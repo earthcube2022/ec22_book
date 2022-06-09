@@ -1,0 +1,14 @@
+ https://github.com/iodepo/odis-arch
+ https://github.com/earthcube2022/ec22_mckay_etal
+ https://github.com/earthcube2022/ec22_kwan_etal
+ https://github.com/earthcube2022/ec22_ji_etal
+ https://github.com/earthcube2022/ec22_rotti_etal
+ https://github.com/earthcube2022/ec22_khider_etal
+ https://github.com/earthcube2022/ec22_okeefe_etal
+ https://github.com/earthcube2022/ec22_mirkovich_etal
+ https://github.com/earthcube2022/ec22_miron_etal
+ https://github.com/earthcube2022/ec22_markowsky_etal
+ https://github.com/earthcube2022/ec22_tauxe_etal
+ https://github.com/earthcube2022/ec22_abduallah_etal
+ https://github.com/earthcube2022/ec22_mills_etal
+ https://github.com/earthcube2022/ec22_yu_etal

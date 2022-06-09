@@ -1,0 +1,53 @@
+title : EarthCube 2022 Call for Notebooks
+author: "EarthCube Office: Supported by NSF Award Number 1928208"
+logo: 'logo.webp'
+copyright : Supported by NSF Award Number 1928208  # Copyright year to be placed in the footer
+
+
+# Short description about the book
+#description: EarthCube 2022 notebook submissions
+
+execute:
+  execute_notebooks: off
+
+# HTML-specific settings
+html:
+  home_page_in_navbar: true
+  use_issues_button: true
+  use_repository_button: true
+  # extra_footer:
+  #   <div>
+  #    Supported by NSF Award Number 1928208
+  #   </div>
+  
+# Interact link settings
+# notebook_interface            : "notebook"
+
+# Launch button settings
+repository:
+  url                         : https://github.com/earthcube2022
+  path_to_book                : "book"
+
+# binder:
+#   binderhub_url               : "https://mybinder.org"
+#   text                        : "Launch binder"
+
+# LaTeX settings
+bibtex_bibfiles:
+   - _bibliography/references.bib
+
+latex:
+  latex_engine: "xelatex"
+  latex_documents:
+    targetname: book.tex
+
+# launch_buttons:
+#   notebook_interface: "jupyterlab"  # or "classic"
+#   binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
+#   colab_url: "https://colab.research.google.com"
+
+sphinx:
+  config:
+    html_show_copyright: false
+    html_theme_options:
+      show_navbar_depth: 1

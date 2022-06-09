@@ -1,0 +1,67 @@
+format: jb-article
+root: docs/index
+sections:
+- file: docs/about
+- file: notebooks/index
+  sections:
+  - file: notebooks/ec21_anil_etal/README.md
+    title: "Hydrographic Ocean Data Exploration"
+    sections:
+    - file: notebooks/ec21_anil_etal/SA_01_Argo_Data_Exploration.ipynb
+  - file: notebooks/ec21_balwada_etal/README.md
+    title: "Interactive Visualization Tools for Ocean Glider Data"
+    sections:
+    - file: notebooks/ec21_balwada_etal/DB_01_Glider_Viz_Panel.ipynb
+  - file: notebooks/ec21_beckley_etal/README.md
+    sections:
+    - file: notebooks/ec21_beckley_etal/OT_01_BulkAccessCOGs.ipynb
+  - file: notebooks/ec21_bourgault_etal/README.md
+    sections:
+    - file: notebooks/ec21_bourgault_etal/PB_02_xclim_Software_ecosystem_for_climate_services.ipynb
+  - file: notebooks/ec21_cherian_etal/README.rst
+    sections:
+    - file: notebooks/ec21_cherian_etal/DC_01_cf-xarray.ipynb
+  - file: notebooks/ec21_cych_etal/readme.md
+    sections:
+    - file: notebooks/ec21_cych_etal/BC_01 Bias Corrected Estimation of Paleointensity.ipynb
+  - file: notebooks/ec21_dye_etal/README.md
+    sections:
+    - file: notebooks/ec21_dye_etal/MD_01_TZVOLCANO_Unsupervised_AI_Anomaly_Detection.ipynb
+  - file: notebooks/ec21_garzon_etal/README.md
+    sections:
+    - file: notebooks/ec21_garzon_etal/showcase/SG_01_Exploring_Research_Data_Repositories_with_geoextent.ipynb
+  - file: notebooks/ec21_gray_etal/README.md
+    sections:
+    - file: notebooks/ec21_gray_etal/PG_01_gulf_stream_dynamics_role_in_productivity.ipynb
+  - file: notebooks/ec21_hu_etal/README.md
+    sections:
+    - file: notebooks/ec21_hu_etal/WH_01_Spatio-Temporal_Deep_Analogs_2021.ipynb
+  - file: notebooks/ec21_lopez_etal/README.md
+    sections:
+    - file: notebooks/ec21_lopez_etal/notebooks/itslive-notebook-rendered.ipynb
+    - file: notebooks/ec21_lopez_etal/notebooks/LL_01_ITS_LIVE_global_glacier_velocity_exploration_and_analysis.ipynb
+  - file: notebooks/ec21_martin_etal/README.md
+    sections:
+    - file: notebooks/ec21_martin_etal/PM_01_Frequency-Domain_Analysis_of_Large_Datasets.ipynb
+  - file: notebooks/ec21_mason_etal/README.md
+    sections:
+    - file: notebooks/ec21_mason_etal/MM_01_Volcanic_activity_detection_and_noise_characterization_using_machine_learning.ipynb
+  - file: notebooks/ec21_maussion_etal/README.md
+    sections:
+    - file: notebooks/ec21_maussion_etal/FM_01_OGGM-Edu_learn_and_teach_about_glaciers.ipynb
+  - file: notebooks/ec21_potnis_etal/README.md
+    sections:
+    - file: notebooks/ec21_potnis_etal/JP_01_Real_Time_Alignment_and_Distribution_of_Weather_Radar_Data_with_Rain_Gauge_Data_for_Deep_Learning_using_CHORDS.ipynb
+  - file: notebooks/ec21_seijo_etal/README.md
+    sections:
+    - file: notebooks/ec21_seijo_etal/GS_02_Argovis_TropicalCyclones_SeaIce.ipynb
+  - file: notebooks/ec21_shi_etal/README.md
+    title: "Automated Machine Learning for Earth Science via AutoGluon"
+    sections:
+    - file: notebooks/ec21_shi_etal/Xingjian_Shi_01_Automated_Machine_Learning_for_Earth_Science_via_AutoGluon.ipynb
+  - file: notebooks/ec21_uchida_etal/README.rst
+    sections:  
+    - file: notebooks/ec21_uchida_etal/notebooks/TU_05_Diagnosing-the-Eliassen-Palm-flux-from-a-quasi-geostrophic-double-gyre-ensemble.ipynb
+  - file: notebooks/ec21_zheng_etal/README.md
+    sections:
+    - file: notebooks/ec21_zheng_etal/notebooks/WZ_01_mapping_ice_flow_velocity.ipynb

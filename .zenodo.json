@@ -1,0 +1,11 @@
+{
+    "creators": [
+        {   
+            "affiliation": "National Science Foundation",
+            "name": "EarthCube"
+        }
+    ],    
+    "license": "CC-0",
+    "title": "EarthCube 2021 Notebooks",
+    "grants": [{"id":"NSF Award Number 1928208"}]
+}
