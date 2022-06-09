@@ -1,76 +1,75 @@
 format: jb-book
-root: docs/index_dup.md
+root: docs/index_dup
 parts:
   - caption: EarthCube 2022 Call
     numbered: False   
     chapters:
-    - file: docs/index.md
-    - file: docs/dois.md
+    - file: docs/index
+    - file: docs/dois
   - caption: Notebook Submissions
     # numbered: 1   
     chapters:
-    - file: chapters/ec22_kwan_etal/README.md
+    - file: chapters/ec22_kwan_etal/README
       title: "Data Cleaning with Pandas and Jupyter Notebooks"
       sections:
-      - file: chapters/ec22_kwan_etal/notebooks/wyk_01_data_cleaning_with_pandas_and_jupyter_notebooks.ipynb
+      - file: chapters/ec22_kwan_etal/notebooks/wyk_01_data_cleaning_with_pandas_and_jupyter_notebooks
 
-    - file: chapters/ec22_ji_etal/README.md
+    - file: chapters/ec22_ji_etal/README
       title: "Magnetic Polarity Inversion Line Detection and Analysis Tool"
       sections:
-      - file: chapters/ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool.ipynb
+      - file: chapters/ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool
 
-    - file:  chapters/ec22_abduallah_etal/README.md
+    - file:  chapters/ec22_abduallah_etal/README
       title: "Predicting Solar Flares with Machine Learning"
       sections:
-      - file: chapters/ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning.ipynb
-        title: "Predicting Solar Flares with Machine Learning"
+      - file: chapters/ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning
 
-    - file:  chapters/ec22_khider_etal/README.md
+    - file:  chapters/ec22_khider_etal/README
       title: "PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists"
       sections:
-      - file: chapters/ec22_khider_etal/DK_v1_PaleoHack.ipynb
+      - file: chapters/ec22_khider_etal/DK_v1_PaleoHack
 
-    - file:  chapters/ec22_markowsky_etal/README.md
+    - file:  chapters/ec22_markowsky_etal/README
       title: "Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template"
       sections:
-      - file: chapters/ec22_markowsky_etal/LM_01_Visualizing_Ice_Core_Datasets_in_Python_Using_a_Jupyter_Notebook_Template.ipynb
+      - file: chapters/ec22_markowsky_etal/LM_01_Visualizing_Ice_Core_Datasets_in_Python_Using_a_Jupyter_Notebook_Template
 
-    - file:  chapters/ec22_mckay_etal/README.md
-      title: "Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences"       
+    - file:  chapters/ec22_mckay_etal/README
+      title: "Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences"
 
-    - file:  chapters/ec22_mills_etal/README.md
+    - file:  chapters/ec22_mills_etal/README
       title: "Intro to Argovis' API"
       sections:
-      - file: chapters/ec22_mills_etal/WM_01_intro_to_argovis_api.ipynb
+      - file: chapters/ec22_mills_etal/WM_01_intro_to_argovis_api
 
-    - file:  chapters/ec22_mirkovich_etal/README.md
+    - file:  chapters/ec22_mirkovich_etal/README
       title: "Assimilative Mapping of Geospace Observations (AMGeO)"
       sections:
-      - file: chapters/ec22_mirkovich_etal/WM_02_AMGeO-2.0.ipynb
+      - file: chapters/ec22_mirkovich_etal/WM_02_AMGeO-2.0
 
-    - file:  chapters/ec22_miron_etal/README.md
+    - file:  chapters/ec22_miron_etal/README
       title: "Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows"
       sections:
-      - file: chapters/ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows.ipynb
+      - file: chapters/ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows
 
-    - file:  chapters/ec22_okeefe_etal/README.md
+    - file:  chapters/ec22_okeefe_etal/README
       title: "Handling Highly Imbalanced Data in Machine Learning Applications"
       sections:
-      - file: chapters/ec22_okeefe_etal/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications.ipynb  
+      - file: chapters/ec22_okeefe_etal/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications  
 
-    - file:  chapters/ec22_rotti_etal/README.md
+    - file:  chapters/ec22_rotti_etal/README
       title: "EC_SEP_Visualization"
       sections:
-      - file: chapters/ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset.ipynb
+      - file: chapters/ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset
 
-    - file:  chapters/ec22_tauxe_etal/README.md
+    - file:  chapters/ec22_tauxe_etal/README
       title: "Jupyter Notebooks as a bridge to the MagIC Database and Open Science"
       sections:
-      - file: chapters/ec22_tauxe_etal/2022_MagIC_database_and_open_science.ipynb
+      - file: chapters/ec22_tauxe_etal/2022_MagIC_database_and_open_science
 
-    - file:  chapters/ec22_yu_etal/README.md
+    - file:  chapters/ec22_yu_etal/README
       title: "ICESpark"
       sections:
-      - file: chapters/ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting.ipynb
+      - file: chapters/ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting
               
          
