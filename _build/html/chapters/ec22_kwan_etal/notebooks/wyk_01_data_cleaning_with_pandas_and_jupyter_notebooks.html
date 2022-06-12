@@ -1,0 +1,3132 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Cleaning with Pandas and Jupyter Notebooks &#8212; EarthCube 2022 Call for Notebooks</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Magnetic Polarity Inversion Line Detection and Analysis Tool" href="../../ec22_ji_etal/README.html" />
+    <link rel="prev" title="Data Cleaning with Pandas and Jupyter Notebooks" href="../README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EarthCube 2022 Call for Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  EarthCube 2022 Call
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../sources/index.html">
+   EarthCube 2022 Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../sources/dois.html">
+   Notebook DOIs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notebook Submissions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../README.html">
+   Data Cleaning with Pandas and Jupyter Notebooks
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Data Cleaning with Pandas and Jupyter Notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_ji_etal/README.html">
+   Magnetic Polarity Inversion Line Detection and Analysis Tool
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool.html">
+     AJ_01_MPIL_Detection_and_Analysis_Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_abduallah_etal/README.html">
+   Predicting Solar Flares with Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning.html">
+     <strong>
+      Predicting Solar Flares with Machine Learning
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_khider_etal/README.html">
+   PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_khider_etal/DK_v1_PaleoHack.html">
+     PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_markowsky_etal/README.html">
+   Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_markowsky_etal/LM_01_Visualizing_Ice_Core_Datasets_in_Python_Using_a_Jupyter_Notebook_Template.html">
+     Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ec22_mckay_etal/README.html">
+   Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_mills_etal/README.html">
+   Intro to Argovis' API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_mills_etal/WM_01_intro_to_argovis_api.html">
+     Intro to Argovis’ API
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_mirkovich_etal/README.html">
+   Assimilative Mapping of Geospace Observations (AMGeO)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_mirkovich_etal/WM_02_AMGeO-2.0.html">
+     AMGeO 2.0: Crafting an API for Geospace Data Scientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_miron_etal/README.html">
+   Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows.html">
+     Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_okeefe_etal/README.html">
+   Handling Highly Imbalanced Data in Machine Learning Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_okeefe_etal/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications.html">
+     Handling Highly Imbalanced Data in Machine Learning Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_rotti_etal/README.html">
+   EC_SEP_Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset.html">
+     GSEP Event Catalog and Time Series Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_tauxe_etal/README.html">
+   Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_tauxe_etal/2022_MagIC_database_and_open_science.html">
+     Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ec22_yu_etal/README.html">
+   ICESpark
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting.html">
+     ICESpark-EarthCube-2022-Annual-Meeting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/chapters/ec22_kwan_etal/notebooks/wyk_01_data_cleaning_with_pandas_and_jupyter_notebooks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Data Cleaning with Pandas and Jupyter Notebooks
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#author-s">
+     Author(s)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#directory-structure">
+     Directory structure
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-library-import">
+     Local library import
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-file-path-variables">
+     Set file path variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#best-practices-and-processing-notes">
+   Best practices and processing notes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-conda-to-manage-dependencies-and-virtual-environments">
+     Use conda to manage dependencies and virtual environments
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-control-git">
+     Version Control / Git
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unit-testing">
+     Unit testing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changes-to-data-files-are-done-in-code">
+     Changes to data files are done in code
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-files">
+     Read files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#viewing-the-dataframe">
+     Viewing the dataframe
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-cleanup-pattern">
+     Basic cleanup pattern
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#view-the-changed-files">
+     View the changed files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   Data processing and analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-file-cleanup">
+     Basic file cleanup
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#before-cleanup">
+       Before cleanup
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#after-cleanup">
+       After cleanup
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clean-up-all-files-and-save-the-changes">
+       Clean up all files and save the changes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-leading-and-trailing-white-spaces">
+     Remove leading and trailing white spaces
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Before cleanup
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       After cleanup
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Clean up all files and save the changes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normalizing-columns-names">
+     Normalizing columns names
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#get-all-unique-column-names">
+       Get all unique column names
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-taxa-and-non-taxa-files">
+       Create taxa and non-taxa files
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#normalize-headers">
+       Normalize headers
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#before-changing-headers">
+       Before changing headers
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#after-changing-headers">
+       After changing headers
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#change-headers-for-all-files-and-save-the-changes">
+       Change headers for all files and save the changes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#turn-one-column-into-multiple-columns">
+     Turn one column into multiple columns
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Before cleanup
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       After cleanup
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Clean up all files and save the changes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clean-up-row-values">
+     Clean up row values
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Before cleanup
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       After cleanup
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Clean up all files and save the changes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-if-required-columns-exists">
+     Check if required columns exists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-cleaning-with-pandas-and-jupyter-notebooks">
+<h1>Data Cleaning with Pandas and Jupyter Notebooks<a class="headerlink" href="#data-cleaning-with-pandas-and-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="author-s">
+<h2>Author(s)<a class="headerlink" href="#author-s" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Author1 = {“name”: “Wai-Yin Kwan”, “affiliation”: “Whirl-i-Gig”, “email”: “<a class="reference external" href="mailto:wyk&#37;&#52;&#48;whirl-i-gig&#46;com">wyk<span>&#64;</span>whirl-i-gig<span>&#46;</span>com</a>”, “orcid”: “0000-0001-6113-0210”}</p></li>
+</ul>
+<h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Data-Cleaning-with-Pandas-and-Jupyter-Notebooks" data-toc-modified-id="Data-Cleaning-with-Pandas-and-Jupyter-Notebooks-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Data Cleaning with Pandas and Jupyter Notebooks</a></span><ul class="toc-item"><li><span><a href="#Author(s)" data-toc-modified-id="Author(s)-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Author(s)</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Results" data-toc-modified-id="Results-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Results</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Directory-structure" data-toc-modified-id="Directory-structure-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Directory structure</a></span></li><li><span><a href="#Library-import" data-toc-modified-id="Library-import-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Library import</a></span></li><li><span><a href="#Local-library-import" data-toc-modified-id="Local-library-import-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Local library import</a></span></li><li><span><a href="#Set-file-path-variables" data-toc-modified-id="Set-file-path-variables-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Set file path variables</a></span></li></ul></li><li><span><a href="#Best-practices-and-processing-notes" data-toc-modified-id="Best-practices-and-processing-notes-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Best practices and processing notes</a></span><ul class="toc-item"><li><span><a href="#Use-conda-to-manage-dependencies-and-virtual-environments" data-toc-modified-id="Use-conda-to-manage-dependencies-and-virtual-environments-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Use conda to manage dependencies and virtual environments</a></span></li><li><span><a href="#Version-Control-/-Git" data-toc-modified-id="Version-Control-/-Git-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Version Control / Git</a></span></li><li><span><a href="#Unit-testing" data-toc-modified-id="Unit-testing-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Unit testing</a></span></li><li><span><a href="#Changes-to-data-files-are-done-in-code" data-toc-modified-id="Changes-to-data-files-are-done-in-code-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Changes to data files are done in code</a></span></li><li><span><a href="#Read-files" data-toc-modified-id="Read-files-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Read files</a></span><ul class="toc-item"><li><span><a href="#Example" data-toc-modified-id="Example-3.5.1"><span class="toc-item-num">3.5.1&nbsp;&nbsp;</span>Example</a></span></li></ul></li><li><span><a href="#Viewing-the-dataframe" data-toc-modified-id="Viewing-the-dataframe-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>Viewing the dataframe</a></span></li><li><span><a href="#Basic-cleanup-pattern" data-toc-modified-id="Basic-cleanup-pattern-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>Basic cleanup pattern</a></span></li><li><span><a href="#View-the-changed-files" data-toc-modified-id="View-the-changed-files-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>View the changed files</a></span></li></ul></li><li><span><a href="#Data-processing-and-analysis" data-toc-modified-id="Data-processing-and-analysis-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data processing and analysis</a></span><ul class="toc-item"><li><span><a href="#Basic-file-cleanup" data-toc-modified-id="Basic-file-cleanup-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Basic file cleanup</a></span><ul class="toc-item"><li><span><a href="#Before-cleanup" data-toc-modified-id="Before-cleanup-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>Before cleanup</a></span></li><li><span><a href="#After-cleanup" data-toc-modified-id="After-cleanup-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>After cleanup</a></span></li><li><span><a href="#Clean-up-all-files-and-save-the-changes" data-toc-modified-id="Clean-up-all-files-and-save-the-changes-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>Clean up all files and save the changes</a></span></li></ul></li><li><span><a href="#Remove-leading-and-trailing-white-spaces" data-toc-modified-id="Remove-leading-and-trailing-white-spaces-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Remove leading and trailing white spaces</a></span><ul class="toc-item"><li><span><a href="#Before-cleanup" data-toc-modified-id="Before-cleanup-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>Before cleanup</a></span></li><li><span><a href="#After-cleanup" data-toc-modified-id="After-cleanup-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>After cleanup</a></span></li><li><span><a href="#Clean-up-all-files-and-save-the-changes" data-toc-modified-id="Clean-up-all-files-and-save-the-changes-4.2.3"><span class="toc-item-num">4.2.3&nbsp;&nbsp;</span>Clean up all files and save the changes</a></span></li></ul></li><li><span><a href="#Normalizing-columns-names" data-toc-modified-id="Normalizing-columns-names-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Normalizing columns names</a></span><ul class="toc-item"><li><span><a href="#Get-all-unique-column-names" data-toc-modified-id="Get-all-unique-column-names-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>Get all unique column names</a></span></li><li><span><a href="#Create-taxa-and-non-taxa-files" data-toc-modified-id="Create-taxa-and-non-taxa-files-4.3.2"><span class="toc-item-num">4.3.2&nbsp;&nbsp;</span>Create taxa and non-taxa files</a></span></li><li><span><a href="#Normalize-headers" data-toc-modified-id="Normalize-headers-4.3.3"><span class="toc-item-num">4.3.3&nbsp;&nbsp;</span>Normalize headers</a></span></li><li><span><a href="#Before-changing-headers" data-toc-modified-id="Before-changing-headers-4.3.4"><span class="toc-item-num">4.3.4&nbsp;&nbsp;</span>Before changing headers</a></span></li><li><span><a href="#After-changing-headers" data-toc-modified-id="After-changing-headers-4.3.5"><span class="toc-item-num">4.3.5&nbsp;&nbsp;</span>After changing headers</a></span></li><li><span><a href="#Change-headers-for-all-files-and-save-the-changes" data-toc-modified-id="Change-headers-for-all-files-and-save-the-changes-4.3.6"><span class="toc-item-num">4.3.6&nbsp;&nbsp;</span>Change headers for all files and save the changes</a></span></li></ul></li><li><span><a href="#Turn-one-column-into-multiple-columns" data-toc-modified-id="Turn-one-column-into-multiple-columns-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Turn one column into multiple columns</a></span><ul class="toc-item"><li><span><a href="#Before-cleanup" data-toc-modified-id="Before-cleanup-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>Before cleanup</a></span></li><li><span><a href="#After-cleanup" data-toc-modified-id="After-cleanup-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>After cleanup</a></span></li><li><span><a href="#Clean-up-all-files-and-save-the-changes" data-toc-modified-id="Clean-up-all-files-and-save-the-changes-4.4.3"><span class="toc-item-num">4.4.3&nbsp;&nbsp;</span>Clean up all files and save the changes</a></span></li></ul></li><li><span><a href="#Clean-up-row-values" data-toc-modified-id="Clean-up-row-values-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Clean up row values</a></span><ul class="toc-item"><li><span><a href="#Before-cleanup" data-toc-modified-id="Before-cleanup-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Before cleanup</a></span></li><li><span><a href="#After-cleanup" data-toc-modified-id="After-cleanup-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>After cleanup</a></span></li><li><span><a href="#Clean-up-all-files-and-save-the-changes" data-toc-modified-id="Clean-up-all-files-and-save-the-changes-4.5.3"><span class="toc-item-num">4.5.3&nbsp;&nbsp;</span>Clean up all files and save the changes</a></span></li></ul></li><li><span><a href="#Check-if-required-columns-exists" data-toc-modified-id="Check-if-required-columns-exists-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Check if required columns exists</a></span></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>References</a></span></li></ul></div></div>
+<div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>Since its inception in the 1960s, the International Ocean Discovery Program (IODP) and its predecessors have recovered sediment cores from ocean basins around the world. The cores provide an extensive amount of information about microorganism fossils and lithologies spanning millions of years. Current challenges to using the scientific ocean drilling (SOD) data include: datasets are stored in different databases with different formats, databases have limited search capabilities, and no one database has all the SOD data.</p>
+<p>The <a class="reference external" href="https://eodp.github.io/">extending Ocean Drilling Pursuits (eODP)</a> project aims to standardized SOD data from several sources into one standardize database structure. The standardized data is then added to the Paleobiology Database (<a class="reference external" href="http://paleobiodb.org">paleobiodb.org</a>) and Macrostrat (<a class="reference external" href="http://macrostrat.org">macrostrat.org</a>) to make the data easily accessible to researchers. This notebook demonstrates how the eODP team uses Jupyter notebooks to clean and standardize 50+ years of SOD data.  This notebook is developed for Python 3.8+ and Jupyter Lab.</p>
+</div>
+<div class="section" id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+<p>Demonstration of how to create a reproducible data cleaning workflow using Git, unit testing, directory organization, and modular code.</p>
+</div>
+<div class="section" id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+<p>For eODP, we use multiple notebooks to clean and standardize over 10,000 CSVs of ocean core data. For this presentation, we are using one notebook to clean just 10 files.</p>
+<p>For each data cleaning step we created: separate sections in this notebook, data cleaning functions in <code class="docutils literal notranslate"><span class="pre">scripts/normalize_data.py</span></code>, and unit tests in <code class="docutils literal notranslate"><span class="pre">test/test_normalize_data.py</span></code></p>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>By making the raw data, processed data, and data cleaning code available, we hope to give ocean core drilling researchers the ability review our data cleaning process and customize the data cleaning steps if so desired. We also hope researchers can apply ideas and tips from our data cleaning process to their own datasets.</p>
+</div>
+<div class="section" id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Award1 = {“agency”: “US National Science Foundation”, “award_code”: “1928362”, “award_URL”: “<a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928362">https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928362</a> “}</p></li>
+</ul>
+</div>
+<div class="section" id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p>Include up to 5 keywords, using the template below.</p>
+<p>keywords=[“data cleaning”, “reproducibility”, “version control”, “testing”]</p>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>Wai-Yin Kwan, 2021. Data Cleaning with Pandas and Jupyter Notebooks. Accessed 5/30/2022 at <a class="reference external" href="https://github.com/wykhuh/ec_eodp_demo">https://github.com/wykhuh/ec_eodp_demo</a></p>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>The template is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License.</a></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="directory-structure">
+<h2>Directory structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>notebooks: Jupyter notebooks</p></li>
+<li><p>processed_data: processed data files</p></li>
+<li><p>raw_data: raw, unprocessed data files</p></li>
+<li><p>scripts: custom data cleaning scripts</p></li>
+<li><p>tests: unit tests written in pytest</p></li>
+</ul>
+</div>
+<div class="section" id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data manipulation</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># handle file system</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="local-library-import">
+<h2>Local library import<a class="headerlink" href="#local-library-import" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Include local library paths</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">))</span>
+
+<span class="c1"># Import local libraries</span>
+<span class="kn">from</span> <span class="nn">scripts.normalize_data</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">normalize_columns</span><span class="p">,</span> 
+    <span class="n">remove_bracket_text</span><span class="p">,</span>
+    <span class="n">remove_whitespace</span><span class="p">,</span>
+    <span class="n">normalize_expedition_section_cols</span><span class="p">,</span>
+    <span class="n">print_df</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="set-file-path-variables">
+<h2>Set file path variables<a class="headerlink" href="#set-file-path-variables" title="Permalink to this headline">¶</a></h2>
+<p>We store the file paths as variables so that can access the paths in multiple data cleaning steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_nontaxa_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;processed_data&#39;</span><span class="p">,</span> <span class="s1">&#39;normalized_nontaxa_list.csv&#39;</span><span class="p">)</span>
+<span class="n">normalized_taxa_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;processed_data&#39;</span><span class="p">,</span>  <span class="s1">&#39;normalized_taxa_list.csv&#39;</span><span class="p">)</span>
+
+<span class="n">taxa_list_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;processed_data&#39;</span><span class="p">,</span> <span class="s1">&#39;drafts&#39;</span><span class="p">,</span> <span class="s1">&#39;taxa_list.csv&#39;</span><span class="p">)</span>
+<span class="n">nontaxa_list_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;processed_data&#39;</span><span class="p">,</span> <span class="s1">&#39;drafts&#39;</span><span class="p">,</span> <span class="s1">&#39;nontaxa_list.csv&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Use `Path` and `rglob` to get all the CSVs in `clean_data/taxa` directory.</span>
+<span class="n">paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;processed_data&#39;</span><span class="p">,</span> <span class="s1">&#39;clean_data&#39;</span><span class="p">,</span> <span class="s1">&#39;taxa&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s1">&#39;*.csv&#39;</span><span class="p">))</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="best-practices-and-processing-notes">
+<h1>Best practices and processing notes<a class="headerlink" href="#best-practices-and-processing-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="use-conda-to-manage-dependencies-and-virtual-environments">
+<h2>Use conda to manage dependencies and virtual environments<a class="headerlink" href="#use-conda-to-manage-dependencies-and-virtual-environments" title="Permalink to this headline">¶</a></h2>
+<p>The package versions are stored environmental.yml so that when other people run the code, they will install the same packages.</p>
+<p>We use virtual environments to avoid dependency conflicts with other projects.</p>
+</div>
+<div class="section" id="version-control-git">
+<h2>Version Control / Git<a class="headerlink" href="#version-control-git" title="Permalink to this headline">¶</a></h2>
+<p>We use git to track changes in the code and data files.</p>
+<p>We found it helpful to make a commit after each data cleaning step in order to make it easier keep track of the data cleaning steps, and undo the certain steps if needed. To undo a data cleaning step that hasn’t been committed, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>. To undo a data cleaning step that has been committed, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span></code>, or <code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">rebase</span></code>.</p>
+</div>
+<div class="section" id="unit-testing">
+<h2>Unit testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h2>
+<p>We wrote unit tests for the data cleaning functions in order to reduce the chances that our data cleaning steps would alter the data files in unexpected ways. The tests are in the <code class="docutils literal notranslate"><span class="pre">./tests</span></code> directory. We used pytest for the unit tests.</p>
+<p>Since we use the same data cleaning functions in multiple notebooks, we created a separate tests directory instead of putting the tests inside the notebooks.</p>
+<p>To run the tests, use <code class="docutils literal notranslate"><span class="pre">pytest</span></code> from the command line. All green dots and <code class="docutils literal notranslate"><span class="pre">[100%]</span></code> means all the tests passed.</p>
+<p><img alt="screenshot pytest results" src="../../../_images/pytest.png" /></p>
+</div>
+<div class="section" id="changes-to-data-files-are-done-in-code">
+<h2>Changes to data files are done in code<a class="headerlink" href="#changes-to-data-files-are-done-in-code" title="Permalink to this headline">¶</a></h2>
+<p>In order to make the data cleaning process reproducible, all the changes to the processed data files are done in code. We do not manually edit the processed files.</p>
+</div>
+<div class="section" id="read-files">
+<h2>Read files<a class="headerlink" href="#read-files" title="Permalink to this headline">¶</a></h2>
+<p>We used <code class="docutils literal notranslate"><span class="pre">pandas.read_csv(path,</span> <span class="pre">dtype=str)</span></code> to read csv and treat all columns as strings. The reason why we used <code class="docutils literal notranslate"><span class="pre">dtype=str</span></code> is because <code class="docutils literal notranslate"><span class="pre">pandas.read_csv(path)</span></code>  will automatically convert the columns to strings, integers, floats, dates. This automatic conversion can change values in unexpected ways such as converting a column with integers and NaN into floats and NaN.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">paths</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use <code class="docutils literal notranslate"><span class="pre">dtype=str</span></code> so that the column has correct integer values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">5</span> <span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pulleniatina coiling (dextral)&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    NaN
+1     20
+2    NaN
+3     23
+4     35
+Name: Pulleniatina coiling (dextral), dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we don’t include <code class="docutils literal notranslate"><span class="pre">dtype</span></code>, the columns has incorrect float values. pandas automatically converts the integers to floats because of NaNs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pulleniatina coiling (dextral)&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     NaN
+1    20.0
+2     NaN
+3    23.0
+4    35.0
+Name: Pulleniatina coiling (dextral), dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="viewing-the-dataframe">
+<h2>Viewing the dataframe<a class="headerlink" href="#viewing-the-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>One thing that we found helpful when data cleaning is to view the dataframe and the total number of rows and columns to check the changes in the dataframe.</p>
+<p><code class="docutils literal notranslate"><span class="pre">print_df</span></code> is a custom function that calls <code class="docutils literal notranslate"><span class="pre">pd.DataFrame.shape</span></code> and <code class="docutils literal notranslate"><span class="pre">pd.DataFrame.head()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">paths</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="n">print_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 23)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Top [cm]</th>
+      <th>Bottom [cm]</th>
+      <th>Top Depth [m]</th>
+      <th>Bottom Depth [m]</th>
+      <th>Datum name</th>
+      <th>Zone name (short)</th>
+      <th>Zone name</th>
+      <th>Preservation</th>
+      <th>Group abundance</th>
+      <th>...</th>
+      <th>Globorotalia flexuosa</th>
+      <th>Globorotalia hessi</th>
+      <th>Globorotalia tosaensis</th>
+      <th>Globorotalia tumida</th>
+      <th>Neogloboquadrina acostaensis (dextral)</th>
+      <th>Neogloboquadrina humerosa</th>
+      <th>Pulleniatina coiling (dextral)</th>
+      <th>Pulleniatina coiling (sinistral)</th>
+      <th>Pulleniatina finalis</th>
+      <th>Sphaeroidinella dahiscens sensu lato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>362-U1480E-1H-CC-PAL-FORAM_CHEN</td>
+      <td>0</td>
+      <td>5</td>
+      <td>7.71</td>
+      <td>7.76</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>P [P43]</td>
+      <td>R [A101]</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>R [A102]</td>
+      <td>NaN</td>
+      <td>R [A102]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>R [A102]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>362-U1480E-2H-CC-PAL-FORAM_CHEN</td>
+      <td>0</td>
+      <td>5</td>
+      <td>17.54</td>
+      <td>17.59</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>P [P43]</td>
+      <td>A [A101]</td>
+      <td>...</td>
+      <td>R [A102]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>A [A102]</td>
+      <td>NaN</td>
+      <td>R [A102]</td>
+      <td>20</td>
+      <td>0</td>
+      <td>R [A102]</td>
+      <td>A [A102]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>362-U1480E-3H-1-W 130/132-FORAM_CHEN</td>
+      <td>0</td>
+      <td>2</td>
+      <td>18.6</td>
+      <td>18.62</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>P [P43]</td>
+      <td>R [A101]</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>F [A102]</td>
+      <td>NaN</td>
+      <td>C [A102]</td>
+      <td>NaN</td>
+      <td>F [A102]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>A [A102]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>362-U1480E-3H-2-W 70/72-FORAM_CHEN</td>
+      <td>0</td>
+      <td>2</td>
+      <td>19.5</td>
+      <td>19.52</td>
+      <td>T Globorotalia tosaensis (Gradstein et al., 2012)</td>
+      <td>PT1a [AO12]</td>
+      <td>Globigerinoides fistulosus (Anthonissen and Og...</td>
+      <td>P [P43]</td>
+      <td>A [A101]</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>C [A102]</td>
+      <td>R [A102]</td>
+      <td>A [A102]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>23</td>
+      <td>0</td>
+      <td>R [A102]</td>
+      <td>F [A102]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>362-U1480E-3H-3-W 130/132-FORAM_CHEN</td>
+      <td>0</td>
+      <td>2</td>
+      <td>21.6</td>
+      <td>21.62</td>
+      <td>T Neogloboquadrina acostaensis (Gradstein et a...</td>
+      <td>PT1a [AO12]</td>
+      <td>Globigerinoides fistulosus (Anthonissen and Og...</td>
+      <td>M [P43]</td>
+      <td>A [A101]</td>
+      <td>...</td>
+      <td>R [A102]</td>
+      <td>NaN</td>
+      <td>R [A102]</td>
+      <td>A [A102]</td>
+      <td>F [A102]</td>
+      <td>F [A102]</td>
+      <td>35</td>
+      <td>12</td>
+      <td>F [A102]</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="basic-cleanup-pattern">
+<h2>Basic cleanup pattern<a class="headerlink" href="#basic-cleanup-pattern" title="Permalink to this headline">¶</a></h2>
+<p>For each data cleanup step, we loop over all the files, create a dataframe for each file, execute some code to clean the data, and then save the revised file.</p>
+<p>for path in paths:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df = pd.read_csv(path, dtype=str)
+
+# code to change file   
+
+df.to_csv(path, index=False)
+</pre></div>
+</div>
+</div>
+<div class="section" id="view-the-changed-files">
+<h2>View the changed files<a class="headerlink" href="#view-the-changed-files" title="Permalink to this headline">¶</a></h2>
+<p>After each cleanup step, we use the desktop application <a class="reference external" href="https://desktop.github.com/">Github Desktop</a> to spot check the changes to the files.</p>
+<p>If the files look ok, make a commit. If the data cleaning step did not act as expected, undo the changes in the data files using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>, update the data cleaning function and the tests, and rerun the data cleaning step.</p>
+<p>The screenshot below shows the changes to <code class="docutils literal notranslate"><span class="pre">Micropal_CSV_1/318_U1355A_Planktic_Forams.csv</span></code></p>
+<p><img alt="screenshot of Github Desktop showing the changed data files" src="../../../_images/git_diff.png" /></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
+<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
+<p>There are many steps needed to clean up the data files.</p>
+<div class="section" id="basic-file-cleanup">
+<h2>Basic file cleanup<a class="headerlink" href="#basic-file-cleanup" title="Permalink to this headline">¶</a></h2>
+<p>pandas has methods that can be used to do some basic file cleanup.</p>
+<ul class="simple">
+<li><p>delete dataframe column if all values are NA<br />
+dropna(axis=’columns’, how=’all’, inplace=True) - <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">pandas.DataFrame.dropna</a></p></li>
+<li><p>delete dataframe row if all values are NA<br />
+dropna(axis=’index’, how=’all’, inplace=True) - <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">pandas.DataFrame.dropna</a></p></li>
+<li><p>remove duplicate rows in dataframe<br />
+drop_duplicates(inplace=True) - <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html">pandas.DataFrame.drop_duplicates</a></p></li>
+</ul>
+<div class="section" id="before-cleanup">
+<h3>Before cleanup<a class="headerlink" href="#before-cleanup" title="Permalink to this headline">¶</a></h3>
+<p>The file has 20 rows and 41 columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">paths</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">print_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20, 41)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Exp</th>
+      <th>Site</th>
+      <th>Hole</th>
+      <th>Core</th>
+      <th>Core-Sect</th>
+      <th>Type</th>
+      <th>Section</th>
+      <th>A/W</th>
+      <th>Top [cm]</th>
+      <th>...</th>
+      <th>Neogloboquadrina pachyderma (sinistral)</th>
+      <th>Neogloboquadrina pachyderma (dextral)</th>
+      <th>Neogloboquadrina pachyderma A (dextral, inflated form)</th>
+      <th>Neogloboquadrina pachyderma B (sinistral, inflated form)</th>
+      <th>Neogloboquadrina pachyderma C (sinistral, compressed form)</th>
+      <th>Orbulina universa</th>
+      <th>Comments</th>
+      <th>Ship File Links</th>
+      <th>Shore File Links</th>
+      <th>File Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>341-U1417B-2H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>2</td>
+      <td>2-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>D [A84]</td>
+      <td>R [A84]</td>
+      <td>NaN</td>
+      <td>R [A84]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>341-U1417B-4H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>4</td>
+      <td>4-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>D [A84]</td>
+      <td>R [A84]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>sandy</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>341-U1417B-6H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>6</td>
+      <td>6-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>D [A84]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>diatom ooze. pyritilize foram</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>341-U1417B-9H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>9</td>
+      <td>9-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Rich in sandy terrigenous grains with presence...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>341-U1417B-10H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>10</td>
+      <td>10-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>D [A84]</td>
+      <td>R [A84]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Rich in planktic foraminifers, pebbles, pyrite</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 41 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="after-cleanup">
+<h3>After cleanup<a class="headerlink" href="#after-cleanup" title="Permalink to this headline">¶</a></h3>
+<p>The number of rows changed from 20 to 17, and the number of columns changed from 41 to 26.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">print_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(17, 26)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Exp</th>
+      <th>Site</th>
+      <th>Hole</th>
+      <th>Core</th>
+      <th>Core-Sect</th>
+      <th>Type</th>
+      <th>Section</th>
+      <th>A/W</th>
+      <th>Top [cm]</th>
+      <th>...</th>
+      <th>Preservation</th>
+      <th>Group abundance</th>
+      <th>Globigerina umbilicata</th>
+      <th>Globigerinita glutinata</th>
+      <th>Neogloboquadrina inglei</th>
+      <th>Neogloboquadrina kagaensis</th>
+      <th>Neogloboquadrina pachyderma (sinistral)</th>
+      <th>Neogloboquadrina pachyderma (dextral)</th>
+      <th>Neogloboquadrina pachyderma B (sinistral, inflated form)</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>341-U1417B-2H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>2</td>
+      <td>2-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>G [P15]</td>
+      <td>R [A83]</td>
+      <td>D [A84]</td>
+      <td>R [A84]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>D [A84]</td>
+      <td>R [A84]</td>
+      <td>R [A84]</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>341-U1417B-4H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>4</td>
+      <td>4-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>G [P15]</td>
+      <td>C  [A61]</td>
+      <td>A [A84]</td>
+      <td>P [A84]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>D [A84]</td>
+      <td>R [A84]</td>
+      <td>NaN</td>
+      <td>sandy</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>341-U1417B-6H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>6</td>
+      <td>6-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>P [P15]</td>
+      <td>P [A83]</td>
+      <td>D [A84]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>D [A84]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>diatom ooze. pyritilize foram</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>341-U1417B-9H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>9</td>
+      <td>9-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>B [A83]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Rich in sandy terrigenous grains with presence...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>341-U1417B-10H-CC-PAL</td>
+      <td>341</td>
+      <td>U1417</td>
+      <td>B</td>
+      <td>10</td>
+      <td>10-CC</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+      <td>0</td>
+      <td>...</td>
+      <td>G [P15]</td>
+      <td>A [A83]</td>
+      <td>D [A84]</td>
+      <td>P [A84]</td>
+      <td>P [A84]</td>
+      <td>NaN</td>
+      <td>D [A84]</td>
+      <td>R [A84]</td>
+      <td>NaN</td>
+      <td>Rich in planktic foraminifers, pebbles, pyrite</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="clean-up-all-files-and-save-the-changes">
+<h3>Clean up all files and save the changes<a class="headerlink" href="#clean-up-all-files-and-save-the-changes" title="Permalink to this headline">¶</a></h3>
+<p>Do basic file cleanup on all the files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+    
+    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="remove-leading-and-trailing-white-spaces">
+<h2>Remove leading and trailing white spaces<a class="headerlink" href="#remove-leading-and-trailing-white-spaces" title="Permalink to this headline">¶</a></h2>
+<p>We created a custom function <code class="docutils literal notranslate"><span class="pre">remove_whitespace</span></code> to remove all leading and trailing white spaces from both the headers and row values.</p>
+<p>Since we wanted to remove white spaces from both the headers and row values, we used <code class="docutils literal notranslate"><span class="pre">read_csv(header=None)</span></code> and <code class="docutils literal notranslate"><span class="pre">to_csv(header=False)</span></code> so that pandas treat the first row like any other row.</p>
+<div class="section" id="id1">
+<h3>Before cleanup<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">print_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 16)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+      <th>14</th>
+      <th>15</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Label ID</td>
+      <td>Exp</td>
+      <td>Site</td>
+      <td>Hole</td>
+      <td>Core</td>
+      <td>Core-Sect</td>
+      <td>Type</td>
+      <td>Section</td>
+      <td>A/W</td>
+      <td>Extra Sample ID Data</td>
+      <td>Top [cm]</td>
+      <td>Bottom [cm]</td>
+      <td>Top Depth [m]</td>
+      <td>Bottom Depth [m]</td>
+      <td>Globigerina bulloides</td>
+      <td>Neogloboquadrina cf. pachyderma</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>318-U1355A-1R-1-PAL-FORAM</td>
+      <td>318</td>
+      <td>U1355</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1-1</td>
+      <td>R</td>
+      <td>1</td>
+      <td>PAL</td>
+      <td>FORAM</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>R[318_PF]</td>
+      <td>R[318_PF]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>After cleanup<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">remove_whitespace</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">print_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 16)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+      <th>14</th>
+      <th>15</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Label ID</td>
+      <td>Exp</td>
+      <td>Site</td>
+      <td>Hole</td>
+      <td>Core</td>
+      <td>Core-Sect</td>
+      <td>Type</td>
+      <td>Section</td>
+      <td>A/W</td>
+      <td>Extra Sample ID Data</td>
+      <td>Top [cm]</td>
+      <td>Bottom [cm]</td>
+      <td>Top Depth [m]</td>
+      <td>Bottom Depth [m]</td>
+      <td>Globigerina bulloides</td>
+      <td>Neogloboquadrina cf. pachyderma</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>318-U1355A-1R-1-PAL-FORAM</td>
+      <td>318</td>
+      <td>U1355</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1-1</td>
+      <td>R</td>
+      <td>1</td>
+      <td>PAL</td>
+      <td>FORAM</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>R[318_PF]</td>
+      <td>R[318_PF]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Clean up all files and save the changes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Remove white space from all files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    
+    <span class="n">remove_whitespace</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="normalizing-columns-names">
+<h2>Normalizing columns names<a class="headerlink" href="#normalizing-columns-names" title="Permalink to this headline">¶</a></h2>
+<p>For the ocean core drilling expedition 312 and later, the researchers for each expedition determined the format of their data files. This resulted in a lot of variability in the file columns. We had to standardized the columns names and update data files. For instance, ‘Bottom [cm]’ and ‘Bottom[cm] [cm]’ in the raw files are ‘Bottom [cm]’ in the processed files.</p>
+<p>Another challenge with parsing the files is that we had to standardized the taxa names. Issues include misspelling, taxa names change over time, and inconsistent ways of treating rank modifiers.</p>
+<div class="section" id="get-all-unique-column-names">
+<h3>Get all unique column names<a class="headerlink" href="#get-all-unique-column-names" title="Permalink to this headline">¶</a></h3>
+<p>In order to normalize the header header names, we needed to get all the headers for all the files.</p>
+<p>Since we only need the header names, use <code class="docutils literal notranslate"><span class="pre">nrow=0</span></code> with <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Top [cm]</th>
+      <th>Bottom [cm]</th>
+      <th>Top Depth [m]</th>
+      <th>Bottom Depth [m]</th>
+      <th>Zone name (short)</th>
+      <th>Zone name</th>
+      <th>Additional zone name (short)</th>
+      <th>Additional zone name</th>
+      <th>Preservation</th>
+      <th>...</th>
+      <th>Globoturborotalita decoraperta _T and B</th>
+      <th>Globoturborotalita rubescens</th>
+      <th>Sphaeroidinellopsis seminulina _T_ _PL4</th>
+      <th>Sphaeroidinellopsis kochi _T</th>
+      <th>Globigerinoidesella fistulosa _T and B_ _Pt1a</th>
+      <th>Globigerinoides ruber _pink_ T</th>
+      <th>Globigerinoides extremus _T and B</th>
+      <th>Globigerinoides obliquus _T</th>
+      <th>Globigerinella calida _B</th>
+      <th>Sample comment</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<p>0 rows × 64 columns</p>
+</div></div></div>
+</div>
+<p>We used <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.columns()</span></code> and python <code class="docutils literal notranslate"><span class="pre">set</span></code> to get all the unique columns for all the files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_columns</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="n">all_columns</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    
+<span class="nb">len</span><span class="p">(</span><span class="n">all_columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>158
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A/W&#39;,
+ &#39;Additional zone name&#39;,
+ &#39;Additional zone name (short)&#39;,
+ &#39;Bottom Depth [m]&#39;,
+ &#39;Bottom Depth[m] [m]&#39;,
+ &#39;Bottom [cm]&#39;,
+ &#39;Bottom[cm] [cm]&#39;,
+ &#39;Candeina nitida&#39;,
+ &#39;Comment (general)&#39;,
+ &#39;Comments&#39;,
+ &#39;Core&#39;,
+ &#39;Core-Sect&#39;,
+ &#39;Datum name&#39;,
+ &#39;Dentoglobigerina altispira _T_ _PL5&#39;,
+ &#39;Dentoglobigerina altispira _T_ _PL5_&#39;,
+ &#39;Dextral:Sinistral _P. obliquiloculata_&#39;,
+ &#39;Dextral:Sinistral _P. praecursor_&#39;,
+ &#39;Dextral:Sinistral _P. primalis_&#39;,
+ &#39;Exp&#39;,
+ &#39;Extra Sample ID Data&#39;,
+ &#39;Fragmentation&#39;,
+ &#39;Fragmentation rank [auto-pop]&#39;,
+ &#39;Genus/species (upper zone)&#39;,
+ &#39;Genus/species lower zone)&#39;,
+ &#39;Globigerina bulloides&#39;,
+ &#39;Globigerina cf. woodi&#39;,
+ &#39;Globigerina falconensis&#39;,
+ &#39;Globigerina umbilicata&#39;,
+ &#39;Globigerinella aequilateralis&#39;,
+ &#39;Globigerinella calida&#39;,
+ &#39;Globigerinella calida _B&#39;,
+ &#39;Globigerinella calida _B_&#39;,
+ &#39;Globigerinella obesa&#39;,
+ &#39;Globigerinita glutinata&#39;,
+ &#39;Globigerinita parkerae&#39;,
+ &#39;Globigerinita uvula&#39;,
+ &#39;Globigerinoides bulloideus&#39;,
+ &#39;Globigerinoides conglobatus&#39;,
+ &#39;Globigerinoides extremus _T and B&#39;,
+ &#39;Globigerinoides extremus _T and B_&#39;,
+ &#39;Globigerinoides fistulosus&#39;,
+ &#39;Globigerinoides obliquus _T&#39;,
+ &#39;Globigerinoides obliquus _T_&#39;,
+ &#39;Globigerinoides quadrilobatus&#39;,
+ &#39;Globigerinoides ruber&#39;,
+ &#39;Globigerinoides ruber (pink)&#39;,
+ &#39;Globigerinoides ruber (white)&#39;,
+ &#39;Globigerinoides ruber _pink_ T&#39;,
+ &#39;Globigerinoides ruber _pink_ _T_&#39;,
+ &#39;Globigerinoides sacculifer&#39;,
+ &#39;Globigerinoides sacculifer (without sack)&#39;,
+ &#39;Globigerinoides tenellus&#39;,
+ &#39;Globigerinoides trilobus&#39;,
+ &#39;Globigerinoidesella fistulosa _T and B_ _Pt1a&#39;,
+ &#39;Globigerinoidesella fistulosa _T and B_ _Pt1a_&#39;,
+ &#39;Globoconella miozea&#39;,
+ &#39;Globorotalia (Globoconella) inflata&#39;,
+ &#39;Globorotalia (Globorotalia) tumida tumida&#39;,
+ &#39;Globorotalia (Hirsutella) hirsuta&#39;,
+ &#39;Globorotalia (Hirsutella) scitula&#39;,
+ &#39;Globorotalia (Truncorotalia) crossaformis&#39;,
+ &#39;Globorotalia (Truncorotalia) truncatulinoides&#39;,
+ &#39;Globorotalia anfracta&#39;,
+ &#39;Globorotalia crassaformis&#39;,
+ &#39;Globorotalia crassaformis sensu lato&#39;,
+ &#39;Globorotalia flexuosa&#39;,
+ &#39;Globorotalia flexuosa _T and B_&#39;,
+ &#39;Globorotalia hessi&#39;,
+ &#39;Globorotalia hessi _B_&#39;,
+ &#39;Globorotalia hirsuta&#39;,
+ &#39;Globorotalia inflata&#39;,
+ &#39;Globorotalia limbata _B&#39;,
+ &#39;Globorotalia limbata _B_&#39;,
+ &#39;Globorotalia limbata _T_&#39;,
+ &#39;Globorotalia margaritae _T and B_ _PL3&#39;,
+ &#39;Globorotalia margaritae _T and B_ _PL3_&#39;,
+ &#39;Globorotalia menardii&#39;,
+ &#39;Globorotalia multicamerata _T&#39;,
+ &#39;Globorotalia multicamerata _T_&#39;,
+ &#39;Globorotalia plesiotumida _B_ _M13b_&#39;,
+ &#39;Globorotalia plesiotumida _T&#39;,
+ &#39;Globorotalia plesiotumida _T_&#39;,
+ &#39;Globorotalia pseudomiocenica _T_ _PL6&#39;,
+ &#39;Globorotalia pseudomiocenica _T_ _PL6_&#39;,
+ &#39;Globorotalia scitula&#39;,
+ &#39;Globorotalia tosaensis&#39;,
+ &#39;Globorotalia tosaensis _T and B_ _Pt1b&#39;,
+ &#39;Globorotalia tosaensis _T and B_ _Pt1b_&#39;,
+ &#39;Globorotalia truncatulinoides&#39;,
+ &#39;Globorotalia truncatulinoides _B&#39;,
+ &#39;Globorotalia truncatulinoides _B_&#39;,
+ &#39;Globorotalia tumida&#39;,
+ &#39;Globorotalia tumida _B_ _PL1a_&#39;,
+ &#39;Globoturborotalita apertura _T and B&#39;,
+ &#39;Globoturborotalita apertura _T and B_&#39;,
+ &#39;Globoturborotalita decoraperta _T and B&#39;,
+ &#39;Globoturborotalita decoraperta _T and B_&#39;,
+ &#39;Globoturborotalita rubescens&#39;,
+ &#39;Group Abundance&#39;,
+ &#39;Group abundance&#39;,
+ &#39;Group abundance (%)&#39;,
+ &#39;Hole&#39;,
+ &#39;Label ID&#39;,
+ &#39;Neogloboquadrina acostaensis&#39;,
+ &#39;Neogloboquadrina acostaensis (dextral)&#39;,
+ &#39;Neogloboquadrina cf. pachyderma&#39;,
+ &#39;Neogloboquadrina dutertrei&#39;,
+ &#39;Neogloboquadrina humerosa&#39;,
+ &#39;Neogloboquadrina incompta (dextral)&#39;,
+ &#39;Neogloboquadrina inglei&#39;,
+ &#39;Neogloboquadrina kagaensis&#39;,
+ &#39;Neogloboquadrina nympha&#39;,
+ &#39;Neogloboquadrina pachyderma (dextral)&#39;,
+ &#39;Neogloboquadrina pachyderma (sin)&#39;,
+ &#39;Neogloboquadrina pachyderma (sinistral)&#39;,
+ &#39;Neogloboquadrina pachyderma B (sinistral, inflated form)&#39;,
+ &#39;Neogloboquadrina pachyderma(dex)&#39;,
+ &#39;Orbulina universa&#39;,
+ &#39;PF Preservation&#39;,
+ &#39;Preservation&#39;,
+ &#39;Pulleniatina coiling (dextral)&#39;,
+ &#39;Pulleniatina coiling (sinistral)&#39;,
+ &#39;Pulleniatina finalis&#39;,
+ &#39;Pulleniatina finalis _B&#39;,
+ &#39;Pulleniatina finalis _B_&#39;,
+ &#39;Pulleniatina obliquiloculata&#39;,
+ &#39;Pulleniatina obliquiloculata (D)&#39;,
+ &#39;Pulleniatina praecursor&#39;,
+ &#39;Pulleniatina praespectabilis&#39;,
+ &#39;Pulleniatina primalis  _Tand B&#39;,
+ &#39;Pulleniatina primalis  _Tand B_&#39;,
+ &#39;Sample&#39;,
+ &#39;Sample comment&#39;,
+ &#39;Section&#39;,
+ &#39;Site&#39;,
+ &#39;Sphaeroidinella dahiscens sensu lato&#39;,
+ &#39;Sphaeroidinella dehiscens&#39;,
+ &#39;Sphaeroidinella dehiscens s.l.&#39;,
+ &#39;Sphaeroidinella dehiscens sensu lato _B_&#39;,
+ &#39;Sphaeroidinellopsis kochi _T&#39;,
+ &#39;Sphaeroidinellopsis kochi _T_&#39;,
+ &#39;Sphaeroidinellopsis seminulina _T_ _PL4&#39;,
+ &#39;Sphaeroidinellopsis seminulina _T_ _PL4_&#39;,
+ &#39;Top Depth [m]&#39;,
+ &#39;Top Depth[m] [m]&#39;,
+ &#39;Top [cm]&#39;,
+ &#39;Top[cm] [cm]&#39;,
+ &#39;Type&#39;,
+ &#39;Type (lower zone)&#39;,
+ &#39;Upper boundary age av. [Ma]&#39;,
+ &#39;Zone author (year)&#39;,
+ &#39;Zone group&#39;,
+ &#39;Zone name&#39;,
+ &#39;Zone name (short)&#39;,
+ &#39;pc_abundance_name_mode&#39;,
+ &#39;pc_fossil_group&#39;,
+ &#39;pc_fossil_name&#39;,
+ &#39;physical_constituent_name&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>We then manually separate taxa names from other headers so that we could do some more processing on the taxa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxa_columns</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="s1">&#39;Candeina nitida&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dentoglobigerina altispira _T_ _PL5&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dentoglobigerina altispira _T_ _PL5_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dextral:Sinistral _P. obliquiloculata_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dextral:Sinistral _P. praecursor_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dextral:Sinistral _P. primalis_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Fragmentation rank [auto-pop]&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Genus/species (upper zone)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Genus/species lower zone)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerina bulloides&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerina cf. woodi&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerina falconensis&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerina umbilicata&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinella aequilateralis&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinella calida&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinella calida _B&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinella calida _B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinella obesa&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinita glutinata&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinita parkerae&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinita uvula&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides bulloideus&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides conglobatus&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides extremus _T and B&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides extremus _T and B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides fistulosus&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides obliquus _T&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides obliquus _T_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides quadrilobatus&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides ruber&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides ruber (pink)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides ruber (white)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides ruber _pink_ T&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides ruber _pink_ _T_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides sacculifer&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides sacculifer (without sack)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides tenellus&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoides trilobus&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoidesella fistulosa _T and B_ _Pt1a&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globigerinoidesella fistulosa _T and B_ _Pt1a_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globoconella miozea&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia (Globoconella) inflata&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia (Globorotalia) tumida tumida&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia (Hirsutella) hirsuta&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia (Hirsutella) scitula&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia (Truncorotalia) crossaformis&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia (Truncorotalia) truncatulinoides&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia anfracta&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia crassaformis&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia crassaformis sensu lato&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia flexuosa&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia flexuosa _T and B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia hessi&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia hessi _B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia hirsuta&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia inflata&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia limbata _B&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia limbata _B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia limbata _T_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia margaritae _T and B_ _PL3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia margaritae _T and B_ _PL3_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia menardii&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia multicamerata _T&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia multicamerata _T_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia plesiotumida _B_ _M13b_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia plesiotumida _T&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia plesiotumida _T_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia pseudomiocenica _T_ _PL6&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia pseudomiocenica _T_ _PL6_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia scitula&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia tosaensis&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia tosaensis _T and B_ _Pt1b&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia tosaensis _T and B_ _Pt1b_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia truncatulinoides&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia truncatulinoides _B&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia truncatulinoides _B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia tumida&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globorotalia tumida _B_ _PL1a_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globoturborotalita apertura _T and B&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globoturborotalita apertura _T and B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globoturborotalita decoraperta _T and B&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globoturborotalita decoraperta _T and B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Globoturborotalita rubescens&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina acostaensis&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina acostaensis (dextral)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina cf. pachyderma&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina dutertrei&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina humerosa&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina incompta (dextral)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina inglei&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina kagaensis&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina nympha&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina pachyderma (dextral)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina pachyderma (sin)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina pachyderma (sinistral)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina pachyderma B (sinistral, inflated form)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Neogloboquadrina pachyderma(dex)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Orbulina universa&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina coiling (dextral)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina coiling (sinistral)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina finalis&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina finalis _B&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina finalis _B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina obliquiloculata&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina obliquiloculata (D)&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina praecursor&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina praespectabilis&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina primalis  _Tand B&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Pulleniatina primalis  _Tand B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sphaeroidinella dahiscens sensu lato&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sphaeroidinella dehiscens&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sphaeroidinella dehiscens s.l.&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sphaeroidinella dehiscens sensu lato _B_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sphaeroidinellopsis kochi _T&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sphaeroidinellopsis kochi _T_&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sphaeroidinellopsis seminulina _T_ _PL4&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sphaeroidinellopsis seminulina _T_ _PL4_&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">taxa_columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>117
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since both <code class="docutils literal notranslate"><span class="pre">all_columns</span></code> and <code class="docutils literal notranslate"><span class="pre">taxa_columns</span></code> are sets, we can subtract them to get the nontaxa headers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nontaxa_columns</span> <span class="o">=</span> <span class="n">all_columns</span> <span class="o">-</span> <span class="n">taxa_columns</span>
+
+<span class="n">nontaxa_columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A/W&#39;,
+ &#39;Additional zone name&#39;,
+ &#39;Additional zone name (short)&#39;,
+ &#39;Bottom Depth [m]&#39;,
+ &#39;Bottom Depth[m] [m]&#39;,
+ &#39;Bottom [cm]&#39;,
+ &#39;Bottom[cm] [cm]&#39;,
+ &#39;Comment (general)&#39;,
+ &#39;Comments&#39;,
+ &#39;Core&#39;,
+ &#39;Core-Sect&#39;,
+ &#39;Datum name&#39;,
+ &#39;Exp&#39;,
+ &#39;Extra Sample ID Data&#39;,
+ &#39;Fragmentation&#39;,
+ &#39;Group Abundance&#39;,
+ &#39;Group abundance&#39;,
+ &#39;Group abundance (%)&#39;,
+ &#39;Hole&#39;,
+ &#39;Label ID&#39;,
+ &#39;PF Preservation&#39;,
+ &#39;Preservation&#39;,
+ &#39;Sample&#39;,
+ &#39;Sample comment&#39;,
+ &#39;Section&#39;,
+ &#39;Site&#39;,
+ &#39;Top Depth [m]&#39;,
+ &#39;Top Depth[m] [m]&#39;,
+ &#39;Top [cm]&#39;,
+ &#39;Top[cm] [cm]&#39;,
+ &#39;Type&#39;,
+ &#39;Type (lower zone)&#39;,
+ &#39;Upper boundary age av. [Ma]&#39;,
+ &#39;Zone author (year)&#39;,
+ &#39;Zone group&#39;,
+ &#39;Zone name&#39;,
+ &#39;Zone name (short)&#39;,
+ &#39;pc_abundance_name_mode&#39;,
+ &#39;pc_fossil_group&#39;,
+ &#39;pc_fossil_name&#39;,
+ &#39;physical_constituent_name&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">nontaxa_columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-taxa-and-non-taxa-files">
+<h3>Create taxa and non-taxa files<a class="headerlink" href="#create-taxa-and-non-taxa-files" title="Permalink to this headline">¶</a></h3>
+<p>We saved the the taxa and nontaxa headers to csv so that we can further process them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxa_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">taxa_columns</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;verbatim_name&#39;</span><span class="p">])</span>
+<span class="n">taxa_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;verbatim_name&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">taxa_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">taxa_list_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">print_df</span><span class="p">(</span><span class="n">taxa_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(117, 1)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>verbatim_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>62</th>
+      <td>Candeina nitida</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>Dentoglobigerina altispira _T_ _PL5</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Dentoglobigerina altispira _T_ _PL5_</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Dextral:Sinistral _P. obliquiloculata_</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Dextral:Sinistral _P. praecursor_</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">non_taxa_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">nontaxa_columns</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">])</span>
+<span class="n">non_taxa_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">non_taxa_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">nontaxa_list_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">print_df</span><span class="p">(</span><span class="n">non_taxa_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(41, 1)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>40</th>
+      <td>A/W</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Additional zone name</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Additional zone name (short)</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Bottom Depth [m]</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Bottom Depth[m] [m]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="normalize-headers">
+<h3>Normalize headers<a class="headerlink" href="#normalize-headers" title="Permalink to this headline">¶</a></h3>
+<p>The software developer first uploads the taxa and nontaxa CSVs to Google Sheets, then project PIs and their students work together to manually normalize the original values. The PIs are currently writing a paper with details about the normalization process [5].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxa_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">normalized_taxa_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">print_df</span><span class="p">(</span><span class="n">taxa_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(117, 2)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>verbatim_name</th>
+      <th>normalized_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Candeina nitida</td>
+      <td>Candeina nitida</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Dentoglobigerina altispira _T_ _PL5</td>
+      <td>Dentoglobigerina altispira</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Dentoglobigerina altispira _T_ _PL5_</td>
+      <td>Dentoglobigerina altispira</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Dextral:Sinistral _P. obliquiloculata_</td>
+      <td>Pulleniatina obliquiloculata (dextral)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Dextral:Sinistral _P. obliquiloculata_</td>
+      <td>Pulleniatina obliquiloculata (sinistral)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nontaxa_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">normalized_nontaxa_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">print_df</span><span class="p">(</span><span class="n">nontaxa_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(44, 2)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>field</th>
+      <th>normalized_field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A/W</td>
+      <td>A/W</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Additional zone name</td>
+      <td>Additional zone name</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Additional zone name (short)</td>
+      <td>Additional zone name (short)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bottom Depth [m]</td>
+      <td>Bottom Depth [m]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bottom Depth[m] [m]</td>
+      <td>Bottom Depth [m]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>After the project PIs manually normalized the columns, we need to update the data files with the normalized columns. We create a dictionary that lists the original field name and normalized field name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxa_mapping</span> <span class="o">=</span> <span class="n">taxa_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;verbatim_name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()[</span><span class="s1">&#39;normalized_name&#39;</span><span class="p">]</span>
+<span class="n">taxa_mapping</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Candeina nitida&#39;: &#39;Candeina nitida&#39;,
+ &#39;Dentoglobigerina altispira _T_ _PL5&#39;: &#39;Dentoglobigerina altispira&#39;,
+ &#39;Dentoglobigerina altispira _T_ _PL5_&#39;: &#39;Dentoglobigerina altispira&#39;,
+ &#39;Dextral:Sinistral _P. obliquiloculata_&#39;: &#39;Pulleniatina obliquiloculata (sinistral)&#39;,
+ &#39;Dextral:Sinistral _P. praecursor_&#39;: &#39;Pulleniatina praecursor (sinistral)&#39;,
+ &#39;Dextral:Sinistral _P. primalis_&#39;: &#39;Pulleniatina primalis (sinistral)&#39;,
+ &#39;Globigerina bulloides&#39;: &#39;Globigerina bulloides&#39;,
+ &#39;Globigerina cf. woodi&#39;: &#39;Globigerina cf. woodi&#39;,
+ &#39;Globigerina falconensis&#39;: &#39;Globigerina falconensis&#39;,
+ &#39;Globigerina umbilicata&#39;: &#39;Globigerina umbilicata&#39;,
+ &#39;Globigerinella aequilateralis&#39;: &#39;Globigerinella aequilateralis&#39;,
+ &#39;Globigerinella calida&#39;: &#39;Globigerinella calida&#39;,
+ &#39;Globigerinella calida _B&#39;: &#39;Globigerinella calida&#39;,
+ &#39;Globigerinella calida _B_&#39;: &#39;Globigerinella calida&#39;,
+ &#39;Globigerinella obesa&#39;: &#39;Globigerinella obesa&#39;,
+ &#39;Globigerinita glutinata&#39;: &#39;Globigerinita glutinata&#39;,
+ &#39;Globigerinita parkerae&#39;: &#39;Globigerinita parkerae&#39;,
+ &#39;Globigerinita uvula&#39;: &#39;Globigerinita uvula&#39;,
+ &#39;Globigerinoides bulloideus&#39;: &#39;Globigerinoides bulloideus&#39;,
+ &#39;Globigerinoides conglobatus&#39;: &#39;Globigerinoides conglobatus&#39;,
+ &#39;Globigerinoides extremus _T and B&#39;: &#39;Globigerinoides extremus&#39;,
+ &#39;Globigerinoides extremus _T and B_&#39;: &#39;Globigerinoides extremus&#39;,
+ &#39;Globigerinoides fistulosus&#39;: &#39;Globigerinoides fistulosus&#39;,
+ &#39;Globigerinoides obliquus _T&#39;: &#39;Globigerinoides obliquus&#39;,
+ &#39;Globigerinoides obliquus _T_&#39;: &#39;Globigerinoides obliquus&#39;,
+ &#39;Globigerinoides quadrilobatus&#39;: &#39;Globigerinoides quadrilobatus&#39;,
+ &#39;Globigerinoides ruber&#39;: &#39;Globigerinoides ruber&#39;,
+ &#39;Globigerinoides ruber (pink)&#39;: &#39;Globigerinoides ruber (pink)&#39;,
+ &#39;Globigerinoides ruber (white)&#39;: &#39;Globigerinoides ruber (white)&#39;,
+ &#39;Globigerinoides ruber _pink_ T&#39;: &#39;Globigerinoides ruber (pink)&#39;,
+ &#39;Globigerinoides ruber _pink_ _T_&#39;: &#39;Globigerinoides ruber (pink)&#39;,
+ &#39;Globigerinoides sacculifer&#39;: &#39;Globigerinoides sacculifer&#39;,
+ &#39;Globigerinoides sacculifer (without sack)&#39;: &#39;Globigerinoides sacculifer (without sac)&#39;,
+ &#39;Globigerinoides tenellus&#39;: &#39;Globigerinoides tenellus&#39;,
+ &#39;Globigerinoides trilobus&#39;: &#39;Globigerinoides trilobus&#39;,
+ &#39;Globigerinoidesella fistulosa _T and B_ _Pt1a&#39;: &#39;Globigerinoidesella fistulosa&#39;,
+ &#39;Globigerinoidesella fistulosa _T and B_ _Pt1a_&#39;: &#39;Globigerinoidesella fistulosa&#39;,
+ &#39;Globoconella miozea&#39;: &#39;Globoconella miozea&#39;,
+ &#39;Globorotalia (Globoconella) inflata&#39;: &#39;Globorotalia Globoconella inflata&#39;,
+ &#39;Globorotalia (Globorotalia) tumida tumida&#39;: &#39;Globorotalia Globoconella tumida tumida&#39;,
+ &#39;Globorotalia (Hirsutella) hirsuta&#39;: &#39;Globorotalia Hirsutella hirsuta&#39;,
+ &#39;Globorotalia (Hirsutella) scitula&#39;: &#39;Globorotalia Hirsutella scitula&#39;,
+ &#39;Globorotalia (Truncorotalia) crossaformis&#39;: &#39;Globorotalia Truncorotalia crossaformis&#39;,
+ &#39;Globorotalia (Truncorotalia) truncatulinoides&#39;: &#39;Globorotalia Truncorotalia truncatulinoides&#39;,
+ &#39;Globorotalia anfracta&#39;: &#39;Globorotalia anfracta&#39;,
+ &#39;Globorotalia crassaformis&#39;: &#39;Globorotalia crassaformis&#39;,
+ &#39;Globorotalia crassaformis sensu lato&#39;: &#39;Globorotalia s.l. crassaformis&#39;,
+ &#39;Globorotalia flexuosa&#39;: &#39;Globorotalia flexuosa&#39;,
+ &#39;Globorotalia flexuosa _T and B_&#39;: &#39;Globorotalia flexuosa&#39;,
+ &#39;Globorotalia hessi&#39;: &#39;Globorotalia hessi&#39;,
+ &#39;Globorotalia hessi _B_&#39;: &#39;Globorotalia hessi&#39;,
+ &#39;Globorotalia hirsuta&#39;: &#39;Globorotalia hirsuta&#39;,
+ &#39;Globorotalia inflata&#39;: &#39;Globorotalia inflata&#39;,
+ &#39;Globorotalia limbata _B&#39;: &#39;Globorotalia limbata&#39;,
+ &#39;Globorotalia limbata _B_&#39;: &#39;Globorotalia limbata&#39;,
+ &#39;Globorotalia limbata _T_&#39;: &#39;Globorotalia limbata&#39;,
+ &#39;Globorotalia margaritae _T and B_ _PL3&#39;: &#39;Globorotalia margaritae&#39;,
+ &#39;Globorotalia margaritae _T and B_ _PL3_&#39;: &#39;Globorotalia margaritae&#39;,
+ &#39;Globorotalia menardii&#39;: &#39;Globorotalia menardii&#39;,
+ &#39;Globorotalia multicamerata _T&#39;: &#39;Globorotalia multicamerata&#39;,
+ &#39;Globorotalia multicamerata _T_&#39;: &#39;Globorotalia multicamerata&#39;,
+ &#39;Globorotalia plesiotumida _B_ _M13b_&#39;: &#39;Globorotalia plesiotumida&#39;,
+ &#39;Globorotalia plesiotumida _T&#39;: &#39;Globorotalia plesiotumida&#39;,
+ &#39;Globorotalia plesiotumida _T_&#39;: &#39;Globorotalia plesiotumida&#39;,
+ &#39;Globorotalia pseudomiocenica _T_ _PL6&#39;: &#39;Globorotalia pseudomiocenica&#39;,
+ &#39;Globorotalia pseudomiocenica _T_ _PL6_&#39;: &#39;Globorotalia pseudomiocenica&#39;,
+ &#39;Globorotalia scitula&#39;: &#39;Globorotalia scitula&#39;,
+ &#39;Globorotalia tosaensis&#39;: &#39;Globorotalia tosaensis&#39;,
+ &#39;Globorotalia tosaensis _T and B_ _Pt1b&#39;: &#39;Globorotalia tosaensis&#39;,
+ &#39;Globorotalia tosaensis _T and B_ _Pt1b_&#39;: &#39;Globorotalia tosaensis&#39;,
+ &#39;Globorotalia truncatulinoides&#39;: &#39;Globorotalia truncatulinoides&#39;,
+ &#39;Globorotalia truncatulinoides _B&#39;: &#39;Globorotalia truncatulinoides&#39;,
+ &#39;Globorotalia truncatulinoides _B_&#39;: &#39;Globorotalia truncatulinoides&#39;,
+ &#39;Globorotalia tumida&#39;: &#39;Globorotalia tumida&#39;,
+ &#39;Globorotalia tumida _B_ _PL1a_&#39;: &#39;Globorotalia tumida&#39;,
+ &#39;Globoturborotalita apertura _T and B&#39;: &#39;Globoturborotalita apertura&#39;,
+ &#39;Globoturborotalita apertura _T and B_&#39;: &#39;Globoturborotalita apertura&#39;,
+ &#39;Globoturborotalita decoraperta _T and B&#39;: &#39;Globoturborotalita decoraperta&#39;,
+ &#39;Globoturborotalita decoraperta _T and B_&#39;: &#39;Globoturborotalita decoraperta&#39;,
+ &#39;Globoturborotalita rubescens&#39;: &#39;Globoturborotalita rubescens&#39;,
+ &#39;Neogloboquadrina acostaensis&#39;: &#39;Neogloboquadrina acostaensis&#39;,
+ &#39;Neogloboquadrina acostaensis (dextral)&#39;: &#39;Neogloboquadrina acostaensis (dextral)&#39;,
+ &#39;Neogloboquadrina cf. pachyderma&#39;: &#39;Neogloboquadrina cf. pachyderma&#39;,
+ &#39;Neogloboquadrina dutertrei&#39;: &#39;Neogloboquadrina dutertrei&#39;,
+ &#39;Neogloboquadrina humerosa&#39;: &#39;Neogloboquadrina humerosa&#39;,
+ &#39;Neogloboquadrina incompta (dextral)&#39;: &#39;Neogloboquadrina incompta (dextral)&#39;,
+ &#39;Neogloboquadrina inglei&#39;: &#39;Neogloboquadrina inglei&#39;,
+ &#39;Neogloboquadrina kagaensis&#39;: &#39;Neogloboquadrina kagaensis&#39;,
+ &#39;Neogloboquadrina nympha&#39;: &#39;Neogloboquadrina nympha&#39;,
+ &#39;Neogloboquadrina pachyderma (dextral)&#39;: &#39;Neogloboquadrina pachyderma (dextral)&#39;,
+ &#39;Neogloboquadrina pachyderma (sin)&#39;: &#39;Neogloboquadrina pachyderma (sinistral)&#39;,
+ &#39;Neogloboquadrina pachyderma (sinistral)&#39;: &#39;Neogloboquadrina pachyderma (sinistral)&#39;,
+ &#39;Neogloboquadrina pachyderma B (sinistral, inflated form)&#39;: &#39;Neogloboquadrina pachyderma B (sinistral, inflated form)&#39;,
+ &#39;Neogloboquadrina pachyderma(dex)&#39;: &#39;Neogloboquadrina pachyderma (dextral)&#39;,
+ &#39;Orbulina universa&#39;: &#39;Orbulina universa&#39;,
+ &#39;Pulleniatina coiling (dextral)&#39;: &#39;Pulleniatina (dextral)&#39;,
+ &#39;Pulleniatina coiling (sinistral)&#39;: &#39;Pulleniatina (sinistral)&#39;,
+ &#39;Pulleniatina finalis&#39;: &#39;Pulleniatina finalis&#39;,
+ &#39;Pulleniatina finalis _B&#39;: &#39;Pulleniatina finalis&#39;,
+ &#39;Pulleniatina finalis _B_&#39;: &#39;Pulleniatina finalis&#39;,
+ &#39;Pulleniatina obliquiloculata&#39;: &#39;Pulleniatina obliquiloculata&#39;,
+ &#39;Pulleniatina obliquiloculata (D)&#39;: &#39;Pulleniatina obliquiloculata (dextral)&#39;,
+ &#39;Pulleniatina praecursor&#39;: &#39;Pulleniatina praecursor&#39;,
+ &#39;Pulleniatina praespectabilis&#39;: &#39;Pulleniatina praespectabilis&#39;,
+ &#39;Pulleniatina primalis  _Tand B&#39;: &#39;Pulleniatina primalis&#39;,
+ &#39;Pulleniatina primalis  _Tand B_&#39;: &#39;Pulleniatina primalis&#39;,
+ &#39;Sphaeroidinella dahiscens sensu lato&#39;: &#39;Sphaeroidinella s.l. dahiscens&#39;,
+ &#39;Sphaeroidinella dehiscens&#39;: &#39;Sphaeroidinella dehiscens&#39;,
+ &#39;Sphaeroidinella dehiscens s.l.&#39;: &#39;Sphaeroidinella s.l. dehiscens&#39;,
+ &#39;Sphaeroidinella dehiscens sensu lato _B_&#39;: &#39;Sphaeroidinella s.l. dehiscens&#39;,
+ &#39;Sphaeroidinellopsis kochi _T&#39;: &#39;Sphaeroidinellopsis kochi&#39;,
+ &#39;Sphaeroidinellopsis kochi _T_&#39;: &#39;Sphaeroidinellopsis kochi&#39;,
+ &#39;Sphaeroidinellopsis seminulina _T_ _PL4&#39;: &#39;Sphaeroidinellopsis seminulina&#39;,
+ &#39;Sphaeroidinellopsis seminulina _T_ _PL4_&#39;: &#39;Sphaeroidinellopsis seminulina&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nontaxa_mapping</span> <span class="o">=</span> <span class="n">nontaxa_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;field&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()[</span><span class="s1">&#39;normalized_field&#39;</span><span class="p">]</span>
+<span class="n">nontaxa_mapping</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A/W&#39;: &#39;A/W&#39;,
+ &#39;Additional zone name&#39;: &#39;Additional zone name&#39;,
+ &#39;Additional zone name (short)&#39;: &#39;Additional zone name (short)&#39;,
+ &#39;Bottom Depth [m]&#39;: &#39;Bottom Depth [m]&#39;,
+ &#39;Bottom Depth[m] [m]&#39;: &#39;Bottom Depth [m]&#39;,
+ &#39;Bottom [cm]&#39;: &#39;Bottom [cm]&#39;,
+ &#39;Bottom[cm] [cm]&#39;: &#39;Bottom [cm]&#39;,
+ &#39;Comment (general)&#39;: &#39;Comments&#39;,
+ &#39;Comments&#39;: &#39;Comments&#39;,
+ &#39;Core&#39;: &#39;Core&#39;,
+ &#39;Core-Sect&#39;: &#39;Core-Sect&#39;,
+ &#39;Datum name&#39;: &#39;Datum name&#39;,
+ &#39;Exp&#39;: &#39;Exp&#39;,
+ &#39;Extra Sample ID Data&#39;: &#39;Extra Sample ID Data&#39;,
+ &#39;Fragmentation&#39;: &#39;Fragmentation&#39;,
+ &#39;Fragmentation rank [auto-pop]&#39;: &#39;Fragmentation rank [auto-pop]&#39;,
+ &#39;Genus/species (upper zone)&#39;: &#39;Genus/species (upper zone)&#39;,
+ &#39;Genus/species lower zone)&#39;: &#39;Genus/species (lower zone)&#39;,
+ &#39;Group Abundance&#39;: &#39;Group Abundance&#39;,
+ &#39;Group abundance&#39;: &#39;Group Abundance&#39;,
+ &#39;Group abundance (%)&#39;: &#39;Group Abundance&#39;,
+ &#39;Hole&#39;: &#39;Hole&#39;,
+ &#39;Label ID&#39;: &#39;Sample&#39;,
+ &#39;PF Preservation&#39;: &#39;PF Preservation&#39;,
+ &#39;Preservation&#39;: &#39;Preservation&#39;,
+ &#39;Sample&#39;: &#39;Sample&#39;,
+ &#39;Sample comment&#39;: &#39;Comments&#39;,
+ &#39;Section&#39;: &#39;Section&#39;,
+ &#39;Site&#39;: &#39;Site&#39;,
+ &#39;Top Depth [m]&#39;: &#39;Top Depth [m]&#39;,
+ &#39;Top Depth[m] [m]&#39;: &#39;Top Depth [m]&#39;,
+ &#39;Top [cm]&#39;: &#39;Top [cm]&#39;,
+ &#39;Top[cm] [cm]&#39;: &#39;Top [cm]&#39;,
+ &#39;Type&#39;: &#39;Type&#39;,
+ &#39;Type (lower zone)&#39;: &#39;Type (lower zone)&#39;,
+ &#39;Upper boundary age av. [Ma]&#39;: &#39;Upper boundary age av. [Ma]&#39;,
+ &#39;Zone author (year)&#39;: &#39;Zone author (year)&#39;,
+ &#39;Zone group&#39;: &#39;Zone group&#39;,
+ &#39;Zone name&#39;: &#39;Zone name&#39;,
+ &#39;Zone name (short)&#39;: &#39;Zone name (short)&#39;,
+ &#39;pc_abundance_name_mode&#39;: &#39;pc_abundance_name_mode&#39;,
+ &#39;pc_fossil_group&#39;: &#39;pc_fossil_group&#39;,
+ &#39;pc_fossil_name&#39;: &#39;pc_fossil_name&#39;,
+ &#39;physical_constituent_name&#39;: &#39;physical_constituent_name&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="before-changing-headers">
+<h3>Before changing headers<a class="headerlink" href="#before-changing-headers" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>    
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Label ID&#39;, &#39;Exp&#39;, &#39;Site&#39;, &#39;Hole&#39;, &#39;Core&#39;, &#39;Core-Sect&#39;, &#39;Type&#39;,
+       &#39;Section&#39;, &#39;A/W&#39;, &#39;Extra Sample ID Data&#39;, &#39;Top [cm]&#39;, &#39;Bottom [cm]&#39;,
+       &#39;Top Depth [m]&#39;, &#39;Bottom Depth [m]&#39;, &#39;Comments&#39;, &#39;Preservation&#39;,
+       &#39;Group Abundance&#39;, &#39;Catapsydrax dissimilis&#39;, &#39;Catapsydrax unicavus&#39;,
+       &#39;Globigerina bulloides&#39;, &#39;Globigerina ciperoensis&#39;,
+       &#39;Globigerina parabulloides&#39;, &#39;Globigerina umbilicata&#39;,
+       &#39;Globigerinita glutinata&#39;, &#39;Globigerinita uvula&#39;,
+       &#39;Globoquadrina duterei&#39;, &#39;Globorotalia incisa&#39;,
+       &#39;Globorotalia (Globoconella) praescitula&#39;,
+       &#39;Globorotalia (Hirsutella) scitula&#39;, &#39;Globorotalia suterae&#39;,
+       &#39;Neogloboquadrina atlantica atlantica&#39;,
+       &#39;Neogloboquadrina atlantica praeatlantica&#39;,
+       &#39;Neogloboquadrina dutertri subcretacea&#39;,
+       &#39;Neogloboquadrina pachyderma (sin)&#39;, &#39;Neogloboquadrina pachyderma(dex)&#39;,
+       &#39;Orbulina universa&#39;, &#39;Turborotalia quinqueloba&#39;, &#39;pc_fossil_group&#39;,
+       &#39;physical_constituent_name&#39;, &#39;pc_fossil_name&#39;, &#39;pc_abundance_name_mode&#39;,
+       &#39;pc_preservation_name_average&#39;, &#39;File Data&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="after-changing-headers">
+<h3>After changing headers<a class="headerlink" href="#after-changing-headers" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">normalize_columns</span></code> replaces the original column names with normalized column names.</p>
+<p>For the nontaxa mapping, ‘Label ID’ is changed to ‘Sample’. For the taxa mapping, ‘Neogloboquadrina pachyderma (sin)’ is changed to ‘Neogloboquadrina pachyderma (sinistral)’,  and ‘Neogloboquadrina pachyderma(dex)’ to ‘Neogloboquadrina pachyderma (dextral)’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span> 
+<span class="n">normalize_columns</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">taxa_mapping</span><span class="p">)</span>
+<span class="n">normalize_columns</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">nontaxa_mapping</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Sample&#39;, &#39;Exp&#39;, &#39;Site&#39;, &#39;Hole&#39;, &#39;Core&#39;, &#39;Core-Sect&#39;, &#39;Type&#39;, &#39;Section&#39;,
+       &#39;A/W&#39;, &#39;Extra Sample ID Data&#39;, &#39;Top [cm]&#39;, &#39;Bottom [cm]&#39;,
+       &#39;Top Depth [m]&#39;, &#39;Bottom Depth [m]&#39;, &#39;Comments&#39;, &#39;Preservation&#39;,
+       &#39;Group Abundance&#39;, &#39;Catapsydrax dissimilis&#39;, &#39;Catapsydrax unicavus&#39;,
+       &#39;Globigerina bulloides&#39;, &#39;Globigerina ciperoensis&#39;,
+       &#39;Globigerina parabulloides&#39;, &#39;Globigerina umbilicata&#39;,
+       &#39;Globigerinita glutinata&#39;, &#39;Globigerinita uvula&#39;,
+       &#39;Globoquadrina duterei&#39;, &#39;Globorotalia incisa&#39;,
+       &#39;Globorotalia (Globoconella) praescitula&#39;,
+       &#39;Globorotalia Hirsutella scitula&#39;, &#39;Globorotalia suterae&#39;,
+       &#39;Neogloboquadrina atlantica atlantica&#39;,
+       &#39;Neogloboquadrina atlantica praeatlantica&#39;,
+       &#39;Neogloboquadrina dutertri subcretacea&#39;,
+       &#39;Neogloboquadrina pachyderma (sinistral)&#39;,
+       &#39;Neogloboquadrina pachyderma (dextral)&#39;, &#39;Orbulina universa&#39;,
+       &#39;Turborotalia quinqueloba&#39;, &#39;pc_fossil_group&#39;,
+       &#39;physical_constituent_name&#39;, &#39;pc_fossil_name&#39;, &#39;pc_abundance_name_mode&#39;,
+       &#39;pc_preservation_name_average&#39;, &#39;File Data&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="change-headers-for-all-files-and-save-the-changes">
+<h3>Change headers for all files and save the changes<a class="headerlink" href="#change-headers-for-all-files-and-save-the-changes" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>    
+    
+    <span class="n">normalize_columns</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">nontaxa_mapping</span><span class="p">)</span>
+    <span class="n">normalize_columns</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">taxa_mapping</span><span class="p">)</span>
+    
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="turn-one-column-into-multiple-columns">
+<h2>Turn one column into multiple columns<a class="headerlink" href="#turn-one-column-into-multiple-columns" title="Permalink to this headline">¶</a></h2>
+<p>For some files, <code class="docutils literal notranslate"><span class="pre">Sample</span></code> or <code class="docutils literal notranslate"><span class="pre">Label</span> <span class="pre">ID</span></code> column was given, but <code class="docutils literal notranslate"><span class="pre">Exp,</span> <span class="pre">Site,</span> <span class="pre">Hole,</span> <span class="pre">Core,</span> <span class="pre">Type,</span> <span class="pre">Section,</span> <span class="pre">A/W</span></code> columns where not given. All those columns should be in every file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">normalize_expedition_section_cols</span></code> converts <code class="docutils literal notranslate"><span class="pre">Sample</span></code> or <code class="docutils literal notranslate"><span class="pre">Label</span> <span class="pre">ID</span></code> into separate <code class="docutils literal notranslate"><span class="pre">Exp,</span> <span class="pre">Site,</span> <span class="pre">Hole,</span> <span class="pre">Core,</span> <span class="pre">Type,</span> <span class="pre">Section,</span> <span class="pre">A/W</span></code> columns.</p>
+<p>Sample: 363-U1483A-1H-2-W 75/77-FORAM<br />
+Exp: 363, Site: U1483, Hole: A, Core: 1, Type: H, Section: 2, A/W: W</p>
+<div class="section" id="id4">
+<h3>Before cleanup<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>File has <code class="docutils literal notranslate"><span class="pre">Sample</span></code> column, but is missing <code class="docutils literal notranslate"><span class="pre">Exp,</span> <span class="pre">Site,</span> <span class="pre">Hole,</span> <span class="pre">Core,</span> <span class="pre">Type,</span> <span class="pre">Section,</span> <span class="pre">A/W</span></code> columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>  
+<span class="n">print_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 9)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Top [cm]</th>
+      <th>Bottom [cm]</th>
+      <th>Top Depth [m]</th>
+      <th>Bottom Depth [m]</th>
+      <th>Preservation</th>
+      <th>Group Abundance</th>
+      <th>Globigerina bulloides</th>
+      <th>Neogloboquadrina pachyderma (sinistral)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>346-U1422A-1H-CC-PAL</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9.71</td>
+      <td>9.71</td>
+      <td>VG</td>
+      <td>R</td>
+      <td>P</td>
+      <td>P</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>After cleanup<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>File has <code class="docutils literal notranslate"><span class="pre">Sample,</span> <span class="pre">Exp,</span> <span class="pre">Site,</span> <span class="pre">Hole,</span> <span class="pre">Core,</span> <span class="pre">Type,</span> <span class="pre">Section,</span> <span class="pre">A/W</span></code> columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">normalize_expedition_section_cols</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">print_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 16)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Top [cm]</th>
+      <th>Bottom [cm]</th>
+      <th>Top Depth [m]</th>
+      <th>Bottom Depth [m]</th>
+      <th>Preservation</th>
+      <th>Group Abundance</th>
+      <th>Globigerina bulloides</th>
+      <th>Neogloboquadrina pachyderma (sinistral)</th>
+      <th>Exp</th>
+      <th>Site</th>
+      <th>Hole</th>
+      <th>Core</th>
+      <th>Type</th>
+      <th>Section</th>
+      <th>A/W</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>346-U1422A-1H-CC-PAL</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9.71</td>
+      <td>9.71</td>
+      <td>VG</td>
+      <td>R</td>
+      <td>P</td>
+      <td>P</td>
+      <td>346</td>
+      <td>U1422</td>
+      <td>A</td>
+      <td>1</td>
+      <td>H</td>
+      <td>CC</td>
+      <td>PAL</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Clean up all files and save the changes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Normalize <code class="docutils literal notranslate"><span class="pre">Sample,</span> <span class="pre">Exp,</span> <span class="pre">Site,</span> <span class="pre">Hole,</span> <span class="pre">Core,</span> <span class="pre">Type,</span> <span class="pre">Section,</span> <span class="pre">A/W</span></code> columns for all files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>   
+    
+    <span class="n">df</span> <span class="o">=</span> <span class="n">normalize_expedition_section_cols</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="clean-up-row-values">
+<h2>Clean up row values<a class="headerlink" href="#clean-up-row-values" title="Permalink to this headline">¶</a></h2>
+<p>For some of the columns such as taxa, the rows contain abundance data that we want to keep and notes in brackets that we want to remove.  <code class="docutils literal notranslate"><span class="pre">remove_bracket_text</span></code> removes the [note] text.</p>
+<div class="section" id="id7">
+<h3>Before cleanup<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>‘Globigerina bulloides’ and ‘Neogloboquadrina cf. pachyderma’ have [318_PF].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>    
+<span class="n">print_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 16)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Exp</th>
+      <th>Site</th>
+      <th>Hole</th>
+      <th>Core</th>
+      <th>Core-Sect</th>
+      <th>Type</th>
+      <th>Section</th>
+      <th>A/W</th>
+      <th>Extra Sample ID Data</th>
+      <th>Top [cm]</th>
+      <th>Bottom [cm]</th>
+      <th>Top Depth [m]</th>
+      <th>Bottom Depth [m]</th>
+      <th>Globigerina bulloides</th>
+      <th>Neogloboquadrina cf. pachyderma</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>318-U1355A-1R-1-PAL-FORAM</td>
+      <td>318</td>
+      <td>U1355</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1-1</td>
+      <td>R</td>
+      <td>1</td>
+      <td>PAL</td>
+      <td>FORAM</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>R[318_PF]</td>
+      <td>R[318_PF]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>After cleanup<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Remove [318_PF] from ‘Globigerina bulloides’ and ‘Neogloboquadrina cf. pachyderma’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">remove_bracket_text</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">print_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 16)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Exp</th>
+      <th>Site</th>
+      <th>Hole</th>
+      <th>Core</th>
+      <th>Core-Sect</th>
+      <th>Type</th>
+      <th>Section</th>
+      <th>A/W</th>
+      <th>Extra Sample ID Data</th>
+      <th>Top [cm]</th>
+      <th>Bottom [cm]</th>
+      <th>Top Depth [m]</th>
+      <th>Bottom Depth [m]</th>
+      <th>Globigerina bulloides</th>
+      <th>Neogloboquadrina cf. pachyderma</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>318-U1355A-1R-1-PAL-FORAM</td>
+      <td>318</td>
+      <td>U1355</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1-1</td>
+      <td>R</td>
+      <td>1</td>
+      <td>PAL</td>
+      <td>FORAM</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>R</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Clean up all files and save the changes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>Remove bracket text from all files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+    
+    <span class="n">df</span> <span class="o">=</span> <span class="n">remove_bracket_text</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-if-required-columns-exists">
+<h2>Check if required columns exists<a class="headerlink" href="#check-if-required-columns-exists" title="Permalink to this headline">¶</a></h2>
+<p>After we completed the data cleaning steps, we want to check if certain required columns are present in all the data files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">required_columns</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="s1">&#39;A/W&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Bottom [cm]&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Bottom Depth [m]&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Core&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Exp&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Hole&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sample&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Section&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Site&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Top [cm]&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Top Depth [m]&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Type&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If a file is missing some required columns, print the file name and the missing columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">missing</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>    
+    <span class="n">cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">required_columns</span> <span class="o">-</span> <span class="n">cols</span>
+    
+    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">missing</span>  <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">required_columns</span> <span class="o">-</span> <span class="n">cols</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="ow">not</span> <span class="n">missing</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All files have required columns.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All files have required columns.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Extending Ocean Drilling Pursuits website <a class="reference external" href="https://eodp.github.io">https://eodp.github.io</a></p></li>
+<li><p>Github repo for processing eODP data: <a class="reference external" href="https://github.com/eODP/data-processing">https://github.com/eODP/data-processing</a>. Folder for eODP raw data files: <a class="reference external" href="https://github.com/eODP/data-processing/tree/master/raw_data/">https://github.com/eODP/data-processing/tree/master/raw_data/</a></p></li>
+<li><p>The normalized nontaxa and taxa csv were provided by Andrew J. Fraass, Leah J. Levay, and Jocelyn A. Sessa.</p></li>
+<li><p>LeVay, Leah; Fraass, Andrew; Peters, Shanan; Sessa, Jocelyn; Kaufman, Seth; Kwan, Wai-Yin. Geologic data standardization for database entry: preparing diverse datasets for hosting and accessibility. EarthCube Annual Meeting. Poster.</p></li>
+<li><p>Sessa, Jocelyn; Levay, Leah; Peters, Shanan; Fraass, Andrew. The extending Ocean Drilling Pursuits (eODP) project: synthesizing scientific ocean drilling data.</p></li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/ec22_kwan_etal/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Data Cleaning with Pandas and Jupyter Notebooks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../ec22_ji_etal/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Magnetic Polarity Inversion Line Detection and Analysis Tool</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

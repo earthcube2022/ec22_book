@@ -1,0 +1,1624 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handling Highly Imbalanced Data in Machine Learning Applications &#8212; EarthCube 2022 Call for Notebooks</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EC_SEP_Visualization" href="../ec22_rotti_etal/README.html" />
+    <link rel="prev" title="Handling Highly Imbalanced Data in Machine Learning Applications" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EarthCube 2022 Call for Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  EarthCube 2022 Call
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/index.html">
+   EarthCube 2022 Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/dois.html">
+   Notebook DOIs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notebook Submissions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_kwan_etal/README.html">
+   Data Cleaning with Pandas and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_kwan_etal/notebooks/wyk_01_data_cleaning_with_pandas_and_jupyter_notebooks.html">
+     Data Cleaning with Pandas and Jupyter Notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_ji_etal/README.html">
+   Magnetic Polarity Inversion Line Detection and Analysis Tool
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool.html">
+     AJ_01_MPIL_Detection_and_Analysis_Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_abduallah_etal/README.html">
+   Predicting Solar Flares with Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning.html">
+     <strong>
+      Predicting Solar Flares with Machine Learning
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_khider_etal/README.html">
+   PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_khider_etal/DK_v1_PaleoHack.html">
+     PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_markowsky_etal/README.html">
+   Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_markowsky_etal/LM_01_Visualizing_Ice_Core_Datasets_in_Python_Using_a_Jupyter_Notebook_Template.html">
+     Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ec22_mckay_etal/README.html">
+   Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_mills_etal/README.html">
+   Intro to Argovis' API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_mills_etal/WM_01_intro_to_argovis_api.html">
+     Intro to Argovis’ API
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_mirkovich_etal/README.html">
+   Assimilative Mapping of Geospace Observations (AMGeO)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_mirkovich_etal/WM_02_AMGeO-2.0.html">
+     AMGeO 2.0: Crafting an API for Geospace Data Scientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_miron_etal/README.html">
+   Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows.html">
+     Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   Handling Highly Imbalanced Data in Machine Learning Applications
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Handling Highly Imbalanced Data in Machine Learning Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_rotti_etal/README.html">
+   EC_SEP_Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset.html">
+     GSEP Event Catalog and Time Series Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_tauxe_etal/README.html">
+   Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_tauxe_etal/2022_MagIC_database_and_open_science.html">
+     Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_yu_etal/README.html">
+   ICESpark
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting.html">
+     ICESpark-EarthCube-2022-Annual-Meeting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_okeefe_etal/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Handling Highly Imbalanced Data in Machine Learning Applications
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#authors">
+     Authors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-contents">
+     Table of contents
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose-a-class-anchor-id-purpose-a">
+     Purpose
+     <a class="anchor" id="purpose">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions-a-class-anchor-id-tech-contr-a">
+     Technical contributions
+     <a class="anchor" id="tech-contr">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology-a-class-anchor-id-methodology-a">
+     Methodology
+     <a class="anchor" id="methodology">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results-a-class-anchor-id-results-a">
+     Results
+     <a class="anchor" id="results">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding-a-class-anchor-id-results-a">
+     Funding
+     <a class="anchor" id="results">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords-a-class-anchor-id-keywords-a">
+     Keywords
+     <a class="anchor" id="keywords">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation-a-class-anchor-id-citation-a">
+     Citation
+     <a class="anchor" id="citation">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suggested-next-steps-a-class-anchor-id-next-steps-a">
+     Suggested next steps
+     <a class="anchor" id="next-steps">
+     </a>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-a-class-anchor-id-setup-a">
+   Setup
+   <a class="anchor" id="setup">
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import-a-class-anchor-id-library-import-a">
+     Library import
+     <a class="anchor" id="library-import">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-import-a-class-anchor-id-data-import-a">
+     Data import
+     <a class="anchor" id="data-import">
+     </a>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis-a-class-anchor-id-data-pna-a">
+   Data processing and analysis
+   <a class="anchor" id="data-pna">
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-raw-data-a-class-anchor-id-raw-data-a">
+     Using the raw data
+     <a class="anchor" id="raw-data">
+     </a>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#splitting-the-data-into-x-and-y-sets-a-class-anchor-id-xy-split-a">
+       Splitting the data into X and Y sets
+       <a class="anchor" id="xy-split">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#splitting-the-data-into-training-and-testing-sets-a-class-anchor-id-traintest-split-a">
+       Splitting the data into training and testing sets
+       <a class="anchor" id="traintest-split">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#defining-and-fitting-the-classifier-a-class-anchor-id-classifier-a">
+       Defining and fitting the classifier
+       <a class="anchor" id="classifier">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#performing-the-initial-analysis-a-class-anchor-id-init-analysis-a">
+       Performing the initial analysis
+       <a class="anchor" id="init-analysis">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#measuring-bias-in-the-initial-analysis-a-class-anchor-id-bias-init-analysis-a">
+       Measuring bias in the initial analysis
+       <a class="anchor" id="bias-init-analysis">
+       </a>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bias-correction-a-class-anchor-id-bias-correction-a">
+     Bias correction
+     <a class="anchor" id="bias-correction">
+     </a>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-1-undersampling-the-data-a-class-anchor-id-m1-a">
+       Method 1: undersampling the data
+       <a class="anchor" id="m1">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-2-oversampling-the-data-a-class-anchor-id-m2-a">
+       Method 2: oversampling the data
+       <a class="anchor" id="m2">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-3-adjusting-class-weights-a-class-anchor-id-m3-a">
+       Method 3: adjusting class weights
+       <a class="anchor" id="m3">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-4-trimming-the-trees-a-class-anchor-id-m4-a">
+       Method 4: trimming the trees
+       <a class="anchor" id="m4">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-5-using-only-events-likely-to-be-in-the-minority-class-a-class-anchor-id-m5-a">
+       Method 5: using only events likely to be in the minority class
+       <a class="anchor" id="m5">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-6-putting-it-together-a-class-anchor-id-m6-a">
+       Method 6: putting it together
+       <a class="anchor" id="m6">
+       </a>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-of-data-obtained-a-class-anchor-id-comp-a">
+   Comparison of Data Obtained
+   <a class="anchor" id="comp">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion-a-class-anchor-id-conc-a">
+   Conclusion
+   <a class="anchor" id="conc">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applicability-to-other-algorithms-a-class-anchor-id-app-a">
+   Applicability to Other Algorithms
+   <a class="anchor" id="app">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references-a-class-anchor-id-ref-a">
+   References
+   <a class="anchor" id="ref">
+   </a>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="handling-highly-imbalanced-data-in-machine-learning-applications">
+<h1>Handling Highly Imbalanced Data in Machine Learning Applications<a class="headerlink" href="#handling-highly-imbalanced-data-in-machine-learning-applications" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Author1 = {“name”: “Patrick M. O’Keefe”, “affiliation”: “New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:pmo6&#37;&#52;&#48;njit&#46;edu">pmo6<span>&#64;</span>njit<span>&#46;</span>edu</a>”}</p></li>
+<li><p>Author2 = {“name”: “Viacheslav M. Sadykov”, “affiliation”: “Georgia State University”, “email”: “<a class="reference external" href="mailto:vsadykov&#37;&#52;&#48;gsu&#46;edu">vsadykov<span>&#64;</span>gsu<span>&#46;</span>edu</a>”}</p></li>
+<li><p>Author3 = {“name”: “Alexander G. Kosovichev”, “affiliation”: “New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:alexander&#46;g&#46;kosovichev&#37;&#52;&#48;njit&#46;edu">alexander<span>&#46;</span>g<span>&#46;</span>kosovichev<span>&#64;</span>njit<span>&#46;</span>edu</a>”}</p></li>
+<li><p>Author4 = {“name”: “Gelu M. Nita”, “affiliation”: “New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:gnita&#37;&#52;&#48;njit&#46;edu">gnita<span>&#64;</span>njit<span>&#46;</span>edu</a>”}</p></li>
+<li><p>Author5 = {“name”: “Vincent Oria”, “affiliation”: “New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:vincent&#46;oria&#37;&#52;&#48;njit&#46;edu">vincent<span>&#46;</span>oria<span>&#64;</span>njit<span>&#46;</span>edu</a>”}</p></li>
+<li><p>Author6 = {“name”: “Shantanu Sharma”, “affiliation”: “New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:shantanu&#46;sharma&#37;&#52;&#48;njit&#46;edu">shantanu<span>&#46;</span>sharma<span>&#64;</span>njit<span>&#46;</span>edu</a>”}</p></li>
+<li><p>Author7 = {“name”: “Fraila Francis”, “affiliation”: “New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:ff29&#37;&#52;&#48;njit&#46;edu">ff29<span>&#64;</span>njit<span>&#46;</span>edu</a>”}</p></li>
+<li><p>Author8 = {“name”: “Chun Jie Chong”, “affiliation”: “New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:cc255&#37;&#52;&#48;njit&#46;edu">cc255<span>&#64;</span>njit<span>&#46;</span>edu</a>”}</p></li>
+</ul>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#purpose">Purpose</a></p></li>
+<li><p><a class="reference external" href="#tech-contr">Technical contributions</a></p></li>
+<li><p><a class="reference external" href="#methodology">Methodology</a></p></li>
+<li><p><a class="reference external" href="#results">Results</a></p></li>
+<li><p><a class="reference external" href="#keywords">Keywords</a></p></li>
+<li><p><a class="reference external" href="#citation">Citation</a></p></li>
+<li><p><a class="reference external" href="#next-steps">Suggested next steps</a></p></li>
+<li><p><a class="reference external" href="#setup">Setup</a></p>
+<ul>
+<li><p><a class="reference external" href="#library-import">Library import</a></p></li>
+<li><p><a class="reference external" href="#data-import">Data import</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#data-pna">Data processing and analysis</a></p>
+<ul>
+<li><p><a class="reference external" href="#raw-data">Using the raw data</a></p>
+<ul>
+<li><p><a class="reference external" href="#xy-split">Splitting the data into X and Y sets</a></p></li>
+<li><p><a class="reference external" href="#traintest-split">Splitting the data into training and testing sets</a></p></li>
+<li><p><a class="reference external" href="#classifier">Defining and fitting the classifier</a></p></li>
+<li><p><a class="reference external" href="#init-analysis">Performing the initial analysis</a></p></li>
+<li><p><a class="reference external" href="#bias-init-analysis">Measuring bias in the initial analysis</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#bias-correction">Bias correction</a></p>
+<ul>
+<li><p><a class="reference external" href="#m1">Method 1: undersampling the data</a></p></li>
+<li><p><a class="reference external" href="#m2">Method 2: oversampling the data</a></p></li>
+<li><p><a class="reference external" href="#m3">Method 3: adjusting class weights</a></p></li>
+<li><p><a class="reference external" href="#m4">Method 4: trimming the trees</a></p></li>
+<li><p><a class="reference external" href="#m5">Method 5: using only events likely to be in the minority class</a></p></li>
+<li><p><a class="reference external" href="#m6">Method 6: putting it together</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#comp">Comparison of Data Obtained</a></p></li>
+<li><p><a class="reference external" href="#conc">Conclusion</a></p></li>
+<li><p><a class="reference external" href="#app">Applicability to Other Algorithms</a></p></li>
+<li><p><a class="reference external" href="#ref">References</a></p></li>
+</ul>
+</div>
+<div class="section" id="purpose-a-class-anchor-id-purpose-a">
+<h2>Purpose<a class="anchor" id="purpose"></a><a class="headerlink" href="#purpose-a-class-anchor-id-purpose-a" title="Permalink to this headline">¶</a></h2>
+<p>Machine learning techniques can be applied across various industries to make accurate predictions of future data points based on observed patterns. However, in cases where there are vast imbalances to training data, algorithms may default to the majority classes when predicting future data points and thus cause inaccuracy in predictions. This may be especially undesirable when predicting rare but dangerous activities such as solar proton events (SPE) that could damage sensitive electronics and affect the general ecosystem on Earth. Traditional methods to remedy class imbalance involve manipulation of the training data to create even splits between classes, but synthetically balanced data may be unrepresentative of the original data. There are, however, additional techniques that can be used without the risk of using sampled data that is unrepresentative of the original data.</p>
+<p>In this work, we develop a database and analyze the application of various class-imbalance treatment techniques (oversampling, undersampling, class weight assignment) to build balanced classifiers for the prediction of whether the solar flare results in an SPE event, with the goal of developing an unbiased solution. Our data set consists of the soft X-ray properties of the solar flares detected by GOES satellite from 2001 to 2020, namely the peak values of the flux in 0.05-0.4 nm and 0.1-0.8 nm channels and related temperature and emission measure peak values derived with TEBBS algorithm. We utilize the balanced accuracy score and other assessment metrics (such as TSS and HSS) for the evaluation of the machine learning prediction. We find that vastly imbalanced data may be analyzed without the risks involved with oversampling or undersampling and accurate, unbiased classifications may be produced.</p>
+</div>
+<div class="section" id="technical-contributions-a-class-anchor-id-tech-contr-a">
+<h2>Technical contributions<a class="anchor" id="tech-contr"></a><a class="headerlink" href="#technical-contributions-a-class-anchor-id-tech-contr-a" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Demonstrating how machine learning applications can effectively function despite vast imbalances in training data.</p>
+<ul>
+<li><p>Exploring various methods of handling class imbalance and quantifying their effectivenesses.</p></li>
+<li><p>Exploring hyperparameters found within the methods of the SciKit-Learn library that can be adjusted to perform the requisite tasks.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="methodology-a-class-anchor-id-methodology-a">
+<h2>Methodology<a class="anchor" id="methodology"></a><a class="headerlink" href="#methodology-a-class-anchor-id-methodology-a" title="Permalink to this headline">¶</a></h2>
+<p>This notebook shows several examples of how data imbalances can be remedied.</p>
+<ul class="simple">
+<li><p>The imbalanced data is first analyzed and tested to give a benchmark metric.</p></li>
+<li><p>Evaluations are performed by computing accuracy scores to gauge the effectiveness of the classifier on the dataset.</p>
+<ul>
+<li><p>Balanced accuracy scores, true skill statistics, and Heidke Skill Scores are used to gauge bias towards the majority class.</p></li>
+</ul>
+</li>
+<li><p>Afterwards, various methods of imbalance correction are applied to the data and to the classifier.</p></li>
+<li><p>The various methods are compared in their accuracy metrics and their potential drawbacks.</p></li>
+</ul>
+</div>
+<div class="section" id="results-a-class-anchor-id-results-a">
+<h2>Results<a class="anchor" id="results"></a><a class="headerlink" href="#results-a-class-anchor-id-results-a" title="Permalink to this headline">¶</a></h2>
+<p>This notebook demonstrates how a machine learning application can effectively function despite vast imbalances in training data.</p>
+</div>
+<div class="section" id="funding-a-class-anchor-id-results-a">
+<h2>Funding<a class="anchor" id="results"></a><a class="headerlink" href="#funding-a-class-anchor-id-results-a" title="Permalink to this headline">¶</a></h2>
+<p>This work was supported from NSF grant number 1639683 and NASA grant number 80NSSC20K0302.</p>
+</div>
+<div class="section" id="keywords-a-class-anchor-id-keywords-a">
+<h2>Keywords<a class="anchor" id="keywords"></a><a class="headerlink" href="#keywords-a-class-anchor-id-keywords-a" title="Permalink to this headline">¶</a></h2>
+<p>keywords=[“solar energetic particles”, “machine learning”, “databases”]</p>
+</div>
+<div class="section" id="citation-a-class-anchor-id-citation-a">
+<h2>Citation<a class="anchor" id="citation"></a><a class="headerlink" href="#citation-a-class-anchor-id-citation-a" title="Permalink to this headline">¶</a></h2>
+<p>O’Keefe et al 2022. Handling Highly Imbalanced Data in Machine Learning Applications. Accessed at <a class="reference external" href="https://github.com/earthcube2022/ec22_okeefe_etal">https://github.com/earthcube2022/ec22_okeefe_etal</a>.</p>
+</div>
+<div class="section" id="suggested-next-steps-a-class-anchor-id-next-steps-a">
+<h2>Suggested next steps<a class="anchor" id="next-steps"></a><a class="headerlink" href="#suggested-next-steps-a-class-anchor-id-next-steps-a" title="Permalink to this headline">¶</a></h2>
+<p>We recommend that developers of machine learning applications use our findings to remedy imbalances in their own organizations’ data. We also recommend that developers of machine learning libraries add bias correction methods such as the ones being suggested or equivalents of them in more of their algorithms.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup-a-class-anchor-id-setup-a">
+<h1>Setup<a class="anchor" id="setup"></a><a class="headerlink" href="#setup-a-class-anchor-id-setup-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="library-import-a-class-anchor-id-library-import-a">
+<h2>Library import<a class="anchor" id="library-import"></a><a class="headerlink" href="#library-import-a-class-anchor-id-library-import-a" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">resample</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">f_classif</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-import-a-class-anchor-id-data-import-a">
+<h2>Data import<a class="anchor" id="data-import"></a><a class="headerlink" href="#data-import-a-class-anchor-id-data-import-a" title="Permalink to this headline">¶</a></h2>
+<p>This data was previously downloaded from the flare database stored at <a class="reference external" href="https://solarflare.njit.edu">https://solarflare.njit.edu</a>. These flare parameters were automatically calculated there and are present in the file:</p>
+<ul class="simple">
+<li><p>MinDur: The duration of the flare in minutes.</p></li>
+<li><p>Tmax: The maximum temperature of the flare obtained in a one-temperature approximation.</p></li>
+<li><p>EMmax: The maximum emission measure of the flare obtained in a one-temperature approximation.</p></li>
+<li><p>PrecisePeak: The peak X-ray flux of the flare, measured in 10^-8 W/m^2.</p></li>
+<li><p>StartTo…: The time at which the respective parameter is achieved, measured in minutes after the start of the flare.</p></li>
+<li><p>…ToEnd: The time at which the respective parameter is achieved, measured in minutes before the end of the flare.</p></li>
+<li><p>CausedSPE: Whether or not the flare caused an SPE event.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;./data/sunData.json&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis-a-class-anchor-id-data-pna-a">
+<h1>Data processing and analysis<a class="anchor" id="data-pna"></a><a class="headerlink" href="#data-processing-and-analysis-a-class-anchor-id-data-pna-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="using-the-raw-data-a-class-anchor-id-raw-data-a">
+<h2>Using the raw data<a class="anchor" id="raw-data"></a><a class="headerlink" href="#using-the-raw-data-a-class-anchor-id-raw-data-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="splitting-the-data-into-x-and-y-sets-a-class-anchor-id-xy-split-a">
+<h3>Splitting the data into X and Y sets<a class="anchor" id="xy-split"></a><a class="headerlink" href="#splitting-the-data-into-x-and-y-sets-a-class-anchor-id-xy-split-a" title="Permalink to this headline">¶</a></h3>
+<p>From the imported data, the data can be split into its features and classes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;MinDur&#39;</span><span class="p">,</span> <span class="s1">&#39;Tmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;PrecisePeak&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToTmax&#39;</span><span class="p">,</span> <span class="s1">&#39;TmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToEMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToPeak&#39;</span><span class="p">,</span> <span class="s1">&#39;PeakToEnd&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="splitting-the-data-into-training-and-testing-sets-a-class-anchor-id-traintest-split-a">
+<h3>Splitting the data into training and testing sets<a class="anchor" id="traintest-split"></a><a class="headerlink" href="#splitting-the-data-into-training-and-testing-sets-a-class-anchor-id-traintest-split-a" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rs</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">rs</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="defining-and-fitting-the-classifier-a-class-anchor-id-classifier-a">
+<h3>Defining and fitting the classifier<a class="anchor" id="classifier"></a><a class="headerlink" href="#defining-and-fitting-the-classifier-a-class-anchor-id-classifier-a" title="Permalink to this headline">¶</a></h3>
+<p>According to Kathryn Whitman et al. (2022), models using empirical evidence of solar energetic activity are preferred by heliophysicists due to the relationships involved being quickly computed and easily applied to future flares. Seeing that the random forest algorithm performs several analyses of the data to obtain several sets of such evidence, it will be used in this particular application.</p>
+<p>To increase the randomnesses of the decision trees in order to force the algorithm to produce more distinct analyses of the data, the number of features in any one decision tree is limited to the square root of the total number of features in the dataframe. To make sure that the application is making efficient use of all available processing resources, n_jobs is set to -1 to parallelize the application into as many jobs as possible.</p>
+<p>This is all implemented as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_features</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier(max_features=&#39;sqrt&#39;, n_jobs=-1, random_state=1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The classifier may be visualized as follows by taking its average depth and number of leaf nodes. For the purpose of comparison of each method, these statistics will be recorded in a DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfrf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="s2">&quot;AverageDepth&quot;</span><span class="p">,</span> <span class="s2">&quot;AverageLeaves&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
+    <span class="n">avgDepth</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">avgLeaves</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">estimators_</span><span class="p">)):</span>
+        <span class="n">avgDepth</span> <span class="o">+=</span> <span class="n">clf</span><span class="o">.</span><span class="n">estimators_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_depth</span><span class="p">()</span>
+        <span class="n">avgLeaves</span> <span class="o">+=</span> <span class="n">clf</span><span class="o">.</span><span class="n">estimators_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_n_leaves</span><span class="p">()</span>
+    <span class="n">avgDepth</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">estimators_</span><span class="p">)</span>
+    <span class="n">avgLeaves</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">estimators_</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average depth: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">avgDepth</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average number of leaves: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">avgLeaves</span><span class="p">))</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">test</span><span class="p">,</span> <span class="n">avgDepth</span><span class="p">,</span> <span class="n">avgLeaves</span><span class="p">]</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Baseline&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 11.7
+Average number of leaves: 57.32
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="performing-the-initial-analysis-a-class-anchor-id-init-analysis-a">
+<h3>Performing the initial analysis<a class="anchor" id="init-analysis"></a><a class="headerlink" href="#performing-the-initial-analysis-a-class-anchor-id-init-analysis-a" title="Permalink to this headline">¶</a></h3>
+<p>After the classifier has been fit with the training data, it can analyze the testing data and provide an accuracy score based on whether the predictions fell into the correct classes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.9969086021505377
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="measuring-bias-in-the-initial-analysis-a-class-anchor-id-bias-init-analysis-a">
+<h3>Measuring bias in the initial analysis<a class="anchor" id="bias-init-analysis"></a><a class="headerlink" href="#measuring-bias-in-the-initial-analysis-a-class-anchor-id-bias-init-analysis-a" title="Permalink to this headline">¶</a></h3>
+<p>A score this high may sound impressive at first, but the data is heavily skewed in favor of the negative class, as seen below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">negClass</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;CausedSPE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span>
+<span class="n">posClass</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;CausedSPE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)]</span>
+<span class="n">negClassSize</span> <span class="o">=</span> <span class="n">negClass</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">posClassSize</span> <span class="o">=</span> <span class="n">posClass</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Negative class size: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">negClassSize</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Positive class size: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">posClassSize</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Negative class size: 24721
+Positive class size: 76
+</pre></div>
+</div>
+</div>
+</div>
+<p>To compare the characteristics of the data in each class, a histogram may be used to visualize the number of flares in various categories. For the sake of simplicity, only the PrecisePeak parameter of each flare will be shown, as it is the most important parameter as determined by this f classifier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_classif</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_support</span><span class="p">()</span>
+<span class="n">xCols</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xCols</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;PrecisePeak&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The histogram may be seen below. A logarithmic y-axis will be used to further help visualize the distributions of the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">posClass</span><span class="p">[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;SEP-Active&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#e50000&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">posClass</span><span class="p">[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">negClass</span><span class="p">[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">]))),</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">negClass</span><span class="p">[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;SEP-Quiet&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#0000e5&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">posClass</span><span class="p">[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">negClass</span><span class="p">[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">]))),</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;PrecisePeak&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of Events&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications_24_0.png" src="../../_images/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications_24_0.png" />
+</div>
+</div>
+<p>While a clean split can be visualized to some extent, many of the flares in the positive class have PrecisePeak values in a similar range as those in the negative class. Therefore, the bias of the algorithm must therefore be measured in order to see how fairly it is treating the data at face value. There are multiple methods of doing so.</p>
+<p>First, the balanced accuracy score is used to measure the average of recall obtained on each class. Next, the true skill statistic (TSS) and Heidke Skill Score (HSS) are calculated as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_TSS</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+    <span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">tp</span><span class="o">/</span><span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span> <span class="o">-</span> <span class="n">fp</span><span class="o">/</span><span class="p">(</span><span class="n">fp</span> <span class="o">+</span> <span class="n">tn</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">compute_HSS</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+    <span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">tp</span> <span class="o">*</span> <span class="n">tn</span> <span class="o">-</span> <span class="n">fn</span> <span class="o">*</span> <span class="n">fp</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">tp</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">fn</span> <span class="o">+</span> <span class="n">tn</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">fp</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">tn</span> <span class="o">+</span> <span class="n">fp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To view all of this information, we may build a performance table like so. For simplicity’s sake, the metrics will be rounded to four decimal places. These metrics will also be stored for comparison.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfpt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="s2">&quot;Accuracy&quot;</span><span class="p">,</span> <span class="s2">&quot;BalancedAccuracy&quot;</span><span class="p">,</span> <span class="s2">&quot;TSS&quot;</span><span class="p">,</span> <span class="s2">&quot;HSS&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">bAcc</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">balanced_accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">TSS</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">compute_TSS</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">HSS</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">compute_HSS</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">retData</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Metric&#39;</span><span class="p">:</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span><span class="n">acc</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;Metric&#39;</span><span class="p">:</span><span class="s1">&#39;Balanced Accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span><span class="n">bAcc</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;Metric&#39;</span><span class="p">:</span><span class="s1">&#39;TSS&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span><span class="n">TSS</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;Metric&#39;</span><span class="p">:</span><span class="s1">&#39;HSS&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span><span class="n">HSS</span><span class="p">}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">retData</span><span class="p">))</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">test</span><span class="p">,</span> <span class="n">acc</span><span class="p">,</span> <span class="n">bAcc</span><span class="p">,</span> <span class="n">TSS</span><span class="p">,</span> <span class="n">HSS</span><span class="p">]</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Baseline&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9969
+1  Balanced Accuracy  0.4999
+2                TSS -0.0001
+3                HSS -0.0003
+</pre></div>
+</div>
+</div>
+</div>
+<p>Seeing that the initial score is indeed hiding bias in favor of the majority class, the bias needs to be corrected in order to obtain a fair analysis.</p>
+</div>
+</div>
+<div class="section" id="bias-correction-a-class-anchor-id-bias-correction-a">
+<h2>Bias correction<a class="anchor" id="bias-correction"></a><a class="headerlink" href="#bias-correction-a-class-anchor-id-bias-correction-a" title="Permalink to this headline">¶</a></h2>
+<p>There are several methods of correcting biases in order to obtain fair analyses.</p>
+<div class="section" id="method-1-undersampling-the-data-a-class-anchor-id-m1-a">
+<h3>Method 1: undersampling the data<a class="anchor" id="m1"></a><a class="headerlink" href="#method-1-undersampling-the-data-a-class-anchor-id-m1-a" title="Permalink to this headline">¶</a></h3>
+<p>This simply involves removing data from both classes in order to produce data sets of equal size. With this method, there is no need to produce synthetic data in order to balance out the classes, but the classifier will not have much to if the data sets are very small in size.</p>
+<p>To mitigate the possibility of the new training data having duplicate records of the testing data, the training and testing sets will need to be redefined.</p>
+<p>The data is resized and the classifier is refit and visualized as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_train</span><span class="p">,</span> <span class="n">data_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">causedSpeTrain</span> <span class="o">=</span> <span class="n">data_train</span><span class="p">[</span><span class="n">data_train</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span>
+<span class="n">noSpeTrain</span> <span class="o">=</span> <span class="n">data_train</span><span class="p">[</span><span class="n">data_train</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">speTrainData</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="n">causedSpeTrain</span><span class="p">,</span> <span class="n">n_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">posClassSize</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">))</span>
+<span class="n">noSpeTrainData</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="n">noSpeTrain</span><span class="p">,</span> <span class="n">n_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">posClassSize</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">))</span>
+<span class="n">newDataTrain</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">speTrainData</span><span class="p">,</span> <span class="n">noSpeTrainData</span><span class="p">])</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">newDataTrain</span><span class="p">[[</span><span class="s1">&#39;MinDur&#39;</span><span class="p">,</span> <span class="s1">&#39;Tmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;PrecisePeak&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToTmax&#39;</span><span class="p">,</span> <span class="s1">&#39;TmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToEMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToPeak&#39;</span><span class="p">,</span> <span class="s1">&#39;PeakToEnd&#39;</span><span class="p">]]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">newDataTrain</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">data_test</span><span class="p">[[</span><span class="s1">&#39;MinDur&#39;</span><span class="p">,</span> <span class="s1">&#39;Tmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;PrecisePeak&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToTmax&#39;</span><span class="p">,</span> <span class="s1">&#39;TmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToEMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToPeak&#39;</span><span class="p">,</span> <span class="s1">&#39;PeakToEnd&#39;</span><span class="p">]]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">data_test</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Undersampled&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 4.38
+Average number of leaves: 7.31
+</pre></div>
+</div>
+</div>
+</div>
+<p>The performance table for this test may be seen here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Undersampled&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9606
+1  Balanced Accuracy  0.9123
+2                TSS  0.8245
+3                HSS  0.1099
+</pre></div>
+</div>
+</div>
+</div>
+<p>While the results seem promising, with the undersampled data, there is not much data to draw empirical analyses from, so problems may only arise in the long run.</p>
+</div>
+<div class="section" id="method-2-oversampling-the-data-a-class-anchor-id-m2-a">
+<h3>Method 2: oversampling the data<a class="anchor" id="m2"></a><a class="headerlink" href="#method-2-oversampling-the-data-a-class-anchor-id-m2-a" title="Permalink to this headline">¶</a></h3>
+<p>The opposite approach to that taken previously is taken with this method: the data sets are enlarged to make them even in size. This does give the classifier more data to work with, but it uses synthetic data that may be unrepresentative of either class.</p>
+<p>The data is resized again and the classifier is refit and visualized:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">speTrainData</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="n">causedSpeTrain</span><span class="p">,</span> <span class="n">n_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="mf">0.35</span><span class="p">))</span>
+<span class="n">noSpeTrainData</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="n">noSpeTrain</span><span class="p">,</span> <span class="n">n_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="mf">0.35</span><span class="p">))</span>
+<span class="n">newDataTrain</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">speTrainData</span><span class="p">,</span> <span class="n">noSpeTrainData</span><span class="p">])</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">newDataTrain</span><span class="p">[[</span><span class="s1">&#39;MinDur&#39;</span><span class="p">,</span> <span class="s1">&#39;Tmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;PrecisePeak&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToTmax&#39;</span><span class="p">,</span> <span class="s1">&#39;TmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToEMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToPeak&#39;</span><span class="p">,</span> <span class="s1">&#39;PeakToEnd&#39;</span><span class="p">]]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">newDataTrain</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Oversampled&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 27.73
+Average number of leaves: 101.72
+</pre></div>
+</div>
+</div>
+</div>
+<p>The performance table for this test may be seen here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Oversampled&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9965
+1  Balanced Accuracy  0.5904
+2                TSS  0.1807
+3                HSS  0.2337
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, the opposite problem is encountered: the class definitions have been changed and it is therefore more difficult to use any new data outside of the original set thanks to the data in the training set being copied many times over. While TSS and HSS metrics may have improved from their baseline counterparts, balanced accuracy has only made a slight, if any, improvement.</p>
+</div>
+<div class="section" id="method-3-adjusting-class-weights-a-class-anchor-id-m3-a">
+<h3>Method 3: adjusting class weights<a class="anchor" id="m3"></a><a class="headerlink" href="#method-3-adjusting-class-weights-a-class-anchor-id-m3-a" title="Permalink to this headline">¶</a></h3>
+<p>Sklearn’s RandomForestClassifier has a built-in feature that allows one to tune the classifier so that the weight of each class is inversely proportional to the class frequencies of the input data.</p>
+<p>The classifier is first refit and visualized:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">class_weight</span> <span class="o">=</span> <span class="s2">&quot;balanced&quot;</span><span class="p">,</span> <span class="n">max_features</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Balanced Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 23.71
+Average number of leaves: 77.63
+</pre></div>
+</div>
+</div>
+</div>
+<p>The performance table for this test may be seen here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Balanced Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9969
+1  Balanced Accuracy  0.5226
+2                TSS  0.0452
+3                HSS  0.0793
+</pre></div>
+</div>
+</div>
+</div>
+<p>While any improvement to the baseline data would be slight, there is no need to synthesize data, nor is there a need to deprive the classifier of training data.</p>
+<p>The class weights may also be manually specified. In this example, the weights are determined by the probability of a data point being in the opposite class. The classifier is refit and visualized here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classSizeSum</span> <span class="o">=</span> <span class="n">negClassSize</span> <span class="o">+</span> <span class="n">posClassSize</span>
+<span class="n">negClassPortion</span> <span class="o">=</span> <span class="n">negClassSize</span> <span class="o">/</span> <span class="n">classSizeSum</span>
+<span class="n">posClassPortion</span> <span class="o">=</span> <span class="n">posClassSize</span> <span class="o">/</span> <span class="n">classSizeSum</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">class_weight</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="n">posClassPortion</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">negClassPortion</span><span class="p">},</span> <span class="n">max_features</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Opposite Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 24.1
+Average number of leaves: 78.85
+</pre></div>
+</div>
+</div>
+</div>
+<p>The performance table for this test may be seen here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Opposite Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9965
+1  Balanced Accuracy  0.5224
+2                TSS  0.0448
+3                HSS  0.0703
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, little improvement, if any, is made to the baseline data, though there is no need to alter the number of samples in the training data.</p>
+</div>
+<div class="section" id="method-4-trimming-the-trees-a-class-anchor-id-m4-a">
+<h3>Method 4: trimming the trees<a class="anchor" id="m4"></a><a class="headerlink" href="#method-4-trimming-the-trees-a-class-anchor-id-m4-a" title="Permalink to this headline">¶</a></h3>
+<p>Until now, absolutely all data points in the training and testing sets were considered, leading to the potential for anomalies to cause counterproductive overanalysis. This can be remedied by adjusting the cost complexities of the trees and choosing the largest subtree with a cost complexity lower than the specified alpha value. The total cost complexity of a tree is the sum of the rate of misclassification and the product of the alpha value and the number of leaf nodes in the tree.</p>
+<p>For the examples in this notebook, an alpha value of 0.01 will be used.</p>
+<p>This can be implemented in Python as shown here, with the same measurements as before taken again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_features</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ccp_alpha</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Trimmed Trees&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 0.0
+Average number of leaves: 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>While this will mean the data will likely not be very accurately classified, here is the performance table for this test anyway for comparison:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Trimmed Trees&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric  Value
+0           Accuracy  0.997
+1  Balanced Accuracy  0.500
+2                TSS  0.000
+3                HSS  0.000
+</pre></div>
+</div>
+</div>
+</div>
+<p>While this method does not necessarily function in isolation, this can improve results that already have bias correction applied. For this example, this will be demonstrated with the adjusted class weights to avoid the need for synthesis or removal of data, as either, again, may change the definition of either class or provide insufficient training data.</p>
+<p>When combined with the balanced class weights, here is the visualization of the classifier:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">class_weight</span> <span class="o">=</span> <span class="s2">&quot;balanced&quot;</span><span class="p">,</span> <span class="n">max_features</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ccp_alpha</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Trimmed Trees with Balanced Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 3.59
+Average number of leaves: 5.96
+</pre></div>
+</div>
+</div>
+</div>
+<p>The performance table for this test may be seen here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Trimmed Trees with Balanced Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9630
+1  Balanced Accuracy  0.9135
+2                TSS  0.8270
+3                HSS  0.1165
+</pre></div>
+</div>
+</div>
+</div>
+<p>With opposite class weights, here is the visualization of the classifier:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">class_weight</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="n">posClassPortion</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">negClassPortion</span><span class="p">},</span> <span class="n">max_features</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ccp_alpha</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Trimmed Trees with Opposite Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 3.62
+Average number of leaves: 6.11
+</pre></div>
+</div>
+</div>
+</div>
+<p>The performance table for this test may be seen here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Trimmed Trees with Opposite Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9614
+1  Balanced Accuracy  0.9353
+2                TSS  0.8707
+3                HSS  0.1175
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-5-using-only-events-likely-to-be-in-the-minority-class-a-class-anchor-id-m5-a">
+<h3>Method 5: using only events likely to be in the minority class<a class="anchor" id="m5"></a><a class="headerlink" href="#method-5-using-only-events-likely-to-be-in-the-minority-class-a-class-anchor-id-m5-a" title="Permalink to this headline">¶</a></h3>
+<p>While undersampling in general may only lead to a classifier having insufficient data to base calculations on, strategic undersampling can isolate events that are either borderline or likely to appear in the minority class. Performing a complete analysis on which events fall into this category can be just as cumbersome as performing the analyses already performed, so it may be beneficial to isolate the most important element for consideration.</p>
+<p>As determined earlier through an f classifier, the PrecisePeak parameter is the most important.</p>
+<p>Next, this “liar’s poker” system will determine which PrecisePeak value should be used as a threshold for more commonly occurring SPEs. It gathers the PrecisePeak parameters of all flares in the positive class as well as the same parameters in the negative class. It eliminates ranges from both lists that are less commonly found in the other as proportions of their respective lengths and selects the last value of the “lower” array to use as the threshold. The latter is determined by taking the arithmetic means of the unique values in both arrays.</p>
+<p>Prior to this point, outliers were not removed from the database because any slight change in the number of elements in it could completely erase the minority class. However, since the elements of both classes are isolated in order to obtain this threshold, removing the outliers from both classes is a must in order to obtain a threshold that does not correspond to an anomaly in either class.</p>
+<p>The threshold is computed as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">removeOutliers</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">q1</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)]</span>
+    <span class="n">q3</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)]</span>
+    <span class="n">iqr</span> <span class="o">=</span> <span class="n">q3</span> <span class="o">-</span> <span class="n">q1</span>
+    <span class="n">q1r</span> <span class="o">=</span> <span class="n">q1</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">iqr</span><span class="p">)</span>
+    <span class="n">q3r</span> <span class="o">=</span> <span class="n">q3</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">iqr</span><span class="p">)</span>
+    <span class="n">delValues</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">q3r</span> <span class="ow">or</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">q1r</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">delValues</span><span class="p">):</span>
+                <span class="n">delValues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">delValues</span><span class="p">)):</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">delValues</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">):</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">((</span><span class="n">delValues</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="fm">__ne__</span><span class="p">,</span> <span class="n">arr</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">arr</span>
+<span class="k">def</span> <span class="nf">commonalityThreshold</span><span class="p">(</span><span class="n">arrA</span><span class="p">,</span> <span class="n">arrB</span><span class="p">):</span>
+    <span class="n">smallArr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">bigArr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arrA</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrB</span><span class="p">)):</span>
+        <span class="n">smallArr</span> <span class="o">=</span> <span class="n">arrA</span>
+        <span class="n">bigArr</span> <span class="o">=</span> <span class="n">arrB</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">smallArr</span> <span class="o">=</span> <span class="n">arrB</span>
+        <span class="n">bigArr</span> <span class="o">=</span> <span class="n">arrA</span>
+    <span class="n">uniqueBigArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">bigArr</span><span class="p">))</span>
+    <span class="n">uniqueSmallArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">smallArr</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniqueBigArr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">minI</span> <span class="o">=</span> <span class="n">uniqueBigArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">maxI</span> <span class="o">=</span> <span class="n">uniqueBigArr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">bigRangeCountI</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bigArr</span> <span class="k">if</span> <span class="n">minI</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">maxI</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">bigArr</span><span class="p">))</span>
+        <span class="n">smallRangeCountI</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smallArr</span> <span class="k">if</span> <span class="n">minI</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">maxI</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">smallArr</span><span class="p">))</span>
+        <span class="n">delValuesI</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bigRangeCountI</span> <span class="o">&gt;</span> <span class="n">smallRangeCountI</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">smallArr</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">smallArr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">minI</span> <span class="ow">and</span> <span class="n">smallArr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">maxI</span><span class="p">):</span>
+                    <span class="n">delValuesI</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smallArr</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">delValuesI</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">delValuesI</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">in</span> <span class="n">smallArr</span><span class="p">):</span>
+                    <span class="n">smallArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">((</span><span class="n">delValuesI</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">.</span><span class="fm">__ne__</span><span class="p">,</span> <span class="n">smallArr</span><span class="p">))</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">smallRangeCountI</span> <span class="o">&gt;</span> <span class="n">bigRangeCountI</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">smallArr</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">bigArr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">minI</span> <span class="ow">and</span> <span class="n">bigArr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">maxI</span><span class="p">):</span>
+                    <span class="n">delValuesI</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bigArr</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">delValuesI</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">delValuesI</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">in</span> <span class="n">bigArr</span><span class="p">):</span>
+                    <span class="n">bigArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">((</span><span class="n">delValuesI</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">.</span><span class="fm">__ne__</span><span class="p">,</span> <span class="n">bigArr</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniqueSmallArr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">minJ</span> <span class="o">=</span> <span class="n">uniqueSmallArr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">maxJ</span> <span class="o">=</span> <span class="n">uniqueSmallArr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">bigRangeCountJ</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bigArr</span> <span class="k">if</span> <span class="n">minJ</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">maxJ</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">bigArr</span><span class="p">))</span>
+        <span class="n">smallRangeCountJ</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smallArr</span> <span class="k">if</span> <span class="n">minJ</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">maxJ</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">smallArr</span><span class="p">))</span>
+        <span class="n">delValuesJ</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bigRangeCountJ</span> <span class="o">&gt;</span> <span class="n">smallRangeCountJ</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">smallArr</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">smallArr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">minJ</span> <span class="ow">and</span> <span class="n">smallArr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">maxJ</span><span class="p">):</span>
+                    <span class="n">delValuesJ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smallArr</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">delValuesJ</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">delValuesJ</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">in</span> <span class="n">smallArr</span><span class="p">):</span>
+                    <span class="n">smallArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">((</span><span class="n">delValuesJ</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">.</span><span class="fm">__ne__</span><span class="p">,</span> <span class="n">smallArr</span><span class="p">))</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">smallRangeCountJ</span> <span class="o">&gt;</span> <span class="n">bigRangeCountJ</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">smallArr</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">bigArr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">minJ</span> <span class="ow">and</span> <span class="n">bigArr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">maxJ</span><span class="p">):</span>
+                    <span class="n">delValuesJ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bigArr</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">delValuesJ</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">delValuesJ</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">in</span> <span class="n">bigArr</span><span class="p">):</span>
+                    <span class="n">bigArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">((</span><span class="n">delValuesJ</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">.</span><span class="fm">__ne__</span><span class="p">,</span> <span class="n">bigArr</span><span class="p">))</span>
+    <span class="n">uniqueBigArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">bigArr</span><span class="p">))</span>
+    <span class="n">uniqueSmallArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">smallArr</span><span class="p">))</span>
+    <span class="k">if</span><span class="p">((</span><span class="nb">sum</span><span class="p">(</span><span class="n">uniqueBigArr</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniqueBigArr</span><span class="p">))</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">uniqueSmallArr</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniqueSmallArr</span><span class="p">))):</span>
+        <span class="k">return</span> <span class="n">uniqueBigArr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">uniqueSmallArr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">dps</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">,</span> <span class="s1">&#39;CausedSPE&#39;</span><span class="p">]]</span>
+<span class="n">dpst</span> <span class="o">=</span> <span class="n">dps</span><span class="p">[(</span><span class="n">dps</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)]</span>
+<span class="n">sortedPeaksT</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dpst</span><span class="p">[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">])</span>
+<span class="n">sortedPeaksT</span> <span class="o">=</span> <span class="n">removeOutliers</span><span class="p">(</span><span class="n">sortedPeaksT</span><span class="p">)</span>
+<span class="n">uniqueSortedPeaksT</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">sortedPeaksT</span><span class="p">))</span>
+<span class="n">dpsf</span> <span class="o">=</span> <span class="n">dps</span><span class="p">[(</span><span class="n">dps</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span>
+<span class="n">sortedPeaksF</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dpsf</span><span class="p">[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">])</span>
+<span class="n">sortedPeaksF</span> <span class="o">=</span> <span class="n">removeOutliers</span><span class="p">(</span><span class="n">sortedPeaksF</span><span class="p">)</span>
+<span class="n">uniqueSortedPeaksF</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">sortedPeaksF</span><span class="p">))</span>
+<span class="n">precisePeakThreshold</span> <span class="o">=</span> <span class="n">commonalityThreshold</span><span class="p">(</span><span class="n">sortedPeaksT</span><span class="p">,</span> <span class="n">sortedPeaksF</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">precisePeakThreshold</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>570.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>This corresponds to a threshold of GOES class C5.7. This result is validated by Arnold O. Benz et al’s (2007) observations that flares of class C5 and greater in general cause radio events.</p>
+<p>The refit classifier may be visualized here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">benz_data_train</span> <span class="o">=</span> <span class="n">data_train</span><span class="p">[(</span><span class="n">data_train</span><span class="p">[</span><span class="s1">&#39;PrecisePeak&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">precisePeakThreshold</span><span class="p">)]</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">benz_data_train</span><span class="p">[[</span><span class="s1">&#39;MinDur&#39;</span><span class="p">,</span> <span class="s1">&#39;Tmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;PrecisePeak&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToTmax&#39;</span><span class="p">,</span> <span class="s1">&#39;TmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToEMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToPeak&#39;</span><span class="p">,</span> <span class="s1">&#39;PeakToEnd&#39;</span><span class="p">]]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">benz_data_train</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">data_test</span><span class="p">[[</span><span class="s1">&#39;MinDur&#39;</span><span class="p">,</span> <span class="s1">&#39;Tmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;PrecisePeak&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToTmax&#39;</span><span class="p">,</span> <span class="s1">&#39;TmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToEMmax&#39;</span><span class="p">,</span> <span class="s1">&#39;EMmaxToEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;StartToPeak&#39;</span><span class="p">,</span> <span class="s1">&#39;PeakToEnd&#39;</span><span class="p">]]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">data_test</span><span class="p">[</span><span class="s1">&#39;CausedSPE&#39;</span><span class="p">]</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_features</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Edge Cases Only&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 11.14
+Average number of leaves: 48.71
+</pre></div>
+</div>
+</div>
+</div>
+<p>The performance table for this test may be seen here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Edge Cases Only&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9962
+1  Balanced Accuracy  0.4996
+2                TSS -0.0008
+3                HSS -0.0013
+</pre></div>
+</div>
+</div>
+</div>
+<p>Removing cases that are likely to be in the majority class may improve antibiased metrics thanks to the classifier not being able to default to the majority class for the data most likely to appear in it, but the improvement may still only be slight if there is any improvement at all.</p>
+</div>
+<div class="section" id="method-6-putting-it-together-a-class-anchor-id-m6-a">
+<h3>Method 6: putting it together<a class="anchor" id="m6"></a><a class="headerlink" href="#method-6-putting-it-together-a-class-anchor-id-m6-a" title="Permalink to this headline">¶</a></h3>
+<p>When combined with the aforementioned solution of trimming the trees and balancing the class weights, here is the classifier refit and visualization with balanced class weights:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">class_weight</span> <span class="o">=</span> <span class="s2">&quot;balanced&quot;</span><span class="p">,</span> <span class="n">max_features</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ccp_alpha</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Edge Cases Only with Trimmed Trees and Balanced Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 4.99
+Average number of leaves: 9.02
+</pre></div>
+</div>
+</div>
+</div>
+<p>The performance table for this test may be seen here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Edge Cases Only with Trimmed Trees and Balanced Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9876
+1  Balanced Accuracy  0.9032
+2                TSS  0.8063
+3                HSS  0.2777
+</pre></div>
+</div>
+</div>
+</div>
+<p>With opposite class weights, here is the refit classifier and its visualization:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">class_weight</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="n">posClassPortion</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">negClassPortion</span><span class="p">},</span> <span class="n">max_features</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ccp_alpha</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">rs</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">visualizeRandomForest</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">,</span> <span class="s2">&quot;Edge Cases Only with Trimmed Trees and Opposite Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average depth: 3.79
+Average number of leaves: 5.67
+</pre></div>
+</div>
+</div>
+</div>
+<p>The performance table for this test may be seen here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">dispPerfTable</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">,</span> <span class="s2">&quot;Edge Cases Only with Trimmed Trees and Opposite Class Weights&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Metric   Value
+0           Accuracy  0.9653
+1  Balanced Accuracy  0.9373
+2                TSS  0.8746
+3                HSS  0.1295
+</pre></div>
+</div>
+</div>
+</div>
+<p>Combining the previous two methods signifies a <i>slight</i> improvement in metrics: the HSS score of the balanced class weight test has notably improved, but not much else has changed from the tests in Method 4.</p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="comparison-of-data-obtained-a-class-anchor-id-comp-a">
+<h1>Comparison of Data Obtained<a class="anchor" id="comp"></a><a class="headerlink" href="#comparison-of-data-obtained-a-class-anchor-id-comp-a" title="Permalink to this headline">¶</a></h1>
+<p>Here are the average tree depths in each of the previous classifiers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">tests</span> <span class="o">=</span> <span class="n">dfrf</span><span class="p">[</span><span class="s2">&quot;Test&quot;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tests</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">[</span><span class="s2">&quot;AverageDepth&quot;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Test&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Average Depth&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">tests</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications_77_0.png" src="../../_images/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications_77_0.png" />
+</div>
+</div>
+<p>Here are the average numbers of leaves:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">tests</span> <span class="o">=</span> <span class="n">dfrf</span><span class="p">[</span><span class="s2">&quot;Test&quot;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tests</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dfrf</span><span class="p">[</span><span class="s2">&quot;AverageLeaves&quot;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Test&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Average Number of Leaves&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">tests</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications_79_0.png" src="../../_images/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications_79_0.png" />
+</div>
+</div>
+<p>Here are the values from the performance tables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">tests</span> <span class="o">=</span> <span class="n">dfpt</span><span class="p">[</span><span class="s2">&quot;Test&quot;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tests</span><span class="p">))</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">[</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Accuracy&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#e50000&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">[</span><span class="s2">&quot;BalancedAccuracy&quot;</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Balanced Accuracy&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#0000e5&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">[</span><span class="s2">&quot;TSS&quot;</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;TSS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#00e500&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dfpt</span><span class="p">[</span><span class="s2">&quot;HSS&quot;</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;HSS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#dfdf14&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Test&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Score&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">tests</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications_81_0.png" src="../../_images/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications_81_0.png" />
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="conclusion-a-class-anchor-id-conc-a">
+<h1>Conclusion<a class="anchor" id="conc"></a><a class="headerlink" href="#conclusion-a-class-anchor-id-conc-a" title="Permalink to this headline">¶</a></h1>
+<p>Based on the data presented here, it is possible to run a machine learning application with highly imbalanced data. However, there are certain antibiasing methods that work better than others. Depriving the algorithm of training data or adding synthetic data may force the algorithm to make inaccurate predictions based on a lack of data or based on duplicate data, but strategic undersampling may <i>slightly</i> improve scores by not allowing the algorithm to default to the majority class based on data that is more likely to appear in it. Adjusting class weights can improve antibiased scores without resizing the data and causing these potential issues, especially when combined with limiting the number of branches in the tree to avoid overanalysis of anomalous data. Combining strategic undersampling, adjusted class weights, and limited tree depth may improve scores even further: the HSS metric from using the balanced class weights and the limited tree depths notably improves by using strategically undersampled training data. From this information, it may be concluded that using adjusted class weights and leaving out anomalies in analyses are the best actions to take and cause the least uncertainty, but combining these techniques with strategic undersampling may improve metrics further when balanced class weights are used.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="applicability-to-other-algorithms-a-class-anchor-id-app-a">
+<h1>Applicability to Other Algorithms<a class="anchor" id="app"></a><a class="headerlink" href="#applicability-to-other-algorithms-a-class-anchor-id-app-a" title="Permalink to this headline">¶</a></h1>
+<p>There are also other, similar methods of correcting class imbalances that can be used when implementing other algorithms. For example, class weights in a neural network classifier can also be adjusted as a hyperparameter and dropout layers can be used to filter anomalies that could cause overfitting.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="references-a-class-anchor-id-ref-a">
+<h1>References<a class="anchor" id="ref"></a><a class="headerlink" href="#references-a-class-anchor-id-ref-a" title="Permalink to this headline">¶</a></h1>
+<p>[1] Whitman, K. et al. (2022). Review of Solar Energetic Particle Models. Advances in Space Research, 6. Submitted for publication.</p>
+<p>[2] Benz, A.O. et al. (2007). Are there Radio-quiet Solar Flares? Cornell University, 1. <a class="reference external" href="https://arxiv.org/pdf/astro-ph/0701570.pdf">https://arxiv.org/pdf/astro-ph/0701570.pdf</a></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/ec22_okeefe_etal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Handling Highly Imbalanced Data in Machine Learning Applications</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../ec22_rotti_etal/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EC_SEP_Visualization</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

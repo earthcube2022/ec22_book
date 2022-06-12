@@ -1,0 +1,1309 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predicting Solar Flares with Machine Learning &#8212; EarthCube 2022 Call for Notebooks</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists" href="../ec22_khider_etal/README.html" />
+    <link rel="prev" title="Predicting Solar Flares with Machine Learning" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EarthCube 2022 Call for Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  EarthCube 2022 Call
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/index.html">
+   EarthCube 2022 Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/dois.html">
+   Notebook DOIs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notebook Submissions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_kwan_etal/README.html">
+   Data Cleaning with Pandas and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_kwan_etal/notebooks/wyk_01_data_cleaning_with_pandas_and_jupyter_notebooks.html">
+     Data Cleaning with Pandas and Jupyter Notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_ji_etal/README.html">
+   Magnetic Polarity Inversion Line Detection and Analysis Tool
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool.html">
+     AJ_01_MPIL_Detection_and_Analysis_Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   Predicting Solar Flares with Machine Learning
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <strong>
+      Predicting Solar Flares with Machine Learning
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_khider_etal/README.html">
+   PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_khider_etal/DK_v1_PaleoHack.html">
+     PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_markowsky_etal/README.html">
+   Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_markowsky_etal/LM_01_Visualizing_Ice_Core_Datasets_in_Python_Using_a_Jupyter_Notebook_Template.html">
+     Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ec22_mckay_etal/README.html">
+   Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_mills_etal/README.html">
+   Intro to Argovis' API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_mills_etal/WM_01_intro_to_argovis_api.html">
+     Intro to Argovis’ API
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_mirkovich_etal/README.html">
+   Assimilative Mapping of Geospace Observations (AMGeO)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_mirkovich_etal/WM_02_AMGeO-2.0.html">
+     AMGeO 2.0: Crafting an API for Geospace Data Scientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_miron_etal/README.html">
+   Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows.html">
+     Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_okeefe_etal/README.html">
+   Handling Highly Imbalanced Data in Machine Learning Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_okeefe_etal/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications.html">
+     Handling Highly Imbalanced Data in Machine Learning Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_rotti_etal/README.html">
+   EC_SEP_Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset.html">
+     GSEP Event Catalog and Time Series Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_tauxe_etal/README.html">
+   Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_tauxe_etal/2022_MagIC_database_and_open_science.html">
+     Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_yu_etal/README.html">
+   ICESpark
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting.html">
+     ICESpark-EarthCube-2022-Annual-Meeting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   <strong>
+    Predicting Solar Flares with Machine Learning
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-contents">
+     <strong>
+      Table of Contents
+     </strong>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#author-s">
+       <strong>
+        Author(s)
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#purpose">
+       <strong>
+        Purpose
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#technical-contributions">
+       <strong>
+        Technical Contributions
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#methodology">
+       <strong>
+        Methodology
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#funding">
+       <strong>
+        Funding
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#keywords">
+       <strong>
+        Keywords
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#citation">
+       <strong>
+        Citation
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#acknowledgements">
+       <strong>
+        Acknowledgements
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   <strong>
+    Setup
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   <strong>
+    Data Processing and Analysis
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binder">
+   <strong>
+    Binder
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flareml-workflow-and-results">
+   <strong>
+    FlareML Workflow and Results
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-preparation-and-loading">
+     <strong>
+      Data Preparation and Loading
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predicting-with-pretrained-models">
+     <strong>
+      Predicting with Pretrained Models
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ens-model-training-and-testing">
+     <strong>
+      ENS Model Training and Testing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rf-model-training-and-testing">
+     <strong>
+      RF Model Training and Testing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mlp-model-training-and-testing">
+     <strong>
+      MLP Model Training and Testing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elm-model-training-and-testing">
+     <strong>
+      ELM Model Training and Testing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#timing">
+     <strong>
+      Timing
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   <strong>
+    Conclusions
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   <strong>
+    References
+   </strong>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="predicting-solar-flares-with-machine-learning">
+<h1><strong>Predicting Solar Flares with Machine Learning</strong><a class="headerlink" href="#predicting-solar-flares-with-machine-learning" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="table-of-contents">
+<h2><strong>Table of Contents</strong><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="toc">
+<!--     <ul class="toc-item"> -->
+        <li><span><a href="#Template-Notebook-for-EarthCube---Long-Version"
+                    data-toc-modified-id="Template-Notebook-for-EarthCube---Long-Version-1"><span
+                        class="toc-item-num">1&nbsp;&nbsp;</span>YA_Notebook for Predicting Solar Flares with Machine
+                    Learning</a></span>
+            <ul class="toc-item" style='margin-top:0px; margin-bottom:0px'>
+                <li><span><a href="#Author(s)" data-toc-modified-id="Author(s)-1.1"><span
+                                class="toc-item-num">1.1&nbsp;&nbsp;</span>Author(s)</a></span></li>
+                <li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span
+                                class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li>
+                <li><span><a href="#Technical-Contributions" data-toc-modified-id="Technical-Contributions-1.3"><span
+                                class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical Contributions</a></span></li>
+                <li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span
+                                class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li>
+                <li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span
+                                class="toc-item-num">1.5&nbsp;&nbsp;</span>Funding</a></span></li>
+                <li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span
+                                class="toc-item-num">1.6&nbsp;&nbsp;</span>Keywords</a></span></li>
+                <li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span
+                                class="toc-item-num">1.7&nbsp;&nbsp;</span>Citation</a></span></li>
+                <li><span style='display:inline'><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.11"><span
+                        class="toc-item-num">1.8&nbsp;&nbsp;</span>Acknowledgements</a></span></li>                
+            </ul>
+        </li>
+<!--     </ul> -->
+    <li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span
+                    class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span>
+    </li>
+    <li><span><a href="#Data-Processing-and-Analysis" data-toc-modified-id="Data-Processing-and-Analysis-3"><span
+                    class="toc-item-num">3&nbsp;&nbsp;</span>Data Processing and Analysis</a></span></li>
+    <li><span><a href="#Binder" data-toc-modified-id="Binder-4"><span
+                    class="toc-item-num">4&nbsp;&nbsp;</span>Binder</a></span></li>
+    <li><span><a href="#FlareML-Workflow" data-toc-modified-id="FlareML-Workflow-5"><span
+                    class="toc-item-num">5&nbsp;&nbsp;</span>FlareML Workflow and Results</a></span>
+        <ul class="toc-item" style='margin-top:0px;margin-bottom:0px'>
+            <li>
+                <span><a href="#Data-Preparation-and-Loading"
+                        data-toc-modified-id="Data-Preparation-and-Loading-5.1"><span
+                            class="toc-item-num">5.1&nbsp;&nbsp;</span>Data Preparation and Loading</a></span>
+            </li>
+            <li>
+                <span><a href="#Predicting-with-Pretrained-Models"
+                        data-toc-modified-id="Predicting-with-Pretrained Models-5.6"><span
+                            class="toc-item-num">5.2&nbsp;&nbsp;</span>Predicting with Pretrained Models</a></span>
+<!--                 <ul class="toc-item">
+                    <li style='list-style: square'>
+                        <span><a href="#Plotting-the-Pretrained-Models-Results"
+                                data-toc-modified-id="Plotting-the-Pretrained-Models-Results-5.2.3">
+                                <span class="toc-item-num">5.2.1&nbsp;&nbsp;
+                                </span>Plotting the Pretrained Models Results</a></span>
+                    </li>
+                </ul> -->
+            </li>            
+            <li>
+                <span><a href="#ENS-Model-Training-and-Testing"
+                        data-toc-modified-id="ENS-Model-Training-and-Testing-5.2"><span
+                            class="toc-item-num">5.3&nbsp;&nbsp;</span>ENS Model Training and Testing</a></span>
+<!--                 <ul class="toc-item">
+                    <li style='list-style: square'>
+                        <span><a href="#ENS-Model-Training-with-Default-Data"
+                                data-toc-modified-id="ENS Model-Training-with-Default-Data-6">
+                                <span class="toc-item-num">5.3.1&nbsp;&nbsp;
+                                </span>ENS Model Training with Default Data</a></span>
+                    </li>
+                    <li style='list-style: square'>
+                        <span><a href="#Predicting-with-Your-ENS-Model"
+                                data-toc-modified-id="Predicting-with-Your-ENS-Model-5.2.2">
+                                <span class="toc-item-num">5.3.2&nbsp;&nbsp;
+                                </span>Predicting with Your ENS Model</a></span>
+                    </li>
+                    <li style='list-style: square'>
+                        <span><a href="#Plotting-the-ENS-Results" data-toc-modified-id="Plotting-the-ENS-Results-5.2.3">
+                                <span class="toc-item-num">5.3.3&nbsp;&nbsp;
+                                </span>Plotting the ENS Results</a></span>
+                    </li>
+                </ul> -->
+            </li>
+            <li>
+                <span><a href="#RF-Model-Training-and-Testing"
+                        data-toc-modified-id="RF-Model-Training-and-Testing-5.2"><span
+                            class="toc-item-num">5.4&nbsp;&nbsp;</span>RF Model Training and Testing</a></span>
+<!--                 <ul class="toc-item">
+                    <li style='list-style: square'>
+                        <span><a href="#RF-Model-Training-with-Default-Data"
+                                data-toc-modified-id="RF Model-Training-with-Default-Data-6">
+                                <span class="toc-item-num">5.4.1&nbsp;&nbsp;
+                                </span>RF Model Training with Default Data</a></span>
+                    </li>
+                    <li style='list-style: square'>
+                        <span><a href="#Predicting-with-Your-RF-Model"
+                                data-toc-modified-id="Predicting-with-Your-RF-Model-5.2.2">
+                                <span class="toc-item-num">5.4.2&nbsp;&nbsp;
+                                </span>Predicting with Your RF Model</a></span>
+                    </li>
+                    <li style='list-style: square'>
+                        <span><a href="#Plotting-the-RF-Results" data-toc-modified-id="Plotting-the-RF-Results-5.2.3">
+                                <span class="toc-item-num">5.4.3&nbsp;&nbsp;
+                                </span>Plotting the RF Results</a></span>
+                    </li>
+                </ul> -->
+            </li>
+            <li>
+                <span><a href="#MLP-Model-Training-and-Testing"
+                        data-toc-modified-id="MLP-Model-Training-and-Testing-5.2"><span
+                            class="toc-item-num">5.5&nbsp;&nbsp;</span>MLP Model Training and Testing</a></span>
+<!--                 <ul class="toc-item">
+                    <li style='list-style: square'>
+                        <span><a href="#MLP-Model-Training-with-Default-Data"
+                                data-toc-modified-id="MLP Model-Training-with-Default-Data-6">
+                                <span class="toc-item-num">5.5.1&nbsp;&nbsp;
+                                </span>MLP Model Training with Default Data</a></span>
+                    </li>
+                    <li style='list-style: square'>
+                        <span><a href="#Predicting-with-Your-MLP-Model"
+                                data-toc-modified-id="Predicting-with-Your-RF-Model-5.2.2">
+                                <span class="toc-item-num">5.5.2&nbsp;&nbsp;
+                                </span>Predicting with Your MLP Model</a></span>
+                    </li>
+                    <li style='list-style: square'>
+                        <span><a href="#Plotting-the-MLP-Results" data-toc-modified-id="Plotting-the-MLP-Results-5.2.3">
+                                <span class="toc-item-num">5.5.3&nbsp;&nbsp;
+                                </span>Plotting the MLP Results</a></span>
+                    </li>
+                </ul> -->
+            </li>
+            <li>
+                <span><a href="#ELM-Model-Training-and-Testing"
+                        data-toc-modified-id="ELM-Model-Training-and-Testing-5.2"><span
+                            class="toc-item-num">5.6&nbsp;&nbsp;</span>ELM Model Training and Testing</a></span>
+<!--                 <ul class="toc-item">
+                    <li style='list-style: square'>
+                        <span><a href="#ELM-Model-Training-with-Default-Data"
+                                data-toc-modified-id="ELM Model-Training-with-Default-Data-6">
+                                <span class="toc-item-num">5.6.1&nbsp;&nbsp;
+                                </span>ELM Model Training with Default Data</a></span>
+                    </li>
+                    <li style='list-style: square'>
+                        <span><a href="#Predicting-with-Your-ELM-Model"
+                                data-toc-modified-id="Predicting-with-Your-ELM-Model-5.2.2">
+                                <span class="toc-item-num">5.6.2&nbsp;&nbsp;
+                                </span>Predicting with Your ELM Model</a></span>
+                    </li>
+                    <li style='list-style: square'>
+                        <span><a href="#Plotting-the-ELM-Results" data-toc-modified-id="Plotting-the-ELM-Results-5.2.3">
+                                <span class="toc-item-num">5.6.3&nbsp;&nbsp;
+                                </span>Plotting the ELM Results</a></span>
+                    </li>
+                </ul> -->
+            </li>            
+            <li>
+                <span><a href="#Timing"
+                        data-toc-modified-id="Timing-5.7"><span
+                            class="toc-item-num">5.7&nbsp;&nbsp;</span>Timing</a></span>
+            </li>            
+        </ul>
+    </li>
+<!--     </ul> -->
+</div>            
+        </ul>
+    </li>
+    <li><span><a href="#Conclusions" data-toc-modified-id="Conclusions-6"><span
+                    class="toc-item-num">6&nbsp;&nbsp;</span>Conclusions</a></span>
+    </li>
+    <li><span><a href="#References" data-toc-modified-id="References-7"><span
+                    class="toc-item-num">7&nbsp;&nbsp;</span>References</a></span>
+    </li>    
+    </ul>
+</div><div class="section" id="author-s">
+<h3><strong>Author(s)</strong><a class="headerlink" href="#author-s" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Author1 = {“name”: “Yasser Abduallah”, “affiliation”: “Department of Computer Science, New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:ya54&#37;&#52;&#48;njit&#46;edu">ya54<span>&#64;</span>njit<span>&#46;</span>edu</a>”, “orcid”: “<a class="reference external" href="https://orcid.org/0000-0003-0792-2270">https://orcid.org/0000-0003-0792-2270</a>”}</p></li>
+<li><p>Author2 = {“name”: “Jason T. L. Wang”, “affiliation”: “Department of Computer Science, New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:wangj&#37;&#52;&#48;njit&#46;edu">wangj<span>&#64;</span>njit<span>&#46;</span>edu</a>”, “orcid”: “<a class="reference external" href="https://orcid.org/0000-0002-2486-1097">https://orcid.org/0000-0002-2486-1097</a>”}</p></li>
+<li><p>Author3 = {“name”: “Haimin Wang”, “affiliation”: “Institute for Space Weather Sciences, New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:haimin&#46;wang&#37;&#52;&#48;njit&#46;edu">haimin<span>&#46;</span>wang<span>&#64;</span>njit<span>&#46;</span>edu</a>”, “orcid”: “<a class="reference external" href="https://orcid.org/0000-0002-5233-565X">https://orcid.org/0000-0002-5233-565X</a>”}</p></li>
+</ul>
+</div>
+<div class="section" id="purpose">
+<h3><strong>Purpose</strong><a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
+<p>Solar flare prediction plays an important role in understanding and forecasting space weather. The main goal of the Helioseismic and Magnetic Imager (HMI), one of the instruments on NASA’s Solar Dynamics Observatory (SDO), is to study the origin of solar variability and characterize the Sun’s magnetic activity. HMI provides continuous full-disk observations of the solar vector magnetic field with high cadence data that lead to reliable predictive capability; yet, solar flare prediction effort utilizing these data is still limited.</p>
+<p>In this notebook we provide an overview of the FlareML system to demonstrate how to predict solar flares using machine learning (ML) and SDO/HMI vector magnetic data products (SHARP parameters).</p>
+</div>
+<div class="section" id="technical-contributions">
+<h3><strong>Technical Contributions</strong><a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>We provide the community with a new tool to predict solar flares.</p></li>
+</ul>
+</div>
+<div class="section" id="methodology">
+<h3><strong>Methodology</strong><a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h3>
+<p>Here we present a flare prediction system, named FlareML, for predicting solar flares using machine learning (ML) based on HMI’s vector magnetic data products. Specifically, we construct training data by utilizing the physical parameters provided by the Space-weather HMI Active Region Patches (SHARP) and categorize solar flares into four classes, namely B, C, M, X, according to the X-ray flare catalogs prepared by the National Centers for Environmental Information (NCEI). Thus, the solar flare prediction problem at hand is essentially a multi-class (i.e., four-class) classification problem. The FlareML system employs four machine learning methods to tackle this multi-class prediction problem. These four methods are: (i) ensemble (ENS), (ii) random forests (RF), (iii) multilayer perceptrons (MLP), and (iv) extreme learning machines (ELM). ENS works by taking the majority vote of the results obtained from RF, MLP and ELM. This notebook leverages python machine learning and visualization packages: matplotlib, numpy, scikit-learn, sklearn-extensions, and pandas. It describes the steps on how to use the FlareML tool to predict solar flare types: B, C, M, and X. The notebook is trained and tested on sample data sets to show flare predictions and their accuracies in graphical bar plots. FlareML is the backend of an online machine-learning-as-a-service system accessible at: <a class="reference external" href="https://nature.njit.edu/spacesoft/DeepSun/">https://nature.njit.edu/spacesoft/DeepSun/</a>.</p>
+<p>Notes: <br></p>
+<ul>
+    <li>Some models used in FlareML are not deterministic due to the randomness of their processes. Therefore, these models do not make the same prediction after re-training.
+    </li>
+    <li>
+        Detailed information about the parameters used for each model can be found in our published paper: <a href='https://iopscience.iop.org/article/10.1088/1674-4527/21/7/160'>https://iopscience.iop.org/article/10.1088/1674-4527/21/7/160</a>
+    </li>
+    </ul>
+</div>
+<div class="section" id="funding">
+<h3><strong>Funding</strong><a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h3>
+<p>This work was supported by U.S. NSF grants AGS-1927578 and AGS-1954737.</p>
+</div>
+<div class="section" id="keywords">
+<h3><strong>Keywords</strong><a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h3>
+<p>keywords=[“Flare”, “Prediction”, “Machine”, “Learning”, “SHARP”]</p>
+</div>
+<div class="section" id="citation">
+<h3><strong>Citation</strong><a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h3>
+<p>To cite this notebook: Yasser Abduallah, Jason T. L. Wang, &amp; Haimin Wang. Predicting Solar Flares with Machine Learning, available at: <a href='https://github.com/ccsc-tools/FlareML/blob/main/YA_01_PredictingSolarFlareswithMachineLearning.ipynb' target='new'>https://github.com/ccsc-tools/FlareML/blob/main/YA_01_PredictingSolarFlareswithMachineLearning.ipynb</a>.</p>
+</div>
+<div class="section" id="acknowledgements">
+<h3><strong>Acknowledgements</strong><a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h3>
+<p>We thank the team of SDO/HMI for producing vector magnetic data products. The flare catalogs were prepared by and made available through NOAA NCEI.</p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1><strong>Setup</strong><a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p><strong>Installation on Local Machine</strong><br>
+Running this notebook in a local machine requires Python version 3.8.x with the following packages and their version:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Library</p></th>
+<th class="head"><p>Version</p></th>
+<th class="text-align:left head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>matplotlib</p></td>
+<td><p>3.4.2</p></td>
+<td class="text-align:left"><p>Graphics and visualization</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>numpy</p></td>
+<td><p>1.19.5</p></td>
+<td class="text-align:left"><p>Array manipulation</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>scikit-learn</p></td>
+<td><p>0.24.2</p></td>
+<td class="text-align:left"><p>Machine learning</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>sklearn-extensions</p></td>
+<td><p>0.0.2</p></td>
+<td class="text-align:left"><p>Extension for scikit-learn</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>pandas</p></td>
+<td><p>1.2.4</p></td>
+<td class="text-align:left"><p>Data loading and manipulation</p></td>
+</tr>
+</tbody>
+</table>
+<p>You may install the package using Python pip packages manager as follows:</p>
+<p>pip install matplotlib==3.4.2 numpy==1.19.5 scikit-learn==0.24.2 sklearn-extensions==0.0.2 pandas==1.2.4</p>
+<p><strong>Library Import</strong><br>
+The following libraries need to be imported.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="c1"># Data manipulation</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Training the models</span>
+<span class="c1"># The following libraries are used to train the algorithms: Random Forest, MLP, and ELM.</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn_extensions.extreme_learning_machines.elm</span> <span class="kn">import</span> <span class="n">GenELMClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn_extensions.extreme_learning_machines.random_layer</span> <span class="kn">import</span> <span class="n">RBFRandomLayer</span><span class="p">,</span> <span class="n">MLPRandomLayer</span>
+
+<span class="c1"># Visualizations</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">flareml_utils</span> <span class="kn">import</span> <span class="n">plot_custom_result</span>
+
+<span class="c1"># Running the training, testing and prediction.</span>
+<span class="kn">from</span> <span class="nn">flareml_train</span> <span class="kn">import</span> <span class="n">train_model</span>
+<span class="kn">from</span> <span class="nn">flareml_test</span> <span class="kn">import</span> <span class="n">test_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
+<h1><strong>Data Processing and Analysis</strong><a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
+<p>We created and stored 845 data samples in
+our database accessible at <a target='new' href='https://nature.njit.edu/spacesoft/Flare-Predict/'>https://nature.njit.edu/spacesoft/Flare-Predict/</a>, where each data sample
+contains values of 13 physical parameters or features. The two digits following a class label (B,
+C, M, X) are ignored in performing flare prediction. The time
+point of a data sample is the beginning time (00:00:01 early
+morning) of the start date of a flare and the label of the data
+sample is the class which the flare belongs to. These labeled
+data samples are used to train the FlareML system.</p>
+<p>For this notebook, we use sample data sets for training and testing.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="binder">
+<h1><strong>Binder</strong><a class="headerlink" href="#binder" title="Permalink to this headline">¶</a></h1>
+<p>This notebook is Binder enabled and can be run on <a target='new' href='https://mybinder.org/'>mybinder.org</a> by using the image link below:</p>
+<p float="left"> <a href='https://mybinder.org/v2/gh/ccsc-tools/FlareML/HEAD?labpath=YA_01_PredictingSolarFlareswithMachineLearning.ipynb' target='new'><img align="left" src='https://mybinder.org/badge_logo.svg'></img></a></p>
+<p><br><br>
+Please note that starting Binder might take some time to create and start the image.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="flareml-workflow-and-results">
+<h1><strong>FlareML Workflow and Results</strong><a class="headerlink" href="#flareml-workflow-and-results" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-preparation-and-loading">
+<h2><strong>Data Preparation and Loading</strong><a class="headerlink" href="#data-preparation-and-loading" title="Permalink to this headline">¶</a></h2>
+<p>The data folder includes two sub-directories: train_data and test_data.</p>
+<ul class="simple">
+<li><p>The train_data includes a CSV training data file that is used to train the model.</p></li>
+<li><p>The test_data includes a CSV test data file that is used to predict the included flares.</p></li>
+</ul>
+<p>The files are loaded and used during the testing and training process.</p>
+</div>
+<div class="section" id="predicting-with-pretrained-models">
+<h2><strong>Predicting with Pretrained Models</strong><a class="headerlink" href="#predicting-with-pretrained-models" title="Permalink to this headline">¶</a></h2>
+<p>There are default and pretrained models that can be used to predict without running your own trained model. The modelid  is set to default_model which uses all pretrained algorithms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_test</span> <span class="kn">import</span> <span class="n">test_model</span>
+<span class="n">args</span> <span class="o">=</span>  <span class="p">{</span><span class="s1">&#39;test_data_file&#39;</span><span class="p">:</span> <span class="s1">&#39;data/test_data/flaringar_simple_random_40.csv&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;modelid&#39;</span><span class="p">:</span> <span class="s1">&#39;default_model&#39;</span><span class="p">}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">test_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting testing with a model with id: default_model testing data file: data/test_data/flaringar_simple_random_40.csv
+Loading data set...
+Done loading data...
+Formatting and mapping the flares classes..
+Prediction is in progress, please wait until it is done...
+Finished the prediction task..
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Plotting the Pretrained Models Results</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_utils</span> <span class="kn">import</span> <span class="n">plot_result</span>
+<span class="n">plot_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_15_0.png" src="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_15_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="ens-model-training-and-testing">
+<h2><strong>ENS Model Training and Testing</strong><a class="headerlink" href="#ens-model-training-and-testing" title="Permalink to this headline">¶</a></h2>
+<p>You may train the model with your own data or train the model with the default data.</p>
+<p><strong>ENS Model Training with Default Data</strong><br>
+Here, we show how to train the model with default data.
+To train the model with your own data:</p>
+<ol class="simple">
+<li><p>You should first upload your file to the data directory (in the left hand side file list).</p></li>
+<li><p>Edit the args variable in the following code and update the path to the training file:<br> ‘train_data_file’:’data/train_data/flaringar_training_sample.csv’ <br>and replace the value ‘data/train_data/flaringar_training_sample.csv’ with your new file name.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loading the train_model function...&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">flareml_train</span> <span class="kn">import</span> <span class="n">train_model</span>
+<span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;train_data_file&#39;</span><span class="p">:</span><span class="s1">&#39;data/train_data/flaringar_training_sample.csv&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;ENS&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;modelid&#39;</span><span class="p">:</span> <span class="s1">&#39;custom_model_id&#39;</span>
+      <span class="p">}</span>
+<span class="n">train_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading the train_model function...
+Starting training with a model with id: custom_model_id training data file: data/train_data/flaringar_training_sample.csv
+Loading data set...
+Training is in progress, please wait until it is done...
+Training started at: 2022-05-05 21:01:24
+Finished 1/3 training..
+Finished 2/3 training..
+Finished 3/3 training..
+Training finished at: 2022-05-05 21:01:42
+Training total time: 0.3 Minute(s)
+
+Finished training the ENS model, you may use the flareml_test.py program to make prediction.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Predicting with Your ENS Model</strong><br>
+To predict the testing data using the model you trained above, make sure the modelid value in the args variable in the following code is set exactly as the one used in the training, for example: ‘custom_model_id’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_test</span> <span class="kn">import</span> <span class="n">test_model</span>
+<span class="n">args</span> <span class="o">=</span>  <span class="p">{</span><span class="s1">&#39;test_data_file&#39;</span><span class="p">:</span> <span class="s1">&#39;data/test_data/flaringar_simple_random_40.csv&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;ENS&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;modelid&#39;</span><span class="p">:</span> <span class="s1">&#39;custom_model_id&#39;</span><span class="p">}</span>
+<span class="n">custom_result</span> <span class="o">=</span> <span class="n">test_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting testing with a model with id: custom_model_id testing data file: data/test_data/flaringar_simple_random_40.csv
+Loading data set...
+Done loading data...
+Formatting and mapping the flares classes..
+Prediction is in progress, please wait until it is done...
+Finished the prediction task..
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Plotting the ENS Results</strong><br>
+The prediction result can be plotted by passing the result variable to the function plot_custom_result as shown in the following example. The result shows the accuracy (TSS value) your model achieves for each flare class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_utils</span> <span class="kn">import</span> <span class="n">plot_custom_result</span>
+<span class="n">plot_custom_result</span><span class="p">(</span><span class="n">custom_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_21_0.png" src="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_21_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note that the output of ENS is the majority vote of the three underlying models (RF, MLP and ELM), and the accuracy of ENS is calculated based on its output.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="rf-model-training-and-testing">
+<h2><strong>RF Model Training and Testing</strong><a class="headerlink" href="#rf-model-training-and-testing" title="Permalink to this headline">¶</a></h2>
+<p><strong>RF Model Training with Default Data</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loading the train_model function...&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">flareml_train</span> <span class="kn">import</span> <span class="n">train_model</span>
+<span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;train_data_file&#39;</span><span class="p">:</span><span class="s1">&#39;data/train_data/flaringar_training_sample.csv&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;RF&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;modelid&#39;</span><span class="p">:</span> <span class="s1">&#39;custom_model_id&#39;</span>
+      <span class="p">}</span>
+<span class="n">train_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading the train_model function...
+Starting training with a model with id: custom_model_id training data file: data/train_data/flaringar_training_sample.csv
+Loading data set...
+Training is in progress, please wait until it is done...
+Training started at: 2022-05-05 21:01:45
+Training finished at: 2022-05-05 21:01:47
+Training total time: 0.04 Minute(s)
+
+Finished training the RF model, you may use the flareml_test.py program to make prediction.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Predicting with Your RF Model</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_test</span> <span class="kn">import</span> <span class="n">test_model</span>
+<span class="n">args</span> <span class="o">=</span>  <span class="p">{</span><span class="s1">&#39;test_data_file&#39;</span><span class="p">:</span> <span class="s1">&#39;data/test_data/flaringar_simple_random_40.csv&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;RF&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;modelid&#39;</span><span class="p">:</span> <span class="s1">&#39;custom_model_id&#39;</span><span class="p">}</span>
+<span class="n">custom_result</span> <span class="o">=</span> <span class="n">test_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting testing with a model with id: custom_model_id testing data file: data/test_data/flaringar_simple_random_40.csv
+Loading data set...
+Done loading data...
+Formatting and mapping the flares classes..
+Prediction is in progress, please wait until it is done...
+Finished the prediction task..
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Plotting the RF Results</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_utils</span> <span class="kn">import</span> <span class="n">plot_custom_result</span>
+<span class="n">plot_custom_result</span><span class="p">(</span><span class="n">custom_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_28_0.png" src="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_28_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="mlp-model-training-and-testing">
+<h2><strong>MLP Model Training and Testing</strong><a class="headerlink" href="#mlp-model-training-and-testing" title="Permalink to this headline">¶</a></h2>
+<p><strong>MLP Model Training with Default Data</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loading the train_model function...&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">flareml_train</span> <span class="kn">import</span> <span class="n">train_model</span>
+<span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;train_data_file&#39;</span><span class="p">:</span><span class="s1">&#39;data/train_data/flaringar_training_sample.csv&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;MLP&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;modelid&#39;</span><span class="p">:</span> <span class="s1">&#39;custom_model_id&#39;</span>
+      <span class="p">}</span>
+<span class="n">train_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading the train_model function...
+Starting training with a model with id: custom_model_id training data file: data/train_data/flaringar_training_sample.csv
+Loading data set...
+Training is in progress, please wait until it is done...
+Training started at: 2022-05-05 21:01:49
+Training finished at: 2022-05-05 21:02:02
+Training total time: 0.22 Minute(s)
+
+Finished training the MLP model, you may use the flareml_test.py program to make prediction.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Predicting with Your MLP Model</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_test</span> <span class="kn">import</span> <span class="n">test_model</span>
+<span class="n">args</span> <span class="o">=</span>  <span class="p">{</span><span class="s1">&#39;test_data_file&#39;</span><span class="p">:</span> <span class="s1">&#39;data/test_data/flaringar_simple_random_40.csv&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;MLP&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;modelid&#39;</span><span class="p">:</span> <span class="s1">&#39;custom_model_id&#39;</span><span class="p">}</span>
+<span class="n">custom_result</span> <span class="o">=</span> <span class="n">test_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting testing with a model with id: custom_model_id testing data file: data/test_data/flaringar_simple_random_40.csv
+Loading data set...
+Done loading data...
+Formatting and mapping the flares classes..
+Prediction is in progress, please wait until it is done...
+Finished the prediction task..
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Plotting the MLP Results</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_utils</span> <span class="kn">import</span> <span class="n">plot_custom_result</span>
+<span class="n">plot_custom_result</span><span class="p">(</span><span class="n">custom_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_34_0.png" src="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_34_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="elm-model-training-and-testing">
+<h2><strong>ELM Model Training and Testing</strong><a class="headerlink" href="#elm-model-training-and-testing" title="Permalink to this headline">¶</a></h2>
+<p><strong>ELM Model Training with Default Data</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loading the train_model function...&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">flareml_train</span> <span class="kn">import</span> <span class="n">train_model</span>
+<span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;train_data_file&#39;</span><span class="p">:</span><span class="s1">&#39;data/train_data/flaringar_training_sample.csv&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;ELM&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;modelid&#39;</span><span class="p">:</span> <span class="s1">&#39;custom_model_id&#39;</span>
+      <span class="p">}</span>
+<span class="n">train_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading the train_model function...
+Starting training with a model with id: custom_model_id training data file: data/train_data/flaringar_training_sample.csv
+Loading data set...
+Training is in progress, please wait until it is done...
+Training started at: 2022-05-05 21:02:04
+Training finished at: 2022-05-05 21:02:05
+Training total time: 0.01 Minute(s)
+
+Finished training the ELM model, you may use the flareml_test.py program to make prediction.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Predicting with Your ELM Model</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_test</span> <span class="kn">import</span> <span class="n">test_model</span>
+<span class="n">args</span> <span class="o">=</span>  <span class="p">{</span><span class="s1">&#39;test_data_file&#39;</span><span class="p">:</span> <span class="s1">&#39;data/test_data/flaringar_simple_random_40.csv&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;ELM&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;modelid&#39;</span><span class="p">:</span> <span class="s1">&#39;custom_model_id&#39;</span><span class="p">}</span>
+<span class="n">custom_result</span> <span class="o">=</span> <span class="n">test_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting testing with a model with id: custom_model_id testing data file: data/test_data/flaringar_simple_random_40.csv
+Loading data set...
+Done loading data...
+Formatting and mapping the flares classes..
+Prediction is in progress, please wait until it is done...
+Finished the prediction task..
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Plotting the ELM Resluts</strong><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flareml_utils</span> <span class="kn">import</span> <span class="n">plot_custom_result</span>
+<span class="n">plot_custom_result</span><span class="p">(</span><span class="n">custom_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_40_0.png" src="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_40_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="timing">
+<h2><strong>Timing</strong><a class="headerlink" href="#timing" title="Permalink to this headline">¶</a></h2>
+<p>Please note that the execution time in mybinder varies based on the availability of resources. The average time to run the notebook is 10-15 minutes, but it could be more.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="conclusions">
+<h1><strong>Conclusions</strong><a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h1>
+<!-- We present a machine-learning-as-a-service framework
+(DeepSun) for solar flare prediction. This framework provides
+two interfaces: a web server where the user enters the information through a graphical interface and a programmable
+interface that can be used by any RESTful client. DeepSun employs three existing machine learning algorithms, namely
+random forests (RF), multilayer perceptrons (MLP), extreme learning machines (ELM), and an ensemble algorithm (ENS) that combines the three machine learning algorithms. Our experimental results demonstrated the good performance of the ensemble algorithm and its superiority over the three existing machine learning algorithms.
+In the current work we focus on data samples composed of SHARP physical parameters. We collect 845 data samples
+belonging to four flare classes: B, C, M, and X across 472 active regions. In addition, the Helioseismic Magnetic
+Imager (HMI) aboard the Solar Dynamics Observatory (SDO) produces continuous full-disk observations (solar images).<br>In
+future work we plan to incorporate these HMI images into our DeepSun framework and extend our previously developed deep learning techniques to directly process the images. -->
+<p>We present a machine learning-based system (FlareML) for solar flare prediction. FlareML employs three existing machine learning algorithms, namely random forests (RF), multilayer perceptrons (MLP), extreme learning machines (ELM), and an ensemble algorithm (ENS) that combines the three machine learning algorithms. Our experimental results demonstrated the good performance of the ensemble algorithm and its superiority over the three existing machine learning algorithms. In the current work we focus on data samples composed of SHARP physical parameters. We collect 845 data samples belonging to four flare classes: B, C, M, and X across 472 active regions. In addition, the Helioseismic Magnetic Imager (HMI) aboard the Solar Dynamics Observatory (SDO) produces continuous full-disk observations (solar images). In future work we plan to incorporate these HMI images into our FlareML framework and extend our previously developed deep learning techniques to directly process the images for solar flare prediction.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="references">
+<h1><strong>References</strong><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ol>
+    <li>
+        DeepSun: Machine-Learning-as-a-Service for Solar Flare Prediction<br>
+        Yasser Abduallah, Jason T. L. Wang and Haimin Wang<br>
+        <a target='new' href='https://iopscience.iop.org/article/10.1088/1674-4527/21/7/160'>https://iopscience.iop.org/article/10.1088/1674-4527/21/7/160</a>
+    </li>
+        <li>
+        Predicting Solar Flares Using SDO/HMI Vector Magnetic Data Products and the Random Forest Algorithm<br>
+         Chang Liu, Na Deng, Jason T. L. Wang and Haimin Wang<br>
+        <a target='new' href='https://iopscience.iop.org/article/10.3847/1538-4357/aa789b'>https://iopscience.iop.org/article/10.3847/1538-4357/aa789b</a>
+    </li>
+     <li>
+         Artificial Neural Networks: An Introduction to ANN Theory and Practice<br>
+    P. J. Braspenning, F. Thuijsman, A. J. M. M. Weijters <br>
+        <a target='new' href='https://link.springer.com/book/10.1007/BFb0027019'>https://link.springer.com/book/10.1007/BFb0027019</a>
+    </li>
+     <li>
+         Enhanced Random Search Based Incremental Extreme Learning Machine<br>
+    Guang-Bin Huang and Lei Chen<br>
+        <a target='new' href='https://www.sciencedirect.com/science/article/abs/pii/S0925231207003633?via%3Dihub'>https://www.sciencedirect.com/science/article/abs/pii/S0925231207003633?via%3Dihub</a>
+    </li>     
+     <li>
+         Predicting Solar Energetic Particles Using SDO/HMI Vector Magnetic Data Products and a
+Bidirectional LSTM Network<br>
+    Yasser Abduallah, Vania K. Jordanova, Hao Liu, Qin Li, Jason T. L. Wang and Haimin Wang<br>
+        <a target='new' href='https://iopscience.iop.org/article/10.3847/1538-4365/ac5f56'>https://iopscience.iop.org/article/10.3847/1538-4365/ac5f56</a>
+    </li>        
+</ol></div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/ec22_abduallah_etal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Predicting Solar Flares with Machine Learning</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../ec22_khider_etal/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

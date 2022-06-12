@@ -1,0 +1,1958 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSEP Event Catalog and Time Series Dataset &#8212; EarthCube 2022 Call for Notebooks</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jupyter Notebooks as a bridge to the MagIC Database and Open Science" href="../ec22_tauxe_etal/README.html" />
+    <link rel="prev" title="EC_SEP_Visualization" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EarthCube 2022 Call for Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  EarthCube 2022 Call
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/index.html">
+   EarthCube 2022 Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/dois.html">
+   Notebook DOIs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notebook Submissions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_kwan_etal/README.html">
+   Data Cleaning with Pandas and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_kwan_etal/notebooks/wyk_01_data_cleaning_with_pandas_and_jupyter_notebooks.html">
+     Data Cleaning with Pandas and Jupyter Notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_ji_etal/README.html">
+   Magnetic Polarity Inversion Line Detection and Analysis Tool
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool.html">
+     AJ_01_MPIL_Detection_and_Analysis_Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_abduallah_etal/README.html">
+   Predicting Solar Flares with Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning.html">
+     <strong>
+      Predicting Solar Flares with Machine Learning
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_khider_etal/README.html">
+   PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_khider_etal/DK_v1_PaleoHack.html">
+     PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_markowsky_etal/README.html">
+   Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_markowsky_etal/LM_01_Visualizing_Ice_Core_Datasets_in_Python_Using_a_Jupyter_Notebook_Template.html">
+     Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ec22_mckay_etal/README.html">
+   Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_mills_etal/README.html">
+   Intro to Argovis' API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_mills_etal/WM_01_intro_to_argovis_api.html">
+     Intro to Argovis’ API
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_mirkovich_etal/README.html">
+   Assimilative Mapping of Geospace Observations (AMGeO)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_mirkovich_etal/WM_02_AMGeO-2.0.html">
+     AMGeO 2.0: Crafting an API for Geospace Data Scientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_miron_etal/README.html">
+   Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows.html">
+     Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_okeefe_etal/README.html">
+   Handling Highly Imbalanced Data in Machine Learning Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_okeefe_etal/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications.html">
+     Handling Highly Imbalanced Data in Machine Learning Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   EC_SEP_Visualization
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     GSEP Event Catalog and Time Series Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_tauxe_etal/README.html">
+   Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_tauxe_etal/2022_MagIC_database_and_open_science.html">
+     Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_yu_etal/README.html">
+   ICESpark
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting.html">
+     ICESpark-EarthCube-2022-Annual-Meeting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   GSEP Event Catalog and Time Series Dataset
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#author-s">
+     Author(s)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suggested-next-steps">
+     Suggested next steps
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-import">
+   Data import
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   Data processing and analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-one-metadata-analysis">
+     Part One - Metadata Analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotting-the-locations-of-flares-associated-to-sep-events">
+       Plotting the locations of flares associated to SEP events.
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#impacts-dosage-rate">
+       Impacts: Dosage rate
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sep-event-occurrence-probability-modeling">
+       SEP Event Occurrence Probability Modeling
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-two-time-series-visualizations">
+     Part Two - Time series visualizations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gsep-slices">
+       GSEP Slices
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="gsep-event-catalog-and-time-series-dataset">
+<h1>GSEP Event Catalog and Time Series Dataset<a class="headerlink" href="#gsep-event-catalog-and-time-series-dataset" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="author-s">
+<h2>Author(s)<a class="headerlink" href="#author-s" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Author1 = {“name”: “Sumanth Rotti”, “affiliation”: “Georgia State University”, “email”: “<a class="reference external" href="mailto:srotti&#37;&#52;&#48;gsu&#46;edu">srotti<span>&#64;</span>gsu<span>&#46;</span>edu</a>”, “orcid”: “0000-0003-1080-3424”}</p></li>
+<li><p>Author2 = {“name”: “Akhil Arya”, “affiliation”: “Georgia State University”, “email”: “<a class="reference external" href="mailto:aarya2&#37;&#52;&#48;gsu&#46;edu">aarya2<span>&#64;</span>gsu<span>&#46;</span>edu</a>”, “orcid”: }</p></li>
+<li><p>Author3 = {“name”: “Berkay Aydin”, “affiliation”: “Georgia State University”, “email”: “<a class="reference external" href="mailto:baydin2&#37;&#52;&#48;gsu&#46;edu">baydin2<span>&#64;</span>gsu<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-9799-9265” }</p></li>
+<li><p>Author4 = {“name”: “Manolis K. Georgoulis”, “affiliation”: “Academy of Athens”, “email”: “<a class="reference external" href="mailto:manolis&#46;georgoulis&#37;&#52;&#48;academyofathens&#46;gr">manolis<span>&#46;</span>georgoulis<span>&#64;</span>academyofathens<span>&#46;</span>gr</a>”, “orcid”: “0000-0001-6913-1330” }</p></li>
+<li><p>Author5 = {“name”: “Petrus C. Martens”, “affiliation”: “Georgia State University”, “email”: “<a class="reference external" href="mailto:pmartens&#37;&#52;&#48;gsu&#46;edu">pmartens<span>&#64;</span>gsu<span>&#46;</span>edu</a>”, “orcid”: }</p></li>
+</ul>
+<h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#GSEP-Event-Catalog-and-Time-Series-Dataset" data-toc-modified-id="GSEP-Event-Catalog-and-Time-Series-Dataset-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>GSEP Event Catalog and Time Series Dataset</a></span><ul class="toc-item"><li><span><a href="#Author(s)" data-toc-modified-id="Author(s)-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Author(s)</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Results" data-toc-modified-id="Results-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Results</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Suggested-next-steps" data-toc-modified-id="Suggested-next-steps-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Suggested next steps</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-import" data-toc-modified-id="Library-import-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library import</a></span></li></ul></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-processing-and-analysis" data-toc-modified-id="Data-processing-and-analysis-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data processing and analysis</a></span><ul class="toc-item"><li><span><a href="#Part-One---Metadata-Analysis" data-toc-modified-id="Part-One---Metadata-Analysis-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Part One - Metadata Analysis</a></span><ul class="toc-item"><li><span><a href="#Plotting-the-locations-of-flares-associated-to-SEP-events." data-toc-modified-id="Plotting-the-locations-of-flares-associated-to-SEP-events.-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>Plotting the locations of flares associated to SEP events.</a></span></li><li><span><a href="#Impacts:-Dosage-rate" data-toc-modified-id="Impacts:-Dosage-rate-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>Impacts: Dosage rate</a></span></li><li><span><a href="#SEP-Event-Occurrence-Probability-Modeling" data-toc-modified-id="SEP-Event-Occurrence-Probability-Modeling-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>SEP Event Occurrence Probability Modeling</a></span></li></ul></li><li><span><a href="#Part-Two---Time-series-visualizations" data-toc-modified-id="Part-Two---Time-series-visualizations-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Part Two - Time series visualizations</a></span><ul class="toc-item"><li><span><a href="#GSEP-Slices" data-toc-modified-id="GSEP-Slices-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>GSEP Slices</a></span></li></ul></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>References</a></span></li></ul></div></div>
+<div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>Solar Energetic Particle (SEP) events are radiation storms of particle fluxes comprising electrons, protons, and heavier ions from the Sun. SEP events are known to originate in large eruptions such as solar flares (SFs) and coronal mass ejections (CMEs). SEP events are essential to understand and forecast because (i) SEPs determine the dosage exposure on astronauts and spacecraft equipment outside the Earth’s magnetosphere; (ii) There is a sudden enhancement in space around Earth’s radiation environment during an SEP event; (iii) Solar protons with energies &gt;100 Mega electronvolts (MeV) can penetrate the Earth’s upper atmosphere.</p>
+<p>Multiple space and ground-based missions currently obtain in-situ solar particle composition and energy spectra fluxes. The time intensities of particle fluxes are used to define and characterize SEP events based on enhancements above a nominal background level. Such time profiles can distinguish the source event as the temporal behavior differs.</p>
+<p>As part of our earlier data curation efforts on SEP events, we have integrated existing SEP event catalogs of Papaioannou et al. (2016)[1] and CDAW-SEP[2] to a comprehensive list of 342 SEP events with reference to their parent eruptions, extending from 1986 to 2017. The metadata also provides a reference to various parameters for each event. We have used solar proton flux data from near-Earth observations of Geostationary Operational Environmental Satellite (GOES). We have cleaned the base dataset and generated multivariate time series (MVTS) slices of the SEP events from the metadata. Our approach is to contribute to the SEP research community with a combined database and present additional data for each event.</p>
+<p>This notebook presents hands-on tools for exploratory data analysis of the metadata and visualizations of time series data. In addition, we will explore the statistical relationships and characteristics between source solar eruptions to SEPs.</p>
+</div>
+<div class="section" id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+<p>The central contributions of the notebook (libraries created and scientific analysis demonstrated) are as follows:</p>
+<ul class="simple">
+<li><p>Functions defined for plotting the GSEP metadata and performing time series visualizations.</p></li>
+<li><p>Function to show spatial distribution of flaring locations on the Sun that are associated with SEP events.</p></li>
+<li><p>Empirical modeling of SEP event occurrence rates from solar source locations, including far-side observations.</p></li>
+</ul>
+</div>
+<div class="section" id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+<p>We utilize the GSEP dataset to perform exploratory analysis. The GSEP dataset consists of 342 SEP events of which 246 cross the space weather prediction center (SWPC) threshold of a significant proton event. The headers in the GSEP list describe physical descriptors (both those stored in the source catalogs and calculated by us) and carry relevant indicators (data quality, observed GOES instrument, and parallel reports.) The proton fluxes from GOES missions are further sliced with respect to the event start and end times as reported in the metadata.
+The GSEP dataset is published on Harvard dataverse and can be accessed via <a class="reference external" href="https://doi.org/10.7910/DVN/DZYLHK">https://doi.org/10.7910/DVN/DZYLHK</a> (DOI: 10.7910/DVN/DZYLHK) [3].</p>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The distribution of SEP events based on the NOAA Solar Radiation Storm-scale indicates several events occuring  with severe bilogical and technological effects during Solar Cycles 22, 23, and 24, covering over three decades between 1986 to 2017.</p></li>
+<li><p>The spatial locations of source flaring active regions associated with SEP events show strong association to the western hemisphere of the Sun.</p></li>
+<li><p>The probability of occurence of an SEP event from an active region also strongly correlates to the magentically well-connected regions on the Sun.</p></li>
+<li><p>Time profiles of solar proton fluxes with a 12-hour observation window includes possible source solar eruption information such as flaring time and magnitude, and CME launch time and width.</p></li>
+</ul>
+</div>
+<div class="section" id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Award1 = {“agency”: “NASA”, “award_code”: “80NSSC21K1388”}</p></li>
+<li><p>Award2 = {“agency”: “NASA”, “award_code”: “80NSSC22K0272”}</p></li>
+<li><p>Award3 = {“agency”: “NSF”, “award_code”: “2104004”, “award_URL”: “<a class="reference external" href="https://nsf.gov/awardsearch/showAward?AWD_ID=2104004">https://nsf.gov/awardsearch/showAward?AWD_ID=2104004</a>”}</p></li>
+</ul>
+</div>
+<div class="section" id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p>keywords=[“Solar Energtic Particle (SEP) Events”, “Solar Proton Events”, “SEP Catalog”]</p>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>S. Rotti, A. Arya, B. Aydin, M.K. Georgoulis, &amp; P.C.H. Martens., GSEP Event List and Dataset, 2022, [<a class="reference external" href="https://github.com/aarya180/EC_SEP_Visualization">https://github.com/aarya180/EC_SEP_Visualization</a>], DOI:[to be assigned].</p>
+</div>
+<div class="section" id="suggested-next-steps">
+<h2>Suggested next steps<a class="headerlink" href="#suggested-next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Extending our spatial probabilistic modeling with the identification of complex spatial and temporal relationships among SEP Events and source flares and CMEs.</p>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>We acknowledge the use of data from NOAA-GOES missions and thank the team for the availability of solar proton data.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data manipulation</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span> 
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Data import</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">tarfile</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualizations</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-import">
+<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the GSEP events list</span>
+<span class="n">data_sep</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;GSEP_List.csv&#39;</span><span class="p">)</span> <span class="c1">## Also available: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DZYLHK&amp;version=3.0</span>
+
+<span class="c1"># Importing the NOAA Active region data</span>
+<span class="n">data_ar</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;noaa_ar_1996_2019.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Loading halo CME data from the CDAW site</span>
+<span class="n">data_hcme</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s2">&quot;https://cdaw.gsfc.nasa.gov/CME_list/halo/halo.html&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
+<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Solar magnetic eruptions occur due to the explosive release of magnetic energy stored in the Sun’s coronal magnetic flux ropes [4]. These flux ropes can be formed in active regions or quiet regions on the Sun [5]. The solar magnetic eruptions may cause:</p>
+<ol class="simple">
+<li><p>Flares: Photons with frequencies ranging from gamma rays to radio waves.</p></li>
+<li><p>CMEs: Plasma masses escape into the interplanetary space.</p></li>
+<li><p>SEPs: Comprising relativistic electrons, protons and high energy ions that follow the heliospheric magnetic field lines configuration, popularly called the Parker Spiral.</p></li>
+</ol>
+<p>The SEP events have typical time scales from hours to days. It Impacts the technological systems in space and on the ground, humans in space and at high altitudes. The long-lasting impacts of SEP events include damage to satellite electronics and airline avionics; and high-energy particle radiation dosage exposure to astronauts and airline passengers, which can cause damage at the cellular level.</p>
+<p>The figure below (Credit: ESA, [<a class="reference external" href="http://www.esa.int/spaceinimages/Images/2017/11/Space_weather_effects">http://www.esa.int/spaceinimages/Images/2017/11/Space_weather_effects</a>]) illustrates the consolidated broader impacts of solar magnetic eruptions.</p>
+<p><img alt="Space_weather_effects.jpg" src="chapters/ec22_rotti_etal/attachment:Space_weather_effects.jpg" /></p>
+<p>Our focus is on SEPs observed near-Earth from 1986 until 2017, comprising the last three solar cycles; 22, 23, and 24. For this, extensive in-situ proton flux data is available from the GOES missions [6], [7]. There are two parts to the analysis in this notebook. First is the exploratory analysis of the GSEP and associated solar source metadata.  We also perform a probabilistic modeling of SEP event occurrence. Second, visualizing the time series slices of the proton fluxes based on the GSEP metadata.</p>
+<div class="section" id="part-one-metadata-analysis">
+<h2>Part One - Metadata Analysis<a class="headerlink" href="#part-one-metadata-analysis" title="Permalink to this headline">¶</a></h2>
+<p>For the first part, we explore the GSEP metadata that is primarily generated by integrating two SEP event catalogs (PSEP [1] and CDAW-SEP [2]).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sep_load_clean</span><span class="p">(</span><span class="n">data_sep</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to load and clean the GSEP metadata.</span>
+<span class="sd">    </span>
+<span class="sd">    Input : </span>
+<span class="sd">    - A pandas dataframe consisting of GSEP metadata, which were loaded in data loading stage</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    Cleaned pandas dataframe for GSEP metadata</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">sep_df</span><span class="o">=</span><span class="n">data_sep</span>
+    <span class="c1">## Conversion of coordinates into numeric type</span>
+    <span class="n">sep_df</span><span class="p">[</span><span class="s2">&quot;fl_lon&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">sep_df</span><span class="p">[</span><span class="s2">&quot;fl_lon&quot;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+    <span class="n">sep_df</span><span class="p">[</span><span class="s2">&quot;fl_lat&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">sep_df</span><span class="p">[</span><span class="s2">&quot;fl_lat&quot;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+    
+    <span class="c1">## Conversion of timestamp to datetime</span>
+    <span class="n">sep_df</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sep_df</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">])</span>
+    <span class="n">sep_df</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">sep_df</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span>
+    
+    <span class="k">return</span> <span class="n">sep_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_clean_ar</span><span class="p">(</span><span class="n">data_ar</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function loads the raw NOAA active region data and returns</span>
+<span class="sd">    the cleaned dataset following the steps described in the function.</span>
+<span class="sd">    This module selects the subset of necessary columns from the raw dataset.</span>
+<span class="sd">    </span>
+<span class="sd">    Inputs : </span>
+<span class="sd">    -A pandas dataframe input at the data loading phase. (data_ar)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - A pandas dataframe with cleaned NOAA active region data.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">ar_df</span><span class="o">=</span><span class="n">data_ar</span>
+    <span class="c1">## Selecting subset of the columns</span>
+    <span class="n">active_region_df</span><span class="o">=</span><span class="n">ar_df</span><span class="p">[[</span><span class="s2">&quot;ar_time&quot;</span><span class="p">,</span><span class="s2">&quot;noaa_ar_no&quot;</span><span class="p">,</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">,</span><span class="s2">&quot;latitude&quot;</span><span class="p">]]</span>
+    
+    <span class="c1">## Extracting the date part from the column ar_time</span>
+    <span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;ar_time&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;ar_time&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span>
+    
+    <span class="c1">## Longitude coordinates ranging outside [-180,180] will be transformed to the correct values</span>
+    <span class="c1">## For example: -184 will be converted to 176, which will now be on the east direction.</span>
+    <span class="c1">## All values ranging outside the range [-180,180] will be shifted to the other direction using the transformation</span>
+    <span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">180</span><span class="p">,</span>
+                                     <span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">]</span><span class="o">-</span><span class="mi">360</span><span class="p">,</span><span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">]</span> <span class="p">)</span>
+    <span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">]</span><span class="o">&lt;-</span><span class="mi">180</span><span class="p">,</span>
+                                     <span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">]</span><span class="o">+</span><span class="mi">360</span><span class="p">,</span><span class="n">active_region_df</span><span class="p">[</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">]</span> <span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">active_region_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bins_formation</span><span class="p">(</span><span class="n">num_lon_bins</span><span class="o">=</span><span class="kc">None</span> <span class="p">,</span><span class="n">num_lat_bins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">customized_lon_bins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">customized_lat_bins</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to define a binning strategy for custom spatial coordinates.</span>
+<span class="sd">    This function either divides the latitude (lat) and longitude (lon) space into equal width bins or </span>
+<span class="sd">    the custom bins.</span>
+<span class="sd">    </span>
+<span class="sd">    Inputs:</span>
+<span class="sd">    num_lon_bins : An integer (n) which will make n-number of equal width bins between [-180,180] </span>
+<span class="sd">    ---- binning lon coordinates</span>
+<span class="sd">    </span>
+<span class="sd">    num_lat_bins : An integer (n) which will make n-number of equal width bins between [-90,90]</span>
+<span class="sd">    -----binning of lat coordinates</span>
+<span class="sd">    </span>
+<span class="sd">    customized_lon_bins : A list to store start point &amp; end points of each bin for lon coordinates</span>
+<span class="sd">    defined by custom bin strategy. For example : [-180,-90,-72,-54,-36,-18,0,18,36,54,72,90,180]--</span>
+<span class="sd">    Passing this list will create 12 bins between [-180,180]. The custom list must be in the increasing order </span>
+<span class="sd">    of endpoints of bins and should start from -180 &amp; ends at 180 to split the full space.</span>
+<span class="sd">    ----</span>
+<span class="sd">    </span>
+<span class="sd">    customized_lat_bins : A list to store start point &amp; end points of each bin for lat coordinates</span>
+<span class="sd">    defined by custom bin strategy. For example : [-90,-72,-54,-36,-18,0,18,36,54,72,90]--</span>
+<span class="sd">    Passing this list will create 10 bins between [-90,90]. The custom list must be in the increasing order </span>
+<span class="sd">    of endpoints of bins and should start from -90 &amp; ends at 90 to split the full space.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Returns: A tuple (lon_bins,lat_bins)</span>
+<span class="sd">    lon_bins: A list consisting start point &amp; end points for all the lon bins</span>
+<span class="sd">    lat_bins: A list consisting start point &amp; end points for all thr lat bins</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    
+    
+    <span class="k">if</span> <span class="n">num_lat_bins</span><span class="o">!=</span><span class="kc">None</span> <span class="p">:</span>
+        <span class="c1">## Creating equal width lat bins</span>
+        <span class="n">lat_bins</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">num_long_bins</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_long_bins</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">num_lon_bins</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+        <span class="c1">## Equal width lon bins</span>
+        <span class="n">lon_bins</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">180</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">360</span><span class="o">/</span><span class="n">num_lon_bins</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_lon_bins</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">customized_lon_bins</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+        <span class="c1">## If customized binning strategy is defined</span>
+        <span class="n">lon_bins</span><span class="o">=</span><span class="n">customized_lon_bins</span>
+    <span class="k">if</span> <span class="n">customized_lat_bins</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+        <span class="c1">## If customized binning strategy is defined</span>
+        <span class="n">lat_bins</span><span class="o">=</span><span class="n">customized_lat_bins</span>
+        
+    <span class="k">return</span> <span class="p">(</span><span class="n">lon_bins</span><span class="p">,</span><span class="n">lat_bins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling bins formation with pre-defined binning strategy</span>
+
+<span class="n">bins</span><span class="o">=</span><span class="n">bins_formation</span><span class="p">(</span><span class="n">customized_lon_bins</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="o">-</span><span class="mi">72</span><span class="p">,</span><span class="o">-</span><span class="mi">54</span><span class="p">,</span><span class="o">-</span><span class="mi">36</span><span class="p">,</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">180</span><span class="p">],</span>
+              <span class="n">customized_lat_bins</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="o">-</span><span class="mi">72</span><span class="p">,</span><span class="o">-</span><span class="mi">54</span><span class="p">,</span><span class="o">-</span><span class="mi">36</span><span class="p">,</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">90</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">merge_sep_ar</span><span class="p">(</span><span class="n">sep_df</span><span class="p">,</span><span class="n">ar_df</span><span class="p">,</span><span class="n">bins</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    A function to join the cleaned SEP and active region data. It</span>
+<span class="sd">    also forms bins on the active regions longitude/central_meridian_dist and latitude</span>
+<span class="sd">    columns respectively</span>
+<span class="sd">    </span>
+<span class="sd">    Inputs:</span>
+<span class="sd">    sep_df - A pandas dataframe consisting SEP metadata</span>
+<span class="sd">    ar_df - A pandas dataframe consisting active regions data</span>
+<span class="sd">    bins - A tuple consisting of lon &amp; lat binning strategy</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    A merged pandas dataframe with SEP, noaa active regions data and corresponding lon, lat bins</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+   <span class="c1">## Joining two dataframes on noaa active region number and the respective timestamp</span>
+    <span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sep_df</span><span class="p">,</span> <span class="n">ar_df</span><span class="p">,</span>  <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;noaa_ar&#39;</span><span class="p">,</span><span class="s1">&#39;timestamp&#39;</span><span class="p">],</span> 
+                  <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;noaa_ar_no&#39;</span><span class="p">,</span><span class="s1">&#39;ar_time&#39;</span><span class="p">])</span>
+    <span class="c1">## Defining bins and storing bins in the new column of dataframe</span>
+    <span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;AR_Lat_bin_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;AR_Lon_bin_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;central_meridian_dist&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">merged_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling the defined merging function</span>
+
+<span class="n">sep_df</span><span class="o">=</span><span class="n">sep_load_clean</span><span class="p">(</span><span class="n">data_sep</span><span class="p">)</span> <span class="c1">## SEP Data</span>
+<span class="n">ar_df</span><span class="o">=</span><span class="n">load_clean_ar</span><span class="p">(</span><span class="n">data_ar</span><span class="p">)</span>    <span class="c1">## noaa Active region</span>
+<span class="n">sep_ar_data</span><span class="o">=</span><span class="n">merge_sep_ar</span><span class="p">(</span><span class="n">sep_df</span><span class="p">,</span><span class="n">ar_df</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span> <span class="c1">## Merged DataFrame</span>
+<span class="n">sep_ar_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sep_index</th>
+      <th>pp_index</th>
+      <th>cdaw_sep_id</th>
+      <th>timestamp</th>
+      <th>cdaw_start_time</th>
+      <th>cdaw_max_time</th>
+      <th>cdaw_evn_max</th>
+      <th>cme_id</th>
+      <th>cme_launch_time</th>
+      <th>cme_1st_app_time</th>
+      <th>...</th>
+      <th>Fe_e_p_shock_notes</th>
+      <th>gsep_notes</th>
+      <th>slice_start</th>
+      <th>slice_end</th>
+      <th>ar_time</th>
+      <th>noaa_ar_no</th>
+      <th>central_meridian_dist</th>
+      <th>latitude</th>
+      <th>AR_Lat_bin_names</th>
+      <th>AR_Lon_bin_names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>gsep_001</td>
+      <td>psep_012</td>
+      <td>NaN</td>
+      <td>1986-02-04</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>AR from LMSAL</td>
+      <td>1986-02-03 21:25:00</td>
+      <td>1986-02-04 17:45:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>gsep_002</td>
+      <td>psep_013</td>
+      <td>NaN</td>
+      <td>1986-02-05</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>AR from LMSAL</td>
+      <td>1986-02-04 14:00:00</td>
+      <td>1986-02-06 08:35:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>gsep_003</td>
+      <td>psep_014</td>
+      <td>NaN</td>
+      <td>1986-02-06</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>AR from LMSAL</td>
+      <td>1986-02-05 20:35:00</td>
+      <td>1986-02-07 13:25:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 51 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="plotting-the-locations-of-flares-associated-to-sep-events">
+<h3>Plotting the locations of flares associated to SEP events.<a class="headerlink" href="#plotting-the-locations-of-flares-associated-to-sep-events" title="Permalink to this headline">¶</a></h3>
+<p>Identifying the source solar active region plays an important role in characterizing the SEP events that occur near Earth. Below, we show scatter plots of coordinate values of flares associated with major events, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gsep_bin_formation</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to bin the 10 MeV proton channel (defined by &quot;gsep_pf_gt10MeV&quot; column).</span>
+<span class="sd">    The bin names (S1 to S4) correspond to the NOAA S-scale (see below).</span>
+<span class="sd">    Inputs : </span>
+<span class="sd">    x - Float value</span>
+<span class="sd">    </span>
+<span class="sd">    Ouputs :</span>
+<span class="sd">    Corresponding bin name</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;S1&#39;</span> 
+    <span class="k">elif</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">100</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;S2&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">1000</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;S3&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">10000</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">100000</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;S4&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;S0&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling the function to make bins of  gsep_pf_gt10_bins column using apply function</span>
+
+<span class="n">sep_ar_data</span><span class="p">[</span><span class="s2">&quot;gsep_pf_gt10_bins&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">sep_ar_data</span><span class="p">[</span><span class="s1">&#39;gsep_pf_gt10MeV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">gsep_bin_formation</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Scatter Plot for longitude and latitude values of flaring regions associated to SEP events.</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">sep_ar_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;central_meridian_dist&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;latitude&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Heliographic Longitude&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Heliographic Latitude&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Coordinate locations of flaring active regions associated to SEP events&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Coordinate locations of flaring active regions associated to SEP events&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_27_1.png" src="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_27_1.png" />
+</div>
+</div>
+<p>The magnetic connectivity between the Sun and Earth is strong over the western hemisphere on the Sun and until <span class="math notranslate nohighlight">\(-30^0\)</span> toward the eastern side. In the figure above, it can be noticed that while most events occur in the magnetically well-connected western regions on the Sun, there are ~20% of the total events originating from the eastern hemisphere, solar limbs and farside (behind the Sun).</p>
+<p>Furthermore, there is a spread of flaring active reagion locations across the solar hemisphere. It is interesting to observe particles reach Earth in the interplanetary magnetic fields that are several tens of degrees beyond the Sun-Earth connecting regions of the Parker spiral.</p>
+</div>
+<div class="section" id="impacts-dosage-rate">
+<h3>Impacts: Dosage rate<a class="headerlink" href="#impacts-dosage-rate" title="Permalink to this headline">¶</a></h3>
+<p>An important effect of SEP events is the dosage rate on astronauts and electronic equipment [8], [9]. The histogram shows the proton flux levels measured in particle flux units (pfu) according to the NOAA solar radiation storm-scale. The figure below (Credit: NOAA-SWPC, [<a class="reference external" href="https://www.swpc.noaa.gov/noaa-scales-explanation">https://www.swpc.noaa.gov/noaa-scales-explanation</a>]),  describing the S-scale with reference the effects of the SEP event levels.</p>
+<p><img alt="SolarRadiationStormScale.jpg" src="chapters/ec22_rotti_etal/attachment:SolarRadiationStormScale.jpg" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Plotting Distribution of bins defined on gsep_pf_gt10_bins</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;gsep_pf_gt10_bins&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">saturation</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S1&quot;</span><span class="p">,</span><span class="s2">&quot;S2&quot;</span><span class="p">,</span><span class="s2">&quot;S3&quot;</span><span class="p">,</span><span class="s2">&quot;S4&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Scale&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of events&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of large SEP events according to the NOAA S-scale&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Distribution of large SEP events according to the NOAA S-scale&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_31_1.png" src="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_31_1.png" />
+</div>
+</div>
+<p>The base scale (S1) is at 10 <em>pfu</em> and continues to logarithmically increase from the previous scale. The number of events in the S1 category is high indicating minor effects. However, there are several events measured in the higher scales that could impact biologically and technologically in space.</p>
+<p>Interestingly, we do not observe any S5 events in the last three solar cycles based on our dataset. Events in that scale are extremely rare and we are only counting the things that came towards Earth.</p>
+<p>Historical fact: The GOES proton fluxes were observed at S4 levels for 12 hours on 29-Oct-2003 (the famous Halloween storm) [10].</p>
+</div>
+<div class="section" id="sep-event-occurrence-probability-modeling">
+<h3>SEP Event Occurrence Probability Modeling<a class="headerlink" href="#sep-event-occurrence-probability-modeling" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">groupby_bins</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span><span class="n">col_1</span><span class="p">,</span><span class="n">col_2</span><span class="p">,</span><span class="n">col_agg</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to compute the aggregated counts of SEP events for each pair of </span>
+<span class="sd">    defined lon &amp; lat bins.</span>
+<span class="sd">    </span>
+<span class="sd">    Inputs :</span>
+<span class="sd">    data_df - Merged dataframe</span>
+<span class="sd">    col_1- First column used for grouping ( lat bins)</span>
+<span class="sd">    col_2 -Second column used for grouping ( lon bins)</span>
+<span class="sd">    col_agg- The column on which aggregation is done (sep_index)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns :</span>
+<span class="sd">    grop_bin_df- A dataframe which stores distinct pairs of bins and the count of SEP events, respectively.</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    
+    <span class="n">groups</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">col_1</span><span class="p">,</span> <span class="n">col_2</span><span class="p">])</span>
+    <span class="n">grop_bin_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="c1">## Counting Number of SEPs for each pair of the spatial bins</span>
+    <span class="n">grop_bin_df</span><span class="p">[</span><span class="n">col_agg</span><span class="o">+</span><span class="s1">&#39;_count&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">groups</span><span class="p">[</span><span class="n">col_agg</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+    <span class="n">grop_bin_df</span><span class="o">=</span><span class="n">grop_bin_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">grop_bin_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling function to group dataframe. For 12 lon_bins &amp; 10 lat bins, we got 120 different pairs</span>
+
+<span class="n">SEP_bin_df</span><span class="o">=</span><span class="n">groupby_bins</span><span class="p">(</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="s2">&quot;AR_Lat_bin_names&quot;</span><span class="p">,</span> <span class="s2">&quot;AR_Lon_bin_names&quot;</span><span class="p">,</span><span class="s2">&quot;sep_index&quot;</span><span class="p">)</span>
+<span class="n">SEP_bin_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AR_Lat_bin_names</th>
+      <th>AR_Lon_bin_names</th>
+      <th>sep_index_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(-90.001, -72.0]</td>
+      <td>(-180.001, -90.0]</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>(-90.001, -72.0]</td>
+      <td>(-90.0, -72.0]</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>(-90.001, -72.0]</td>
+      <td>(-72.0, -54.0]</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_clean_halo_cme</span><span class="p">(</span><span class="n">data_hcme</span><span class="p">,</span><span class="n">bins</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">     Function to load and clean the Halo CME data.</span>
+<span class="sd">     </span>
+<span class="sd">     Input : </span>
+<span class="sd">     -data_hcme : A pandas dataframe extracted in the data loading stage from the url:</span>
+<span class="sd">     https://cdaw.gsfc.nasa.gov/CME_list/halo/halo.html</span>
+<span class="sd">     </span>
+<span class="sd">     - bins : A tuple which will consist list for two binning strategies.</span>
+<span class="sd">     </span>
+<span class="sd">     </span>
+<span class="sd">     Returns: </span>
+<span class="sd">     A dataframe consisting of Halo CME data.</span>
+<span class="sd">     </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    
+    
+    <span class="n">table_MN</span> <span class="o">=</span> <span class="n">data_hcme</span>
+    <span class="c1">## Removing source location values consisting &quot;Backside&quot; or ends with b or having -- </span>
+    <span class="n">patternDel</span> <span class="o">=</span> <span class="s2">&quot;Backside*|.*b|--.*&quot;</span>
+    <span class="nb">filter</span> <span class="o">=</span> <span class="n">table_MN</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;Source Location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">patternDel</span><span class="p">)</span>
+    <span class="n">Halo_df</span><span class="o">=</span><span class="n">table_MN</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">~</span><span class="nb">filter</span><span class="p">]</span>
+    
+    <span class="c1">## Formatting columns of dataframe</span>
+    <span class="n">df_split1</span><span class="o">=</span><span class="n">Halo_df</span><span class="p">[</span><span class="s1">&#39;Source Location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;[NSEW?]|&gt;&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_split1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;g1&#39;</span><span class="p">,</span> <span class="s2">&quot;Lat&quot;</span><span class="p">,</span><span class="s2">&quot;Long&quot;</span><span class="p">,</span><span class="s1">&#39;g2&#39;</span><span class="p">]</span>
+    <span class="c1">## Direction string for the coordinates</span>
+    <span class="n">df_split2</span><span class="o">=</span><span class="n">Halo_df</span><span class="p">[</span><span class="s1">&#39;Source Location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_split2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lat_direction&quot;</span><span class="p">,</span> <span class="s2">&quot;Long_direction&quot;</span><span class="p">,</span><span class="s2">&quot;g3&quot;</span><span class="p">]</span>
+    
+    <span class="c1">## Converting coordinates values to numerical data types. </span>
+    <span class="c1">## Multiplying the coordinates with -1 if the direction is either S or E</span>
+    <span class="n">cordinates_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_split1</span><span class="p">,</span><span class="n">df_split2</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">cordinates_df</span><span class="p">[</span><span class="s2">&quot;Lat&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">cordinates_df</span><span class="p">[</span><span class="s2">&quot;Lat&quot;</span><span class="p">])</span>
+    <span class="n">cordinates_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">cordinates_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">])</span>
+    <span class="n">cordinates_df</span><span class="p">[</span><span class="s2">&quot;Lat&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cordinates_df</span><span class="p">[</span><span class="s1">&#39;Lat_direction&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span>
+                                           <span class="n">cordinates_df</span><span class="p">[</span><span class="s1">&#39;Lat&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+                                           <span class="n">cordinates_df</span><span class="p">[</span><span class="s1">&#39;Lat&#39;</span><span class="p">])</span>
+    <span class="n">cordinates_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cordinates_df</span><span class="p">[</span><span class="s1">&#39;Long_direction&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span>
+                                           <span class="n">cordinates_df</span><span class="p">[</span><span class="s1">&#39;Long&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+                                           <span class="n">cordinates_df</span><span class="p">[</span><span class="s1">&#39;Long&#39;</span><span class="p">])</span>
+    
+    <span class="n">HCME_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">Halo_df</span><span class="p">,</span><span class="n">cordinates_df</span><span class="p">[[</span><span class="s1">&#39;Lat&#39;</span><span class="p">,</span><span class="s2">&quot;Long&quot;</span><span class="p">]]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1">## Longitude coordinates ranging outside [-180,180] will be transformed to the correct values</span>
+    <span class="c1">## For example: -184 will be converted to 176, which will now be on the east direction.</span>
+    <span class="c1">## All values ranging outside the range [-180,180] will be shifted to the other direction using the transformation</span>
+    <span class="n">HCME_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">HCME_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span><span class="o">&lt;-</span><span class="mi">180</span><span class="p">,</span><span class="n">HCME_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span><span class="o">+</span><span class="mi">360</span><span class="p">,</span><span class="n">HCME_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span> <span class="p">)</span>
+    <span class="n">HCME_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">HCME_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">180</span><span class="p">,</span><span class="n">HCME_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span><span class="o">-</span><span class="mi">360</span><span class="p">,</span><span class="n">HCME_df</span><span class="p">[</span><span class="s2">&quot;Long&quot;</span><span class="p">]</span> <span class="p">)</span>
+    
+    
+    <span class="c1">## Binning the dataframe </span>
+    <span class="n">HCME_df</span><span class="p">[</span><span class="s1">&#39;HCME_Lat_bin_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">HCME_df</span><span class="p">[</span><span class="s1">&#39;Lat&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">HCME_df</span><span class="p">[</span><span class="s1">&#39;HCME_Lon_bin_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">HCME_df</span><span class="p">[</span><span class="s1">&#39;Long&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">HCME_df</span><span class="o">=</span><span class="n">HCME_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">HCME_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span><span class="s1">&#39;HCME_index&#39;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">HCME_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling function to get clean halo CME dataframe</span>
+
+<span class="n">HCME_df</span><span class="o">=</span><span class="n">load_clean_halo_cme</span><span class="p">(</span><span class="n">data_hcme</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling function to group dataframe. For 12 lon bins &amp; 10 lat bins, we get 120 different pairs.</span>
+
+<span class="n">HCME_bin_df</span><span class="o">=</span><span class="n">groupby_bins</span><span class="p">(</span><span class="n">HCME_df</span><span class="p">,</span><span class="s1">&#39;HCME_Lat_bin_names&#39;</span><span class="p">,</span><span class="s1">&#39;HCME_Lon_bin_names&#39;</span><span class="p">,</span><span class="s1">&#39;HCME_index&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">laplacian_prob_smoothing</span><span class="p">(</span><span class="n">SEP_bin_df</span><span class="p">,</span><span class="n">HCME_bin_df</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to merge both SEP grids dataframe and Halo CME dataframe.</span>
+<span class="sd">    On the merged dataframe, the conditional probabilities of occurence of SEPs and Halo CMEs in spatial grids</span>
+<span class="sd">    are computed. The probabilities are then distributed using Laplacian smoothing.</span>
+<span class="sd">    </span>
+<span class="sd">    Laplacian smoothing---&gt;              (count(A) +K)</span>
+<span class="sd">                            P(A|B)=   ------------------   ; where K is a constant</span>
+<span class="sd">                                      count(B)+K*Domain{X}</span>
+<span class="sd">    </span>
+<span class="sd">    Inputs : </span>
+<span class="sd">    SEP_bin_df - Grouped dataframe for SEP </span>
+<span class="sd">    HCME_bin_df - Grouped dataframe for Halo CME data</span>
+<span class="sd">    k- An integer for laplacian smoothing</span>
+<span class="sd">    </span>
+<span class="sd">    Returns : </span>
+<span class="sd">    A merged data frame with laplacian smoothed probabilities  </span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">## Merging the two dataframe on the active region spatial bins created for SEP data and Halo CME.</span>
+    <span class="n">cond_prob_df</span><span class="o">=</span><span class="n">SEP_bin_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">HCME_bin_df</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+                              <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;AR_Lat_bin_names&#39;</span><span class="p">,</span><span class="s1">&#39;AR_Lon_bin_names&#39;</span><span class="p">],</span>
+                                  <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HCME_Lat_bin_names&#39;</span><span class="p">,</span><span class="s1">&#39;HCME_Lon_bin_names&#39;</span><span class="p">])</span>
+    <span class="c1">## Computed laplacian smoothing to distribute probabilities among zero probabilities</span>
+    <span class="n">cond_prob_df</span><span class="p">[</span><span class="s2">&quot;Laplacian_smoothing&quot;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">cond_prob_df</span><span class="p">[</span><span class="s2">&quot;sep_index_count&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">cond_prob_df</span><span class="p">[</span><span class="s2">&quot;HCME_index_count&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">cond_prob_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">cond_prob_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling the function</span>
+
+<span class="n">lap_prob_df</span><span class="o">=</span><span class="n">laplacian_prob_smoothing</span><span class="p">(</span><span class="n">SEP_bin_df</span><span class="p">,</span><span class="n">HCME_bin_df</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Making copy of the dataframe</span>
+
+<span class="n">final_lap_df</span><span class="o">=</span><span class="n">lap_prob_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Splitting the lat bins into two atomic values; start and end of the bins</span>
+
+<span class="n">final_lap_df</span><span class="p">[[</span><span class="s1">&#39;Lat_bin_start&#39;</span><span class="p">,</span><span class="s1">&#39;Lat_bin_end&#39;</span><span class="p">]]</span><span class="o">=</span><span class="n">final_lap_df</span><span class="p">[</span><span class="s1">&#39;AR_Lat_bin_names&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">final_lap_df</span><span class="p">[</span><span class="s2">&quot;Lat_bin_start&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">final_lap_df</span><span class="p">[</span><span class="s2">&quot;Lat_bin_start&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">final_lap_df</span><span class="p">[</span><span class="s2">&quot;Lat_bin_end&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">final_lap_df</span><span class="p">[</span><span class="s2">&quot;Lat_bin_end&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Splitting the lon bins into two atomic values; start and end of the bins</span>
+
+<span class="n">final_lap_df</span><span class="p">[[</span><span class="s1">&#39;Lon_bin_start&#39;</span><span class="p">,</span><span class="s1">&#39;Lon_bin_end&#39;</span><span class="p">]]</span><span class="o">=</span><span class="n">final_lap_df</span><span class="p">[</span><span class="s1">&#39;AR_Lon_bin_names&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">final_lap_df</span><span class="p">[</span><span class="s2">&quot;Lon_bin_start&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">final_lap_df</span><span class="p">[</span><span class="s2">&quot;Lon_bin_start&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">final_lap_df</span><span class="p">[</span><span class="s2">&quot;Lon_bin_end&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">final_lap_df</span><span class="p">[</span><span class="s2">&quot;Lon_bin_end&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">final_lap_df</span><span class="o">=</span><span class="n">final_lap_df</span><span class="p">[[</span><span class="s2">&quot;Lon_bin_start&quot;</span><span class="p">,</span><span class="s2">&quot;Lon_bin_end&quot;</span><span class="p">,</span><span class="s2">&quot;Lat_bin_start&quot;</span><span class="p">,</span><span class="s2">&quot;Lat_bin_end&quot;</span><span class="p">,</span><span class="s2">&quot;Laplacian_smoothing&quot;</span><span class="p">]]</span>
+
+<span class="n">final_lap_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lon_bin_start</th>
+      <th>Lon_bin_end</th>
+      <th>Lat_bin_start</th>
+      <th>Lat_bin_end</th>
+      <th>Laplacian_smoothing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-180.001</td>
+      <td>-90.0</td>
+      <td>-90.001</td>
+      <td>-72.0</td>
+      <td>0.008333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-90.0</td>
+      <td>-72.0</td>
+      <td>-90.001</td>
+      <td>-72.0</td>
+      <td>0.008333</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-72.0</td>
+      <td>-54.0</td>
+      <td>-90.001</td>
+      <td>-72.0</td>
+      <td>0.008333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Pivot table on spatial bins. Each element of the pivot table will denote the laplacian smoothing calculated for</span>
+<span class="c1">## the respective pairs of spatial bins</span>
+
+<span class="n">piv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">lap_prob_df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Laplacian_smoothing&quot;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AR_Lat_bin_names&quot;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AR_Lon_bin_names&quot;</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">piv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>AR_Lon_bin_names</th>
+      <th>(-180.001, -90.0]</th>
+      <th>(-90.0, -72.0]</th>
+      <th>(-72.0, -54.0]</th>
+      <th>(-54.0, -36.0]</th>
+      <th>(-36.0, -18.0]</th>
+      <th>(-18.0, 0.0]</th>
+      <th>(0.0, 18.0]</th>
+      <th>(18.0, 36.0]</th>
+      <th>(36.0, 54.0]</th>
+      <th>(54.0, 72.0]</th>
+      <th>(72.0, 90.0]</th>
+      <th>(90.0, 180.0]</th>
+    </tr>
+    <tr>
+      <th>AR_Lat_bin_names</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>(-90.001, -72.0]</th>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+    </tr>
+    <tr>
+      <th>(-72.0, -54.0]</th>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008264</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+    </tr>
+    <tr>
+      <th>(-54.0, -36.0]</th>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008197</td>
+      <td>0.008264</td>
+      <td>0.008264</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008197</td>
+    </tr>
+    <tr>
+      <th>(-36.0, -18.0]</th>
+      <td>0.007299</td>
+      <td>0.008264</td>
+      <td>0.008065</td>
+      <td>0.016129</td>
+      <td>0.038462</td>
+      <td>0.015152</td>
+      <td>0.015267</td>
+      <td>0.023810</td>
+      <td>0.032000</td>
+      <td>0.040984</td>
+      <td>0.032000</td>
+      <td>0.007463</td>
+    </tr>
+    <tr>
+      <th>(-18.0, 0.0]</th>
+      <td>0.006579</td>
+      <td>0.031496</td>
+      <td>0.023256</td>
+      <td>0.038168</td>
+      <td>0.037594</td>
+      <td>0.042857</td>
+      <td>0.028777</td>
+      <td>0.099291</td>
+      <td>0.047619</td>
+      <td>0.062016</td>
+      <td>0.078125</td>
+      <td>0.014184</td>
+    </tr>
+    <tr>
+      <th>(0.0, 18.0]</th>
+      <td>0.006757</td>
+      <td>0.007752</td>
+      <td>0.031496</td>
+      <td>0.015385</td>
+      <td>0.058394</td>
+      <td>0.078014</td>
+      <td>0.074324</td>
+      <td>0.062069</td>
+      <td>0.069767</td>
+      <td>0.115385</td>
+      <td>0.047619</td>
+      <td>0.013245</td>
+    </tr>
+    <tr>
+      <th>(18.0, 36.0]</th>
+      <td>0.007752</td>
+      <td>0.008264</td>
+      <td>0.016129</td>
+      <td>0.008130</td>
+      <td>0.031496</td>
+      <td>0.022901</td>
+      <td>0.022388</td>
+      <td>0.023810</td>
+      <td>0.031746</td>
+      <td>0.024194</td>
+      <td>0.032787</td>
+      <td>0.008197</td>
+    </tr>
+    <tr>
+      <th>(36.0, 54.0]</th>
+      <td>0.008333</td>
+      <td>0.008264</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008130</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008197</td>
+      <td>0.008333</td>
+    </tr>
+    <tr>
+      <th>(54.0, 72.0]</th>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+    </tr>
+    <tr>
+      <th>(72.0, 90.0]</th>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+      <td>0.008333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot pivot table as heatmap using seaborn</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">pl</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">piv</span><span class="p">,</span> <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span> <span class="n">pl</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">get_majorticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Latitude bins&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Longitude bins&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Active Region bins in Heliographic Coordinates&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_45_0.png" src="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_45_0.png" />
+</div>
+</div>
+<p>The probability of occurrence model satisfactorily reflects the observational evidences of SEP event association to the source active regions. From the heat map shown above, we can notice the higher probability of magnetic connectivity of eruptive regions from central to the western hemisphere of the Sun.</p>
+</div>
+</div>
+<div class="section" id="part-two-time-series-visualizations">
+<h2>Part Two - Time series visualizations<a class="headerlink" href="#part-two-time-series-visualizations" title="Permalink to this headline">¶</a></h2>
+<p>The integral proton fluxes from GOES satellites are downloaded from the NOAA server [<a class="reference external" href="https://satdat.ngdc.noaa.gov/sem/goes/data/avg/">https://satdat.ngdc.noaa.gov/sem/goes/data/avg/</a>] and sorted for reliable missions. Two GOES missions making parallel observations are denoted as primary and secondary. The differences in their measurements occur because of the geomagnetic cut-off [7]. Hence, we understand the possible variations by visually inspecting the time series data and sorting them into reliable missions. Furthermore, the proton flux data is smoothed and imputed across all missions. Then, a subset of time series is obtained for each SEP event based on the event start and end time as reported in the GSEP catalog. We maintain an observation window of 12 hours before the event onset. These subsets or time series slices are stored on Harvard Dataverse.</p>
+<div class="section" id="gsep-slices">
+<h3>GSEP Slices<a class="headerlink" href="#gsep-slices" title="Permalink to this headline">¶</a></h3>
+<p>SEP events are theoretically classified as impulsive and gradual events based on the nature of the temporal evolution of particles originating from the Sun. Impulsive events have beam-like proton flux profiles while gradual events are observed as slowly decreasing in proton flux, lasting longer and posing much bigger threat of radiation exposure to astronauts.</p>
+<p>The below time series plots show typical examples of SEP events with reference to their source eruptions. For illustrative purposes, two events each from the last three solar cycles are selected from the GSEP list, respectively. The indeces of the events are <strong>gsep_003</strong>, <strong>gsep_040</strong>, <strong>gsep_165</strong>, <strong>gsep_231</strong>, <strong>gsep_320</strong> and <strong>gsep_340</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">file_name_</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to perform string manipulation to create time series slice filename convention</span>
+<span class="sd">    </span>
+<span class="sd">    Inputs : </span>
+<span class="sd">    x - A string</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    filename - String in the format yyyy-mm-dd_HH-MM.csv</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">x_temp</span><span class="o">=</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">filename</span><span class="o">=</span><span class="n">x_temp</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">,</span><span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.csv&quot;</span>
+    <span class="k">return</span> <span class="n">filename</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">loading_ts_from_tar</span><span class="p">(</span><span class="n">t22</span><span class="p">,</span><span class="n">t23</span><span class="p">,</span><span class="n">t24</span><span class="p">,</span><span class="n">filename</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to load time series slice inside tar files into a dataframe  </span>
+<span class="sd">    </span>
+<span class="sd">    Inputs :</span>
+<span class="sd">    t22 - string for gsep_sc22 zip file</span>
+<span class="sd">    t23 - string for gsep_sc23 zip file</span>
+<span class="sd">    t24 - string for gsep_sc24 zip file</span>
+<span class="sd">    filename - string of the filename to serach for</span>
+<span class="sd">    </span>
+<span class="sd">    Returns : </span>
+<span class="sd">     A data frame corresponding to time series slice. Note: It will return an empty dataframe if filename is</span>
+<span class="sd">     not found inside any of the tar</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">## Opening tar objects</span>
+    <span class="n">tar1</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">t22</span><span class="p">)</span>
+    <span class="n">tar2</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">t23</span><span class="p">)</span>
+    <span class="n">tar3</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">t24</span><span class="p">)</span>
+    
+    <span class="c1">## Storing CSV files inside list</span>
+    <span class="n">csv_files_1</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">tar1</span><span class="o">.</span><span class="n">getmembers</span><span class="p">()</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.csv&#39;</span><span class="p">)]</span>
+    <span class="n">csv_files_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">tar2</span><span class="o">.</span><span class="n">getmembers</span><span class="p">()</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.csv&#39;</span><span class="p">)]</span>
+    <span class="n">csv_files_3</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">tar3</span><span class="o">.</span><span class="n">getmembers</span><span class="p">()</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.csv&#39;</span><span class="p">)]</span>
+    
+    <span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+   
+    <span class="c1">## Searching file in gsep_sc22 zip</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">csv_files_1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                <span class="n">csv_contents</span> <span class="o">=</span> <span class="n">tar1</span><span class="o">.</span><span class="n">extractfile</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">csv_contents</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">df</span>
+    
+    <span class="c1">## Searching file in gsep_sc23 zip </span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">csv_files_2</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                <span class="n">csv_contents</span> <span class="o">=</span> <span class="n">tar2</span><span class="o">.</span><span class="n">extractfile</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">csv_contents</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">df</span>
+    
+    <span class="c1">## Searching file in gsep_sc24 zip</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">csv_files_3</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                <span class="n">csv_contents</span> <span class="o">=</span> <span class="n">tar3</span><span class="o">.</span><span class="n">extractfile</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">csv_contents</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">df</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">time_series_slice_df</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">sep_index</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to read sep_index and merged sep_ar_data and return the time series slice for</span>
+<span class="sd">    the respective index value</span>
+<span class="sd">    </span>
+<span class="sd">    Inputs :</span>
+<span class="sd">    data_df - A dataframe - sep_ar_data dataframe</span>
+<span class="sd">    sep_index - A string ; for example gsep_003</span>
+<span class="sd">    </span>
+<span class="sd">    Returns :</span>
+<span class="sd">    time_series_df- Time series slice for sep_index</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">## tar files downloaded from the GSEP dataset available on Harvard Dataverse</span>
+    <span class="n">t22</span><span class="o">=</span><span class="s2">&quot;gsep_sc22.tar.gz&quot;</span> 
+    <span class="n">t23</span><span class="o">=</span><span class="s2">&quot;gsep_sc23.tar.gz&quot;</span>
+    <span class="n">t24</span><span class="o">=</span><span class="s2">&quot;gsep_sc24.tar.gz&quot;</span>
+    
+    <span class="c1">## string manipulation to convert slice_start column in metadata ti file format</span>
+    <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;slice_start_temp&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;slice_start&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1">## This column will store the string in the conventions of csv files; calling function using apply()</span>
+    <span class="n">data_df</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;slice_start_temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">file_name_</span><span class="p">)</span> 
+    
+    <span class="c1">## Extracting filename as a string</span>
+    <span class="n">ts_file</span><span class="o">=</span><span class="n">data_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;sep_index&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">sep_index</span><span class="p">][</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1">## Calling function to get time series for the sep index</span>
+    <span class="n">time_series_df</span><span class="o">=</span><span class="n">loading_ts_from_tar</span><span class="p">(</span><span class="n">t22</span><span class="p">,</span><span class="n">t23</span><span class="p">,</span><span class="n">t24</span><span class="p">,</span><span class="n">ts_file</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">time_series_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize_ts</span><span class="p">(</span><span class="n">time_series_df</span><span class="p">,</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="n">sep_index</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to visualize the time series for a given SEP event</span>
+<span class="sd">    </span>
+<span class="sd">    Inputs:</span>
+<span class="sd">    -time_series_df : A pandas dataframe which consist time series slice</span>
+<span class="sd">    -sep_ar_data : A pandas dataframe that has meta data information</span>
+<span class="sd">    -sep_index : A string for sep_index</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    Time series plot</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="c1">## Extracting SEP event onset and peak time, </span>
+    <span class="n">single_sep_data</span><span class="o">=</span><span class="n">sep_ar_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">sep_ar_data</span><span class="p">[</span><span class="s1">&#39;sep_index&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">sep_index</span><span class="p">]</span>
+    <span class="n">sep_start_time</span><span class="o">=</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">single_sep_data</span><span class="p">[</span><span class="s2">&quot;slice_start&quot;</span><span class="p">])</span><span class="o">+</span><span class="n">pd</span><span class="o">.</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">12</span><span class="p">))</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">## slice time +12h</span>
+    <span class="n">sep_max_time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">single_sep_data</span><span class="p">[</span><span class="s2">&quot;gsep_max_time&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1">## Extracting flare metadata, </span>
+    <span class="n">flare_start_time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">single_sep_data</span><span class="p">[</span><span class="s2">&quot;fl_start_time&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> 
+    <span class="n">fl_goes_class</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">single_sep_data</span><span class="p">[</span><span class="s2">&quot;fl_goes_class&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="c1">## Extracting CME launch time from GSEP metadata</span>
+    <span class="n">cme_launch_time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">single_sep_data</span><span class="p">[</span><span class="s2">&quot;cme_launch_time&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>      
+    <span class="n">cme_vel</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">single_sep_data</span><span class="p">[</span><span class="s2">&quot;lasco_linear_speed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>  
+    <span class="n">cme_width</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">single_sep_data</span><span class="p">[</span><span class="s2">&quot;lasco_cme_width&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">cme_details</span><span class="o">=</span> <span class="s1">&#39;(&#39;</span><span class="o">+</span><span class="s2">&quot;v:&quot;</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">cme_vel</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;w:&quot;</span><span class="o">+</span><span class="n">cme_width</span><span class="o">+</span><span class="s1">&#39;)&#39;</span>
+    
+    
+    <span class="c1">## Figusre size</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    
+    <span class="c1">## Plot components</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Particle Flux Unit (pfu)&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Time series plot of&quot;</span> <span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">sep_index</span> <span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="c1">## Visualizing P2-P7 proton channels</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_series_df</span><span class="p">[</span><span class="s2">&quot;p2_flux_ic&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;P2 Channel&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_series_df</span><span class="p">[</span><span class="s2">&quot;p3_flux_ic&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;P3 Channel&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_series_df</span><span class="p">[</span><span class="s2">&quot;p4_flux_ic&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;P4 Channel&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_series_df</span><span class="p">[</span><span class="s2">&quot;p5_flux_ic&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;P5 Channel&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_series_df</span><span class="p">[</span><span class="s2">&quot;p6_flux_ic&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;P6 Channel&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_series_df</span><span class="p">[</span><span class="s2">&quot;p7_flux_ic&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;P7 Channel&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> <span class="c1">## Logrithmic scale -y axis</span>
+    
+    <span class="c1">## Defining frequency and format of x tick labels</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">HourLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">-%H:%M&#39;</span><span class="p">))</span>
+    
+    <span class="c1">## Plotting vertical lines of extracted meta data information.</span>
+    <span class="c1">##If any of the profile is not available, will not plot the vertical lines. Handling this through try &amp; pass</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">sep_start_time</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Event Onset&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">try</span> <span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">sep_max_time</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Event Peak&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">flare_start_time</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>
+                   <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Flare Onset&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39;(&#39;</span><span class="o">+</span><span class="n">fl_goes_class</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">try</span> <span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">cme_launch_time</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>
+                   <span class="n">label</span><span class="o">=</span><span class="s1">&#39;CME Launch&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="n">cme_details</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">()</span> <span class="c1"># Rotation</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_vis</span><span class="p">(</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="n">sep_index</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to call the visualization module for any </span>
+<span class="sd">    given SEP Event</span>
+<span class="sd">    </span>
+<span class="sd">    Inputs:</span>
+<span class="sd">    - sep_ar_data : Pandas dataframe that has metadata information merged with NOAA active region information</span>
+<span class="sd">    -sep_index : String for sep_index</span>
+<span class="sd">    </span>
+<span class="sd">    Outputs:</span>
+<span class="sd">    Plot for given SEP Index</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">time_series_df</span><span class="o">=</span><span class="n">time_series_slice_df</span><span class="p">(</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="n">sep_index</span><span class="p">)</span> <span class="c1"># Function call to get time series</span>
+    <span class="n">time_series_df</span><span class="p">[</span><span class="s2">&quot;time_stamp&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">time_series_df</span><span class="p">[</span><span class="s2">&quot;time_stamp&quot;</span><span class="p">])</span>
+    <span class="n">time_series_df</span><span class="o">=</span><span class="n">time_series_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;time_stamp&#39;</span><span class="p">)</span>
+    <span class="n">visualize_ts</span><span class="p">(</span><span class="n">time_series_df</span><span class="p">,</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="n">sep_index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling the plotting function on the event index gsep_003</span>
+
+<span class="n">plot_vis</span><span class="p">(</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="s1">&#39;gsep_003&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_54_0.png" src="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_54_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling the plotting function on the event index gsep_040</span>
+
+<span class="n">plot_vis</span><span class="p">(</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="s1">&#39;gsep_040&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_55_0.png" src="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_55_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling the plotting function on the event index gsep_165</span>
+
+<span class="n">plot_vis</span><span class="p">(</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="s1">&#39;gsep_165&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_56_0.png" src="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_56_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling the plotting function on the event index gsep_231</span>
+
+<span class="n">plot_vis</span><span class="p">(</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="s1">&#39;gsep_231&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_57_0.png" src="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_57_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling the plotting function on the event index gsep_320</span>
+
+<span class="n">plot_vis</span><span class="p">(</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="s1">&#39;gsep_320&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_58_0.png" src="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_58_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Calling the plotting function on the event index gsep_340</span>
+
+<span class="n">plot_vis</span><span class="p">(</span><span class="n">sep_ar_data</span><span class="p">,</span><span class="s1">&#39;gsep_340&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_59_0.png" src="../../_images/SR_01_GSEP_events_catalog_and_time_series_dataset_59_0.png" />
+</div>
+</div>
+<p>We believe this tool will be a useful helper utility for visual analytics of SEP events, specifically for understanding the statistical distributions of time differences between SEP start times and associated flare/CME occurrences.</p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Athanasios Papaioannou, Ingmar Sandberg, Anastasios Anastasiadis, Athanasios Kouloumvakos, Manolis K. Georgoulis, Kostas Tziotziou, Georgia Tsiropoula, Piers Jiggens and Alain Hilgers, “Solar flares, coronal mass ejections and solar energetic particle event characteristics.” J. Space Weather Space Clim., 6 (2016) A42, DOI: <a class="reference external" href="https://doi.org/10.1051/swsc/2016035">https://doi.org/10.1051/swsc/2016035</a></p></li>
+<li><p>CDAW Major SEP Events List, <a class="reference external" href="https://cdaw.gsfc.nasa.gov/CME_list/sepe/">https://cdaw.gsfc.nasa.gov/CME_list/sepe/</a></p></li>
+<li><p>S. Rotti, B. Aydin, M. Georgoulis, and P. Martens, “GSEP Dataset.” Harvard Dataverse, 2022. doi: 10.7910/DVN/DZYLHK.</p></li>
+<li><p>Reames, D.V. The Two Sources of Solar Energetic Particles. Space Sci Rev 175, 53–92 (2013). <a class="reference external" href="https://doi.org/10.1007/s11214-013-9958-9">https://doi.org/10.1007/s11214-013-9958-9</a></p></li>
+<li><p>Anastasiadis Anastasios, Lario David, Papaioannou Athanasios, Kouloumvakos Athanasios and Vourlidas Angelos 2019 Solar energetic particles in the inner heliosphere: status and open questionsPhil. Trans. R. Soc. A.3772018010020180100 <a class="reference external" href="http://doi.org/10.1098/rsta.2018.0100">http://doi.org/10.1098/rsta.2018.0100</a></p></li>
+<li><p>Terrance Onsager, Richard Grubb, Joseph Kunches, Lorne Matheson, David Speich, Ron W. Zwickl, and Herb Sauer “Operational uses of the GOES energetic particle detectors”, Proc. SPIE 2812, GOES-8 and Beyond, (18 October 1996); <a class="reference external" href="https://doi.org/10.1117/12.254075">https://doi.org/10.1117/12.254075</a></p></li>
+<li><p>Rodriguez, J.V., Krosschell, J.C. and Green, J.C., 2014. Intercalibration of GOES 8–15 solar proton detectors. Space Weather, 12(1), pp.92-109. <a class="reference external" href="https://doi.org/10.1002/2013SW000996">https://doi.org/10.1002/2013SW000996</a></p></li>
+<li><p>Pulkkinen, T. Space Weather: Terrestrial Perspective. Living Rev. Sol. Phys. 4, 1 (2007). <a class="reference external" href="https://doi.org/10.12942/lrsp-2007-1">https://doi.org/10.12942/lrsp-2007-1</a></p></li>
+<li><p>Jiggens, P; Clavie, C; Evans, H; O’Brien, TP; Witasse, O; Mishev, AL; et al. (2019): In Situ Data and Effect Correlation During September 2017 Solar Particle Event. University of Leicester. Journal contribution. <a class="reference external" href="https://hdl.handle.net/2381/11536293.v1">https://hdl.handle.net/2381/11536293.v1</a></p></li>
+<li><p>Intense Space Weather Storms, October 19 - November 7, 2003, Service Assessment <a class="reference external" href="https://www.weather.gov/media/publications/assessments/SWstorms_assessment.pdf">https://www.weather.gov/media/publications/assessments/SWstorms_assessment.pdf</a></p></li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/ec22_rotti_etal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EC_SEP_Visualization</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../ec22_tauxe_etal/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Jupyter Notebooks as a bridge to the MagIC Database and Open Science</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

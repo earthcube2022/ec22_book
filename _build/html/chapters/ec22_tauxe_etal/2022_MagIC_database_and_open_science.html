@@ -1,0 +1,1366 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jupyter Notebooks as a bridge to the MagIC Database and Open Science &#8212; EarthCube 2022 Call for Notebooks</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="gallery" href="../ec22_yu_etal/README.html" />
+    <link rel="prev" title="Jupyter Notebooks as a bridge to the MagIC Database and Open Science" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EarthCube 2022 Call for Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  EarthCube 2022 Call
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/index.html">
+   EarthCube 2022 Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/dois.html">
+   Notebook DOIs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notebook Submissions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_kwan_etal/README.html">
+   Data Cleaning with Pandas and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_kwan_etal/notebooks/wyk_01_data_cleaning_with_pandas_and_jupyter_notebooks.html">
+     Data Cleaning with Pandas and Jupyter Notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_ji_etal/README.html">
+   Magnetic Polarity Inversion Line Detection and Analysis Tool
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool.html">
+     AJ_01_MPIL_Detection_and_Analysis_Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_abduallah_etal/README.html">
+   Predicting Solar Flares with Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning.html">
+     <strong>
+      Predicting Solar Flares with Machine Learning
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_khider_etal/README.html">
+   PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_khider_etal/DK_v1_PaleoHack.html">
+     PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_markowsky_etal/README.html">
+   Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_markowsky_etal/LM_01_Visualizing_Ice_Core_Datasets_in_Python_Using_a_Jupyter_Notebook_Template.html">
+     Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ec22_mckay_etal/README.html">
+   Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_mills_etal/README.html">
+   Intro to Argovis' API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_mills_etal/WM_01_intro_to_argovis_api.html">
+     Intro to Argovis’ API
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_mirkovich_etal/README.html">
+   Assimilative Mapping of Geospace Observations (AMGeO)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_mirkovich_etal/WM_02_AMGeO-2.0.html">
+     AMGeO 2.0: Crafting an API for Geospace Data Scientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_miron_etal/README.html">
+   Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows.html">
+     Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_okeefe_etal/README.html">
+   Handling Highly Imbalanced Data in Machine Learning Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_okeefe_etal/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications.html">
+     Handling Highly Imbalanced Data in Machine Learning Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_rotti_etal/README.html">
+   EC_SEP_Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset.html">
+     GSEP Event Catalog and Time Series Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_yu_etal/README.html">
+   ICESpark
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting.html">
+     ICESpark-EarthCube-2022-Annual-Meeting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_tauxe_etal/2022_MagIC_database_and_open_science.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#author-s">
+     Author(s)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#overview-of-the-magic-database">
+       Overview of the  MagIC database
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#overview-of-the-pmagpy-software-package">
+       Overview of the PmagPy software package
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-of-pmagpy-from-within-a-jupyter-notebook">
+       Use of PmagPy from within a Jupyter notebook
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-of-the-notebook">
+     Access of the notebook:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-binder">
+       Using Binder
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-jupyterhub">
+       Using jupyterhub
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-library-import">
+     Local library import
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-definitions">
+   Parameter definitions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-import">
+   Data import
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   Data processing and analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#magic-formatted-files">
+     MagIC formatted files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equal-area-projections-of-directional-data">
+     Equal area projections of directional data.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#essential-parameters">
+     essential parameters:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saving-plots">
+     Saving plots
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#are-the-two-sets-of-directions-antipodal">
+     Are the two sets of directions antipodal?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#map-of-equivalent-vgps">
+     Map of equivalent VGPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="jupyter-notebooks-as-a-bridge-to-the-magic-database-and-open-science">
+<h1>Jupyter Notebooks as a bridge to the MagIC Database and Open Science<a class="headerlink" href="#jupyter-notebooks-as-a-bridge-to-the-magic-database-and-open-science" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="author-s">
+<h2>Author(s)<a class="headerlink" href="#author-s" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Author1 = {“name”: “Lisa Tauxe”, “affiliation”: “Scripps Institution of Oceanography”, “email”: “<a class="reference external" href="mailto:ltauxe&#37;&#52;&#48;ucsd&#46;edu">ltauxe<span>&#64;</span>ucsd<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-4837-8200”}</p></li>
+<li><p>Author2 = {“name”: “Rupert Minnett”, “affiliation”: “Oregon State University”, “email”: “<a class="reference external" href="mailto:rminnett&#37;&#52;&#48;earthref&#46;org">rminnett<span>&#64;</span>earthref<span>&#46;</span>org</a>”, “orcid”: “0000-0002-9000-2100”}</p></li>
+<li><p>Author3 = {“name”: “Nick Jarboe”, “affiliation”: “Oregon State University”, “email”: “<a class="reference external" href="mailto:njarboe&#37;&#52;&#48;earthref&#46;org">njarboe<span>&#64;</span>earthref<span>&#46;</span>org</a>”, “orcid”: “0000-0003-1465-9394”}</p></li>
+<li><p>Author4 = {“name”: “Catherine Constable”, “affiliation”: “Scripps Institution of Oceanography”, “email”: “<a class="reference external" href="mailto:cconstable&#37;&#52;&#48;ucsd&#46;edu">cconstable<span>&#64;</span>ucsd<span>&#46;</span>edu</a>”, “orcid”: “0000-0003-4534-4977”}</p></li>
+<li><p>Author5 = {“name”: “Anthony Koppers”, “affiliation”: “Oregon State University, “email”: “Oregon State University, “orcid”: “0000-0002-8136-5372”}</p></li>
+</ul>
+</div>
+<div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>This notebook demonstrates how to access data in the MagIC open-source database at <a class="reference external" href="https://earthref.org/MagIC">https://earthref.org/MagIC</a>. MagIC is the first of a set of data repositories created by the EarthCube-funded project FIESTA.
+The MagIC Database (Magnetics Information Consortium) allows magnetic measurement data of rocks and archaeological artifacts to be more Findable, Accessible, Interoperable, and Re-usable.  The MagIC Data Model governs the dataset contributions in the MagIC Database and is fully described here: <a class="reference external" href="https://earthref.org/MagIC/data-models/3.0">https://earthref.org/MagIC/data-models/3.0</a>.  PmagPy is a cross-platform and open-source software package  with Python functions written for the analysis of paleomagnetic and rock magnetic data, including tools that facilitate uploading, downloading and (re)interpretion of data in the MagIC Database.  It is intended to make the uploading of paleomagnetic data into MagIC straight-forward as MagIC data tables are created as part of normal data analysis and these can be uploaded to MagIC using the EarthCube-unded FIESTA API <a class="reference external" href="https://api.earthref.org">https://api.earthref.org</a> within a Jupyter notebook or through the MagIC website itself.</p>
+<div class="section" id="overview-of-the-magic-database">
+<h3>Overview of the  MagIC database<a class="headerlink" href="#overview-of-the-magic-database" title="Permalink to this headline">¶</a></h3>
+<p>Figure 1 shows the basic workflow of a typical paleomagnetic project from sampling in the field to contributing to the MagIC Database. Samples are taken in the field, and prepared into specimens, which then get measured. The measurements can be made on many different measurements and converted into a single, standard (MagIC) format which can then be operated on by an open-source software package, <em>PmagPy</em> to visualize and interpret the data.  The measurement data and interpretations can be compiled into a hierarchy of MagIC data tables and then uploaded into the MagIC database.</p>
+<p><img alt="pmag_workflow.png" src="chapters/ec22_tauxe_etal/attachment:pmag_workflow.png" /></p>
+<p>Figure 1: Workflow of a typical paleomagnetic project (from Tauxe et al., 2016; doi:10.1002/2016GC006307)</p>
+<p>The MagIC Data Model is built with the hierarchical structure typical of paleomagnetism whereby samples are taken in the field from “sites”, which are considered homogeneous with respect to the magnetic property being measured (for example a lava flow or sedimentary horizon).  Sites can be grouped into “locations” which can be stratigraphic sections, drill cores, or regions.   The links between specimens, samples, sites, and locations are specified in the various data tables in the MagIC data format.</p>
+<p>Each contribution in the database is associated with a publication via the DOI.  There are nine data tables:</p>
+<ul class="simple">
+<li><p>contribution: metadata of the associated publication.</p></li>
+<li><p>locations: metadata for locations, which are groups of sites (e.g., stratigraphic section, region, etc.)</p></li>
+<li><p>sites: metadata and derived data at the site level (units with a common expectation)</p></li>
+<li><p>samples: metadata and derived data at the sample level.</p></li>
+<li><p>specimens: metadata and derived data at the specimen level.</p></li>
+<li><p>measurements: metadata and measurements made on specimens from which all other data are derived</p></li>
+<li><p>criteria: criteria by which data are deemed acceptable</p></li>
+<li><p>ages: ages and metadata for sites/samples/specimens</p></li>
+<li><p>images: associated images and plots.</p></li>
+</ul>
+<p>Only the contribution and location tables are required for a given study, but others can be used if desired.  The most useful datasets include the measurements table and the full hierarchy of data tables.</p>
+</div>
+<div class="section" id="overview-of-the-pmagpy-software-package">
+<h3>Overview of the PmagPy software package<a class="headerlink" href="#overview-of-the-pmagpy-software-package" title="Permalink to this headline">¶</a></h3>
+<p><em>PmagPy</em> is a software package with over 1000 functions grouped into several modules that provide data analysis tools for visualizing and interpreting many different kinds of data including those in the MagIC format.  It can be accessed through <a class="reference external" href="https://github.com/PmagPy/PmagPy">https://github.com/PmagPy/PmagPy</a> and downloaded onto a personal computer following instructions in the PmagPy cookbook <a class="reference external" href="https://earthref.org/PmagPy/cookbook/">https://earthref.org/PmagPy/cookbook/</a>.  There are many notebooks in the <em>PmagPy</em> software package which can also be run without installation through the website: <a class="reference external" href="https://jupyterhub.earthref.org">https://jupyterhub.earthref.org</a> after creating a personal user’s space and running a simple Jupyter notebook (PmagPy_online setup).</p>
+<p>Functions as simple as calculating the expected direction at a given latitude to those as complicated as interpreting paleointensity data are available.  Most functions for making such calculations are grouped into the <em>pmag</em> module.  Functions for making specialized plots are grouped into the <em>pmagplotlib</em> module.  Functions specifically designed for use within Jupyter notebooks are grouped in the <em>ipmag</em> module.  There are also a number of command line programs that allow similar data analysis to be performed as in the notebooks.  Finally, there are several Graphical User Interfaces (GUIs) that, when installed on a personal computer aid in interpretation and data analysis, call the many functions in the <em>PmagPy</em> package.  This notebook focuses on  the use of Jupyter Notebooks for using the <em>PmagPy</em> functions.</p>
+</div>
+<div class="section" id="use-of-pmagpy-from-within-a-jupyter-notebook">
+<h3>Use of PmagPy from within a Jupyter notebook<a class="headerlink" href="#use-of-pmagpy-from-within-a-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
+<p>Notebooks such as this one can be used to call <em>PmagPy</em> functions.  They can be used to convert data from laboratory formats into the MagIC format and produce many of the plots and make the calculations required in paleomagnetic projects.</p>
+<p>Data can be accessed either through a web browser or through the FIESTA API queries, the most direct of which connects a dataset to the DOI of the publication using Python code that is part of the PmagPy software package. Data can therefore be downloaded, unpacked, re-analyzed or imaged and then repackaged and uploaded back into a private workspace of the user. Jupyter notebooks can then be attached to a new publication and serve as important supplemental material for publication, making the data and the analysis thereof transparent and reproducible. We will illustrate the use of Jupyter notebooks in connection with FAIR data practices in the rock and paleomagnetic world.</p>
+</div>
+</div>
+<div class="section" id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Paleomagnetic data published on the MagIC website and linked to a DOI can be downloaded from the database using the FIESTA API.</p></li>
+<li><p>The PmagPy python software package imported in the notebook can be used to unpack and re-analyze data in the database to reproduce results, demonstrating the benefits of FAIR principles.</p></li>
+</ul>
+</div>
+<div class="section" id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>import useful Python modules</p></li>
+<li><p>import the PmagPy software package</p></li>
+<li><p>download a dataset from MagIC using the FIESTA API through PmagPy</p></li>
+<li><p>re-analyze the data using PmagPy plotting and analysis functions</p></li>
+</ul>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>This notebook illustrates how open-source databases can be accessed and used to further the goals of open science.</p>
+</div>
+<div class="section" id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Award1 = {“agency”: “US National Science Foundation”, “award_code”: “1822336”, “award_URL”: “<a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1822336">https://www.nsf.gov/awardsearch/showAward?AWD_ID=1822336</a>”}</p></li>
+<li><p>Award2 = {“agency”: “US National Science Foundation”, “award_code”: “2126298”, “award_URL”: “<a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2126298">https://www.nsf.gov/awardsearch/showAward?AWD_ID=2126298</a>”}</p></li>
+</ul>
+</div>
+<div class="section" id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p>keywords=[“FAIR”, “Open Science”, “MagIC database”, “PmagPy software package”, “paleomagnetism”]</p>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>Tauxe et al., 2022, Jupyter Notebooks as a bridge to the MagIC Database and Open Science, 2022 EarthCube Annual Meeting. Accessed XX/XX/XXXX at <a class="reference external" href="https://github.com/PmagPy/2022_Tauxe-et-al_MagIC-Database-and-Open-Science">https://github.com/PmagPy/2022_Tauxe-et-al_MagIC-Database-and-Open-Science</a></p>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>We thank  members of the MagIC/FIESTA database team Nick Swanson-Hysell and Christeanne Santos for help in maintaining the PmagPy software package.  We also thank EarthCube for providing support for the further development of PmagPy and MagIC under the umbrella of the FIESTA project, meant to expand database design beyond MagIC into other geoscience domains.</p>
+<p>The template is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License.</a></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="access-of-the-notebook">
+<h2>Access of the notebook:<a class="headerlink" href="#access-of-the-notebook" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-binder">
+<h3>Using Binder<a class="headerlink" href="#using-binder" title="Permalink to this headline">¶</a></h3>
+<p>This notebook can be run by launching Binder from the GitHub repository.</p>
+<ul class="simple">
+<li><p>Go to <a class="reference external" href="https://github.com/earthcube2022/ec22_tauxe_etal.git">https://github.com/earthcube2022/ec22_tauxe_etal.git</a> and click on Binder label at the top of the <a class="reference external" href="http://README.md">README.md</a> file.</p></li>
+<li><p>Once the dependencies are installed, JupyterLab loads, and the notebook opens, the cells in the notebook can be executed and edited as needed.</p></li>
+</ul>
+</div>
+<div class="section" id="using-jupyterhub">
+<h3>Using jupyterhub<a class="headerlink" href="#using-jupyterhub" title="Permalink to this headline">¶</a></h3>
+<p>The Binder version does not allow uploading of user’s own data and is therefore useful only for demonstration purposes.  However, this notebook is also included in the PmagPy software package which can be installed on a personal and downloaded onto a personal computer following instructions in the PmagPy cookbook <a class="reference external" href="https://earthref.org/PmagPy/cookbook/">https://earthref.org/PmagPy/cookbook/</a>or  run without installation through the website: <a class="reference external" href="https://jupyterhub.earthref.org">https://jupyterhub.earthref.org</a>.</p>
+</div>
+</div>
+<div class="section" id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+<p>Import all the required Python libraries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This allows you to make matplotlib plots inside the notebook</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># Import packages</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># and  Pandas for data wrangling</span>
+<span class="kn">import</span> <span class="nn">os</span> <span class="c1"># some useful operating system functions</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="local-library-import">
+<h2>Local library import<a class="headerlink" href="#local-library-import" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>import the special PmagPy and mapping modules</p></li>
+<li><p>create a directory for use in this notebook</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import PmagPy modules</span>
+<span class="kn">import</span> <span class="nn">pmagpy.pmag</span> <span class="k">as</span> <span class="nn">pmag</span>
+<span class="kn">import</span> <span class="nn">pmagpy.pmagplotlib</span> <span class="k">as</span> <span class="nn">pmagplotlib</span>
+<span class="kn">import</span> <span class="nn">pmagpy.ipmag</span> <span class="k">as</span> <span class="nn">ipmag</span>
+
+<span class="n">dirs</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> <span class="c1"># get a list of directories in this one</span>
+<span class="k">if</span> <span class="s1">&#39;MagIC_for_earthcube&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;MagIC_for_earthcube&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="parameter-definitions">
+<h1>Parameter definitions<a class="headerlink" href="#parameter-definitions" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>after installation of PmagPy software, set up the directory structure for this notebook</p></li>
+<li><p>Define path, desired DOI for downloading data from MagIC and a placeholder filename.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dir_path</span><span class="o">=</span><span class="s1">&#39;MagIC_for_earthcube&#39;</span> <span class="c1"># set the path to the working directory</span>
+<span class="n">reference_doi</span><span class="o">=</span><span class="s1">&#39;10.1029/2019GC008479&#39;</span> <span class="c1"># Behar et al. (2019)</span>
+<span class="n">magic_contribution</span><span class="o">=</span><span class="s1">&#39;magic_contribution.txt&#39;</span> <span class="c1"># temporary name for contribution prior to unpacking</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-import">
+<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
+<p>Retrieve all the required data for the analysis.</p>
+<p>We will be using the data from this reference:</p>
+<p>Behar, N., Shaar, R., Tauxe, L., Asefaw, H., Ebert, Y., Heimann, A., Koppers, A.A.P., and Ron, H., Paleomagnetic study of the Plio-Pleistocene Golan Heights volcanic field, Israel: confirmation of the GAD field hypothesis,  Geophys., Geochem. Geosyst., 20,  doi: 10.1029/2019GC008479, 2019.</p>
+<p>The purpose of that paper was to provide new data relating to the geomagnetic field over the last few million years.  The Plain Language Summary stated:</p>
+<p>“Since the early days of paleomagnetic research, it has been inferred that the time‐averaged structure of the field is a geocentric axial dipole (GAD)—equivalent to a field generated by a dipole at the center of the Earth aligned with its rotation axis. This so‐called GAD hypothesis is fundamental in paleomagnetism and is the basis for plate tectonic reconstructions. However, recent studies have suggested persistent departures from a GAD structure, manifested as an anomaly in the inclination angle of the field in northern hemispheric low to middle latitudes. To address this problem, we analyzed 91 basaltic lava flows from the Golan Heights volcanic plateau in Israel (32–33°N), spanning the past 5 Myr. As each basaltic flow captured the direction of the ambient magnetic field when it cooled, these flows provide us information about the averaged direction of the ancient geomagnetic field. Our results show that the averaged field in the Golan Heights is in agreement with a GAD structure. We also show that if we reanalyze the global paleomagnetic data from lava flows spanning the past 10 Myr using stricter selection criteria and a different inclination anomaly calculation method, the data do not support a
+global non‐GAD field.”</p>
+<p>In this notebook, we will reproduce a few of the key diagrams in the paper.</p>
+<p>Steps for data import:</p>
+<ul class="simple">
+<li><p>create a directory to put downloaded data</p></li>
+<li><p>download the data from the database using the reference DOI</p></li>
+<li><p>move the data to the directory</p></li>
+<li><p>unpack the data into MagIC formatted tab-delimited files.</p></li>
+</ul>
+<p>For help on all functions use:
+help(ModuleName.FunctionName)</p>
+<p>example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">ipmag</span><span class="o">.</span><span class="n">download_magic_from_doi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function download_magic_from_doi in module pmagpy.ipmag:
+
+download_magic_from_doi(doi)
+    Download a public contribution matching the provided DOI
+    from earthref.org/MagIC.
+    
+    Parameters
+    ----------
+    doi : str
+        DOI for a MagIC
+    
+    Returns
+    ---------
+    result : bool
+    message : str
+        Error message if download didn&#39;t succeed
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ipmag</span><span class="o">.</span><span class="n">download_magic_from_doi</span><span class="p">(</span><span class="n">reference_doi</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">magic_contribution</span><span class="p">,</span> <span class="n">dir_path</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">magic_contribution</span><span class="p">)</span>
+<span class="n">ipmag</span><span class="o">.</span><span class="n">download_magic</span><span class="p">(</span><span class="n">magic_contribution</span><span class="p">,</span><span class="n">dir_path</span><span class="o">=</span><span class="n">dir_path</span><span class="p">,</span><span class="n">print_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16961/magic_contribution_16961.txt extracted to magic_contribution.txt 
+
+1  records written to file  /Users/ltauxe/PmagPy/MagIC_for_earthcube/contribution.txt
+1  records written to file  /Users/ltauxe/PmagPy/MagIC_for_earthcube/locations.txt
+91  records written to file  /Users/ltauxe/PmagPy/MagIC_for_earthcube/sites.txt
+611  records written to file  /Users/ltauxe/PmagPy/MagIC_for_earthcube/samples.txt
+676  records written to file  /Users/ltauxe/PmagPy/MagIC_for_earthcube/specimens.txt
+6297  records written to file  /Users/ltauxe/PmagPy/MagIC_for_earthcube/measurements.txt
+2  records written to file  /Users/ltauxe/PmagPy/MagIC_for_earthcube/criteria.txt
+91  records written to file  /Users/ltauxe/PmagPy/MagIC_for_earthcube/ages.txt
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
+<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
+<p>We will look at three examples of reuse of the data from our study.  The first will make an equal area projection of all the directions found in the study. Paleomagnetists often deal with directional data (Figures 2a,b) and like other Earth Science disciplines (e.g., structural geology) plot directions that are inherently three-dimensional on a 2-D projection (Figure 2c).  Plotted in this way one can assess whether the directions behave as one might expect from secular variation of the field. For example, in our second plot, we will check whether two sets of directions from the two polarities, normal (as in the present field) and reverse (opposite), are antipodal.</p>
+<p><img alt="components.png" src="chapters/ec22_tauxe_etal/attachment:components.png" />
+Figure 2: a)  Lines of flux of the geomagnetic field of 2005. At point <span class="math notranslate nohighlight">\(P\)</span> the horizontal component of the field <span class="math notranslate nohighlight">\(B_H\)</span>, is directed toward the magnetic north (with a deviation known as declination, <span class="math notranslate nohighlight">\(D\)</span>). The vertical component <span class="math notranslate nohighlight">\(B_V\)</span> is directed down and the field makes an angle <span class="math notranslate nohighlight">\(I\)</span> with the horizontal, known as the inclination.   b) Components of the geomagnetic field vector <span class="math notranslate nohighlight">\(B\)</span>.   c) Construction of an equal area projection for a point <span class="math notranslate nohighlight">\(P\)</span> corresponding to a <span class="math notranslate nohighlight">\(D\)</span> of 40<span class="math notranslate nohighlight">\(^{\circ}\)</span> and an <span class="math notranslate nohighlight">\(I\)</span> of 35<span class="math notranslate nohighlight">\(^{\circ}\)</span>. d) Transformation of a direction measured at location <span class="math notranslate nohighlight">\(S\)</span> to a virtual geomagnetic pole (VGP).   Figure  modified from <a class="reference external" href="https://earthref.org/MagIC/books/Tauxe/Essentials/">https://earthref.org/MagIC/books/Tauxe/Essentials/</a> and references therein.</p>
+<p>In the third plot, we will look at the directional data after transformation to virtual geomagnetic pole positions (Figure 2d).  These we will plot on an orthorhombic projection with the reverse poles (negative latitudes) flipped to their antipodes.</p>
+<p>For more information on Paleomagnetism, check out the open-source textbook hosted by MagIC at:
+<a class="reference external" href="https://earthref.org/MagIC/books/Tauxe/Essentials/">https://earthref.org/MagIC/books/Tauxe/Essentials/</a>.</p>
+<div class="section" id="magic-formatted-files">
+<h2>MagIC formatted files<a class="headerlink" href="#magic-formatted-files" title="Permalink to this headline">¶</a></h2>
+<p>MagIC text files all have the delimiter (tab) and the type of table in the first line and the column headers in the second line.  For details on the column headers in each data table, see the current MagIC database model definitions here: <a class="reference external" href="https://earthref.org/MagIC/data-models/3.0">https://earthref.org/MagIC/data-models/3.0</a></p>
+<p>To read in the site level data into a <em>Pandas</em> DataFrame we specify that the file is tab-delimited with the <em>sep</em> argument and that the header is in the second row (remember that Pandas starts counting at zero).  Then we will look at the first few lines using the <em>.head()</em> function.  To do this, we use the following syntax:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dir_path</span><span class="o">+</span><span class="s1">&#39;/sites.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>age_high</th>
+      <th>age_low</th>
+      <th>age_unit</th>
+      <th>citations</th>
+      <th>criteria</th>
+      <th>dir_alpha95</th>
+      <th>dir_comp_name</th>
+      <th>dir_dec</th>
+      <th>dir_inc</th>
+      <th>...</th>
+      <th>result_quality</th>
+      <th>result_type</th>
+      <th>samples</th>
+      <th>site</th>
+      <th>software_packages</th>
+      <th>specimens</th>
+      <th>vgp_dm</th>
+      <th>vgp_dp</th>
+      <th>vgp_lat</th>
+      <th>vgp_lon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.6798</td>
+      <td>0.6798</td>
+      <td>0.6798</td>
+      <td>Ma</td>
+      <td>This study</td>
+      <td>ACCEPT</td>
+      <td>4.7</td>
+      <td>Fit 1</td>
+      <td>350.0</td>
+      <td>37.2</td>
+      <td>...</td>
+      <td>g</td>
+      <td>i</td>
+      <td>GH01A:GH01B:GH01C:GH01D:GH01H:GH01M</td>
+      <td>GH01</td>
+      <td>pmagpy-3.16.0: demag_gui.v.3.0</td>
+      <td>GH01A1:GH01B1:GH01B2:GH01C1:GH01D1:GH01H1:GH01M1</td>
+      <td>5.5</td>
+      <td>3.2</td>
+      <td>74.8</td>
+      <td>254.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.3500</td>
+      <td>2.6000</td>
+      <td>0.1000</td>
+      <td>Ma</td>
+      <td>This study</td>
+      <td>ACCEPT</td>
+      <td>2.3</td>
+      <td>Fit 1</td>
+      <td>349.7</td>
+      <td>37.2</td>
+      <td>...</td>
+      <td>g</td>
+      <td>i</td>
+      <td>GH02A:GH02C:GH02D:GH02E:GH02F:GH02G</td>
+      <td>GH02</td>
+      <td>pmagpy-3.16.0: demag_gui.v.3.0</td>
+      <td>GH02A1:GH02C1:GH02D1:GH02E1:GH02E2:GH02F1:GH02...</td>
+      <td>2.7</td>
+      <td>1.6</td>
+      <td>74.7</td>
+      <td>255.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.1115</td>
+      <td>1.1115</td>
+      <td>1.1115</td>
+      <td>Ma</td>
+      <td>This study</td>
+      <td>ACCEPT</td>
+      <td>2.3</td>
+      <td>Fit 1</td>
+      <td>157.0</td>
+      <td>-56.9</td>
+      <td>...</td>
+      <td>g</td>
+      <td>i</td>
+      <td>GH03A:GH03B:GH03C:GH03D:GH03E:GH03G:GH03H</td>
+      <td>GH03</td>
+      <td>pmagpy-3.16.0: demag_gui.v.3.0</td>
+      <td>GH03A1:GH03B1:GH03C1:GH03C2:GH03D1:GH03E1:GH03...</td>
+      <td>3.3</td>
+      <td>2.4</td>
+      <td>-70.8</td>
+      <td>145.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.3500</td>
+      <td>2.6000</td>
+      <td>0.1000</td>
+      <td>Ma</td>
+      <td>This study</td>
+      <td>ACCEPT</td>
+      <td>2.1</td>
+      <td>Fit 1</td>
+      <td>175.1</td>
+      <td>-58.0</td>
+      <td>...</td>
+      <td>g</td>
+      <td>i</td>
+      <td>GH04A:GH04B:GH04C:GH04D:GH04E:GH04F:GH04G:GH04H</td>
+      <td>GH04</td>
+      <td>pmagpy-3.16.0: demag_gui.v.3.0</td>
+      <td>GH04A1:GH04B1:GH04C1:GH04D1:GH04E1:GH04E2:GH04...</td>
+      <td>3.1</td>
+      <td>2.3</td>
+      <td>-83.1</td>
+      <td>181.8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.1196</td>
+      <td>1.1196</td>
+      <td>1.1196</td>
+      <td>Ma</td>
+      <td>This study</td>
+      <td>ACCEPT</td>
+      <td>2.8</td>
+      <td>Fit 1</td>
+      <td>181.0</td>
+      <td>-56.8</td>
+      <td>...</td>
+      <td>g</td>
+      <td>i</td>
+      <td>GH05A:GH05B:GH05D:GH05G:GH05H:GH05I:GH05K:GH05L</td>
+      <td>GH05</td>
+      <td>pmagpy-3.16.0: demag_gui.v.3.0</td>
+      <td>GH05A1:GH05B1:GH05D1:GH05G1:GH05H1:GH05H2:GH05...</td>
+      <td>4.1</td>
+      <td>2.9</td>
+      <td>-85.6</td>
+      <td>226.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 35 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="equal-area-projections-of-directional-data">
+<h2>Equal area projections of directional data.<a class="headerlink" href="#equal-area-projections-of-directional-data" title="Permalink to this headline">¶</a></h2>
+<p>First,  will plot the Plio-Pleistocene magnetic field directional data in the Behar et al. (2019) paper in an equal area projection using the PmagPy function ipmag.eqarea_magic().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">ipmag</span><span class="o">.</span><span class="n">eqarea_magic</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function eqarea_magic in module pmagpy.ipmag:
+
+eqarea_magic(in_file=&#39;sites.txt&#39;, dir_path=&#39;.&#39;, input_dir_path=&#39;&#39;, spec_file=&#39;specimens.txt&#39;, samp_file=&#39;samples.txt&#39;, site_file=&#39;sites.txt&#39;, loc_file=&#39;locations.txt&#39;, plot_by=&#39;all&#39;, crd=&#39;g&#39;, ignore_tilt=False, save_plots=True, fmt=&#39;svg&#39;, contour=False, color_map=&#39;coolwarm&#39;, plot_ell=&#39;&#39;, n_plots=5, interactive=False, contribution=None, source_table=&#39;sites&#39;, image_records=False)
+    makes equal area projections from declination/inclination data
+    
+    Parameters
+    ----------
+    in_file : str, default &quot;sites.txt&quot;
+    dir_path : str
+        output directory, default &quot;.&quot;
+    input_dir_path : str
+        input file directory (if different from dir_path), default &quot;&quot;
+    spec_file : str
+        input specimen file name, default &quot;specimens.txt&quot;
+    samp_file: str
+        input sample file name, default &quot;samples.txt&quot;
+    site_file : str
+        input site file name, default &quot;sites.txt&quot;
+    loc_file : str
+        input location file name, default &quot;locations.txt&quot;
+    plot_by : str
+        [spc, sam, sit, loc, all] (specimen, sample, site, location, all), default &quot;all&quot;
+    crd : [&#39;s&#39;,&#39;g&#39;,&#39;t&#39;], coordinate system for plotting whereby:
+        s : specimen coordinates, aniso_tile_correction = -1
+        g : geographic coordinates, aniso_tile_correction = 0 (default)
+        t : tilt corrected coordinates, aniso_tile_correction = 100
+    ignore_tilt : bool
+        default False.  If True, data are unoriented (allows plotting of measurement dec/inc)
+    save_plots : bool
+        plot and save non-interactively, default True
+    fmt : str
+        [&quot;png&quot;, &quot;svg&quot;, &quot;pdf&quot;, &quot;jpg&quot;], default &quot;svg&quot;
+    contour : bool
+        plot as color contour
+    colormap : str
+        color map for contour plotting, default &quot;coolwarm&quot;
+        see cartopy documentation for more options
+    plot_ell : str
+        [F,K,B,Be,Bv] plot Fisher, Kent, Bingham, Bootstrap ellipses or Bootstrap eigenvectors
+        default &quot;&quot; plots none
+    n_plots : int
+        maximum number of plots to make, default 5
+        if you want to make all possible plots, specify &quot;all&quot;
+    interactive : bool, default False
+        interactively plot and display for each specimen
+        (this is best used on the command line or in the Python interpreter)
+    contribution : cb.Contribution, default None
+        if provided, use Contribution object instead of reading in
+        data from files
+    source_table : table to get plot data from (only needed with contribution argument)
+        for example, you could specify source_table=&quot;measurements&quot; and plot_by=&quot;sites&quot;
+        to plot measurement data by site.
+        default &quot;sites&quot;
+    image_records : generate and return a record for each image in a list of dicts
+        which can be ingested by pmag.magic_write
+        bool, default False
+    
+    
+    Returns
+    ---------
+    if image_records == False:
+        type - Tuple : (True or False indicating if conversion was successful, file name(s) written)
+    if image_records == True:
+       Tuple : (True or False indicating if conversion was successful, output file name written, list of image recs)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="essential-parameters">
+<h2>essential parameters:<a class="headerlink" href="#essential-parameters" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>ipmag.equarea_magic reads in the required directional data from the MagIC formatted txt file ‘.sites’ in the specified directory.</p></li>
+<li><p>dir_path was set previously and all other parameters are the defaults, so we can just run this program.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ipmag</span><span class="o">.</span><span class="n">eqarea_magic</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="n">dir_path</span><span class="p">,</span><span class="n">save_plots</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-I- Using online data model
+-I- Getting method codes from earthref.org
+-I- Importing controlled vocabularies from https://earthref.org
+91  sites records read in
+All
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, [])
+</pre></div>
+</div>
+<img alt="../../_images/2022_MagIC_database_and_open_science_19_2.png" src="../../_images/2022_MagIC_database_and_open_science_19_2.png" />
+</div>
+</div>
+<p>Figure 3: Equal area plot of the directions from the downloaded data set.  North is at the top of the diagram and vertical is in the center. Solid (open) symbols are downward (upward) directed.  There are two sets of directions, one pointed north and down and one pointed south and up.</p>
+</div>
+<div class="section" id="saving-plots">
+<h2>Saving plots<a class="headerlink" href="#saving-plots" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>to save the plots, set <em>save_plots</em> to True and your preferred format using the argument, <em>fmt</em>.</p></li>
+<li><p>you can download the resulting png file (or find it in your project directory if running locally).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ipmag</span><span class="o">.</span><span class="n">eqarea_magic</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="n">dir_path</span><span class="p">,</span><span class="n">save_plots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>91  sites records read in
+1  saved in  /Users/ltauxe/PmagPy/MagIC_for_earthcube/all_Golan-Heights_g_eqarea.png
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True,
+ [&#39;/Users/ltauxe/PmagPy/MagIC_for_earthcube/all_Golan-Heights_g_eqarea.png&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="are-the-two-sets-of-directions-antipodal">
+<h2>Are the two sets of directions antipodal?<a class="headerlink" href="#are-the-two-sets-of-directions-antipodal" title="Permalink to this headline">¶</a></h2>
+<p>One can see in Figure 3 that there are two sets of directions, one to the north and down (as expected for the latitude of the Golan Heights in Israel and one directed to the south and up (as expected for a reverse field in Israel).  So, are the two sets of directions antipodal?   <em>PmagPy</em> has code to test this hypothesis.  Here we will use the bootstrap reversal test (see opensource textbook Essentials of Paleomagnetism at: <a class="reference external" href="https://earthref.org/MagIC/books/Tauxe/Essentials/">https://earthref.org/MagIC/books/Tauxe/Essentials/</a>) to see if the two sets are antipodal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">ipmag</span><span class="o">.</span><span class="n">reversal_test_bootstrap</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function reversal_test_bootstrap in module pmagpy.ipmag:
+
+reversal_test_bootstrap(dec=None, inc=None, di_block=None, plot_stereo=False, save=False, save_folder=&#39;.&#39;, fmt=&#39;svg&#39;)
+    Conduct a reversal test using bootstrap statistics (Tauxe, 2010) to
+    determine whether two populations of directions could be from an antipodal
+    common mean.
+    
+    Parameters
+    ----------
+    dec: list of declinations
+    inc: list of inclinations
+        or
+    di_block: a nested list of [dec,inc]
+        A di_block can be provided in which case it will be used instead of
+        dec, inc lists.
+    
+    plot_stereo : before plotting the CDFs, plot stereonet with the
+        bidirectionally separated data (default is False)
+    save : boolean argument to save plots (default is False)
+    save_folder : directory where plots will be saved (default is current directory, &#39;.&#39;)
+    fmt : format of saved figures (default is &#39;svg&#39;)
+    
+    Returns
+    -------
+    plots : Plots of the cumulative distribution of Cartesian components are
+        shown as is an equal area plot if plot_stereo = True
+    
+    Examples
+    --------
+    Populations of roughly antipodal directions are developed here using
+    ``ipmag.fishrot``. These directions are combined into a single di_block
+    given that the function determines the principal component and splits the
+    data accordingly by polarity.
+    
+    &gt;&gt;&gt; directions_n = ipmag.fishrot(k=20, n=30, dec=5, inc=-60)
+    &gt;&gt;&gt; directions_r = ipmag.fishrot(k=35, n=25, dec=182, inc=57)
+    &gt;&gt;&gt; directions = directions_n + directions_r
+    &gt;&gt;&gt; ipmag.reversal_test_bootstrap(di_block=directions, plot_stereo = True)
+    
+    Data can also be input to the function as separate lists of dec and inc.
+    In this example, the di_block from above is split into lists of dec and inc
+    which are then used in the function:
+    
+    &gt;&gt;&gt; direction_dec, direction_inc, direction_moment = ipmag.unpack_di_block(directions)
+    &gt;&gt;&gt; ipmag.reversal_test_bootstrap(dec=direction_dec,inc=direction_inc, plot_stereo = True)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We already read in the directional data into a Pandas DataFrame <em>df</em>, so lets pick out the lists of declinations and inclinations and feed them into <em>ipmag.reversal_test_bootstrap</em>. This program first converts one of the sets of directions to their antipodes (by adding 180<span class="math notranslate nohighlight">\(^{\circ}\)</span> to the declinations and taking the opposition of the inclinations.  It then calculates the mean directions from 1000 “pseudosamples” of the two data sets and plots the resulting means (converted to their cartesian coordinates) as cumulative distributions.
+If there is overlap in all three components, then the data sets are likely antipodal.</p>
+<p>Consulting the MagIC data model page for the sites data table, we see that the desired column headers are ‘dir_dec’ and ‘dir_inc’ for declination and inclination. So we can make arrays (or lists) of those and feed them into our reversals test as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decs</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;dir_dec&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">incs</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;dir_inc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">ipmag</span><span class="o">.</span><span class="n">reversal_test_bootstrap</span><span class="p">(</span><span class="n">dec</span><span class="o">=</span><span class="n">decs</span><span class="p">,</span><span class="n">inc</span><span class="o">=</span><span class="n">incs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2022_MagIC_database_and_open_science_26_0.png" src="../../_images/2022_MagIC_database_and_open_science_26_0.png" />
+</div>
+</div>
+<p>Here we see that the X and Z components are NOT antipodal as the 95% confidence limits (vertical lines) of the bootstrapped  means do not overlap.  So this data set fails the reversals test.</p>
+</div>
+<div class="section" id="map-of-equivalent-vgps">
+<h2>Map of equivalent VGPs<a class="headerlink" href="#map-of-equivalent-vgps" title="Permalink to this headline">¶</a></h2>
+<p>We can explore the data set further by converting the directions to their equivalent   virtual geomagnetic poles (VGPs).  The transformation and the plot is done for is by the <em>PmagPy</em> function <em>ipmag.vgpmap_magic()</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">ipmag</span><span class="o">.</span><span class="n">vgpmap_magic</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function vgpmap_magic in module pmagpy.ipmag:
+
+vgpmap_magic(dir_path=&#39;.&#39;, results_file=&#39;sites.txt&#39;, crd=&#39;&#39;, sym=&#39;ro&#39;, size=8, rsym=&#39;g^&#39;, rsize=8, fmt=&#39;pdf&#39;, res=&#39;c&#39;, proj=&#39;ortho&#39;, flip=False, anti=False, fancy=False, ell=False, ages=False, lat_0=0, lon_0=0, save_plots=True, interactive=False, contribution=None, image_records=False)
+    makes a map of vgps and a95/dp,dm for site means in a sites table
+    
+    Parameters
+    ----------
+    dir_path : str, default &quot;.&quot;
+        input directory path
+    results_file : str, default &quot;sites.txt&quot;
+        name of MagIC format sites file
+    crd : str, default &quot;&quot;
+       coordinate system [g, t] (geographic, tilt_corrected)
+    sym : str, default &quot;ro&quot;
+        symbol color and shape, default red circles
+        (see matplotlib documentation for more color/shape options)
+    size : int, default 8
+        symbol size
+    rsym : str, default &quot;g^&quot;
+        symbol for plotting reverse poles
+        (see matplotlib documentation for more color/shape options)
+    rsize : int, default 8
+        symbol size for reverse poles
+    fmt : str, default &quot;pdf&quot;
+        format for figures, [&quot;svg&quot;, &quot;jpg&quot;, &quot;pdf&quot;, &quot;png&quot;]
+    res : str, default &quot;c&quot;
+        resolution [c, l, i, h] (crude, low, intermediate, high)
+    proj : str, default &quot;ortho&quot;
+        ortho = orthographic
+        lcc = lambert conformal
+        moll = molweide
+        merc = mercator
+    flip : bool, default False
+        if True, flip reverse poles to normal antipode
+    anti : bool, default False
+        if True, plot antipodes for each pole
+    fancy : bool, default False
+        if True, plot topography (not yet implemented)
+    ell : bool, default False
+        if True, plot ellipses
+    ages : bool, default False
+        if True, plot ages
+    lat_0 : float, default 0.
+        eyeball latitude
+    lon_0 : float, default 0.
+        eyeball longitude
+    save_plots : bool, default True
+        if True, create and save all requested plots
+    interactive : bool, default False
+       if True, interactively plot and display
+        (this is best used on the command line only)
+    image_records : bool, default False
+        if True, return a list of created images
+    
+    Returns
+    ---------
+    if image_records == False:
+        type - Tuple : (True or False indicating if conversion was successful, file name(s) written)
+    if image_records == True:
+       Tuple : (True or False indicating if conversion was successful, output file name written, list of image recs)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ipmag</span><span class="o">.</span><span class="n">vgpmap_magic</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="n">dir_path</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">save_plots</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">lat_0</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span><span class="n">rsym</span><span class="o">=</span><span class="s1">&#39;b^&#39;</span><span class="p">,</span><span class="n">rsize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2022_MagIC_database_and_open_science_30_0.png" src="../../_images/2022_MagIC_database_and_open_science_30_0.png" />
+</div>
+</div>
+<p>Figure 4: Orthographic projection of virtual geomagnetic poles calculated from directional data of Behar et al. (2019).  Red dots are for the normal poles and blue squares are the antipodes of the reverse poles.</p>
+<p>By setting the argument <em>flip</em> to True, we can plot the normal (red dots) and the reverse (blue triangles) poles on the same projection.  Behar et al. (2019) attributed  the difference in mean directions to a tectonic tilting event that offset the two sets.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="next-steps">
+<h1>Next steps:<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Try out other Jupyter notebooks within the <em>PmagPy</em> software distribution to learn the full functionality of the package either by installing <em>PmagPy</em> on a personal computer (see <a class="reference external" href="https://earthref.org/PmagPy/cookbook/">https://earthref.org/PmagPy/cookbook/</a>) or  run PmagPy notebooks without installation through the website: <a class="reference external" href="https://jupyterhub.earthref.org">https://jupyterhub.earthref.org</a>. You will have to create a username using an ORCID which will allow you to upload your own data, or download data from the MagIC website, create plots and save them and preserve your work in your own permanent space.  Using the FIESTA API, datasets can be uploaded to a Private Workspace in the MagIC database and published when your manuscript gets accepted.</p></li>
+<li><p>Become a PmagPy developer!</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Behar, N., Shaar, R., Tauxe, L., Asefaw, H., Ebert, Y., Heimann, A., Koppers, A.A.P., and Ron, H. (2019), Paleomagnetic study of the Plio-Pleistocene Golan Heights volcanic field, Israel: confirmation of the GAD field hypothesis,  Geophys., Geochem. Geosyst., 20, <a class="reference external" href="https://dx.doi.org/10.1029/2019GC008479">https://dx.doi.org/10.1029/2019GC008479</a>.</p></li>
+<li><p>MagIC website: <a class="reference external" href="https://earthref.org/MagIC">https://earthref.org/MagIC</a></p></li>
+<li><p>EarthRef FIESTA API: <a class="reference external" href="https://api.earthref.org">https://api.earthref.org</a></p></li>
+<li><p>Textbook for paleomagnetism: <a class="reference external" href="https://earthref.org/MagIC/books/Tauxe/Essentials/">https://earthref.org/MagIC/books/Tauxe/Essentials/</a></p></li>
+<li><p>PmagPy installation instructions: <a class="reference external" href="https://earthref.org/PmagPy/cookbook/">https://earthref.org/PmagPy/cookbook/</a></p></li>
+<li><p>Course in Python for Earth Science Students: <a class="reference external" href="https://github.com/ltauxe/Python-for-Earth-Science-Students">https://github.com/ltauxe/Python-for-Earth-Science-Students</a></p></li>
+<li><p>PmagPy citation:  Tauxe, L., R. Shaar, L. Jonestrask, N. L. Swanson-Hysell, R. Minnett, A. A. P. Koppers, C. G. Constable, N. Jarboe, K. Gaastra, and L. Fairchild (2016), PmagPy: Software package for paleomagnetic data analysis and a bridge to the Magnetics Information Consortium (MagIC) Database, Geochem. Geophys. Geosyst., 17, <a class="reference external" href="https://doi.org/10.1002/2016GC006307">https://doi.org/10.1002/2016GC006307</a>.</p></li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/ec22_tauxe_etal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Jupyter Notebooks as a bridge to the MagIC Database and Open Science</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../ec22_yu_etal/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">gallery</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1227 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to Argovis’ API &#8212; EarthCube 2022 Call for Notebooks</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Earthcube-Meeting-2022" href="../ec22_mirkovich_etal/README.html" />
+    <link rel="prev" title="Intro to Argovis’ API" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EarthCube 2022 Call for Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  EarthCube 2022 Call
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/index.html">
+   EarthCube 2022 Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sources/dois.html">
+   Notebook DOIs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notebook Submissions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_kwan_etal/README.html">
+   Data Cleaning with Pandas and Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_kwan_etal/notebooks/wyk_01_data_cleaning_with_pandas_and_jupyter_notebooks.html">
+     Data Cleaning with Pandas and Jupyter Notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_ji_etal/README.html">
+   Magnetic Polarity Inversion Line Detection and Analysis Tool
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool.html">
+     AJ_01_MPIL_Detection_and_Analysis_Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_abduallah_etal/README.html">
+   Predicting Solar Flares with Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning.html">
+     <strong>
+      Predicting Solar Flares with Machine Learning
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_khider_etal/README.html">
+   PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_khider_etal/DK_v1_PaleoHack.html">
+     PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_markowsky_etal/README.html">
+   Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_markowsky_etal/LM_01_Visualizing_Ice_Core_Datasets_in_Python_Using_a_Jupyter_Notebook_Template.html">
+     Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ec22_mckay_etal/README.html">
+   Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   Intro to Argovis' API
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Intro to Argovis’ API
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_mirkovich_etal/README.html">
+   Assimilative Mapping of Geospace Observations (AMGeO)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_mirkovich_etal/WM_02_AMGeO-2.0.html">
+     AMGeO 2.0: Crafting an API for Geospace Data Scientists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_miron_etal/README.html">
+   Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows.html">
+     Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_okeefe_etal/README.html">
+   Handling Highly Imbalanced Data in Machine Learning Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_okeefe_etal/PO_02_Handling_Highly_Imbalanced_Data_in_Machine_Learning_Applications.html">
+     Handling Highly Imbalanced Data in Machine Learning Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_rotti_etal/README.html">
+   EC_SEP_Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset.html">
+     GSEP Event Catalog and Time Series Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_tauxe_etal/README.html">
+   Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_tauxe_etal/2022_MagIC_database_and_open_science.html">
+     Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ec22_yu_etal/README.html">
+   ICESpark
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting.html">
+     ICESpark-EarthCube-2022-Annual-Meeting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_mills_etal/WM_01_intro_to_argovis_api.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Intro to Argovis’ API
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#authors">
+     Authors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suggested-next-steps">
+     Suggested next steps
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-library-import">
+     Local library import
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-definitions">
+   Parameter definitions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-import">
+   Data import
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   Data processing and analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#co-location-examples">
+     Co-location examples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-source-searching-negation-search">
+       Data source searching &amp; negation search
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#searching-by-available-data">
+       Searching by available data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proximity-search">
+       Proximity search
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qc-filtering">
+     QC filtering
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpolation-of-profiles-measurements-to-pressure-levels-of-interest">
+     Interpolation of profiles measurements to pressure levels of interest
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-argovis-api">
+<h1>Intro to Argovis’ API<a class="headerlink" href="#intro-to-argovis-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Author1 = {“name”: “William Mills”, “affiliation”: “Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, CO, United States”, “email”: “William.Mills−1&#64;colorado.edu”, “orcid”: “0000-0002-5887-6270”}</p></li>
+<li><p>Author2 = {“name”: “Donata Giglio”, “affiliation”: “Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, CO, United States”, “email”: “<a class="reference external" href="mailto:donata&#46;Giglio&#37;&#52;&#48;colorado&#46;edu">donata<span>&#46;</span>Giglio<span>&#64;</span>colorado<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-3738-4293”}</p></li>
+<li><p>Author3 = {“name”: “Megan Scanderbeg”, “affiliation”: “Scripps Institution of Oceanography”, “email”: “<a class="reference external" href="mailto:mscanderbeg&#37;&#52;&#48;ucsd&#46;edu">mscanderbeg<span>&#64;</span>ucsd<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-0398-7272”}</p></li>
+<li><p>Author4 = {“name”: “Tyler Tucker”, “affiliation”: “W. M. Keck Observatory”, “email”: “<a class="reference external" href="mailto:ttucker&#37;&#52;&#48;keck&#46;hawaii&#46;edu">ttucker<span>&#64;</span>keck<span>&#46;</span>hawaii<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-0560-9777”}</p></li>
+</ul>
+<h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Intro-to-Argovis'-API" data-toc-modified-id="Intro-to-Argovis'-API-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Intro to Argovis' API</a></span><ul class="toc-item"><li><span><a href="#Authors" data-toc-modified-id="Authors-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Authors</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Results" data-toc-modified-id="Results-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Results</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Suggested-next-steps" data-toc-modified-id="Suggested-next-steps-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Suggested next steps</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-import" data-toc-modified-id="Library-import-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library import</a></span></li><li><span><a href="#Local-library-import" data-toc-modified-id="Local-library-import-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Local library import</a></span></li></ul></li><li><span><a href="#Parameter-definitions" data-toc-modified-id="Parameter-definitions-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Parameter definitions</a></span></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-processing-and-analysis" data-toc-modified-id="Data-processing-and-analysis-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Data processing and analysis</a></span><ul class="toc-item"><li><span><a href="#Co-location-examples" data-toc-modified-id="Co-location-examples-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Co-location examples</a></span><ul class="toc-item"><li><span><a href="#Data-source-searching-&amp;-negation-search" data-toc-modified-id="Data-source-searching-&amp;-negation-search-5.1.1"><span class="toc-item-num">5.1.1&nbsp;&nbsp;</span>Data source searching &amp; negation search</a></span></li><li><span><a href="#Searching-by-available-data" data-toc-modified-id="Searching-by-available-data-5.1.2"><span class="toc-item-num">5.1.2&nbsp;&nbsp;</span>Searching by available data</a></span></li><li><span><a href="#Proximity-search" data-toc-modified-id="Proximity-search-5.1.3"><span class="toc-item-num">5.1.3&nbsp;&nbsp;</span>Proximity search</a></span></li></ul></li><li><span><a href="#QC-filtering" data-toc-modified-id="QC-filtering-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>QC filtering</a></span></li><li><span><a href="#Interpolation-of-profiles-measurements-to-pressure-levels-of-interest" data-toc-modified-id="Interpolation-of-profiles-measurements-to-pressure-levels-of-interest-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Interpolation of profiles measurements to pressure levels of interest</a></span></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>References</a></span></li></ul></div></div>
+<div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>The Argovis project (<a class="reference external" href="http://argovis.colorado.edu">argovis.colorado.edu</a>, [1]) is upgrading its API, with a new design that better supports expressive, targeted search across multiple data sources, including Argo floats [2, 3], GO-SHIP profiles [4], and more. This new API is intended to enable co-location studies across datasets and efficiently scoped download of exactly the data researchers need. The purpose of this notebook is to illustrate some of the key features of this API as it is being developed; please note that this API is still under development and will evolve further before full release (including access to other datasets), and that helper functions here are examples only and will be superseded by a python library in future. Please send comments, feedback and feature requests to the team at <a class="reference external" href="mailto:argovis&#37;&#52;&#48;colorado&#46;edu">argovis<span>&#64;</span>colorado<span>&#46;</span>edu</a>.</p>
+</div>
+<div class="section" id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>API development to access point data in a new schema (e.g. oceanic profiles)</p></li>
+<li><p>Alpha demo of the new Earth system data API, including:</p>
+<ul>
+<li><p>Co-location and cross referencing of disparate data sources</p></li>
+<li><p>Querying and downloading data or metadata subsets for exactly the measurements of interest (e.g. oxygen profiles in the ocean), within the metadata space (lat / lon / time, data source, etc) of interest.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+<p>A new hierarchical JSON schema for describing generic Earth-system point data was developed in collaboration between Argo and GO-SHIP data experts, into which e.g. Argo and GO-SHIP data were cast and indexed in Mongodb. This allows for convenient and powerful cross-indexing of these data for performing the co-location searches of interest.</p>
+<p>On top of this data structure, a new RESTful API was developed that leverages the OpenAPI standard for specification and documentation of point data search routes. Emphasis was placed on creating the ability to make <em>targeted queries</em> that return only the data of interest, filtered by user-specified metadata and data search parameters, in order to leverage server-side resources on behalf of users and allow them to download only the data of interest to them, thus enabling rapid, interactive analysis building.</p>
+<p>In the following, we will demo some of the data queries that are possible with the new API.</p>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ocean profile data is queried, returned and plotted, filtered by data source, geography, and available measurements.</p></li>
+<li><p>Argo core and BGC measurements are co-located with GO-SHIP WOCE lines of interest.</p></li>
+<li><p>Co-located measurements are plotted and compared.</p></li>
+<li><p>Examples of filtering measurement data by QC flag, and interpolating measurements onto regular depth profiles are presented.</p></li>
+</ul>
+</div>
+<div class="section" id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://argovis.colorado.edu/docs/Argovis_About.html">Argovis</a> is currently funded by two NSF awards:</p>
+<ul class="simple">
+<li><p>Award1 = {“agency”: “US National Science Foundation”, “award_code”: “1928305”, “award_URL”: ” <a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928305&amp;HistoricalAwards=false">https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928305&amp;HistoricalAwards=false</a> “}</p></li>
+<li><p>Award2 = {“agency”: “US National Science Foundation”, “award_code”: “2026776”, “award_URL”: ” <a class="reference external" href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=2026776&amp;HistoricalAwards=false">http://www.nsf.gov/awardsearch/showAward?AWD_ID=2026776&amp;HistoricalAwards=false</a> “}</p></li>
+</ul>
+</div>
+<div class="section" id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p>keywords= [“Argovis”,“Argo”,”floats”,”GO-SHIP”,“oceanic profiles”,’hydrographic data”,”profiling floats”,”in-situ observations”]</p>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>Mills, W., Giglio, D., Scanderbeg, M., Tucker, T. (2022). <em>Intro to Argovis’ API</em>. A DOI will be assigned after review.</p>
+</div>
+<div class="section" id="suggested-next-steps">
+<h2>Suggested next steps<a class="headerlink" href="#suggested-next-steps" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Python library of helper functions and wrappers</strong>: this notebook leverages some simple helper functions for wrapping API calls; these should be formalized and expanded as a fully unit tested and versioned python library distributed on Pypi.</p></li>
+<li><p><strong>Schema finalization</strong>: the current database implements a release candidate of our point data schema; this will likely be updated based on early feedback.</p></li>
+<li><p><strong>Data source expansion</strong>: the current database includes a selection of Argo and GO-SHIP data, but has been designed to be highly extensible; integrating more data sources (e.g. tropical cyclone, atmospheric river, satellite, and gridded data) will be pursued as ongoing work.</p></li>
+</ul>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>GO-SHIP data were included in Argovis as part of a collaboration with Sarah Purkey, Steve Diggs, Lynne Merchant, Karen Stocks, and Andrew Barna (NSF award #2026776).</p>
+<p>This iteration of Argovis is hosted at the University of Colorado, Boudler, on the CU Platform Engineering team’s OpenShift Kubernetes platform. The authors thank and acknowledge the whole platform team at CU for their consistent support.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+<p>We begin by importing some typical libraries, as well as some examples of custom helper functions that wrap the Argovis API:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#data processing</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1">#data visualization</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="local-library-import">
+<h2>Local library import<a class="headerlink" href="#local-library-import" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##### import local functions</span>
+<span class="c1"># for data processing</span>
+<span class="kn">from</span> <span class="nn">utilities_NSF_EC2022</span> <span class="kn">import</span> <span class="n">create_url</span><span class="p">,</span> <span class="n">get_data_from_url</span><span class="p">,</span> <span class="n">get_info_from_df</span><span class="p">,</span><span class="n">get_data_for_timeRange</span><span class="p">,</span> \
+                                    <span class="n">polygon_lon_lat</span><span class="p">,</span> <span class="n">mask_QC</span><span class="p">,</span> <span class="n">simple_plot</span><span class="p">,</span> <span class="n">qc</span><span class="p">,</span> <span class="n">interpolate</span>
+<span class="c1"># for data visualization</span>
+<span class="kn">from</span> <span class="nn">utilities_NSF_EC2022</span> <span class="kn">import</span> <span class="n">set_ax_label</span><span class="p">,</span> \
+                                 <span class="n">set_map_and_plot_locations_withColor</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="parameter-definitions">
+<h1>Parameter definitions<a class="headerlink" href="#parameter-definitions" title="Permalink to this headline">¶</a></h1>
+<p>Next, let’s populate some useful parameters for our API. We’ll store the root of our API in <code class="docutils literal notranslate"><span class="pre">URL_PREFIX</span></code>, and pass our API key around in <code class="docutils literal notranslate"><span class="pre">API_KEY</span></code>. If you don’t have an Argovis API key, you can get one for free at <a class="reference external" href="https://argovis-keygen.colorado.edu/">https://argovis-keygen.colorado.edu/</a> API keys allow us to allocate our  resources fairly to all our users. <code class="docutils literal notranslate"><span class="pre">API_KEY</span></code> can be also left empty <code class="docutils literal notranslate"><span class="pre">''</span></code> (as in the cell below), yet in this case the user may exceed API request limits (and get HTTP 403 errors), depending on system load at the time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefix to use with all API queries</span>
+<span class="n">URL_PREFIX</span> <span class="o">=</span> <span class="s1">&#39;https://argovis-api.colorado.edu&#39;</span>
+<span class="n">API_KEY</span>   <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s also declare some space-time variables we’ll use to filter our search results by in the following examples. Dates are encoded as ISO 8601 UTC datestrings, and polygons are defined as lists of [lon, lat] pairs; to construct a polygon interactively:</p>
+<ul class="simple">
+<li><p>visit <a class="reference external" href="http://argovis.colorado.edu">argovis.colorado.edu</a></p></li>
+<li><p>draw a shape</p></li>
+<li><p>click on the purple shaded area of the region of interest (not on a dot)</p></li>
+<li><p>from the pop up window, go “to Selection page”</p></li>
+<li><p>from the url of the selection shape, copy the shape, i.e. [copy_all_this_inside_outer_brackets] after ‘shape=’</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">startDate</span> <span class="o">=</span> <span class="s1">&#39;2021-04-20T00:00:00Z&#39;</span>
+<span class="n">endDate</span>   <span class="o">=</span> <span class="s1">&#39;2021-05-02T00:00:00Z&#39;</span>
+<span class="c1"># To see what this polygon looks like, visit https://argovis.colorado.edu/ng/home?mapProj=WM&amp;presRange=%5B0,2000%5D&amp;selectionStartDate=2022-03-31T22:30:45Z&amp;selectionEndDate=2022-04-14T22:30:45Z&amp;threeDayEndDate=2022-04-12T22:30:45&amp;shapes=%5B%5B%5B22.105999,-76.289063%5D,%5B26.902477,-72.597656%5D,%5B26.084682,-66.395555%5D,%5B25.005973,-60.292969%5D,%5B10.833306,-65.566406%5D,%5B11.942098,-72.133142%5D,%5B22.105999,-76.289063%5D%5D%5D&amp;includeRealtime=true&amp;onlyBGC=false&amp;onlyDeep=false&amp;threeDayToggle=false</span>
+<span class="n">polygon</span> <span class="o">=</span> <span class="s1">&#39;[[-76.289063,22.105999],[-72.597656,26.902477],[-66.395555,26.084682],[-60.292969,25.005973],[-65.566406,10.833306],[-72.133142,11.942098],[-76.289063,22.105999]]&#39;</span>
+
+<span class="c1"># helper function parameters</span>
+<span class="c1">## list of parameters to extract from dataframes to dictionaries for plotting, see get_info_from_df</span>
+<span class="n">info_to_store</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="s1">&#39;date&#39;</span><span class="p">,</span><span class="s1">&#39;cols_bySource&#39;</span><span class="p">,</span><span class="s1">&#39;ids&#39;</span><span class="p">,</span><span class="s1">&#39;woce_line&#39;</span><span class="p">]</span>
+
+<span class="c1">## repackaging of polygon coordinates for plotting, see set_map_and_plot_locations_withColor</span>
+<span class="n">polygon_lon_lat_dict</span> <span class="o">=</span> <span class="n">polygon_lon_lat</span><span class="p">(</span><span class="n">polygon_str</span><span class="o">=</span><span class="n">polygon</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-import">
+<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
+<p>Note that due to the nature of this notebook as an API technical demo, data import is performed throughout the following examples. Helper functions are provided to wrap API calls, but expert users are encouraged to access the API directly, as informed by the <a class="reference external" href="https://argovis-api.colorado.edu/docs/">API documentation here</a>.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
+<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="co-location-examples">
+<h2>Co-location examples<a class="headerlink" href="#co-location-examples" title="Permalink to this headline">¶</a></h2>
+<p>One of Argovis’ goals is to enable <em>co-location studies</em>: quickly seeing when and where two or more datasets intersect, possibly providing crosschecks or other mutually supporting data. In what follows, we’ll see some examples of co-locating Argo and GO-SHIP measurements in the polygon we defined above.</p>
+<div class="section" id="data-source-searching-negation-search">
+<h3>Data source searching &amp; negation search<a class="headerlink" href="#data-source-searching-negation-search" title="Permalink to this headline">¶</a></h3>
+<p>First, let’s try selecting a few different sources of data, like Argo core [3], Argo BGC [3], and GO-SHIP [4] measurements, and plotting their co-location. See the helper functions for detailed implementation of the API wrapper, but here we’re leveraging the API’s <code class="docutils literal notranslate"><span class="pre">/profiles</span></code> endpoint and its time range (via <code class="docutils literal notranslate"><span class="pre">startDate=</span></code> and <code class="docutils literal notranslate"><span class="pre">endDate=</span></code>), data source (via <code class="docutils literal notranslate"><span class="pre">source=</span></code>) and region (via <code class="docutils literal notranslate"><span class="pre">polygon=</span></code>) metadata filtering.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">source_all</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;argo_core&#39;</span><span class="p">,</span><span class="s1">&#39;argo_bgc&#39;</span><span class="p">,</span><span class="s1">&#39;cchdo_go-ship&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">isource</span> <span class="ow">in</span> <span class="n">source_all</span><span class="p">:</span>
+    <span class="n">bfr_df</span> <span class="o">=</span> <span class="n">get_data_for_timeRange</span><span class="p">(</span><span class="n">startDate</span><span class="o">=</span><span class="n">startDate</span><span class="p">,</span><span class="n">endDate</span><span class="o">=</span><span class="n">endDate</span><span class="p">,</span> \
+                                <span class="n">url_prefix</span><span class="o">=</span><span class="n">URL_PREFIX</span><span class="o">+</span><span class="s1">&#39;/profiles?&#39;</span><span class="p">,</span> \
+                                <span class="n">myAPIkey</span><span class="o">=</span><span class="n">API_KEY</span><span class="p">,</span> \
+                                <span class="n">source</span><span class="o">=</span><span class="n">isource</span><span class="p">,</span> \
+                                <span class="n">polygon</span><span class="o">=</span><span class="n">polygon</span><span class="p">,</span> \
+                                <span class="n">dt_tag</span><span class="o">=</span><span class="s1">&#39;365d&#39;</span><span class="p">,</span><span class="n">writeFlag</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">bfr_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="n">bfr_info</span> <span class="o">=</span> <span class="n">get_info_from_df</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">bfr_df</span><span class="p">,</span><span class="n">info_to_store</span><span class="o">=</span><span class="n">info_to_store</span><span class="p">)</span>
+        <span class="c1">###### let&#39;s plot the polygon and the profile locations color coded by source</span>
+        <span class="n">set_map_and_plot_locations_withColor</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="n">bfr_info</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span><span class="n">lat</span><span class="o">=</span><span class="n">bfr_info</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> \
+                                     <span class="n">cols</span><span class="o">=</span><span class="n">bfr_info</span><span class="p">[</span><span class="s1">&#39;cols_bySource&#39;</span><span class="p">],</span> \
+                                     <span class="n">polygon_lon_lat_dict</span><span class="o">=</span><span class="n">polygon_lon_lat_dict</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;source: &#39;</span> <span class="o">+</span> <span class="n">isource</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">28</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of items: 50
+https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&amp;endDate=2021-05-02T23:59:59Z&amp;polygon=[[-76.289063,22.105999],[-72.597656,26.902477],[-66.395555,26.084682],[-60.292969,25.005973],[-65.566406,10.833306],[-72.133142,11.942098],[-76.289063,22.105999]]&amp;source=argo_core
+Number of items: 4
+https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&amp;endDate=2021-05-02T23:59:59Z&amp;polygon=[[-76.289063,22.105999],[-72.597656,26.902477],[-66.395555,26.084682],[-60.292969,25.005973],[-65.566406,10.833306],[-72.133142,11.942098],[-76.289063,22.105999]]&amp;source=argo_bgc
+Number of items: 46
+https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&amp;endDate=2021-05-02T23:59:59Z&amp;polygon=[[-76.289063,22.105999],[-72.597656,26.902477],[-66.395555,26.084682],[-60.292969,25.005973],[-65.566406,10.833306],[-72.133142,11.942098],[-76.289063,22.105999]]&amp;source=cchdo_go-ship
+</pre></div>
+</div>
+<img alt="../../_images/WM_01_intro_to_argovis_api_23_1.png" src="../../_images/WM_01_intro_to_argovis_api_23_1.png" />
+<img alt="../../_images/WM_01_intro_to_argovis_api_23_2.png" src="../../_images/WM_01_intro_to_argovis_api_23_2.png" />
+<img alt="../../_images/WM_01_intro_to_argovis_api_23_3.png" src="../../_images/WM_01_intro_to_argovis_api_23_3.png" />
+</div>
+</div>
+<p>In these plots, yellow points correspond to Argo profiles without BGC variables or measurements deeper than 2500 dbar; green points correspond to Argo BGC profiles; blue points correspond to Deep Argo profiles (with measurements deeper than 2500 dbar); and black dots correspond to GO-SHIP profiles.</p>
+<p>Notice in the first map, we actually got <code class="docutils literal notranslate"><span class="pre">argo_bgc</span></code>, <code class="docutils literal notranslate"><span class="pre">argo_deep</span></code> and <code class="docutils literal notranslate"><span class="pre">argo_core</span></code> profiles when we asked for <code class="docutils literal notranslate"><span class="pre">argo_core</span></code>; this is because Argo floats that measure BGC variables and/or sample below 2000m will also carry the <code class="docutils literal notranslate"><span class="pre">argo_core</span></code> tag. If we want to exclude profiles that include <code class="docutils literal notranslate"><span class="pre">argo_bgc</span></code> variables, we can use Argovis’ <em>negation search</em> in the <code class="docutils literal notranslate"><span class="pre">source</span></code> filter (please refer to the previous paragraph for the color of the dots in the next cell):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfr_df</span> <span class="o">=</span> <span class="n">get_data_for_timeRange</span><span class="p">(</span><span class="n">startDate</span><span class="o">=</span><span class="n">startDate</span><span class="p">,</span><span class="n">endDate</span><span class="o">=</span><span class="n">endDate</span><span class="p">,</span> \
+                            <span class="n">url_prefix</span><span class="o">=</span><span class="n">URL_PREFIX</span><span class="o">+</span><span class="s1">&#39;/profiles?&#39;</span><span class="p">,</span> \
+                            <span class="n">myAPIkey</span><span class="o">=</span><span class="n">API_KEY</span><span class="p">,</span> \
+                            <span class="n">source</span><span class="o">=</span><span class="s1">&#39;argo_core,~argo_bgc&#39;</span><span class="p">,</span> \
+                            <span class="n">polygon</span><span class="o">=</span><span class="n">polygon</span><span class="p">,</span> \
+                            <span class="n">dt_tag</span><span class="o">=</span><span class="s1">&#39;365d&#39;</span><span class="p">,</span><span class="n">writeFlag</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">bfr_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="n">bfr_info</span> <span class="o">=</span> <span class="n">get_info_from_df</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">bfr_df</span><span class="p">,</span><span class="n">info_to_store</span><span class="o">=</span><span class="n">info_to_store</span><span class="p">)</span>
+    <span class="c1">###### let&#39;s plot the polygon and the profile locations color coded by source</span>
+    <span class="n">set_map_and_plot_locations_withColor</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="n">bfr_info</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span><span class="n">lat</span><span class="o">=</span><span class="n">bfr_info</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> \
+                                 <span class="n">cols</span><span class="o">=</span><span class="n">bfr_info</span><span class="p">[</span><span class="s1">&#39;cols_bySource&#39;</span><span class="p">],</span> \
+                                 <span class="n">polygon_lon_lat_dict</span><span class="o">=</span><span class="n">polygon_lon_lat_dict</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;source: &#39;</span> <span class="o">+</span> <span class="n">isource</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">28</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of items: 46
+https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&amp;endDate=2021-05-02T23:59:59Z&amp;polygon=[[-76.289063,22.105999],[-72.597656,26.902477],[-66.395555,26.084682],[-60.292969,25.005973],[-65.566406,10.833306],[-72.133142,11.942098],[-76.289063,22.105999]]&amp;source=argo_core,~argo_bgc
+</pre></div>
+</div>
+<img alt="../../_images/WM_01_intro_to_argovis_api_25_1.png" src="../../_images/WM_01_intro_to_argovis_api_25_1.png" />
+</div>
+</div>
+<p>Now (map above) we don’t have profiles that include <code class="docutils literal notranslate"><span class="pre">argo_bgc</span></code> variables, as desired. If we want an account of the different types of Argo profiles in a region, we can iterate through these source parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'argo_core,~argo_bgc,~argo_deep'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'argo_bgc,~argo_deep'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'argo_deep,~argo_bgc'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'argo_bgc,argo_deep'</span></code></p></li>
+</ul>
+<p>Counting the profiles for each query, we would know how many profiles only have core variables (exclusive of deep and BGC variables), how many profiles have BGC variables exclusive of deep measurements, how many profiles have deep measurements exclusive of BGC variables, and how many profiles have both BGC variables and deep measurements, respectively. We note that <code class="docutils literal notranslate"><span class="pre">argo_deep</span></code> profiles are tagged as any profile with levels deeper than 2500 dbar, and therefore will also carry an <code class="docutils literal notranslate"><span class="pre">argo_core</span></code> and (if applicable) <code class="docutils literal notranslate"><span class="pre">argo_bgc</span></code> source tag. If we want to check for edge cases when a BGC profile file is available yet a core file is not, we can use the parameter <code class="docutils literal notranslate"><span class="pre">'argo_bgc,~argo_core'</span></code> (this should not happen).</p>
+</div>
+<div class="section" id="searching-by-available-data">
+<h3>Searching by available data<a class="headerlink" href="#searching-by-available-data" title="Permalink to this headline">¶</a></h3>
+<p>We often only want profiles that have data of interest. Argovis features the ability to perform exactly this type of search, providing metadata and data only for profiles with the measurements we need. Let’s look for profiles in our region of interest that have dissolved oxygen and pressure measurements, by using the <code class="docutils literal notranslate"><span class="pre">data</span></code> filter. Also note adding <code class="docutils literal notranslate"><span class="pre">metadata-only</span></code> to the filter list tells Argovis to look for profiles that have the data listed, but only actually return the corresponding metadata for those profiles:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">get_data_for_timeRange</span><span class="p">(</span><span class="n">startDate</span><span class="o">=</span><span class="n">startDate</span><span class="p">,</span><span class="n">endDate</span><span class="o">=</span><span class="n">endDate</span><span class="p">,</span> \
+                                <span class="n">url_prefix</span><span class="o">=</span><span class="n">URL_PREFIX</span><span class="o">+</span><span class="s1">&#39;/profiles?&#39;</span><span class="p">,</span> \
+                                <span class="n">myAPIkey</span><span class="o">=</span><span class="n">API_KEY</span><span class="p">,</span> \
+                                <span class="n">data</span><span class="o">=</span><span class="s1">&#39;doxy,pres,metadata-only&#39;</span><span class="p">,</span> \
+                                <span class="n">polygon</span><span class="o">=</span><span class="n">polygon</span><span class="p">,</span> \
+                                <span class="n">dt_tag</span><span class="o">=</span><span class="s1">&#39;100d&#39;</span><span class="p">,</span><span class="n">writeFlag</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;df_all&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+        <span class="n">df_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_all</span><span class="p">,</span><span class="n">df</span><span class="p">],</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df_all</span> <span class="o">=</span> <span class="n">df</span>
+            
+<span class="c1"># store some info</span>
+<span class="n">info_d_reg</span> <span class="o">=</span> <span class="n">get_info_from_df</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_all</span><span class="p">,</span><span class="n">info_to_store</span><span class="o">=</span><span class="n">info_to_store</span><span class="p">)</span>
+
+<span class="c1"># delete df_all</span>
+<span class="k">del</span> <span class="n">df_all</span>
+
+<span class="c1">###### let&#39;s plot the polygon and profile locations color coded by source</span>
+<span class="n">set_map_and_plot_locations_withColor</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="n">info_d_reg</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span><span class="n">lat</span><span class="o">=</span><span class="n">info_d_reg</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> \
+                                     <span class="n">cols</span><span class="o">=</span><span class="n">info_d_reg</span><span class="p">[</span><span class="s1">&#39;cols_bySource&#39;</span><span class="p">],</span> \
+                                     <span class="n">polygon_lon_lat_dict</span><span class="o">=</span><span class="n">polygon_lon_lat_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of items: 4
+https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&amp;endDate=2021-05-02T23:59:59Z&amp;polygon=[[-76.289063,22.105999],[-72.597656,26.902477],[-66.395555,26.084682],[-60.292969,25.005973],[-65.566406,10.833306],[-72.133142,11.942098],[-76.289063,22.105999]]&amp;data=doxy,pres,metadata-only
+</pre></div>
+</div>
+<img alt="../../_images/WM_01_intro_to_argovis_api_27_1.png" src="../../_images/WM_01_intro_to_argovis_api_27_1.png" />
+</div>
+</div>
+<p>We can perform a similar search, this time demanding data be only from a particular WOCE (World Ocean Circulation Experiment) line with the <code class="docutils literal notranslate"><span class="pre">woceline=</span></code> filter (instead of querying profiles in a region as done previously):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;df_d1&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+    <span class="k">del</span> <span class="n">df_d1</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">get_data_for_timeRange</span><span class="p">(</span><span class="n">startDate</span><span class="o">=</span><span class="n">startDate</span><span class="p">,</span><span class="n">endDate</span><span class="o">=</span><span class="n">endDate</span><span class="p">,</span> \
+                                <span class="n">url_prefix</span><span class="o">=</span><span class="n">URL_PREFIX</span><span class="o">+</span><span class="s1">&#39;/profiles?&#39;</span><span class="p">,</span> \
+                                <span class="n">myAPIkey</span><span class="o">=</span><span class="n">API_KEY</span><span class="p">,</span> \
+                                <span class="n">data</span><span class="o">=</span><span class="s1">&#39;pres,doxy_ctd,metadata-only&#39;</span><span class="p">,</span> \
+                                <span class="n">woceline</span><span class="o">=</span><span class="s1">&#39;A22&#39;</span><span class="p">,</span> \
+                                <span class="n">dt_tag</span><span class="o">=</span><span class="s1">&#39;365d&#39;</span><span class="p">,</span><span class="n">writeFlag</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;df_d1&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+        <span class="n">df_d1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_d1</span><span class="p">,</span><span class="n">df</span><span class="p">],</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df_d1</span> <span class="o">=</span> <span class="n">df</span>
+<span class="c1"># store some info</span>
+<span class="n">info_d1</span> <span class="o">=</span> <span class="n">get_info_from_df</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_d1</span><span class="p">,</span><span class="n">info_to_store</span><span class="o">=</span><span class="n">info_to_store</span><span class="p">)</span>
+
+<span class="n">font</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;weight&#39;</span> <span class="p">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;size&#39;</span>   <span class="p">:</span> <span class="mi">24</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">font</span><span class="p">)</span>
+<span class="n">set_map_and_plot_locations_withColor</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span><span class="n">lat</span><span class="o">=</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> \
+                                     <span class="n">cols</span><span class="o">=</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;cols_bySource&#39;</span><span class="p">],</span> \
+                                     <span class="n">polygon_lon_lat_dict</span><span class="o">=</span><span class="p">[])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;A22&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">28</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of items: 46
+https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&amp;endDate=2021-05-02T23:59:59Z&amp;data=pres,doxy_ctd,metadata-only&amp;woceline=A22
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;A22&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/WM_01_intro_to_argovis_api_29_2.png" src="../../_images/WM_01_intro_to_argovis_api_29_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="proximity-search">
+<h3>Proximity search<a class="headerlink" href="#proximity-search" title="Permalink to this headline">¶</a></h3>
+<p>Now that we’ve identified some information from this WOCE line of interest, we can use Argovis’ proximity search to find nearby Argo profiles, via the <code class="docutils literal notranslate"><span class="pre">radius</span></code> and <code class="docutils literal notranslate"><span class="pre">center</span></code> pair of query parameters, which together search for profiles within a given distance of a centerpoint. Here we also use the <code class="docutils literal notranslate"><span class="pre">metadata-only</span></code> flag to <code class="docutils literal notranslate"><span class="pre">data</span></code>, so we get profiles that contain <code class="docutils literal notranslate"><span class="pre">pres</span></code> and <code class="docutils literal notranslate"><span class="pre">doxy</span></code>, but for now only actually download their metadata:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta_days</span> <span class="o">=</span> <span class="mf">3.5</span>
+
+<span class="k">if</span> <span class="s1">&#39;df_d2&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+    <span class="k">del</span> <span class="n">df_d2</span>
+
+<span class="n">lst_id_pairs_d1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lst_id_pairs_d2</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">])):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">.2</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">get_data_for_timeRange</span><span class="p">(</span><span class="n">startDate</span><span class="o">=</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%SZ&#39;</span><span class="p">)</span><span class="o">-</span> \
+                                          <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">delta_days</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%SZ&#39;</span><span class="p">),</span>
+                               <span class="n">endDate</span><span class="o">=</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%SZ&#39;</span><span class="p">)</span><span class="o">+</span> \
+                                          <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">delta_days</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%SZ&#39;</span><span class="p">),</span> \
+                               <span class="n">myAPIkey</span><span class="o">=</span><span class="n">API_KEY</span><span class="p">,</span> \
+                               <span class="n">center</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]),</span> \
+                               <span class="n">radius_km</span><span class="o">=</span><span class="s1">&#39;50&#39;</span><span class="p">,</span> \
+                               <span class="n">url_prefix</span><span class="o">=</span><span class="n">URL_PREFIX</span><span class="o">+</span><span class="s1">&#39;/profiles?&#39;</span><span class="p">,</span> \
+                               <span class="n">data</span><span class="o">=</span><span class="s1">&#39;pres,doxy,metadata-only&#39;</span><span class="p">,</span> \
+                               <span class="n">source</span><span class="o">=</span><span class="s1">&#39;argo_core&#39;</span><span class="p">,</span> \
+                               <span class="n">dt_tag</span><span class="o">=</span><span class="s1">&#39;365d&#39;</span><span class="p">,</span><span class="n">writeFlag</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">d</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="c1">#info_d2 = {**info_d2, **get_info_from_df(df=d,info_to_store=info_to_store)}</span>
+        <span class="c1">#list_d2 = list_d2 + [d]</span>
+        <span class="k">if</span> <span class="s1">&#39;df_d2&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+            <span class="n">df_d2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_d2</span><span class="p">,</span><span class="n">d</span><span class="p">],</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df_d2</span> <span class="o">=</span> <span class="n">d</span>
+        <span class="n">lst_id_pairs_d2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+        <span class="n">lst_id_pairs_d1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">info_d2</span><span class="o">=</span><span class="n">get_info_from_df</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_d2</span><span class="p">,</span><span class="n">info_to_store</span><span class="o">=</span><span class="n">info_to_store</span><span class="p">)</span>
+
+<span class="c1">###### let&#39;s plot the profile locations color coded by source</span>
+<span class="n">set_map_and_plot_locations_withColor</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">info_d2</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span><span class="n">lat</span><span class="o">=</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">info_d2</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> \
+                                     <span class="n">cols</span><span class="o">=</span><span class="n">info_d1</span><span class="p">[</span><span class="s1">&#39;cols_bySource&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">info_d2</span><span class="p">[</span><span class="s1">&#39;cols_bySource&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_31_0.png" src="../../_images/WM_01_intro_to_argovis_api_31_0.png" />
+</div>
+</div>
+<p>Finally, now that we’ve found Argo and GO-SHIP profiles that both measure dissolved oxygen, we can download the measurements of interest, plot the two and compare:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">font</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;weight&#39;</span> <span class="p">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;size&#39;</span>   <span class="p">:</span> <span class="mi">24</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">font</span><span class="p">)</span>
+
+<span class="n">col_d1</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span>
+<span class="n">col_d2</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span>
+
+<span class="n">var_d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;doxy_ctd&#39;</span><span class="p">,</span> <span class="s1">&#39;doxy&#39;</span><span class="p">]</span>
+
+<span class="n">mrk_sz1</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">mrk_sz2</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">mrk_type1</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+<span class="n">mrk_type2</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span>
+
+<span class="n">presRange</span> <span class="o">=</span><span class="s1">&#39;0,100&#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_id_pairs_d1</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">ids_bfr1</span> <span class="o">=</span> <span class="n">lst_id_pairs_d1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">ids_bfr2</span> <span class="o">=</span> <span class="n">lst_id_pairs_d2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ids_bfr1</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="n">ids_bfr1</span> <span class="o">=</span> <span class="p">[</span><span class="n">ids_bfr1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ids_bfr2</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="n">ids_bfr2</span> <span class="o">=</span> <span class="p">[</span><span class="n">ids_bfr2</span><span class="p">]</span>
+        
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">fig_close</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">if</span> <span class="s1">&#39;bfr_title&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+        <span class="k">del</span> <span class="n">bfr_title</span>
+        
+    <span class="c1"># plot </span>
+    <span class="k">for</span> <span class="n">isource</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s1">&#39;ids_bfr&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+            <span class="k">del</span> <span class="n">ids_bfr</span>
+        <span class="n">ids_bfr</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;ids_bfr&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">isource</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">ids_bfr</span><span class="p">:</span>
+            <span class="n">bfr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">get_data_from_url</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">URL_PREFIX</span><span class="o">+</span><span class="s1">&#39;/profiles?&amp;data=&#39;</span><span class="o">+</span><span class="n">var_d</span><span class="p">[</span><span class="n">isource</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;,pres&amp;id=&#39;</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="s1">&#39;&amp;presRange=&#39;</span><span class="o">+</span><span class="n">presRange</span><span class="p">,</span>\
+                                                 <span class="n">myAPIkey</span><span class="o">=</span><span class="n">API_KEY</span><span class="p">,</span><span class="n">writeFlag</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+            <span class="k">if</span> <span class="s1">&#39;bfr_df&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+                <span class="k">del</span> <span class="n">bfr_df</span>
+
+            <span class="k">for</span> <span class="n">j_df</span> <span class="ow">in</span> <span class="n">bfr</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;bfr_df&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+                    <span class="n">bfr_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">j_df</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">bfr_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">bfr_df</span><span class="p">,</span><span class="n">j_df</span><span class="p">],</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var_d</span><span class="p">[</span><span class="n">isource</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">bfr_df</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">bfr_df2plt</span> <span class="o">=</span> <span class="n">bfr_df</span><span class="p">[</span><span class="n">bfr_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">var_d</span><span class="p">[</span><span class="n">isource</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bfr_df2plt</span><span class="p">[</span><span class="n">var_d</span><span class="p">[</span><span class="n">isource</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span><span class="n">bfr_df2plt</span><span class="p">[</span><span class="s1">&#39;pres&#39;</span><span class="p">],</span> \
+                         <span class="n">marker</span><span class="o">=</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;mrk_type&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">isource</span><span class="p">)),</span><span class="n">markersize</span><span class="o">=</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;mrk_sz&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">isource</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;col_d&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">isource</span><span class="p">)),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">isource</span> <span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+                    <span class="n">fig_close</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;bfr_title&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+                    <span class="n">bfr_title</span> <span class="o">=</span> <span class="n">j</span> 
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">bfr_title</span> <span class="o">=</span> <span class="n">bfr_title</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="n">j</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">bfr_title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">set_ax_label</span><span class="p">(</span><span class="n">var_d</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">set_ax_label</span><span class="p">(</span><span class="s1">&#39;pres&#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">fig_close</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_33_0.png" src="../../_images/WM_01_intro_to_argovis_api_33_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="qc-filtering">
+<h2>QC filtering<a class="headerlink" href="#qc-filtering" title="Permalink to this headline">¶</a></h2>
+<p>Argovis offers QC flags for data whenever available as elements in a profile’s <code class="docutils literal notranslate"><span class="pre">data</span></code> array, but by default does not make any filtering decisions based on those flags. This example will show you how to filter your data by corresponding QC.</p>
+<p>See ref. table 2 in section 4.1 of <a class="reference external" href="http://www.argodatamgt.org/content/download/15699/102401/file/argo-quality-control-manual-version2.8.pdf">http://www.argodatamgt.org/content/download/15699/102401/file/argo-quality-control-manual-version2.8.pdf</a> for a description of Argo QC flag interpretations.</p>
+<p>First, let’s get some data that has a couple of bad temperature measurements. Be sure to also ask for the QC variable <code class="docutils literal notranslate"><span class="pre">temp_argoqc</span></code> in your <code class="docutils literal notranslate"><span class="pre">data</span></code> query:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">create_url</span><span class="p">(</span><span class="n">URL_PREFIX</span><span class="o">+</span><span class="s1">&#39;/profiles?&#39;</span><span class="p">,</span> <span class="n">profile_id</span><span class="o">=</span><span class="s1">&#39;3900321_108&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;pres,temp,temp_argoqc&#39;</span><span class="p">)</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">get_data_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">API_KEY</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets’s see what this temperature profile looks like in a simple plot that colors points by QC level:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simple_plot</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="s1">&#39;temp&#39;</span><span class="p">,</span> <span class="s1">&#39;temp_argoqc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_37_0.png" src="../../_images/WM_01_intro_to_argovis_api_37_0.png" />
+</div>
+</div>
+<p>As noted, there are a couple of levels with QC &gt; 1, which we might not want. Let’s filter those off so we can be completely confident in the data we’re using with another simple masking function, and then plot the result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mp</span> <span class="o">=</span> <span class="n">mask_QC</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="s1">&#39;temp&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">simple_plot</span><span class="p">(</span><span class="n">mp</span><span class="p">,</span> <span class="s1">&#39;temp&#39;</span><span class="p">,</span> <span class="s1">&#39;temp_argoqc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_39_0.png" src="../../_images/WM_01_intro_to_argovis_api_39_0.png" />
+</div>
+</div>
+<p>Levels with QC &gt; 1 have been suppressed, leaving us with only top-quality data. For the curious, have a look at the definition of <code class="docutils literal notranslate"><span class="pre">mask_QC</span></code>; an important design pattern illustrated there is that the function both takes and returns a dictionary that matches the JSON schema specification of an Argovis profile object; therefore, this function can be safely combined with other functions with a similar signature in a profile processing pipeline.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mask_QC</span></code> provides fine-grained control of QC filtering one variable at a time, but we can also use the convenience function <code class="docutils literal notranslate"><span class="pre">qc</span></code> to quickly scrub all the data in a profile. As a prerequisite, we must request QC data to go with every data variable; Argo QC data [5] for variable <code class="docutils literal notranslate"><span class="pre">x</span></code> is always found in <code class="docutils literal notranslate"><span class="pre">x_argoqc</span></code>, while CCHDO QC [6] is marked <code class="docutils literal notranslate"><span class="pre">x_woceqc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">create_url</span><span class="p">(</span><span class="n">URL_PREFIX</span><span class="o">+</span><span class="s1">&#39;/profiles?&#39;</span><span class="p">,</span> <span class="n">profile_id</span><span class="o">=</span><span class="s1">&#39;2902115_144&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;pres,pres_argoqc,chla,chla_argoqc,temp_sfile,temp_sfile_argoqc&#39;</span><span class="p">)</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">get_data_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">API_KEY</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s have a look at the BGC temperature and chlorophyll as they appear without QC filtering:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simple_plot</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="s1">&#39;temp_sfile&#39;</span><span class="p">,</span> <span class="s1">&#39;temp_sfile_argoqc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_44_0.png" src="../../_images/WM_01_intro_to_argovis_api_44_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simple_plot</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="s1">&#39;chla&#39;</span><span class="p">,</span> <span class="s1">&#39;chla_argoqc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_45_0.png" src="../../_images/WM_01_intro_to_argovis_api_45_0.png" />
+</div>
+</div>
+<p>Apply the default cleaning (i.e. for argo profiles, we exclude measurements with QC &gt; 1) to quickly tidy up, and replot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned</span> <span class="o">=</span> <span class="n">qc</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+<span class="n">simple_plot</span><span class="p">(</span><span class="n">cleaned</span><span class="p">,</span> <span class="s1">&#39;temp_sfile&#39;</span><span class="p">,</span> <span class="s1">&#39;temp_sfile_argoqc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_47_0.png" src="../../_images/WM_01_intro_to_argovis_api_47_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simple_plot</span><span class="p">(</span><span class="n">cleaned</span><span class="p">,</span> <span class="s1">&#39;chla&#39;</span><span class="p">,</span> <span class="s1">&#39;chla_argoqc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_48_0.png" src="../../_images/WM_01_intro_to_argovis_api_48_0.png" />
+</div>
+</div>
+<p>This worked quickly and easily, but if we look again at the original plots of this profile, most of the flagged levels for BGC temperature are QC=8, which indicates estimated, and not necessarily bad, data (for more information on Argo QC flags, see [5]). We can provide our cleaning function with custom levels to keep more points if desired:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">partially_cleaned</span> <span class="o">=</span> <span class="n">qc</span><span class="p">(</span><span class="n">profile</span><span class="p">,[(</span><span class="s1">&#39;temp_sfile&#39;</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">])])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simple_plot</span><span class="p">(</span><span class="n">partially_cleaned</span><span class="p">,</span> <span class="s1">&#39;temp_sfile&#39;</span><span class="p">,</span> <span class="s1">&#39;temp_sfile_argoqc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_51_0.png" src="../../_images/WM_01_intro_to_argovis_api_51_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simple_plot</span><span class="p">(</span><span class="n">partially_cleaned</span><span class="p">,</span> <span class="s1">&#39;chla&#39;</span><span class="p">,</span> <span class="s1">&#39;chla_argoqc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_52_0.png" src="../../_images/WM_01_intro_to_argovis_api_52_0.png" />
+</div>
+</div>
+<p>We get the estimated temperature measurements, but none of the high-flag chlorophyll.</p>
+</div>
+<div class="section" id="interpolation-of-profiles-measurements-to-pressure-levels-of-interest">
+<h2>Interpolation of profiles measurements to pressure levels of interest<a class="headerlink" href="#interpolation-of-profiles-measurements-to-pressure-levels-of-interest" title="Permalink to this headline">¶</a></h2>
+<p>At times we may wish to interpolate data to a set of standard pressure levels, rather than keep whatever pressure levels a profile presents. The convenience function <code class="docutils literal notranslate"><span class="pre">interpolate</span></code> performs this for us. Let’s begin by fetching a profile as usual, and remember what its temperature plot looks like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">create_url</span><span class="p">(</span><span class="n">URL_PREFIX</span><span class="o">+</span><span class="s1">&#39;/profiles?&#39;</span><span class="p">,</span> <span class="n">profile_id</span><span class="o">=</span><span class="s1">&#39;3900321_108&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;pres,temp,temp_argoqc&#39;</span><span class="p">)</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">get_data_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">API_KEY</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">simple_plot</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="s1">&#39;temp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_56_0.png" src="../../_images/WM_01_intro_to_argovis_api_56_0.png" />
+</div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">interpolate</span></code> function to interpolate every data variable in the profile to a set number of levels, every 100 dbar from 0 to 2000 dbar (e.g. approximately in the top 2000m):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interpolated_profile</span> <span class="o">=</span> <span class="n">interpolate</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2001</span><span class="p">))[</span><span class="mi">0</span><span class="p">::</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">simple_plot</span><span class="p">(</span><span class="n">interpolated_profile</span><span class="p">,</span> <span class="s1">&#39;temp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_58_0.png" src="../../_images/WM_01_intro_to_argovis_api_58_0.png" />
+</div>
+</div>
+<p>Note a few facts about interpolated profiles:</p>
+<ul class="simple">
+<li><p>All QC information is dropped, as there is no meaningful way to interpolate QC flags. Therefore, it’s best to do any QC cleaning you desire <em>before</em> interpolation.</p></li>
+<li><p>profile.data_warnings will include the flag <code class="docutils literal notranslate"><span class="pre">data_interpolated</span></code> to indicate a profile’s data has been interpolated in this fashion.</p></li>
+<li><p>By default, pchip intepolation is performed.</p></li>
+</ul>
+<p>In addition to pchip, linear interpolation and nearest-neighbor are also available:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_interpolated_profile</span> <span class="o">=</span> <span class="n">interpolate</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2001</span><span class="p">))[</span><span class="mi">0</span><span class="p">::</span><span class="mi">10</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="n">simple_plot</span><span class="p">(</span><span class="n">linear_interpolated_profile</span><span class="p">,</span> <span class="s1">&#39;temp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_60_0.png" src="../../_images/WM_01_intro_to_argovis_api_60_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nn_interpolated_profile</span> <span class="o">=</span> <span class="n">interpolate</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2001</span><span class="p">))[</span><span class="mi">0</span><span class="p">::</span><span class="mi">10</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+<span class="n">simple_plot</span><span class="p">(</span><span class="n">nn_interpolated_profile</span><span class="p">,</span> <span class="s1">&#39;temp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/WM_01_intro_to_argovis_api_61_0.png" src="../../_images/WM_01_intro_to_argovis_api_61_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Tucker, T., Giglio, D., Scanderbeg, M., &amp; Shen, S. S. P. (2020). Argovis: A Web Application for Fast Delivery, Visualization, and Analysis of Argo Data, Journal of Atmospheric and Oceanic Technology, 37(3), 401-416. <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/3/JTECH-D-19-0041.1.xml">doi:10.1175/JTECH-D-19-0041.1</a>.</p></li>
+<li><p>Argo (2000). Argo float data and metadata from Global Data Assembly Centre (Argo GDAC). SEANOE. <a class="reference external" href="http://sose.ucsd.edu/PAPERS/Verdy_et_al-2017-JGR.pdf">doi:10.17882/42182</a>.</p></li>
+<li><p><a class="reference external" href="https://argo.ucsd.edu/organization/">https://argo.ucsd.edu/organization/</a></p></li>
+<li><p><a class="reference external" href="http://cchdo.ucsd.edu">http://cchdo.ucsd.edu</a></p></li>
+<li><p><a class="reference external" href="https://argo.ucsd.edu/data/how-to-use-argo-files/">https://argo.ucsd.edu/data/how-to-use-argo-files/</a></p></li>
+<li><p><a class="reference external" href="https://cchdo.github.io/hdo-assets/documentation/manuals/pdf/90_1/chap4.pdf">https://cchdo.github.io/hdo-assets/documentation/manuals/pdf/90_1/chap4.pdf</a></p></li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "py_nsf_ec2022"
+        },
+        kernelOptions: {
+            kernelName: "py_nsf_ec2022",
+            path: "./chapters/ec22_mills_etal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'py_nsf_ec2022'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro to Argovis’ API</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../ec22_mirkovich_etal/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Earthcube-Meeting-2022</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
