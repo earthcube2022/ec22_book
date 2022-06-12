@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Call for Notebooks &#8212; EarthCube 2022 Call for Notebooks</title>
+    <title>Notebook DOIs &#8212; EarthCube 2022 Call for Notebooks</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Cleaning with Pandas and Jupyter Notebooks" href="../chapters/ec22_kwan_etal/README.html" />
+    <link rel="prev" title="EarthCube 2022 Notebooks" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -92,14 +94,14 @@
   EarthCube 2022 Call
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
    EarthCube 2022 Notebooks
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dois.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Notebook DOIs
   </a>
  </li>
@@ -362,7 +364,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/about.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/sources/dois.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -396,11 +398,78 @@
   <a class="reference internal nav-link" href="#about">
    About
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#links">
-   Links
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#earthcube-2022-notebooks">
+     EarthCube 2022 Notebooks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-cleaning-with-pandas-and-jupyter-notebooks">
+     Data Cleaning with Pandas and Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#magnetic-polarity-inversion-line-detection-and-analysis-tool">
+     Magnetic Polarity Inversion Line Detection and Analysis Tool
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predicting-solar-flares-with-machine-learning">
+     Predicting Solar Flares with Machine Learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paleohack-putting-earthcube-tools-in-the-hands-of-paleogeoscientists">
+     PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-ice-core-datasets-in-python-using-a-jupyter-notebook-template">
+     Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#database-interoperability-uncertainty-quantification-and-reproducible-workflows-in-the-paleogeosciences">
+     Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intro-to-argovis-api">
+     Intro to Argovis’ API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assimilative-mapping-of-geospace-observations-amgeo">
+     Assimilative Mapping of Geospace Observations (AMGeO)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accelerating-lagrangian-analyses-of-oceanic-data-benchmarking-typical-workflows">
+     Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handling-highly-imbalanced-data-in-machine-learning-applications">
+     Handling Highly Imbalanced Data in Machine Learning Applications
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ec-sep-visualization">
+     EC_SEP_Visualization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-notebooks-as-a-bridge-to-the-magic-database-and-open-science">
+     Jupyter Notebooks as a bridge to the MagIC Database and Open Science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#icespark">
+     ICESpark
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -413,26 +482,110 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="call-for-notebooks">
-<h1>Call for Notebooks<a class="headerlink" href="#call-for-notebooks" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="notebook-dois">
+<h1>Notebook DOIs<a class="headerlink" href="#notebook-dois" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
-<p>Welcome</p>
-<p>EarthCube welcomes those interested in the intersection between cyberinfrastructure and geosciences to join the 2021 EarthCube Annual Meeting to be held virtually on June 15-17, 2021.</p>
-<p>The heart of EarthCube is people. We put people first and do our best to recognize, appreciate, and respect the diversity of our global contributors. EarthCube welcomes contributions from everyone who shares our interests and wants to contribute in a healthy and constructive manner within our community.</p>
-<p>Meeting Objectives:</p>
+<p>The EarthCube notebooks have associated DOIs published through Zenodo.  These can be used
+to cite the notebooks and obtain an archived versions of them.</p>
+<div class="section" id="earthcube-2022-notebooks">
+<h3>EarthCube 2022 Notebooks<a class="headerlink" href="#earthcube-2022-notebooks" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Networking</p></li>
-<li><p>Learn about important opportunities on the horizon for EarthCube.</p></li>
-<li><p>Share novel approaches used in geoscience research and the new tools, techniques, and data available to others as a result.</p></li>
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
 </ul>
 </div>
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://docs.google.com/document/d/1gkIGbqUtiy6AQ-OsnHq6xni2sA_8Hhn80VASPKW4uD8/edit">Accepted Notebook Abstracts</a></p>
-<p><a class="reference external" href="https://github.com/earthcube2021">Notebook Directory</a></p>
-<p><a class="reference external" href="https://custom.cvent.com/DCBD4ADAAD004096B1E4AD96F3C8049E/files/event/6589b2a29fd54e0ba214e0ba1c6348fe/f85fe4ee8b284b4da23836b2df7f67db.pdf">Gather.Town Tips</a></p>
-<p><a class="reference external" href="https://custom.cvent.com/DCBD4ADAAD004096B1E4AD96F3C8049E/files/event/6589b2a29fd54e0ba214e0ba1c6348fe/a50fcdb2d83d4cf49529b8db8c42fffc.pdf">Gather.Town Tips for Poster Presenters</a></p>
+<div class="section" id="data-cleaning-with-pandas-and-jupyter-notebooks">
+<h3>Data Cleaning with Pandas and Jupyter Notebooks<a class="headerlink" href="#data-cleaning-with-pandas-and-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="magnetic-polarity-inversion-line-detection-and-analysis-tool">
+<h3>Magnetic Polarity Inversion Line Detection and Analysis Tool<a class="headerlink" href="#magnetic-polarity-inversion-line-detection-and-analysis-tool" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="predicting-solar-flares-with-machine-learning">
+<h3>Predicting Solar Flares with Machine Learning<a class="headerlink" href="#predicting-solar-flares-with-machine-learning" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="paleohack-putting-earthcube-tools-in-the-hands-of-paleogeoscientists">
+<h3>PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists<a class="headerlink" href="#paleohack-putting-earthcube-tools-in-the-hands-of-paleogeoscientists" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="visualizing-ice-core-datasets-in-python-using-a-jupyter-notebook-template">
+<h3>Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template<a class="headerlink" href="#visualizing-ice-core-datasets-in-python-using-a-jupyter-notebook-template" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="database-interoperability-uncertainty-quantification-and-reproducible-workflows-in-the-paleogeosciences">
+<h3>Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences<a class="headerlink" href="#database-interoperability-uncertainty-quantification-and-reproducible-workflows-in-the-paleogeosciences" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="intro-to-argovis-api">
+<h3>Intro to Argovis’ API<a class="headerlink" href="#intro-to-argovis-api" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="assimilative-mapping-of-geospace-observations-amgeo">
+<h3>Assimilative Mapping of Geospace Observations (AMGeO)<a class="headerlink" href="#assimilative-mapping-of-geospace-observations-amgeo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="accelerating-lagrangian-analyses-of-oceanic-data-benchmarking-typical-workflows">
+<h3>Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows<a class="headerlink" href="#accelerating-lagrangian-analyses-of-oceanic-data-benchmarking-typical-workflows" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="handling-highly-imbalanced-data-in-machine-learning-applications">
+<h3>Handling Highly Imbalanced Data in Machine Learning Applications<a class="headerlink" href="#handling-highly-imbalanced-data-in-machine-learning-applications" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="ec-sep-visualization">
+<h3>EC_SEP_Visualization<a class="headerlink" href="#ec-sep-visualization" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="jupyter-notebooks-as-a-bridge-to-the-magic-database-and-open-science">
+<h3>Jupyter Notebooks as a bridge to the MagIC Database and Open Science<a class="headerlink" href="#jupyter-notebooks-as-a-bridge-to-the-magic-database-and-open-science" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
+<div class="section" id="icespark">
+<h3>ICESpark<a class="headerlink" href="#icespark" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>URL</p></li>
+<li><p>DOI</p></li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -449,7 +602,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./docs"
+            path: "./sources"
         },
         predefinedOutput: true
     }
@@ -460,7 +613,21 @@
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EarthCube 2022 Notebooks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../chapters/ec22_kwan_etal/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Cleaning with Pandas and Jupyter Notebooks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>

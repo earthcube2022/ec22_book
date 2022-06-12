@@ -1,11 +1,11 @@
 format: jb-book
-root: docs/index_dup
+root: sources/index_dup.md
 parts:
   - caption: EarthCube 2022 Call
     numbered: False   
     chapters:
-    - file: docs/index
-    - file: docs/dois
+    - file: sources/index.md
+    - file: sources/dois.md
   - caption: Notebook Submissions
     # numbered: 1   
     chapters:
