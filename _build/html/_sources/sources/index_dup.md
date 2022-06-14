@@ -17,41 +17,25 @@ the 2022 EarthCube Annual Meeting proceedings.
 
 ## Notebook Organizing Committee:
 
-* Hugh Shanahan - Royal Holloway, University of London
-* Matt Turk - University of Illinois
-* Ryan Abernathey - Columbia University
-* Keith Maull - NCAR
-* Donata Giglio - University of Colorado, EarthCube TAC
-* Lynne Schreiber - SDSC, UCSD - EarthCube Office
-* Daniel S. Katz  - University of Illinois - EarthCube Office
-* Kenton McHenry - University of Illinois - EarthCube Office
+* Lisa Tauxe (UCSD) - Chair
+* Donata Giglio (University of Colorado)
+* Daniel S. Katz (University of Illinois)
+* Kenton McHenry (University of Illinois)
+* Jessica Scheick (U of New Hampshire)
+* Lynne Schreiber (UCSD)
+* Hugh Shanahan (Royal Holloway, University of London)
 
 ## Notebook Reviewers:
 
-* Anderson Banihirwe (UCAR)
-* Shay Carter (UNIDATA)
-* Gui Castelao (UCSD)
-* Julien Chastang (UNIDATA)
-* Kelly Enloe (University of Colorado)
-* Brian Grivna (University of Minnesota)
-* Christopher Havlin (University of Illinois)
-* Spencer Jones (Columbia)
-* Phong Le (University of Illinois)
-* Trevor Leonard (University of Colorodo)
-* Zhiyu Li (University of Illinois)
-* Rupert Minnett (EarthRef)
-* Thomas Nicholas (University of York)
-* Chris Olson (UCSD)
-* Kevin Paul (UCAR)
-* Jessica Scheick (University of Maine)
-* David Shumway
-* Aiman Soliman (University of Illinois)
-* Charles Stern (University of Colorado)
-* Lisa Tauxe (UCSD)
-* Kristen Thyng (Axiom Data Science)
-* Wen-wen Tung (Purdue)
-* Ana Beatriz Villas Boas (UCSD)
-* Kunxuan Wang (University of Illinois)
-* Carol Willing (Project Jupyter)
+* Shay Carter (UCAR)
+* Julien Chastang (UCAR)
+* Christopher Havlin (University of Illinois at Urbana-Champaign)
+* Cory Jones (Texas A&M University)
+* Zhiyu Li (U of Illinois)
+* Rupert Minnett (Oregon State University)
+* Chris Olson (USCD)
+* David Shumway (University of Illinois Chicago)
+* Charles Stern (Lamont-Doherty Earth Observatory)
+* Wen-wen Tung (Purdue University)
 * Bidhyananda Yadav (Ohio State University)
-* Whyjay Zheng (UC Berkeley)
+* Whyjay Zheng (University of California Berkeley)
