@@ -17,14 +17,13 @@ the 2022 EarthCube Annual Meeting proceedings.
 
 ## Notebook Organizing Committee:
 
-* Hugh Shanahan - Royal Holloway, University of London
-* Matt Turk - University of Illinois
-* Ryan Abernathey - Columbia University
-* Keith Maull - NCAR
-* Donata Giglio - University of Colorado, EarthCube TAC
-* Lynne Schreiber - SDSC, UCSD - EarthCube Office
-* Daniel S. Katz  - University of Illinois - EarthCube Office
-* Kenton McHenry - University of Illinois - EarthCube Office
+* Lisa Tauxe (UCSD) - Chair
+* Donata Giglio (University of Colorado)
+* Daniel S. Katz (University of Illinois)
+* Kenton McHenry (University of Illinois)
+* Jessica Scheick (U of New Hampshire)
+* Lynne Schreiber (UCSD)
+* Hugh Shanahan (Royal Holloway, University of London)
 
 ## Notebook Reviewers:
 
