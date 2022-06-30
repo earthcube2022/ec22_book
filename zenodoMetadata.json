@@ -1,0 +1,462 @@
+{
+    "title": "Data Cleaning with Pandas and Jupyter Notebooks",
+    "creators": [
+        {
+            "name": "Wai-Yin Kwan",
+            "affiliation": "Whirl-i-Gig",
+            "email": "wyk@whirl-i-gig.com",
+            "orcid": "0000-0001-6113-0210"
+        }
+    ],
+    "keywords": [
+        "data cleaning",
+        "reproducibility",
+        "version control",
+        "testing"
+    ]
+}
+
+{
+    "title": "Intro to Argovis' API",
+    "creators": [
+        {
+            "name": "William Mills",
+            "affiliation": "Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, CO, United States",
+            "email": "William.Mills−1@colorado.edu",
+            "orcid": "0000-0002-5887-6270"
+        },
+        {
+            "name": "Donata Giglio",
+            "affiliation": "Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, CO, United States",
+            "email": "donata.Giglio@colorado.edu",
+            "orcid": "0000-0002-3738-4293"
+        },
+        {
+            "name": "Megan Scanderbeg",
+            "affiliation": "Scripps Institution of Oceanography",
+            "email": "mscanderbeg@ucsd.edu",
+            "orcid": "0000-0002-0398-7272"
+        },
+        {
+            "name": "Tyler Tucker",
+            "affiliation": "W. M. Keck Observatory",
+            "email": "ttucker@keck.hawaii.edu",
+            "orcid": "0000-0002-0560-9777"
+        }
+    ],
+    "keywords": [
+        "Argovis",
+        "Argo",
+        "floats",
+        "GO-SHIP",
+        "oceanic profiles",
+        "hydrographic data",
+        "profiling floats",
+        "in-situ observations"
+    ]
+}
+
+{
+    "title": "PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists",
+    "creators": [
+        {
+            "name": "Deborah Khider",
+            "affiliation": "Information Sciences Institute, University of Southern California",
+            "email": "khider@usc.edu",
+            "orcid": "0000-0001-7501-8430"
+        },
+        {
+            "name": "Julien Emile-Geay",
+            "affiliation": "Department of Earth Sciences, University of Southern California",
+            "email": "julieneg@usc.edu",
+            "orcid": "0000-0001-5920-4751"
+        },
+        {
+            "name": "Alexander James",
+            "affiliation": "Department of Earth Sciences, University of Southern California",
+            "email": "akjames@usc.edu",
+            "orcid": "0000-0001-8561-3188"
+        },
+        {
+            "name": "Feng Zhu",
+            "affiliation": "Nanjing University of Information Science and Technology",
+            "email": "fzhu@nuist.edu",
+            "orcid": "0000-0002-9969-2953"
+        }
+    ],
+    "keywords": [
+        "Paleoclimate",
+        "LiPD",
+        "Python",
+        "Coherence",
+        "Correlation",
+        "Causality"
+    ]
+}
+
+{
+    "title": "Database interoperability, uncertainty quantification and reproducible workflows in the paleogeosciences",
+    "creators": [
+        {
+            "name": "Nicholas McKay",
+            "affiliation": "Northern Arizona University",
+            "orcid": "0000-0003-3598-5113"
+        },
+        {
+            "name": "Julien Emile-Geay",
+            "affiliation": "University of Southern California",
+            "orcid": "0000-0001-5920-4751"
+        },
+        {
+            "name": "Deborah Khider",
+            "affiliation": "University of Southern California",
+            "orcid": "0000-0001-7501-8430"
+        }
+    ],
+    "keywords": [
+        "paleoclimate",
+        "paleoecology",
+        "abrupt change",
+        "R",
+        "LiPD"
+    ]
+}
+
+{
+    "title": "Magnetic Polarity Inversion Line Detection and Analysis Tool",
+    "creators": [
+        {
+            "name": "Anli Ji",
+            "affiliation": "Department of Computer Science, Georgia State University, Atlanta, GA",
+            "email": "aji1@student.gsu.edu",
+            "orcid": "0000-0002-1551-2370"
+        },
+        {
+            "name": "Nigar Khasayeva",
+            "affiliation": "Department of Computer Science, Georgia State University, Atlanta, GA",
+            "email": "nkhasayeva1@student.gsu.edu",
+            "orcid": "0000-0002-4590-7031"
+        },
+        {
+            "name": "Xumin Cai",
+            "affiliation": "Department of Computer Science, Georgia State University, Atlanta, GA",
+            "email": "xcai3@student.gsu.edu",
+            "orcid": ""
+        },
+        {
+            "name": "Manolis K. Georgoulis",
+            "affiliation": "Research Center for Astronomy and Applied Mathematics, Academy of Athens, Greece",
+            "email": "manolis.georgoulis@academyofathens.gr",
+            "orcid": "0000-0001-6913-1330"
+        },
+        {
+            "name": "Petrus C. Martens",
+            "affiliation": "Department of Physics & Astronomy, Georgia State University, Atlanta, GA",
+            "email": "martens@astro.gsu.edu",
+            "orcid": ""
+        },
+        {
+            "name": "Rafal A. Angryk",
+            "affiliation": "Department of Computer Science, Georgia State University, Atlanta, GA",
+            "email": "rangryk@cs.gsu.edu",
+            "orcid": "0000-0001-9598-8207"
+        },
+        {
+            "name": "Berkay Aydin",
+            "affiliation": "Department of Computer Science, Georgia State University, Atlanta, GA",
+            "email": "baydin2@gsu.edu",
+            "orcid": "0000-0002-9799-9265"
+        }
+    ],
+    "keywords": [
+        "Magnetic Polarity Inversion Lines",
+        "Solar Active Regions",
+        "Feature Extraction"
+    ]
+}
+
+{
+    "title": "EC SEP Visualization",
+    "creators": [
+        {
+            "name": "Sumanth Rotti",
+            "affiliation": "Georgia State University",
+            "email": "srotti@gsu.edu",
+            "orcid": "0000-0003-1080-3424"
+        },
+        {
+            "name": "Akhil Arya",
+            "affiliation": "Georgia State University",
+            "email": "aarya2@gsu.edu"
+        },
+        {
+            "name": "Berkay Aydin",
+            "affiliation": "Georgia State University",
+            "email": "baydin2@gsu.edu",
+            "orcid": "0000-0002-9799-9265"
+        },
+        {
+            "name": "Manolis K. Georgoulis",
+            "affiliation": "Academy of Athens",
+            "email": "manolis.georgoulis@academyofathens.gr",
+            "orcid": "0000-0001-6913-1330"
+        },
+        {
+            "name": "Petrus C. Martens",
+            "affiliation": "Georgia State University",
+            "email": "pmartens@gsu.edu"
+        }
+    ],
+    "keywords": [
+        "Solar Energtic Particle (SEP) Events",
+        "Solar Proton Events",
+        "SEP Catalog"
+    ]
+}
+
+{
+    "title": "Handling Highly Imbalanced Data in Machine Learning Applications",
+    "creators": [
+        {
+            "name": "Patrick M. O'Keefe",
+            "affiliation": "New Jersey Institute of Technology",
+            "email": "pmo6@njit.edu"
+        },
+        {
+            "name": "Viacheslav M. Sadykov",
+            "affiliation": "Georgia State University",
+            "email": "vsadykov@gsu.edu"
+        },
+        {
+            "name": "Alexander G. Kosovichev",
+            "affiliation": "New Jersey Institute of Technology",
+            "email": "alexander.g.kosovichev@njit.edu"
+        },
+        {
+            "name": "Gelu M. Nita",
+            "affiliation": "New Jersey Institute of Technology",
+            "email": "gnita@njit.edu"
+        },
+        {
+            "name": "Vincent Oria",
+            "affiliation": "New Jersey Institute of Technology",
+            "email": "vincent.oria@njit.edu"
+        },
+        {
+            "name": "Shantanu Sharma",
+            "affiliation": "New Jersey Institute of Technology",
+            "email": "shantanu.sharma@njit.edu"
+        },
+        {
+            "name": "Fraila Francis",
+            "affiliation": "New Jersey Institute of Technology",
+            "email": "ff29@njit.edu"
+        },
+        {
+            "name": "Chun Jie Chong",
+            "affiliation": "New Jersey Institute of Technology",
+            "email": "cc255@njit.edu"
+        }
+    ],
+    "keywords": [
+        "solar energetic particles",
+        "machine learning",
+        "databases"
+    ]
+}
+
+{
+    "title": "AMGeO 2.0: Crafting an API for Geospace Data Scientists",
+    "creators": [
+        {
+            "name": "Willem Mirkovich",
+            "affiliation": "University of Colorado Boulder, Smead Aerospace Engineering Sciences",
+            "email": "willem.mirkovich@colorado.edu",
+            "orcid": "0000-0003-0955-8281"
+        },
+        {
+            "name": "Tomoko Matsuo",
+            "affiliation": "University of Colorado Boulder, Smead Aerospace Engineering Sciences",
+            "email": "tomoko.matsuo@colorado.edu",
+            "orcid": "0000-0002-2754-1224"
+        },
+        {
+            "name": "Liam Kilcommons",
+            "affiliation": "University of Colorado Boulder, Smead Aerospace Engineering Sciences",
+            "email": "Liam.Kilcommons@colorado.edu",
+            "orcid": "0000-0002-4980-3045"
+        }
+    ],
+    "keywords": [
+        "AMGeO",
+        "Xarray",
+        "Python",
+        "API",
+        "Geospace"
+    ]
+}
+
+{
+    "title": "Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows",
+    "creators": [
+        {
+            "name": "Miron, Philippe",
+            "affiliation": "Florida State University",
+            "email": "pmiron@fsu.edu",
+            "orcid": "0000-0002-8520-6221"
+        },
+        {
+            "name": "Elipot, Shane",
+            "affiliation": "University of Miami",
+            "email": "selipot@miami.edu",
+            "orcid": "0000-0001-6051-5426 "
+        },
+        {
+            "name": "Lumpkin, Rick",
+            "affiliation": "NOAA’s Atlantic Oceanographic and Meteorological Laboratory",
+            "email": "rick.lumpkin@noaa.gov",
+            "orcid": "0000-0002-6690-1704 "
+        },
+        {
+            "name": "Dano, Bertrand",
+            "affiliation": "NOAA’s Atlantic Oceanographic and Meteorological Laboratory",
+            "email": "danob@miami.edu",
+            "orcid": "0000-0002-3372-2566"
+        }
+    ],
+    "keywords": [
+        "lagrangian",
+        "drifters",
+        "data structures",
+        "workflow tasks",
+        "benchmarks"
+    ]
+}
+
+{
+    "title": "Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template",
+    "creators": [
+        {
+            "name": "L. Markowsky",
+            "affiliation": "Kennesaw State University",
+            "email": "lmarkowsky@gmail.com"
+        },
+        {
+            "name": "Jessica Scheick",
+            "affiliation": "University of New Hampshire",
+            "email": "jbscheick@gmail.com",
+            "orcid": "0000-0002-3421-4459"
+        }
+    ],
+    "keywords": [
+        "ice core",
+        "visualization",
+        "climate",
+        "climate change",
+        "reproducible"
+    ]
+}
+
+{
+    "title": "Jupyter Notebooks as a bridge to the MagIC Database and Open Science",
+    "creators": [
+        {
+            "name": "Lisa Tauxe",
+            "affiliation": "Scripps Institution of Oceanography",
+            "email": "ltauxe@ucsd.edu",
+            "orcid": "0000-0002-4837-8200"
+        },
+        {
+            "name": "Rupert Minnett",
+            "affiliation": "Oregon State University",
+            "email": "rminnett@earthref.org",
+            "orcid": "0000-0002-9000-2100"
+        },
+        {
+            "name": "Nick Jarboe",
+            "affiliation": "Oregon State University",
+            "email": "njarboe@earthref.org",
+            "orcid": "0000-0003-1465-9394"
+        },
+        {
+            "name": "Catherine Constable",
+            "affiliation": "Scripps Institution of Oceanography",
+            "email": "cconstable@ucsd.edu",
+            "orcid": "0000-0003-4534-4977"
+        },
+        {
+            "name": "Anthony Koppers",
+            "affiliation": "Oregon State University",
+            "orcid": "0000-0002-8136-5372"
+        }
+    ],
+    "keywords": [
+        "FAIR",
+        "Open Science",
+        "MagIC database",
+        "PmagPy software package",
+        "paleomagnetism"
+    ]
+}
+
+{
+    "title": "Predicting Solar Flares with Machine Learning",
+    "creators": [
+        {
+            "name": "Yasser Abduallah",
+            "affiliation": "Department of Computer Science, New Jersey Institute of Technology",
+            "email": "ya54@njit.edu",
+            "orcid": "https://orcid.org/0000-0003-0792-2270"
+        },
+        {
+            "name": "Jason T. L. Wang",
+            "affiliation": "Department of Computer Science, New Jersey Institute of Technology",
+            "email": "wangj@njit.edu",
+            "orcid": "https://orcid.org/0000-0002-2486-1097"
+        },
+        {
+            "name": "Haimin Wang",
+            "affiliation": "Institute for Space Weather Sciences, New Jersey Institute of Technology",
+            "email": "haimin.wang@njit.edu",
+            "orcid": "https://orcid.org/0000-0002-5233-565X"
+        }
+    ],
+    "keywords": [
+        "Flare",
+        "Prediction",
+        "Machine",
+        "Learning",
+        "SHARP"
+    ]
+}
+
+{
+    "title": "ICESpark-EarthCube-2022-Annual-Meeting",
+    "creators": [
+        {
+            "name": "Jia Yu",
+            "affiliation": "Washington State University",
+            "email": "jia.yu1@wsu.edu"
+        },
+        {
+            "name": "Yiqun Xie",
+            "affiliation": "University of Maryland",
+            "email": "xie@umd.edu"
+        },
+        {
+            "name": "Kyle Duncan",
+            "affiliation": "University of Maryland",
+            "email": "kduncan@umd.edu"
+        },
+        {
+            "name": "Sinead Louise Farrell",
+            "affiliation": "University of Maryland",
+            "email": "sineadf@umd.edu"
+        }
+    ],
+    "keywords": [
+        "arctic observation",
+        "big data",
+        "cluster computing"
+    ]
+}
