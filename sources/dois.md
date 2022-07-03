@@ -8,7 +8,8 @@ to cite the notebooks and obtain an archived versions of them.
 
 ### EarthCube 2022 Notebooks 
 
-* URL  
+
+[![DOI](https://zenodo.org/badge/501753258.svg)](https://zenodo.org/badge/latestdoi/501753258)
 * Repo: https://github.com/earthcube2022
 
 ### Data Cleaning with Pandas and Jupyter Notebooks
