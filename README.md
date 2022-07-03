@@ -1,7 +1,6 @@
-# EC 22
+# EarthCube 2022 Call for Notebooks
 
 # About
 
-This is the EC 22 notebook submissions
-
+The collection of notebooks that form the 2022 EarthCube call for Notebooks.
 
