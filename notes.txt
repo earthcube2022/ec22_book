@@ -14,3 +14,8 @@
  https://github.com/earthcube2022/ec22_yu_etal
 
 
+ Need to leverage https://github.com/zenodraft/metadata-schema-zenodo
+
+
+
+
