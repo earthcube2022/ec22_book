@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Intro to Argovis’ API &#8212; EarthCube 2022 Call for Notebooks</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,36 +20,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -60,7 +61,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,9 +84,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -326,12 +342,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -339,61 +360,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_mills_etal/WM_01_intro_to_argovis_api.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ec22_mills_etal/WM_01_intro_to_argovis_api.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Intro to Argovis’ API
@@ -524,19 +601,165 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Intro to Argovis’ API</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Intro to Argovis’ API
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#authors">
+     Authors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suggested-next-steps">
+     Suggested next steps
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-library-import">
+     Local library import
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-definitions">
+   Parameter definitions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-import">
+   Data import
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   Data processing and analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#co-location-examples">
+     Co-location examples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-source-searching-negation-search">
+       Data source searching &amp; negation search
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#searching-by-available-data">
+       Searching by available data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proximity-search">
+       Proximity search
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qc-filtering">
+     QC filtering
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpolation-of-profiles-measurements-to-pressure-levels-of-interest">
+     Interpolation of profiles measurements to pressure levels of interest
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-argovis-api">
-<h1>Intro to Argovis’ API<a class="headerlink" href="#intro-to-argovis-api" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-argovis-api">
+<h1>Intro to Argovis’ API<a class="headerlink" href="#intro-to-argovis-api" title="Permalink to this headline">#</a></h1>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Author1 = {“name”: “William Mills”, “affiliation”: “Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, CO, United States”, “email”: “William.Mills−1&#64;colorado.edu”, “orcid”: “0000-0002-5887-6270”}</p></li>
 <li><p>Author2 = {“name”: “Donata Giglio”, “affiliation”: “Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, CO, United States”, “email”: “<a class="reference external" href="mailto:donata&#46;Giglio&#37;&#52;&#48;colorado&#46;edu">donata<span>&#46;</span>Giglio<span>&#64;</span>colorado<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-3738-4293”}</p></li>
@@ -544,13 +767,13 @@
 <li><p>Author4 = {“name”: “Tyler Tucker”, “affiliation”: “W. M. Keck Observatory”, “email”: “<a class="reference external" href="mailto:ttucker&#37;&#52;&#48;keck&#46;hawaii&#46;edu">ttucker<span>&#64;</span>keck<span>&#46;</span>hawaii<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-0560-9777”}</p></li>
 </ul>
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Intro-to-Argovis'-API" data-toc-modified-id="Intro-to-Argovis'-API-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Intro to Argovis' API</a></span><ul class="toc-item"><li><span><a href="#Authors" data-toc-modified-id="Authors-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Authors</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Results" data-toc-modified-id="Results-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Results</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Suggested-next-steps" data-toc-modified-id="Suggested-next-steps-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Suggested next steps</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-import" data-toc-modified-id="Library-import-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library import</a></span></li><li><span><a href="#Local-library-import" data-toc-modified-id="Local-library-import-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Local library import</a></span></li></ul></li><li><span><a href="#Parameter-definitions" data-toc-modified-id="Parameter-definitions-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Parameter definitions</a></span></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-processing-and-analysis" data-toc-modified-id="Data-processing-and-analysis-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Data processing and analysis</a></span><ul class="toc-item"><li><span><a href="#Co-location-examples" data-toc-modified-id="Co-location-examples-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Co-location examples</a></span><ul class="toc-item"><li><span><a href="#Data-source-searching-&amp;-negation-search" data-toc-modified-id="Data-source-searching-&amp;-negation-search-5.1.1"><span class="toc-item-num">5.1.1&nbsp;&nbsp;</span>Data source searching &amp; negation search</a></span></li><li><span><a href="#Searching-by-available-data" data-toc-modified-id="Searching-by-available-data-5.1.2"><span class="toc-item-num">5.1.2&nbsp;&nbsp;</span>Searching by available data</a></span></li><li><span><a href="#Proximity-search" data-toc-modified-id="Proximity-search-5.1.3"><span class="toc-item-num">5.1.3&nbsp;&nbsp;</span>Proximity search</a></span></li></ul></li><li><span><a href="#QC-filtering" data-toc-modified-id="QC-filtering-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>QC filtering</a></span></li><li><span><a href="#Interpolation-of-profiles-measurements-to-pressure-levels-of-interest" data-toc-modified-id="Interpolation-of-profiles-measurements-to-pressure-levels-of-interest-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Interpolation of profiles measurements to pressure levels of interest</a></span></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>References</a></span></li></ul></div></div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Intro-to-Argovis'-API" data-toc-modified-id="Intro-to-Argovis'-API-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Intro to Argovis' API</a></span><ul class="toc-item"><li><span><a href="#Authors" data-toc-modified-id="Authors-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Authors</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Results" data-toc-modified-id="Results-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Results</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Suggested-next-steps" data-toc-modified-id="Suggested-next-steps-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Suggested next steps</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-import" data-toc-modified-id="Library-import-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library import</a></span></li><li><span><a href="#Local-library-import" data-toc-modified-id="Local-library-import-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Local library import</a></span></li></ul></li><li><span><a href="#Parameter-definitions" data-toc-modified-id="Parameter-definitions-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Parameter definitions</a></span></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-processing-and-analysis" data-toc-modified-id="Data-processing-and-analysis-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Data processing and analysis</a></span><ul class="toc-item"><li><span><a href="#Co-location-examples" data-toc-modified-id="Co-location-examples-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Co-location examples</a></span><ul class="toc-item"><li><span><a href="#Data-source-searching-&amp;-negation-search" data-toc-modified-id="Data-source-searching-&amp;-negation-search-5.1.1"><span class="toc-item-num">5.1.1&nbsp;&nbsp;</span>Data source searching &amp; negation search</a></span></li><li><span><a href="#Searching-by-available-data" data-toc-modified-id="Searching-by-available-data-5.1.2"><span class="toc-item-num">5.1.2&nbsp;&nbsp;</span>Searching by available data</a></span></li><li><span><a href="#Proximity-search" data-toc-modified-id="Proximity-search-5.1.3"><span class="toc-item-num">5.1.3&nbsp;&nbsp;</span>Proximity search</a></span></li></ul></li><li><span><a href="#QC-filtering" data-toc-modified-id="QC-filtering-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>QC filtering</a></span></li><li><span><a href="#Interpolation-of-profiles-measurements-to-pressure-levels-of-interest" data-toc-modified-id="Interpolation-of-profiles-measurements-to-pressure-levels-of-interest-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Interpolation of profiles measurements to pressure levels of interest</a></span></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>References</a></span></li></ul></div></section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The Argovis project (<a class="reference external" href="http://argovis.colorado.edu">argovis.colorado.edu</a>, [1]) is upgrading its API, with a new design that better supports expressive, targeted search across multiple data sources, including Argo floats [2, 3], GO-SHIP profiles [4], and more. This new API is intended to enable co-location studies across datasets and efficiently scoped download of exactly the data researchers need. The purpose of this notebook is to illustrate some of the key features of this API as it is being developed; please note that this API is still under development and will evolve further before full release (including access to other datasets), and that helper functions here are examples only and will be superseded by a python library in future. Please send comments, feedback and feature requests to the team at <a class="reference external" href="mailto:argovis&#37;&#52;&#48;colorado&#46;edu">argovis<span>&#64;</span>colorado<span>&#46;</span>edu</a>.</p>
-</div>
-<div class="section" id="technical-contributions">
-<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>API development to access point data in a new schema (e.g. oceanic profiles)</p></li>
 <li><p>Alpha demo of the new Earth system data API, including:</p>
@@ -560,56 +783,56 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="methodology">
-<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">#</a></h2>
 <p>A new hierarchical JSON schema for describing generic Earth-system point data was developed in collaboration between Argo and GO-SHIP data experts, into which e.g. Argo and GO-SHIP data were cast and indexed in Mongodb. This allows for convenient and powerful cross-indexing of these data for performing the co-location searches of interest.</p>
 <p>On top of this data structure, a new RESTful API was developed that leverages the OpenAPI standard for specification and documentation of point data search routes. Emphasis was placed on creating the ability to make <em>targeted queries</em> that return only the data of interest, filtered by user-specified metadata and data search parameters, in order to leverage server-side resources on behalf of users and allow them to download only the data of interest to them, thus enabling rapid, interactive analysis building.</p>
 <p>In the following, we will demo some of the data queries that are possible with the new API.</p>
-</div>
-<div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Ocean profile data is queried, returned and plotted, filtered by data source, geography, and available measurements.</p></li>
 <li><p>Argo core and BGC measurements are co-located with GO-SHIP WOCE lines of interest.</p></li>
 <li><p>Co-located measurements are plotted and compared.</p></li>
 <li><p>Examples of filtering measurement data by QC flag, and interpolating measurements onto regular depth profiles are presented.</p></li>
 </ul>
-</div>
-<div class="section" id="funding">
-<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://argovis.colorado.edu/docs/Argovis_About.html">Argovis</a> is currently funded by two NSF awards:</p>
 <ul class="simple">
 <li><p>Award1 = {“agency”: “US National Science Foundation”, “award_code”: “1928305”, “award_URL”: ” <a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928305&amp;HistoricalAwards=false">https://www.nsf.gov/awardsearch/showAward?AWD_ID=1928305&amp;HistoricalAwards=false</a> “}</p></li>
 <li><p>Award2 = {“agency”: “US National Science Foundation”, “award_code”: “2026776”, “award_URL”: ” <a class="reference external" href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=2026776&amp;HistoricalAwards=false">http://www.nsf.gov/awardsearch/showAward?AWD_ID=2026776&amp;HistoricalAwards=false</a> “}</p></li>
 </ul>
-</div>
-<div class="section" id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
 <p>keywords= [“Argovis”,“Argo”,”floats”,”GO-SHIP”,“oceanic profiles”,’hydrographic data”,”profiling floats”,”in-situ observations”]</p>
-</div>
-<div class="section" id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <p>Mills, W., Giglio, D., Scanderbeg, M., Tucker, T. (2022). <em>Intro to Argovis’ API</em>. A DOI will be assigned after review.</p>
-</div>
-<div class="section" id="suggested-next-steps">
-<h2>Suggested next steps<a class="headerlink" href="#suggested-next-steps" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="suggested-next-steps">
+<h2>Suggested next steps<a class="headerlink" href="#suggested-next-steps" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>Python library of helper functions and wrappers</strong>: this notebook leverages some simple helper functions for wrapping API calls; these should be formalized and expanded as a fully unit tested and versioned python library distributed on Pypi.</p></li>
 <li><p><strong>Schema finalization</strong>: the current database implements a release candidate of our point data schema; this will likely be updated based on early feedback.</p></li>
 <li><p><strong>Data source expansion</strong>: the current database includes a selection of Argo and GO-SHIP data, but has been designed to be highly extensible; integrating more data sources (e.g. tropical cyclone, atmospheric river, satellite, and gridded data) will be pursued as ongoing work.</p></li>
 </ul>
-</div>
-<div class="section" id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h2>
 <p>GO-SHIP data were included in Argovis as part of a collaboration with Sarah Purkey, Steve Diggs, Lynne Merchant, Karen Stocks, and Andrew Barna (NSF award #2026776).</p>
 <p>This iteration of Argovis is hosted at the University of Colorado, Boudler, on the CU Platform Engineering team’s OpenShift Kubernetes platform. The authors thank and acknowledge the whole platform team at CU for their consistent support.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="library-import">
-<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h1>
+<section id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">#</a></h2>
 <p>We begin by importing some typical libraries, as well as some examples of custom helper functions that wrap the Argovis API:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -630,9 +853,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="local-library-import">
-<h2>Local library import<a class="headerlink" href="#local-library-import" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="local-library-import">
+<h2>Local library import<a class="headerlink" href="#local-library-import" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##### import local functions</span>
@@ -646,10 +869,10 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="parameter-definitions">
-<h1>Parameter definitions<a class="headerlink" href="#parameter-definitions" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="parameter-definitions">
+<h1>Parameter definitions<a class="headerlink" href="#parameter-definitions" title="Permalink to this headline">#</a></h1>
 <p>Next, let’s populate some useful parameters for our API. We’ll store the root of our API in <code class="docutils literal notranslate"><span class="pre">URL_PREFIX</span></code>, and pass our API key around in <code class="docutils literal notranslate"><span class="pre">API_KEY</span></code>. If you don’t have an Argovis API key, you can get one for free at <a class="reference external" href="https://argovis-keygen.colorado.edu/">https://argovis-keygen.colorado.edu/</a> API keys allow us to allocate our  resources fairly to all our users. <code class="docutils literal notranslate"><span class="pre">API_KEY</span></code> can be also left empty <code class="docutils literal notranslate"><span class="pre">''</span></code> (as in the cell below), yet in this case the user may exceed API request limits (and get HTTP 403 errors), depending on system load at the time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -685,18 +908,18 @@
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-import">
-<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-import">
+<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">#</a></h1>
 <p>Note that due to the nature of this notebook as an API technical demo, data import is performed throughout the following examples. Helper functions are provided to wrap API calls, but expert users are encouraged to access the API directly, as informed by the <a class="reference external" href="https://argovis-api.colorado.edu/docs/">API documentation here</a>.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
-<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="co-location-examples">
-<h2>Co-location examples<a class="headerlink" href="#co-location-examples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-processing-and-analysis">
+<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">#</a></h1>
+<section id="co-location-examples">
+<h2>Co-location examples<a class="headerlink" href="#co-location-examples" title="Permalink to this headline">#</a></h2>
 <p>One of Argovis’ goals is to enable <em>co-location studies</em>: quickly seeing when and where two or more datasets intersect, possibly providing crosschecks or other mutually supporting data. In what follows, we’ll see some examples of co-locating Argo and GO-SHIP measurements in the polygon we defined above.</p>
-<div class="section" id="data-source-searching-negation-search">
-<h3>Data source searching &amp; negation search<a class="headerlink" href="#data-source-searching-negation-search" title="Permalink to this headline">¶</a></h3>
+<section id="data-source-searching-negation-search">
+<h3>Data source searching &amp; negation search<a class="headerlink" href="#data-source-searching-negation-search" title="Permalink to this headline">#</a></h3>
 <p>First, let’s try selecting a few different sources of data, like Argo core [3], Argo BGC [3], and GO-SHIP [4] measurements, and plotting their co-location. See the helper functions for detailed implementation of the API wrapper, but here we’re leveraging the API’s <code class="docutils literal notranslate"><span class="pre">/profiles</span></code> endpoint and its time range (via <code class="docutils literal notranslate"><span class="pre">startDate=</span></code> and <code class="docutils literal notranslate"><span class="pre">endDate=</span></code>), data source (via <code class="docutils literal notranslate"><span class="pre">source=</span></code>) and region (via <code class="docutils literal notranslate"><span class="pre">polygon=</span></code>) metadata filtering.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -768,9 +991,9 @@ https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&am
 <li><p><code class="docutils literal notranslate"><span class="pre">'argo_bgc,argo_deep'</span></code></p></li>
 </ul>
 <p>Counting the profiles for each query, we would know how many profiles only have core variables (exclusive of deep and BGC variables), how many profiles have BGC variables exclusive of deep measurements, how many profiles have deep measurements exclusive of BGC variables, and how many profiles have both BGC variables and deep measurements, respectively. We note that <code class="docutils literal notranslate"><span class="pre">argo_deep</span></code> profiles are tagged as any profile with levels deeper than 2500 dbar, and therefore will also carry an <code class="docutils literal notranslate"><span class="pre">argo_core</span></code> and (if applicable) <code class="docutils literal notranslate"><span class="pre">argo_bgc</span></code> source tag. If we want to check for edge cases when a BGC profile file is available yet a core file is not, we can use the parameter <code class="docutils literal notranslate"><span class="pre">'argo_bgc,~argo_core'</span></code> (this should not happen).</p>
-</div>
-<div class="section" id="searching-by-available-data">
-<h3>Searching by available data<a class="headerlink" href="#searching-by-available-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="searching-by-available-data">
+<h3>Searching by available data<a class="headerlink" href="#searching-by-available-data" title="Permalink to this headline">#</a></h3>
 <p>We often only want profiles that have data of interest. Argovis features the ability to perform exactly this type of search, providing metadata and data only for profiles with the measurements we need. Let’s look for profiles in our region of interest that have dissolved oxygen and pressure measurements, by using the <code class="docutils literal notranslate"><span class="pre">data</span></code> filter. Also note adding <code class="docutils literal notranslate"><span class="pre">metadata-only</span></code> to the filter list tells Argovis to look for profiles that have the data listed, but only actually return the corresponding metadata for those profiles:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -849,9 +1072,9 @@ https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&am
 <img alt="../../_images/WM_01_intro_to_argovis_api_29_2.png" src="../../_images/WM_01_intro_to_argovis_api_29_2.png" />
 </div>
 </div>
-</div>
-<div class="section" id="proximity-search">
-<h3>Proximity search<a class="headerlink" href="#proximity-search" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="proximity-search">
+<h3>Proximity search<a class="headerlink" href="#proximity-search" title="Permalink to this headline">#</a></h3>
 <p>Now that we’ve identified some information from this WOCE line of interest, we can use Argovis’ proximity search to find nearby Argo profiles, via the <code class="docutils literal notranslate"><span class="pre">radius</span></code> and <code class="docutils literal notranslate"><span class="pre">center</span></code> pair of query parameters, which together search for profiles within a given distance of a centerpoint. Here we also use the <code class="docutils literal notranslate"><span class="pre">metadata-only</span></code> flag to <code class="docutils literal notranslate"><span class="pre">data</span></code>, so we get profiles that contain <code class="docutils literal notranslate"><span class="pre">pres</span></code> and <code class="docutils literal notranslate"><span class="pre">doxy</span></code>, but for now only actually download their metadata:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -972,10 +1195,10 @@ https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&am
 <img alt="../../_images/WM_01_intro_to_argovis_api_33_0.png" src="../../_images/WM_01_intro_to_argovis_api_33_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="qc-filtering">
-<h2>QC filtering<a class="headerlink" href="#qc-filtering" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="qc-filtering">
+<h2>QC filtering<a class="headerlink" href="#qc-filtering" title="Permalink to this headline">#</a></h2>
 <p>Argovis offers QC flags for data whenever available as elements in a profile’s <code class="docutils literal notranslate"><span class="pre">data</span></code> array, but by default does not make any filtering decisions based on those flags. This example will show you how to filter your data by corresponding QC.</p>
 <p>See ref. table 2 in section 4.1 of <a class="reference external" href="http://www.argodatamgt.org/content/download/15699/102401/file/argo-quality-control-manual-version2.8.pdf">http://www.argodatamgt.org/content/download/15699/102401/file/argo-quality-control-manual-version2.8.pdf</a> for a description of Argo QC flag interpretations.</p>
 <p>First, let’s get some data that has a couple of bad temperature measurements. Be sure to also ask for the QC variable <code class="docutils literal notranslate"><span class="pre">temp_argoqc</span></code> in your <code class="docutils literal notranslate"><span class="pre">data</span></code> query:</p>
@@ -1092,9 +1315,9 @@ https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&am
 </div>
 </div>
 <p>We get the estimated temperature measurements, but none of the high-flag chlorophyll.</p>
-</div>
-<div class="section" id="interpolation-of-profiles-measurements-to-pressure-levels-of-interest">
-<h2>Interpolation of profiles measurements to pressure levels of interest<a class="headerlink" href="#interpolation-of-profiles-measurements-to-pressure-levels-of-interest" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="interpolation-of-profiles-measurements-to-pressure-levels-of-interest">
+<h2>Interpolation of profiles measurements to pressure levels of interest<a class="headerlink" href="#interpolation-of-profiles-measurements-to-pressure-levels-of-interest" title="Permalink to this headline">#</a></h2>
 <p>At times we may wish to interpolate data to a set of standard pressure levels, rather than keep whatever pressure levels a profile presents. The convenience function <code class="docutils literal notranslate"><span class="pre">interpolate</span></code> performs this for us. Let’s begin by fetching a profile as usual, and remember what its temperature plot looks like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1149,10 +1372,10 @@ https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&am
 <img alt="../../_images/WM_01_intro_to_argovis_api_61_0.png" src="../../_images/WM_01_intro_to_argovis_api_61_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="references">
-<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h1>
 <ol class="simple">
 <li><p>Tucker, T., Giglio, D., Scanderbeg, M., &amp; Shen, S. S. P. (2020). Argovis: A Web Application for Fast Delivery, Visualization, and Analysis of Argo Data, Journal of Atmospheric and Oceanic Technology, 37(3), 401-416. <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/3/JTECH-D-19-0041.1.xml">doi:10.1175/JTECH-D-19-0041.1</a>.</p></li>
 <li><p>Argo (2000). Argo float data and metadata from Global Data Assembly Centre (Argo GDAC). SEANOE. <a class="reference external" href="http://sose.ucsd.edu/PAPERS/Verdy_et_al-2017-JGR.pdf">doi:10.17882/42182</a>.</p></li>
@@ -1161,7 +1384,7 @@ https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&am
 <li><p><a class="reference external" href="https://argo.ucsd.edu/data/how-to-use-argo-files/">https://argo.ucsd.edu/data/how-to-use-argo-files/</a></p></li>
 <li><p><a class="reference external" href="https://cchdo.github.io/hdo-assets/documentation/manuals/pdf/90_1/chap4.pdf">https://cchdo.github.io/hdo-assets/documentation/manuals/pdf/90_1/chap4.pdf</a></p></li>
 </ol>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1185,9 +1408,11 @@ https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&am
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1203,25 +1428,27 @@ https://argovis-api.colorado.edu/profiles?&amp;startDate=2021-04-20T00:00:00Z&am
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
-        
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+  
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

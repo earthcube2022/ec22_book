@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>AMGeO 2.0: Crafting an API for Geospace Data Scientists &#8212; EarthCube 2022 Call for Notebooks</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,36 +20,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -60,7 +61,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,9 +84,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -326,12 +342,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -339,61 +360,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_mirkovich_etal/WM_02_AMGeO-2.0.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ec22_mirkovich_etal/WM_02_AMGeO-2.0.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    AMGeO 2.0: Crafting an API for Geospace Data Scientists
@@ -592,19 +669,233 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>AMGeO 2.0: Crafting an API for Geospace Data Scientists</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   AMGeO 2.0: Crafting an API for Geospace Data Scientists
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#authors">
+     Authors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#work-in-progress">
+     Work in progress
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suggested-next-steps">
+     Suggested next steps
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-imports">
+     Library imports
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-definitions">
+   Parameter definitions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-import">
+   Data import
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   Data processing and analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#amgeo-s-new-api">
+     AMGeO’s new API
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creating-an-amgeo-api-instance">
+       Creating an AMGeO API instance
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#setting-our-output-directory-for-amgeo-data">
+         Setting our output directory for AMGeO data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creating-an-amgeo-controller">
+       Creating an AMGeO controller
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#generating-amgeo-maps">
+       Generating AMGeO maps
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#browsing-amgeo-maps">
+       Browsing AMGeO maps
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loading-amgeo-maps">
+       Loading AMGeO maps
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#amgeo-s-xarray-datasets">
+     AMGeO’s xarray datasets
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-variables">
+       Data variables
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#coordinates-dimensions">
+       Coordinates/Dimensions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dataset-metadata">
+       Dataset metadata
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compatability-with-matplotlib">
+     Compatability with matplotlib
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compatability-with-numpy">
+     Compatability with numpy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compatability-with-apexpy">
+     Compatability with apexpy
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#amgeo-to-geodetic">
+       AMGeO to geodetic
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compatability-with-cartopy">
+     Compatability with cartopy
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotting-amgeo-electostatic-potential-on-orthographic-projection">
+       Plotting AMGeO electostatic potential on orthographic projection
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-compatability">
+     Pandas compatability
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="amgeo-2-0-crafting-an-api-for-geospace-data-scientists">
-<h1>AMGeO 2.0: Crafting an API for Geospace Data Scientists<a class="headerlink" href="#amgeo-2-0-crafting-an-api-for-geospace-data-scientists" title="Permalink to this headline">¶</a></h1>
-<img src='./static/AMGeOLogo.svg'/><div class="section" id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="amgeo-2-0-crafting-an-api-for-geospace-data-scientists">
+<h1>AMGeO 2.0: Crafting an API for Geospace Data Scientists<a class="headerlink" href="#amgeo-2-0-crafting-an-api-for-geospace-data-scientists" title="Permalink to this headline">#</a></h1>
+<img src='./static/AMGeOLogo.svg'/><section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">#</a></h2>
 <p>Author1 = {
 “name”: “Willem Mirkovich”,
 “affiliation”: “University of Colorado Boulder, Smead Aerospace Engineering Sciences”,
@@ -624,13 +915,13 @@
 “orcid”: “0000-0002-4980-3045”
 }</p>
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#AMGeO-2.0:-Crafting-an-API-for-Geospace-Data-Scientists" data-toc-modified-id="AMGeO-2.0:-Crafting-an-API-for-Geospace-Data-Scientists-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>AMGeO 2.0: Crafting an API for Geospace Data Scientists</a></span><ul class="toc-item"><li><span><a href="#Authors" data-toc-modified-id="Authors-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Authors</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Work-in-progress" data-toc-modified-id="Work-in-progress-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Work in progress</a></span></li><li><span><a href="#Suggested-next-steps" data-toc-modified-id="Suggested-next-steps-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Suggested next steps</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-imports" data-toc-modified-id="Library-imports-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library imports</a></span></li></ul></li><li><span><a href="#Parameter-definitions" data-toc-modified-id="Parameter-definitions-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Parameter definitions</a></span></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-processing-and-analysis" data-toc-modified-id="Data-processing-and-analysis-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Data processing and analysis</a></span><ul class="toc-item"><li><span><a href="#AMGeO's-new-API" data-toc-modified-id="AMGeO's-new-API-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>AMGeO's new API</a></span><ul class="toc-item"><li><span><a href="#Creating-an-AMGeO-API-instance" data-toc-modified-id="Creating-an-AMGeO-API-instance-5.1.1"><span class="toc-item-num">5.1.1&nbsp;&nbsp;</span>Creating an AMGeO API instance</a></span><ul class="toc-item"><li><span><a href="#Setting-our-output-directory-for-AMGeO-data" data-toc-modified-id="Setting-our-output-directory-for-AMGeO-data-5.1.1.1"><span class="toc-item-num">5.1.1.1&nbsp;&nbsp;</span>Setting our output directory for AMGeO data</a></span></li></ul></li><li><span><a href="#Creating-an-AMGeO-controller" data-toc-modified-id="Creating-an-AMGeO-controller-5.1.2"><span class="toc-item-num">5.1.2&nbsp;&nbsp;</span>Creating an AMGeO controller</a></span></li><li><span><a href="#Generating-AMGeO-maps" data-toc-modified-id="Generating-AMGeO-maps-5.1.3"><span class="toc-item-num">5.1.3&nbsp;&nbsp;</span>Generating AMGeO maps</a></span></li><li><span><a href="#Browsing-AMGeO-maps" data-toc-modified-id="Browsing-AMGeO-maps-5.1.4"><span class="toc-item-num">5.1.4&nbsp;&nbsp;</span>Browsing AMGeO maps</a></span></li><li><span><a href="#Loading-AMGeO-maps" data-toc-modified-id="Loading-AMGeO-maps-5.1.5"><span class="toc-item-num">5.1.5&nbsp;&nbsp;</span>Loading AMGeO maps</a></span></li></ul></li><li><span><a href="#AMGeO's-xarray-datasets" data-toc-modified-id="AMGeO's-xarray-datasets-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>AMGeO's xarray datasets</a></span><ul class="toc-item"><li><span><a href="#Data-variables" data-toc-modified-id="Data-variables-5.2.1"><span class="toc-item-num">5.2.1&nbsp;&nbsp;</span>Data variables</a></span></li><li><span><a href="#Coordinates/Dimensions" data-toc-modified-id="Coordinates/Dimensions-5.2.2"><span class="toc-item-num">5.2.2&nbsp;&nbsp;</span>Coordinates/Dimensions</a></span></li><li><span><a href="#Dataset-metadata" data-toc-modified-id="Dataset-metadata-5.2.3"><span class="toc-item-num">5.2.3&nbsp;&nbsp;</span>Dataset metadata</a></span></li></ul></li><li><span><a href="#Compatability-with-matplotlib" data-toc-modified-id="Compatability-with-matplotlib-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Compatability with matplotlib</a></span></li><li><span><a href="#Compatability-with-numpy" data-toc-modified-id="Compatability-with-numpy-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Compatability with numpy</a></span></li><li><span><a href="#Compatability-with-apexpy" data-toc-modified-id="Compatability-with-apexpy-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Compatability with apexpy</a></span><ul class="toc-item"><li><span><a href="#AMGeO-to-geodetic" data-toc-modified-id="AMGeO-to-geodetic-5.5.1"><span class="toc-item-num">5.5.1&nbsp;&nbsp;</span>AMGeO to geodetic</a></span></li></ul></li><li><span><a href="#Compatability-with-cartopy" data-toc-modified-id="Compatability-with-cartopy-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>Compatability with cartopy</a></span><ul class="toc-item"><li><span><a href="#Plotting-AMGeO-electostatic-potential-on-orthographic-projection" data-toc-modified-id="Plotting-AMGeO-electostatic-potential-on-orthographic-projection-5.6.1"><span class="toc-item-num">5.6.1&nbsp;&nbsp;</span>Plotting AMGeO electostatic potential on orthographic projection</a></span></li></ul></li><li><span><a href="#Pandas-compatability" data-toc-modified-id="Pandas-compatability-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>Pandas compatability</a></span></li><li><span><a href="#Conclusion" data-toc-modified-id="Conclusion-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>Conclusion</a></span></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>References</a></span></li></ul></div></div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<div class="toc"><ul class="toc-item"><li><span><a href="#AMGeO-2.0:-Crafting-an-API-for-Geospace-Data-Scientists" data-toc-modified-id="AMGeO-2.0:-Crafting-an-API-for-Geospace-Data-Scientists-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>AMGeO 2.0: Crafting an API for Geospace Data Scientists</a></span><ul class="toc-item"><li><span><a href="#Authors" data-toc-modified-id="Authors-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Authors</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Work-in-progress" data-toc-modified-id="Work-in-progress-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Work in progress</a></span></li><li><span><a href="#Suggested-next-steps" data-toc-modified-id="Suggested-next-steps-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Suggested next steps</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-imports" data-toc-modified-id="Library-imports-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library imports</a></span></li></ul></li><li><span><a href="#Parameter-definitions" data-toc-modified-id="Parameter-definitions-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Parameter definitions</a></span></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-processing-and-analysis" data-toc-modified-id="Data-processing-and-analysis-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Data processing and analysis</a></span><ul class="toc-item"><li><span><a href="#AMGeO's-new-API" data-toc-modified-id="AMGeO's-new-API-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>AMGeO's new API</a></span><ul class="toc-item"><li><span><a href="#Creating-an-AMGeO-API-instance" data-toc-modified-id="Creating-an-AMGeO-API-instance-5.1.1"><span class="toc-item-num">5.1.1&nbsp;&nbsp;</span>Creating an AMGeO API instance</a></span><ul class="toc-item"><li><span><a href="#Setting-our-output-directory-for-AMGeO-data" data-toc-modified-id="Setting-our-output-directory-for-AMGeO-data-5.1.1.1"><span class="toc-item-num">5.1.1.1&nbsp;&nbsp;</span>Setting our output directory for AMGeO data</a></span></li></ul></li><li><span><a href="#Creating-an-AMGeO-controller" data-toc-modified-id="Creating-an-AMGeO-controller-5.1.2"><span class="toc-item-num">5.1.2&nbsp;&nbsp;</span>Creating an AMGeO controller</a></span></li><li><span><a href="#Generating-AMGeO-maps" data-toc-modified-id="Generating-AMGeO-maps-5.1.3"><span class="toc-item-num">5.1.3&nbsp;&nbsp;</span>Generating AMGeO maps</a></span></li><li><span><a href="#Browsing-AMGeO-maps" data-toc-modified-id="Browsing-AMGeO-maps-5.1.4"><span class="toc-item-num">5.1.4&nbsp;&nbsp;</span>Browsing AMGeO maps</a></span></li><li><span><a href="#Loading-AMGeO-maps" data-toc-modified-id="Loading-AMGeO-maps-5.1.5"><span class="toc-item-num">5.1.5&nbsp;&nbsp;</span>Loading AMGeO maps</a></span></li></ul></li><li><span><a href="#AMGeO's-xarray-datasets" data-toc-modified-id="AMGeO's-xarray-datasets-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>AMGeO's xarray datasets</a></span><ul class="toc-item"><li><span><a href="#Data-variables" data-toc-modified-id="Data-variables-5.2.1"><span class="toc-item-num">5.2.1&nbsp;&nbsp;</span>Data variables</a></span></li><li><span><a href="#Coordinates/Dimensions" data-toc-modified-id="Coordinates/Dimensions-5.2.2"><span class="toc-item-num">5.2.2&nbsp;&nbsp;</span>Coordinates/Dimensions</a></span></li><li><span><a href="#Dataset-metadata" data-toc-modified-id="Dataset-metadata-5.2.3"><span class="toc-item-num">5.2.3&nbsp;&nbsp;</span>Dataset metadata</a></span></li></ul></li><li><span><a href="#Compatability-with-matplotlib" data-toc-modified-id="Compatability-with-matplotlib-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Compatability with matplotlib</a></span></li><li><span><a href="#Compatability-with-numpy" data-toc-modified-id="Compatability-with-numpy-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Compatability with numpy</a></span></li><li><span><a href="#Compatability-with-apexpy" data-toc-modified-id="Compatability-with-apexpy-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Compatability with apexpy</a></span><ul class="toc-item"><li><span><a href="#AMGeO-to-geodetic" data-toc-modified-id="AMGeO-to-geodetic-5.5.1"><span class="toc-item-num">5.5.1&nbsp;&nbsp;</span>AMGeO to geodetic</a></span></li></ul></li><li><span><a href="#Compatability-with-cartopy" data-toc-modified-id="Compatability-with-cartopy-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>Compatability with cartopy</a></span><ul class="toc-item"><li><span><a href="#Plotting-AMGeO-electostatic-potential-on-orthographic-projection" data-toc-modified-id="Plotting-AMGeO-electostatic-potential-on-orthographic-projection-5.6.1"><span class="toc-item-num">5.6.1&nbsp;&nbsp;</span>Plotting AMGeO electostatic potential on orthographic projection</a></span></li></ul></li><li><span><a href="#Pandas-compatability" data-toc-modified-id="Pandas-compatability-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>Pandas compatability</a></span></li><li><span><a href="#Conclusion" data-toc-modified-id="Conclusion-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>Conclusion</a></span></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>References</a></span></li></ul></div></section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The purpose of this notebook is to introduce Geospace scientists to the new AMGeO 2.0 API, as well as demonstrate functionality with other popular python packages.</p>
-</div>
-<div class="section" id="technical-contributions">
-<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Introduces geospace researchers to AMGeO’s new API</p></li>
 <li><p>Showcases power of using Xarray to enable research of multidimensional datasets</p></li>
@@ -643,39 +934,39 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="methodology">
-<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">#</a></h2>
 <p>The Assimilative Mapping of Geospace Observations (AMGeO) is a data science tool for the geospace science community that automates labor-intensive data acquisition and processing, combining observations from various sensors into assimilative maps of the high-latitude ionosphere. While AMGeO offers a highly configurable toolset, it currently requires both domain expertise and familiarity with Python to use it effectively for scientific research.</p>
 <p>To remove hurdles for novice users and empower all AMGeO users, we have recently introduced a new Application Programming Interface (API) focused on enhanced user-experience, including better compatibility with Jupyter Notebooks, improved data manipulation with Xarray and more flexible data generation. This notebook will demonstrate the functionality offered by the new API and how to use AMGeO in conjunction with other popular Python research tools in order to accelerate geospace data science processes.</p>
-</div>
-<div class="section" id="funding">
-<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">#</a></h2>
 <p>AMGeO is supported by the NSF EarthCube grants ICER 1928403 to the University of Colorado Boulder, ICER 1928327 to the Virginia Tech, and ICER 1928358 to the Johns Hopkins University Applied Physics Laboratory.</p>
-</div>
-<div class="section" id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
 <p>keywords=[“AMGeO”, “Xarray”, “Python”, “API”, “Geospace”]</p>
-</div>
-<div class="section" id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <p>Willem Mirkovich, Liam Kilcommons, Tomoko Matsuo, 2022. AMGeO, Xarray, Python, API, Geospace. Accessed 4/15/2022 at <a class="reference external" href="https://github.com/willemmirkovich/Earthcube-Meeting-2022">https://github.com/willemmirkovich/Earthcube-Meeting-2022</a></p>
-</div>
-<div class="section" id="work-in-progress">
-<h2>Work in progress<a class="headerlink" href="#work-in-progress" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="work-in-progress">
+<h2>Work in progress<a class="headerlink" href="#work-in-progress" title="Permalink to this headline">#</a></h2>
 <p>While this notebook is in a complete state, these are some notable additions that would be nice to add:</p>
 <ul class="simple">
 <li><p>Apexpy example of converting to base vectors</p></li>
 <li><p>Cartopy example of time-series</p></li>
 <li><p>Cartopy example of vector plots</p></li>
 </ul>
-</div>
-<div class="section" id="suggested-next-steps">
-<h2>Suggested next steps<a class="headerlink" href="#suggested-next-steps" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="suggested-next-steps">
+<h2>Suggested next steps<a class="headerlink" href="#suggested-next-steps" title="Permalink to this headline">#</a></h2>
 <p>Please get started with AMGeO <a class="reference external" href="https://amgeo.colorado.edu/">here</a>, we would love any feedback to continue improving our software.</p>
-</div>
-<div class="section" id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h2>
 <p>We would like to thank our data providers:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://supermag.jhuapl.edu/">SuperMAG</a></p></li>
@@ -683,12 +974,12 @@
 <li><p><a class="reference external" href="http://ampere.jhuapl.edu/">AMPERE</a></p></li>
 <li><p><a class="reference external" href="https://spdf.gsfc.nasa.gov/">NASA SPDF</a></p></li>
 </ul>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="library-imports">
-<h2>Library imports<a class="headerlink" href="#library-imports" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h1>
+<section id="library-imports">
+<h2>Library imports<a class="headerlink" href="#library-imports" title="Permalink to this headline">#</a></h2>
 <p>Below are the necessary libraries needed to run this notebook:</p>
 <ul class="simple">
 <li><p>Python 3.8</p></li>
@@ -739,10 +1030,10 @@ different data and incomplete metadata
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="parameter-definitions">
-<h1>Parameter definitions<a class="headerlink" href="#parameter-definitions" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="parameter-definitions">
+<h1>Parameter definitions<a class="headerlink" href="#parameter-definitions" title="Permalink to this headline">#</a></h1>
 <p>During the duration of this notebook, there are some commone placeholder variables that will be used.</p>
 <p><code class="docutils literal notranslate"><span class="pre">api</span></code> will be used to store AMGeO’s API instance</p>
 <div class="cell docutils container">
@@ -776,16 +1067,16 @@ Does not predict magnetic potential nor field-aligned current
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-import">
-<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-import">
+<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">#</a></h1>
 <p>Since this notebook is a technical overview of AMGeO’s new API, all Data used will be imported/generated during the course of the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Processing</span></code> section.
 To learn more about AMGeO and the data we generate, <a class="reference external" href="https://amgeo.colorado.edu/">please go to our website</a></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
-<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="amgeo-s-new-api">
-<h2>AMGeO’s new API<a class="headerlink" href="#amgeo-s-new-api" title="Permalink to this headline">¶</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-processing-and-analysis">
+<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">#</a></h1>
+<section id="amgeo-s-new-api">
+<h2>AMGeO’s new API<a class="headerlink" href="#amgeo-s-new-api" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://amgeo.colorado.edu/">AMGeO’s 2.0 Release</a> comes with a fleshed out Application Programming Interface (API) for easier
 generation/loading of Assimilative Maps of GeoSpace Observations (AMGeO).</p>
 <p>The development of this API had two main goals in mind:</p>
@@ -795,8 +1086,8 @@ generation/loading of Assimilative Maps of GeoSpace Observations (AMGeO).</p>
 Numpy, Xarray, Scipy, as well as popular geospatial packages like
 ApexPy, CartoPy</p></li>
 </ol>
-<div class="section" id="creating-an-amgeo-api-instance">
-<h3>Creating an AMGeO API instance<a class="headerlink" href="#creating-an-amgeo-api-instance" title="Permalink to this headline">¶</a></h3>
+<section id="creating-an-amgeo-api-instance">
+<h3>Creating an AMGeO API instance<a class="headerlink" href="#creating-an-amgeo-api-instance" title="Permalink to this headline">#</a></h3>
 <p>Here, we can create an AMGeO API instance, and get various details as to a default API instance</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -813,8 +1104,8 @@ current output directory: /workspaces/Earthcube-Meeting-2022/amgeo_out
 </div>
 </div>
 </div>
-<div class="section" id="setting-our-output-directory-for-amgeo-data">
-<h4>Setting our output directory for AMGeO data<a class="headerlink" href="#setting-our-output-directory-for-amgeo-data" title="Permalink to this headline">¶</a></h4>
+<section id="setting-our-output-directory-for-amgeo-data">
+<h4>Setting our output directory for AMGeO data<a class="headerlink" href="#setting-our-output-directory-for-amgeo-data" title="Permalink to this headline">#</a></h4>
 <p>When running AMGeO, a local file system directory will be selected to store your assimilative maps. By default, AMGeo will use <code class="docutils literal notranslate"><span class="pre">~/amgeo_v2_ouptput</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -848,10 +1139,10 @@ current output directory: /workspaces/Earthcube-Meeting-2022/amgeo_out
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="creating-an-amgeo-controller">
-<h3>Creating an AMGeO controller<a class="headerlink" href="#creating-an-amgeo-controller" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="creating-an-amgeo-controller">
+<h3>Creating an AMGeO controller<a class="headerlink" href="#creating-an-amgeo-controller" title="Permalink to this headline">#</a></h3>
 <p>To generate assimilative maps, you will have to load specific settings from AMGeO. Conveniently, AMGeO’s new API allows for a simple way to load AMGeO’s default settings using a <code class="docutils literal notranslate"><span class="pre">controller</span></code>.</p>
 <p>To create a <code class="docutils literal notranslate"><span class="pre">controller</span></code> instance, you can call <code class="docutils literal notranslate"><span class="pre">get_controller</span></code> on an API instance</p>
 <div class="cell docutils container">
@@ -870,9 +1161,9 @@ Does not predict magnetic potential nor field-aligned current
 </div>
 </div>
 <p>As observed, calling <code class="docutils literal notranslate"><span class="pre">get_controller</span></code> returns an <code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">AMGeO</span> <span class="pre">Controller</span></code>, that is able to both create and load assimilative maps using AMGeO’s default settings.</p>
-</div>
-<div class="section" id="generating-amgeo-maps">
-<h3>Generating AMGeO maps<a class="headerlink" href="#generating-amgeo-maps" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="generating-amgeo-maps">
+<h3>Generating AMGeO maps<a class="headerlink" href="#generating-amgeo-maps" title="Permalink to this headline">#</a></h3>
 <img src="./static/AMGeOElectricPotentialMap.png" width="500px" height="500px">
 <p>Now that we have a <code class="docutils literal notranslate"><span class="pre">controller</span></code> instance, we can create assimilative maps by calling the <code class="docutils literal notranslate"><span class="pre">generate</span></code> method on our <code class="docutils literal notranslate"><span class="pre">controller</span></code>.
 This method takes both a hemisphere and a date argument.</p>
@@ -948,9 +1239,9 @@ AMGeO complete
 </div>
 </div>
 <p>Once complete, we will be able to see generated AMGeO maps for each datetime.</p>
-</div>
-<div class="section" id="browsing-amgeo-maps">
-<h3>Browsing AMGeO maps<a class="headerlink" href="#browsing-amgeo-maps" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="browsing-amgeo-maps">
+<h3>Browsing AMGeO maps<a class="headerlink" href="#browsing-amgeo-maps" title="Permalink to this headline">#</a></h3>
 <p>Once we have generated AMGeO maps, we might be interested in browsing what maps we have available.</p>
 <p>To do this, the <code class="docutils literal notranslate"><span class="pre">controller</span></code> has a <code class="docutils literal notranslate"><span class="pre">browse</span></code> method that can be used in two ways.</p>
 <ol>
@@ -991,9 +1282,9 @@ AMGeO complete
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="loading-amgeo-maps">
-<h3>Loading AMGeO maps<a class="headerlink" href="#loading-amgeo-maps" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="loading-amgeo-maps">
+<h3>Loading AMGeO maps<a class="headerlink" href="#loading-amgeo-maps" title="Permalink to this headline">#</a></h3>
 <p>The last and most important piece of AMGeO’s new API is the ability to load AMGeO maps into <a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.Dataset.html">Xarray datasets</a>, with no work needed other than calling <code class="docutils literal notranslate"><span class="pre">controller.load</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">load</span></code> supports the same modularity as <code class="docutils literal notranslate"><span class="pre">generate</span></code>, to allow for loading various dates/datetimes on a given hemisphere into one dataset.</p>
 <ol>
@@ -3662,10 +3953,10 @@ Attributes:
         [-7.72148525e-03,  5.87325210e+00,  5.04612658e-01, ...,
          -6.67919901e-01, -5.93560886e+00, -7.72148525e-03]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c12a08ec-cfe2-4f86-8127-f9620a0cd02e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c12a08ec-cfe2-4f86-8127-f9620a0cd02e' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>AMGeO Assimilative Maps</dd><dt><span>version :</span></dt><dd>v2_beta</dd><dt><span>hemisphere :</span></dt><dd>N</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="amgeo-s-xarray-datasets">
-<h2>AMGeO’s xarray datasets<a class="headerlink" href="#amgeo-s-xarray-datasets" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="amgeo-s-xarray-datasets">
+<h2>AMGeO’s xarray datasets<a class="headerlink" href="#amgeo-s-xarray-datasets" title="Permalink to this headline">#</a></h2>
 <p>As stated, AMGeO uses Xarray to load Assimilative Maps into a sensible data structure for
 data wrangling and processing.</p>
 <p>This section is to go over some of the neat features that come with interacting with AMGeO maps with Xarray datasets.</p>
@@ -4360,8 +4651,8 @@ Attributes:
         [-7.72148525e-03,  5.87325210e+00,  5.04612658e-01, ...,
          -6.67919901e-01, -5.93560886e+00, -7.72148525e-03]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-0107673b-f8d4-466c-a7f7-79a7455e0fef' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0107673b-f8d4-466c-a7f7-79a7455e0fef' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>AMGeO Assimilative Maps</dd><dt><span>version :</span></dt><dd>v2_beta</dd><dt><span>hemisphere :</span></dt><dd>N</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<div class="section" id="data-variables">
-<h3>Data variables<a class="headerlink" href="#data-variables" title="Permalink to this headline">¶</a></h3>
+<section id="data-variables">
+<h3>Data variables<a class="headerlink" href="#data-variables" title="Permalink to this headline">#</a></h3>
 <p>Once you have loaded a dataset, you are able to access various <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">variables</span></code> that an AMGeO map generates. These are just ways to differentiate between different kinds of data you might be interested in. When accessing a <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">variable</span></code>, you will get a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> in return.</p>
 <p>We can see all of the data variables that are accessible in an AMGeO Dataset by doing the following:</p>
 <div class="cell docutils container">
@@ -4825,9 +5116,9 @@ Attributes:
        240., 250., 260., 270., 280., 290., 300., 310., 320., 330., 340., 350.,
        360.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-316871ae-44a6-4186-aa37-d65733181b66' class='xr-section-summary-in' type='checkbox'  checked><label for='section-316871ae-44a6-4186-aa37-d65733181b66' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>cond_hall</dd><dt><span>longname :</span></dt><dd>Ovation Pyme Hall Conductance</dd><dt><span>shortname :</span></dt><dd>cond_hall</dd><dt><span>units :</span></dt><dd>mho</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="coordinates-dimensions">
-<h3>Coordinates/Dimensions<a class="headerlink" href="#coordinates-dimensions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="coordinates-dimensions">
+<h3>Coordinates/Dimensions<a class="headerlink" href="#coordinates-dimensions" title="Permalink to this headline">#</a></h3>
 <p>One of the main advantages to using Xarray for managing scientific data is how it is able to manage multi-dimensional datasets. Traditionally, accessing information regarding the dimensions of your arrays must be made explicit in comments or stored in auxillary data structures. With <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>, it is all in one place</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5597,9 +5888,9 @@ Attributes:
     shortname:  lats
     units:      degrees</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'lat'</div></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-674e9146-ff87-457b-9713-d479f66cb3d2' class='xr-array-in' type='checkbox' checked><label for='section-674e9146-ff87-457b-9713-d479f66cb3d2' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>68.33</span></div><div class='xr-array-data'><pre>array(68.33319991)</pre></div></div></li><li class='xr-section-item'><input id='section-d8f86e1e-5f2c-4ecf-8299-64ae32c3a5ae' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d8f86e1e-5f2c-4ecf-8299-64ae32c3a5ae' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2013-01-06T16:30:00</div><input id='attrs-ff2714c7-becf-4b32-ad5c-d8550efbf326' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ff2714c7-becf-4b32-ad5c-d8550efbf326' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-141cda33-808b-483a-9877-7e091e7b5508' class='xr-var-data-in' type='checkbox'><label for='data-141cda33-808b-483a-9877-7e091e7b5508' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(&#x27;2013-01-06T16:30:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>68.33</div><input id='attrs-e3ec0195-9c32-4eec-a9fa-4ae0cedda514' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e3ec0195-9c32-4eec-a9fa-4ae0cedda514' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-622b911c-b119-4cd0-b9f6-5d85b50625b4' class='xr-var-data-in' type='checkbox'><label for='data-622b911c-b119-4cd0-b9f6-5d85b50625b4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>longname :</span></dt><dd>Modified Magnetic Apex Latitudes</dd><dt><span>shortname :</span></dt><dd>lats</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array(68.33319991)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>160.0</div><input id='attrs-029f335d-035e-4bcc-b9e2-97449a92ed9e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-029f335d-035e-4bcc-b9e2-97449a92ed9e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b825bb88-14ee-4870-9859-a10561ff45b6' class='xr-var-data-in' type='checkbox'><label for='data-b825bb88-14ee-4870-9859-a10561ff45b6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>longname :</span></dt><dd>Magnetic Local Time in Degrees</dd><dt><span>shortname :</span></dt><dd>lons</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array(160.)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-88e04dd8-306a-4b78-9135-b3c6571a720b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-88e04dd8-306a-4b78-9135-b3c6571a720b' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>longname :</span></dt><dd>Modified Magnetic Apex Latitudes</dd><dt><span>shortname :</span></dt><dd>lats</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="dataset-metadata">
-<h3>Dataset metadata<a class="headerlink" href="#dataset-metadata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dataset-metadata">
+<h3>Dataset metadata<a class="headerlink" href="#dataset-metadata" title="Permalink to this headline">#</a></h3>
 <p>In addition to robust dimension/coordinate information, you can also attach metadata to your DataArrays. AMGeO does this on multiple properties, and they are accessible by calling the <code class="docutils literal notranslate"><span class="pre">attrs</span></code> property</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5647,10 +5938,10 @@ Attributes:
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="compatability-with-matplotlib">
-<h2>Compatability with matplotlib<a class="headerlink" href="#compatability-with-matplotlib" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="compatability-with-matplotlib">
+<h2>Compatability with matplotlib<a class="headerlink" href="#compatability-with-matplotlib" title="Permalink to this headline">#</a></h2>
 <p>Xarray DataArrays also make quick plotting much easier, with coordinates and metadata accessible from the same data structure</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5706,9 +5997,9 @@ Attributes:
 <img alt="../../_images/WM_02_AMGeO-2.0_73_0.png" src="../../_images/WM_02_AMGeO-2.0_73_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="compatability-with-numpy">
-<h2>Compatability with numpy<a class="headerlink" href="#compatability-with-numpy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compatability-with-numpy">
+<h2>Compatability with numpy<a class="headerlink" href="#compatability-with-numpy" title="Permalink to this headline">#</a></h2>
 <p>Xarray has native support for quite a few Numpy compatable operations</p>
 <p>Look <a class="reference external" href="http://xarray.pydata.org/en/stable/user-guide/duckarrays.html">here</a> for a full list of support for Numpy</p>
 <p>It is also possible to convert a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> to a <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> with the <code class="docutils literal notranslate"><span class="pre">values</span></code> property</p>
@@ -5726,9 +6017,9 @@ Attributes:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="compatability-with-apexpy">
-<h2>Compatability with apexpy<a class="headerlink" href="#compatability-with-apexpy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compatability-with-apexpy">
+<h2>Compatability with apexpy<a class="headerlink" href="#compatability-with-apexpy" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://pypi.org/project/apexpy/">ApexPy</a> is a fully fleshed out library for geospatial coordinate systems conversions such as Geodetic, Magnetic Local Time, and Apex.</p>
 <p>AMGeO’s latitude and longitude are in <code class="docutils literal notranslate"><span class="pre">Magnetic</span> <span class="pre">Apex</span> <span class="pre">Latitude</span></code> and <code class="docutils literal notranslate"><span class="pre">Magnetic</span> <span class="pre">Local</span> <span class="pre">Time</span> <span class="pre">in</span> <span class="pre">Degrees</span></code>, respectively, which is simple enough to transform to other coordinate systems using this package.</p>
 <div class="cell docutils container">
@@ -5764,8 +6055,8 @@ Attributes:
 </div>
 </div>
 </div>
-<div class="section" id="amgeo-to-geodetic">
-<h3>AMGeO to geodetic<a class="headerlink" href="#amgeo-to-geodetic" title="Permalink to this headline">¶</a></h3>
+<section id="amgeo-to-geodetic">
+<h3>AMGeO to geodetic<a class="headerlink" href="#amgeo-to-geodetic" title="Permalink to this headline">#</a></h3>
 <p>For plots using the common mercator projection, Geodetic is what we will be looking for</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5812,15 +6103,15 @@ Attributes:
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="compatability-with-cartopy">
-<h2>Compatability with cartopy<a class="headerlink" href="#compatability-with-cartopy" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="compatability-with-cartopy">
+<h2>Compatability with cartopy<a class="headerlink" href="#compatability-with-cartopy" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/index.html">CartoPy</a> is a popular python package that allows for plotting onto Geographic
 projections of the world.</p>
 <p>AMGeO’s API lends itself well to mapping its data easily to these plotting tools.</p>
-<div class="section" id="plotting-amgeo-electostatic-potential-on-orthographic-projection">
-<h3>Plotting AMGeO electostatic potential on orthographic projection<a class="headerlink" href="#plotting-amgeo-electostatic-potential-on-orthographic-projection" title="Permalink to this headline">¶</a></h3>
+<section id="plotting-amgeo-electostatic-potential-on-orthographic-projection">
+<h3>Plotting AMGeO electostatic potential on orthographic projection<a class="headerlink" href="#plotting-amgeo-electostatic-potential-on-orthographic-projection" title="Permalink to this headline">#</a></h3>
 <p>Using the convenient <code class="docutils literal notranslate"><span class="pre">geo_lat</span></code> and <code class="docutils literal notranslate"><span class="pre">geo_lon</span></code> values we just generated, we can use Cartopy’s <code class="docutils literal notranslate"><span class="pre">PlatteCarree</span></code> transform to map these values onto an <code class="docutils literal notranslate"><span class="pre">Orthographic</span></code> projection.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Orhtographic</span></code> projection will suit nicely for visualzing an AMGeO grid of electostatic potentials on the northern hemisphere, which will spread from the magnetic north pole.</p>
 <div class="cell docutils container">
@@ -5848,10 +6139,10 @@ projections of the world.</p>
 <img alt="../../_images/WM_02_AMGeO-2.0_85_0.png" src="../../_images/WM_02_AMGeO-2.0_85_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="pandas-compatability">
-<h2>Pandas compatability<a class="headerlink" href="#pandas-compatability" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="pandas-compatability">
+<h2>Pandas compatability<a class="headerlink" href="#pandas-compatability" title="Permalink to this headline">#</a></h2>
 <p>While not necessarily easier, since AMGeO works with multi-dimensional data, Xarray provides compatability with pandas. A more comprehensive overview can be found <a class="reference external" href="http://xarray.pydata.org/en/stable/user-guide/pandas.html">here</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6055,17 +6346,17 @@ projections of the world.</p>
 <p>1776 rows × 9 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>This notebook showcases the standalone utility of AMGeO’s new API, as well as the various ways it can be used in tandem with other popular python packages.</p>
 <p>Please get started with AMGeO <a class="reference external" href="https://amgeo.colorado.edu/">here</a>, we would love any feedback to continue improving our software.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="references">
-<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h1>
 <p>AMGeO Collaboration (2019), A Collaborative Data Science Platform for the Geospace Community: Assimilative Mapping of Geospace Observations (AMGeO) v1.0.0, <a class="reference external" href="http://doi.org/10.5281/zenodo.3564914">http://doi.org/10.5281/zenodo.3564914</a>.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -6089,9 +6380,11 @@ projections of the world.</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -6107,25 +6400,27 @@ projections of the world.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
-        
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+  
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

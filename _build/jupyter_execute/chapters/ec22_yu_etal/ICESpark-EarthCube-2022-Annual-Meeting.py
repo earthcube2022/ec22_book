@@ -82,7 +82,13 @@ from sedona.utils.adapter import Adapter
 # In[2]:
 
 
-spark = SparkSession.     builder.     appName('appName').     master('local[*]').     config("spark.serializer", KryoSerializer.getName).     config("spark.kryo.registrator", SedonaKryoRegistrator.getName).     config('spark.jars.packages',
+spark = SparkSession. \
+    builder. \
+    appName('appName'). \
+    master('local[*]'). \
+    config("spark.serializer", KryoSerializer.getName). \
+    config("spark.kryo.registrator", SedonaKryoRegistrator.getName). \
+    config('spark.jars.packages',
            'org.apache.sedona:sedona-python-adapter-3.0_2.12:1.2.0-incubating,org.datasyslab:geotools-wrapper:1.1.0-25.2'). \
     getOrCreate()
 
@@ -120,7 +126,13 @@ def orbit_date(s):
 spark.udf.register("orbit_date", orbit_date)
 
 # Load data and create a Date column
-spark.read.format("csv").    option("delimiter", ",").    option("header", "true").    load("data/IS2_RGTs_aggr_data_timestamp-head500.csv").    withColumn("date", expr("orbit_date(filename)")).    repartition(10).    createOrReplaceTempView("is2_df_raw")
+spark.read.format("csv").\
+    option("delimiter", ",").\
+    option("header", "true").\
+    load("data/IS2_RGTs_aggr_data_timestamp-head500.csv").\
+    withColumn("date", expr("orbit_date(filename)")).\
+    repartition(10).\
+    createOrReplaceTempView("is2_df_raw")
 
 
 # ## Create DataFrame with a Geometry column
@@ -128,7 +140,8 @@ spark.read.format("csv").    option("delimiter", ",").    option("header", "true
 # In[5]:
 
 
-spark.sql("select ST_FlipCoordinates(ST_GeomFromWKT(WKT)) as orbit, Name, altitudeMode, tessellate, extrude, visibility, filename, date from is2_df_raw").    createOrReplaceTempView("is2_df")
+spark.sql("select ST_FlipCoordinates(ST_GeomFromWKT(WKT)) as orbit, Name, altitudeMode, tessellate, extrude, visibility, filename, date from is2_df_raw").\
+    createOrReplaceTempView("is2_df")
 
 ## Show the schema of the table
 spark.table("is2_df").show(2)
@@ -437,7 +450,13 @@ spark.udf.register("cruise_date", cruise_date)
 # In[18]:
 
 
-cruise_df = spark.read.format("csv").    option("delimiter", "\t").    option("header", "true").    load("data/PS122*head1000.txt").    filter(col("Latitude").isNotNull()).    filter(col("Longitude").isNotNull()).    repartition(10)
+cruise_df = spark.read.format("csv").\
+    option("delimiter", "\t").\
+    option("header", "true").\
+    load("data/PS122*head1000.txt").\
+    filter(col("Latitude").isNotNull()).\
+    filter(col("Longitude").isNotNull()).\
+    repartition(10)
 cruise_df.show(2)
 
 
@@ -446,7 +465,8 @@ cruise_df.show(2)
 # In[19]:
 
 
-cruise_df = cruise_df.withColumn("location", expr("ST_Point(cast(Longitude as double), cast(Latitude as double))")).drop("Longitude").drop("Latitude").withColumn("date", expr("cruise_date(`Date/Time (UTC)`)"))
+cruise_df = cruise_df.withColumn("location", expr("ST_Point(cast(Longitude as double), cast(Latitude as double))"))\
+.drop("Longitude").drop("Latitude").withColumn("date", expr("cruise_date(`Date/Time (UTC)`)"))
 # .filter("`Date/Time (UTC)` LIKE \'2020______T__:00:00\'")
 # cruise_df.createOrReplaceTempView("cruise_df")
 cruise_df.show(2)
@@ -462,7 +482,9 @@ print(cruise_df.count())
 # In[20]:
 
 
-result_df = cruise_df.join(spark.table("is2_df").filter('filename LIKE \'%2019%\'').select("orbit", "date"), 'date').    filter("ST_Intersects(ST_Transform(ST_Buffer(ST_Transform(location, \'epsg:4326\',\'epsg:3413\'), 50000), \'epsg:3413\',\'epsg:4326\'), ST_FlipCoordinates(orbit))").    cache()
+result_df = cruise_df.join(spark.table("is2_df").filter('filename LIKE \'%2019%\'').select("orbit", "date"), 'date').\
+    filter("ST_Intersects(ST_Transform(ST_Buffer(ST_Transform(location, \'epsg:4326\',\'epsg:3413\'), 50000), \'epsg:3413\',\'epsg:4326\'), ST_FlipCoordinates(orbit))").\
+    cache()
 print('The number of crossings pairs: ', result_df.count())
 result_df = result_df.limit(1000) # Only send 1000 rows for visualization
 result_df.show(10)

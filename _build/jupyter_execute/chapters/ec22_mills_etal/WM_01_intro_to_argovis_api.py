@@ -100,9 +100,11 @@ warnings.filterwarnings('ignore')
 
 ##### import local functions
 # for data processing
-from utilities_NSF_EC2022 import create_url, get_data_from_url, get_info_from_df,get_data_for_timeRange,                                     polygon_lon_lat, mask_QC, simple_plot, qc, interpolate
+from utilities_NSF_EC2022 import create_url, get_data_from_url, get_info_from_df,get_data_for_timeRange, \
+                                    polygon_lon_lat, mask_QC, simple_plot, qc, interpolate
 # for data visualization
-from utilities_NSF_EC2022 import set_ax_label,                                  set_map_and_plot_locations_withColor
+from utilities_NSF_EC2022 import set_ax_label, \
+                                 set_map_and_plot_locations_withColor
 
 
 # # Parameter definitions
@@ -159,11 +161,18 @@ polygon_lon_lat_dict = polygon_lon_lat(polygon_str=polygon)
 
 source_all = ['argo_core','argo_bgc','cchdo_go-ship']
 for isource in source_all:
-    bfr_df = get_data_for_timeRange(startDate=startDate,endDate=endDate,                                 url_prefix=URL_PREFIX+'/profiles?',                                 myAPIkey=API_KEY,                                 source=isource,                                 polygon=polygon,                                 dt_tag='365d',writeFlag=True)
+    bfr_df = get_data_for_timeRange(startDate=startDate,endDate=endDate, \
+                                url_prefix=URL_PREFIX+'/profiles?', \
+                                myAPIkey=API_KEY, \
+                                source=isource, \
+                                polygon=polygon, \
+                                dt_tag='365d',writeFlag=True)
     if not bfr_df.empty:
         bfr_info = get_info_from_df(df=bfr_df,info_to_store=info_to_store)
         ###### let's plot the polygon and the profile locations color coded by source
-        set_map_and_plot_locations_withColor(lon=bfr_info['lon'],lat=bfr_info['lat'],                                      cols=bfr_info['cols_bySource'],                                      polygon_lon_lat_dict=polygon_lon_lat_dict)
+        set_map_and_plot_locations_withColor(lon=bfr_info['lon'],lat=bfr_info['lat'], \
+                                     cols=bfr_info['cols_bySource'], \
+                                     polygon_lon_lat_dict=polygon_lon_lat_dict)
         plt.title('source: ' + isource,fontsize=28)
 
 
@@ -174,11 +183,18 @@ for isource in source_all:
 # In[9]:
 
 
-bfr_df = get_data_for_timeRange(startDate=startDate,endDate=endDate,                             url_prefix=URL_PREFIX+'/profiles?',                             myAPIkey=API_KEY,                             source='argo_core,~argo_bgc',                             polygon=polygon,                             dt_tag='365d',writeFlag=True)
+bfr_df = get_data_for_timeRange(startDate=startDate,endDate=endDate, \
+                            url_prefix=URL_PREFIX+'/profiles?', \
+                            myAPIkey=API_KEY, \
+                            source='argo_core,~argo_bgc', \
+                            polygon=polygon, \
+                            dt_tag='365d',writeFlag=True)
 if not bfr_df.empty:
     bfr_info = get_info_from_df(df=bfr_df,info_to_store=info_to_store)
     ###### let's plot the polygon and the profile locations color coded by source
-    set_map_and_plot_locations_withColor(lon=bfr_info['lon'],lat=bfr_info['lat'],                                  cols=bfr_info['cols_bySource'],                                  polygon_lon_lat_dict=polygon_lon_lat_dict)
+    set_map_and_plot_locations_withColor(lon=bfr_info['lon'],lat=bfr_info['lat'], \
+                                 cols=bfr_info['cols_bySource'], \
+                                 polygon_lon_lat_dict=polygon_lon_lat_dict)
     plt.title('source: ' + isource,fontsize=28)
 
 
@@ -198,7 +214,12 @@ if not bfr_df.empty:
 # In[10]:
 
 
-df = get_data_for_timeRange(startDate=startDate,endDate=endDate,                                 url_prefix=URL_PREFIX+'/profiles?',                                 myAPIkey=API_KEY,                                 data='doxy,pres,metadata-only',                                 polygon=polygon,                                 dt_tag='100d',writeFlag=True)
+df = get_data_for_timeRange(startDate=startDate,endDate=endDate, \
+                                url_prefix=URL_PREFIX+'/profiles?', \
+                                myAPIkey=API_KEY, \
+                                data='doxy,pres,metadata-only', \
+                                polygon=polygon, \
+                                dt_tag='100d',writeFlag=True)
 if not df.empty:
     if 'df_all' in locals():
         df_all = pd.concat([df_all,df],ignore_index=True)
@@ -212,7 +233,9 @@ info_d_reg = get_info_from_df(df=df_all,info_to_store=info_to_store)
 del df_all
 
 ###### let's plot the polygon and profile locations color coded by source
-set_map_and_plot_locations_withColor(lon=info_d_reg['lon'],lat=info_d_reg['lat'],                                      cols=info_d_reg['cols_bySource'],                                      polygon_lon_lat_dict=polygon_lon_lat_dict)
+set_map_and_plot_locations_withColor(lon=info_d_reg['lon'],lat=info_d_reg['lat'], \
+                                     cols=info_d_reg['cols_bySource'], \
+                                     polygon_lon_lat_dict=polygon_lon_lat_dict)
 
 
 # We can perform a similar search, this time demanding data be only from a particular WOCE (World Ocean Circulation Experiment) line with the `woceline=` filter (instead of querying profiles in a region as done previously):
@@ -223,7 +246,12 @@ set_map_and_plot_locations_withColor(lon=info_d_reg['lon'],lat=info_d_reg['lat']
 if 'df_d1' in locals():
     del df_d1
 
-df = get_data_for_timeRange(startDate=startDate,endDate=endDate,                                 url_prefix=URL_PREFIX+'/profiles?',                                 myAPIkey=API_KEY,                                 data='pres,doxy_ctd,metadata-only',                                 woceline='A22',                                 dt_tag='365d',writeFlag=True)
+df = get_data_for_timeRange(startDate=startDate,endDate=endDate, \
+                                url_prefix=URL_PREFIX+'/profiles?', \
+                                myAPIkey=API_KEY, \
+                                data='pres,doxy_ctd,metadata-only', \
+                                woceline='A22', \
+                                dt_tag='365d',writeFlag=True)
 if not df.empty:
     if 'df_d1' in locals():
         df_d1 = pd.concat([df_d1,df],ignore_index=True)
@@ -236,7 +264,9 @@ font = {'weight' : 'normal',
         'size'   : 24}
 
 plt.rc('font', **font)
-set_map_and_plot_locations_withColor(lon=info_d1['lon'],lat=info_d1['lat'],                                      cols=info_d1['cols_bySource'],                                      polygon_lon_lat_dict=[])
+set_map_and_plot_locations_withColor(lon=info_d1['lon'],lat=info_d1['lat'], \
+                                     cols=info_d1['cols_bySource'], \
+                                     polygon_lon_lat_dict=[])
 plt.title('A22',fontsize=28)
 
 
@@ -257,7 +287,8 @@ lst_id_pairs_d2 = []
 
 for i in np.arange(0,len(info_d1['lon'])):
     time.sleep(.2)
-    d = get_data_for_timeRange(startDate=(datetime.strptime(info_d1['date'][i],'%Y-%m-%dT%H:%M:%SZ')-                                           timedelta(days=delta_days)).strftime('%Y-%m-%dT%H:%M:%SZ'),
+    d = get_data_for_timeRange(startDate=(datetime.strptime(info_d1['date'][i],'%Y-%m-%dT%H:%M:%SZ')- \
+                                          timedelta(days=delta_days)).strftime('%Y-%m-%dT%H:%M:%SZ'),
                                endDate=(datetime.strptime(info_d1['date'][i],'%Y-%m-%dT%H:%M:%SZ')+ \
                                           timedelta(days=delta_days)).strftime('%Y-%m-%dT%H:%M:%SZ'), \
                                myAPIkey=API_KEY, \
@@ -280,7 +311,8 @@ for i in np.arange(0,len(info_d1['lon'])):
 info_d2=get_info_from_df(df=df_d2,info_to_store=info_to_store)
 
 ###### let's plot the profile locations color coded by source
-set_map_and_plot_locations_withColor(lon=info_d1['lon']+info_d2['lon'],lat=info_d1['lat']+info_d2['lat'],                                      cols=info_d1['cols_bySource']+info_d2['cols_bySource'])
+set_map_and_plot_locations_withColor(lon=info_d1['lon']+info_d2['lon'],lat=info_d1['lat']+info_d2['lat'], \
+                                     cols=info_d1['cols_bySource']+info_d2['cols_bySource'])
 
 
 # Finally, now that we've found Argo and GO-SHIP profiles that both measure dissolved oxygen, we can download the measurements of interest, plot the two and compare:
@@ -326,7 +358,8 @@ for i in np.arange(0,len(lst_id_pairs_d1),1):
             del ids_bfr
         ids_bfr = eval('ids_bfr'+str(isource))
         for j in ids_bfr:
-            bfr = pd.DataFrame(get_data_from_url(url=URL_PREFIX+'/profiles?&data='+var_d[isource-1]+',pres&id='+j+'&presRange='+presRange,                                                 myAPIkey=API_KEY,writeFlag=False))
+            bfr = pd.DataFrame(get_data_from_url(url=URL_PREFIX+'/profiles?&data='+var_d[isource-1]+',pres&id='+j+'&presRange='+presRange,\
+                                                 myAPIkey=API_KEY,writeFlag=False))
             if 'bfr_df' in locals():
                 del bfr_df
 
@@ -337,7 +370,8 @@ for i in np.arange(0,len(lst_id_pairs_d1),1):
                     bfr_df = pd.concat([bfr_df,j_df],ignore_index=True)
             if var_d[isource-1] in bfr_df.keys():
                 bfr_df2plt = bfr_df[bfr_df.eval(var_d[isource-1]).notnull()]
-                plt.plot(bfr_df2plt[var_d[isource-1]],bfr_df2plt['pres'],                          marker=eval('mrk_type'+str(isource)),markersize=eval('mrk_sz'+str(isource)),color=eval('col_d'+str(isource)),linewidth=2)
+                plt.plot(bfr_df2plt[var_d[isource-1]],bfr_df2plt['pres'], \
+                         marker=eval('mrk_type'+str(isource)),markersize=eval('mrk_sz'+str(isource)),color=eval('col_d'+str(isource)),linewidth=2)
                 if isource ==2:
                     fig_close = False
                 if not 'bfr_title' in locals():

@@ -1509,7 +1509,7 @@ i = 10
 # In[89]:
 
 
-get_ipython().run_cell_magic('time', '', 'ke = kinetic_energy(ds_ak.obs.ve[i], ds_ak.obs.vn[i])')
+get_ipython().run_cell_magic('time', '', 'ke = kinetic_energy(ds_ak.obs.ve[i], ds_ak.obs.vn[i])\n')
 
 
 # The function is compiled just in time when we execute the function for the first time, future executions are *numba fast*.
@@ -1523,7 +1523,7 @@ kinetic_energy_nb(ds_ak.obs.ve[i], ds_ak.obs.vn[i])
 # In[91]:
 
 
-get_ipython().run_cell_magic('timeit', '-r10 -n10', 'ke2 = kinetic_energy_nb(ds_ak.obs.ve[i], ds_ak.obs.vn[i])')
+get_ipython().run_cell_magic('timeit', '-r10 -n10', 'ke2 = kinetic_energy_nb(ds_ak.obs.ve[i], ds_ak.obs.vn[i])\n')
 
 
 # This results in more than a 500x sped up (!) for the same function simply by adding the `@nb.njit` decorators!

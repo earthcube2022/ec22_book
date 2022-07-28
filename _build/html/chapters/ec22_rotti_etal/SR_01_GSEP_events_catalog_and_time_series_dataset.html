@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>GSEP Event Catalog and Time Series Dataset &#8212; EarthCube 2022 Call for Notebooks</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +20,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Jupyter Notebooks as a bridge to the MagIC Database and Open Science" href="../ec22_tauxe_etal/README.html" />
@@ -62,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -328,12 +344,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -341,61 +362,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ec22_rotti_etal/SR_01_GSEP_events_catalog_and_time_series_dataset.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    GSEP Event Catalog and Time Series Dataset
@@ -518,19 +595,157 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>GSEP Event Catalog and Time Series Dataset</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   GSEP Event Catalog and Time Series Dataset
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#author-s">
+     Author(s)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suggested-next-steps">
+     Suggested next steps
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-import">
+   Data import
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   Data processing and analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-one-metadata-analysis">
+     Part One - Metadata Analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotting-the-locations-of-flares-associated-to-sep-events">
+       Plotting the locations of flares associated to SEP events.
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#impacts-dosage-rate">
+       Impacts: Dosage rate
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sep-event-occurrence-probability-modeling">
+       SEP Event Occurrence Probability Modeling
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-two-time-series-visualizations">
+     Part Two - Time series visualizations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gsep-slices">
+       GSEP Slices
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="gsep-event-catalog-and-time-series-dataset">
-<h1>GSEP Event Catalog and Time Series Dataset<a class="headerlink" href="#gsep-event-catalog-and-time-series-dataset" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="author-s">
-<h2>Author(s)<a class="headerlink" href="#author-s" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="gsep-event-catalog-and-time-series-dataset">
+<h1>GSEP Event Catalog and Time Series Dataset<a class="headerlink" href="#gsep-event-catalog-and-time-series-dataset" title="Permalink to this headline">#</a></h1>
+<section id="author-s">
+<h2>Author(s)<a class="headerlink" href="#author-s" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Author1 = {“name”: “Sumanth Rotti”, “affiliation”: “Georgia State University”, “email”: “<a class="reference external" href="mailto:srotti&#37;&#52;&#48;gsu&#46;edu">srotti<span>&#64;</span>gsu<span>&#46;</span>edu</a>”, “orcid”: “0000-0003-1080-3424”}</p></li>
 <li><p>Author2 = {“name”: “Akhil Arya”, “affiliation”: “Georgia State University”, “email”: “<a class="reference external" href="mailto:aarya2&#37;&#52;&#48;gsu&#46;edu">aarya2<span>&#64;</span>gsu<span>&#46;</span>edu</a>”, “orcid”: }</p></li>
@@ -539,66 +754,66 @@
 <li><p>Author5 = {“name”: “Petrus C. Martens”, “affiliation”: “Georgia State University”, “email”: “<a class="reference external" href="mailto:pmartens&#37;&#52;&#48;gsu&#46;edu">pmartens<span>&#64;</span>gsu<span>&#46;</span>edu</a>”, “orcid”: }</p></li>
 </ul>
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#GSEP-Event-Catalog-and-Time-Series-Dataset" data-toc-modified-id="GSEP-Event-Catalog-and-Time-Series-Dataset-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>GSEP Event Catalog and Time Series Dataset</a></span><ul class="toc-item"><li><span><a href="#Author(s)" data-toc-modified-id="Author(s)-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Author(s)</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Results" data-toc-modified-id="Results-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Results</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Suggested-next-steps" data-toc-modified-id="Suggested-next-steps-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Suggested next steps</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-import" data-toc-modified-id="Library-import-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library import</a></span></li></ul></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-processing-and-analysis" data-toc-modified-id="Data-processing-and-analysis-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data processing and analysis</a></span><ul class="toc-item"><li><span><a href="#Part-One---Metadata-Analysis" data-toc-modified-id="Part-One---Metadata-Analysis-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Part One - Metadata Analysis</a></span><ul class="toc-item"><li><span><a href="#Plotting-the-locations-of-flares-associated-to-SEP-events." data-toc-modified-id="Plotting-the-locations-of-flares-associated-to-SEP-events.-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>Plotting the locations of flares associated to SEP events.</a></span></li><li><span><a href="#Impacts:-Dosage-rate" data-toc-modified-id="Impacts:-Dosage-rate-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>Impacts: Dosage rate</a></span></li><li><span><a href="#SEP-Event-Occurrence-Probability-Modeling" data-toc-modified-id="SEP-Event-Occurrence-Probability-Modeling-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>SEP Event Occurrence Probability Modeling</a></span></li></ul></li><li><span><a href="#Part-Two---Time-series-visualizations" data-toc-modified-id="Part-Two---Time-series-visualizations-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Part Two - Time series visualizations</a></span><ul class="toc-item"><li><span><a href="#GSEP-Slices" data-toc-modified-id="GSEP-Slices-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>GSEP Slices</a></span></li></ul></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>References</a></span></li></ul></div></div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<div class="toc"><ul class="toc-item"><li><span><a href="#GSEP-Event-Catalog-and-Time-Series-Dataset" data-toc-modified-id="GSEP-Event-Catalog-and-Time-Series-Dataset-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>GSEP Event Catalog and Time Series Dataset</a></span><ul class="toc-item"><li><span><a href="#Author(s)" data-toc-modified-id="Author(s)-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Author(s)</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Results" data-toc-modified-id="Results-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Results</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Suggested-next-steps" data-toc-modified-id="Suggested-next-steps-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Suggested next steps</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-import" data-toc-modified-id="Library-import-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library import</a></span></li></ul></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-processing-and-analysis" data-toc-modified-id="Data-processing-and-analysis-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data processing and analysis</a></span><ul class="toc-item"><li><span><a href="#Part-One---Metadata-Analysis" data-toc-modified-id="Part-One---Metadata-Analysis-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Part One - Metadata Analysis</a></span><ul class="toc-item"><li><span><a href="#Plotting-the-locations-of-flares-associated-to-SEP-events." data-toc-modified-id="Plotting-the-locations-of-flares-associated-to-SEP-events.-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>Plotting the locations of flares associated to SEP events.</a></span></li><li><span><a href="#Impacts:-Dosage-rate" data-toc-modified-id="Impacts:-Dosage-rate-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>Impacts: Dosage rate</a></span></li><li><span><a href="#SEP-Event-Occurrence-Probability-Modeling" data-toc-modified-id="SEP-Event-Occurrence-Probability-Modeling-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>SEP Event Occurrence Probability Modeling</a></span></li></ul></li><li><span><a href="#Part-Two---Time-series-visualizations" data-toc-modified-id="Part-Two---Time-series-visualizations-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Part Two - Time series visualizations</a></span><ul class="toc-item"><li><span><a href="#GSEP-Slices" data-toc-modified-id="GSEP-Slices-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>GSEP Slices</a></span></li></ul></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>References</a></span></li></ul></div></section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>Solar Energetic Particle (SEP) events are radiation storms of particle fluxes comprising electrons, protons, and heavier ions from the Sun. SEP events are known to originate in large eruptions such as solar flares (SFs) and coronal mass ejections (CMEs). SEP events are essential to understand and forecast because (i) SEPs determine the dosage exposure on astronauts and spacecraft equipment outside the Earth’s magnetosphere; (ii) There is a sudden enhancement in space around Earth’s radiation environment during an SEP event; (iii) Solar protons with energies &gt;100 Mega electronvolts (MeV) can penetrate the Earth’s upper atmosphere.</p>
 <p>Multiple space and ground-based missions currently obtain in-situ solar particle composition and energy spectra fluxes. The time intensities of particle fluxes are used to define and characterize SEP events based on enhancements above a nominal background level. Such time profiles can distinguish the source event as the temporal behavior differs.</p>
 <p>As part of our earlier data curation efforts on SEP events, we have integrated existing SEP event catalogs of Papaioannou et al. (2016)[1] and CDAW-SEP[2] to a comprehensive list of 342 SEP events with reference to their parent eruptions, extending from 1986 to 2017. The metadata also provides a reference to various parameters for each event. We have used solar proton flux data from near-Earth observations of Geostationary Operational Environmental Satellite (GOES). We have cleaned the base dataset and generated multivariate time series (MVTS) slices of the SEP events from the metadata. Our approach is to contribute to the SEP research community with a combined database and present additional data for each event.</p>
 <p>This notebook presents hands-on tools for exploratory data analysis of the metadata and visualizations of time series data. In addition, we will explore the statistical relationships and characteristics between source solar eruptions to SEPs.</p>
-</div>
-<div class="section" id="technical-contributions">
-<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">#</a></h2>
 <p>The central contributions of the notebook (libraries created and scientific analysis demonstrated) are as follows:</p>
 <ul class="simple">
 <li><p>Functions defined for plotting the GSEP metadata and performing time series visualizations.</p></li>
 <li><p>Function to show spatial distribution of flaring locations on the Sun that are associated with SEP events.</p></li>
 <li><p>Empirical modeling of SEP event occurrence rates from solar source locations, including far-side observations.</p></li>
 </ul>
-</div>
-<div class="section" id="methodology">
-<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">#</a></h2>
 <p>We utilize the GSEP dataset to perform exploratory analysis. The GSEP dataset consists of 342 SEP events of which 246 cross the space weather prediction center (SWPC) threshold of a significant proton event. The headers in the GSEP list describe physical descriptors (both those stored in the source catalogs and calculated by us) and carry relevant indicators (data quality, observed GOES instrument, and parallel reports.) The proton fluxes from GOES missions are further sliced with respect to the event start and end times as reported in the metadata.
 The GSEP dataset is published on Harvard dataverse and can be accessed via <a class="reference external" href="https://doi.org/10.7910/DVN/DZYLHK">https://doi.org/10.7910/DVN/DZYLHK</a> (DOI: 10.7910/DVN/DZYLHK) [3].</p>
-</div>
-<div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The distribution of SEP events based on the NOAA Solar Radiation Storm-scale indicates several events occuring  with severe bilogical and technological effects during Solar Cycles 22, 23, and 24, covering over three decades between 1986 to 2017.</p></li>
 <li><p>The spatial locations of source flaring active regions associated with SEP events show strong association to the western hemisphere of the Sun.</p></li>
 <li><p>The probability of occurence of an SEP event from an active region also strongly correlates to the magentically well-connected regions on the Sun.</p></li>
 <li><p>Time profiles of solar proton fluxes with a 12-hour observation window includes possible source solar eruption information such as flaring time and magnitude, and CME launch time and width.</p></li>
 </ul>
-</div>
-<div class="section" id="funding">
-<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Award1 = {“agency”: “NASA”, “award_code”: “80NSSC21K1388”}</p></li>
 <li><p>Award2 = {“agency”: “NASA”, “award_code”: “80NSSC22K0272”}</p></li>
 <li><p>Award3 = {“agency”: “NSF”, “award_code”: “2104004”, “award_URL”: “<a class="reference external" href="https://nsf.gov/awardsearch/showAward?AWD_ID=2104004">https://nsf.gov/awardsearch/showAward?AWD_ID=2104004</a>”}</p></li>
 </ul>
-</div>
-<div class="section" id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
 <p>keywords=[“Solar Energtic Particle (SEP) Events”, “Solar Proton Events”, “SEP Catalog”]</p>
-</div>
-<div class="section" id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <p>S. Rotti, A. Arya, B. Aydin, M.K. Georgoulis, &amp; P.C.H. Martens., GSEP Event List and Dataset, 2022, [<a class="reference external" href="https://github.com/aarya180/EC_SEP_Visualization">https://github.com/aarya180/EC_SEP_Visualization</a>], DOI:[to be assigned].</p>
-</div>
-<div class="section" id="suggested-next-steps">
-<h2>Suggested next steps<a class="headerlink" href="#suggested-next-steps" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="suggested-next-steps">
+<h2>Suggested next steps<a class="headerlink" href="#suggested-next-steps" title="Permalink to this headline">#</a></h2>
 <p>Extending our spatial probabilistic modeling with the identification of complex spatial and temporal relationships among SEP Events and source flares and CMEs.</p>
-</div>
-<div class="section" id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h2>
 <p>We acknowledge the use of data from NOAA-GOES missions and thank the team for the availability of solar proton data.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="library-import">
-<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h1>
+<section id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data manipulation</span>
@@ -630,10 +845,10 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-import">
-<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-import">
+<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the GSEP events list</span>
@@ -648,9 +863,9 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
-<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-processing-and-analysis">
+<h1>Data processing and analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">#</a></h1>
 <p>Solar magnetic eruptions occur due to the explosive release of magnetic energy stored in the Sun’s coronal magnetic flux ropes [4]. These flux ropes can be formed in active regions or quiet regions on the Sun [5]. The solar magnetic eruptions may cause:</p>
 <ol class="simple">
 <li><p>Flares: Photons with frequencies ranging from gamma rays to radio waves.</p></li>
@@ -661,8 +876,8 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 <p>The figure below (Credit: ESA, [<a class="reference external" href="http://www.esa.int/spaceinimages/Images/2017/11/Space_weather_effects">http://www.esa.int/spaceinimages/Images/2017/11/Space_weather_effects</a>]) illustrates the consolidated broader impacts of solar magnetic eruptions.</p>
 <p><img alt="Space_weather_effects.jpg" src="chapters/ec22_rotti_etal/attachment:Space_weather_effects.jpg" /></p>
 <p>Our focus is on SEPs observed near-Earth from 1986 until 2017, comprising the last three solar cycles; 22, 23, and 24. For this, extensive in-situ proton flux data is available from the GOES missions [6], [7]. There are two parts to the analysis in this notebook. First is the exploratory analysis of the GSEP and associated solar source metadata.  We also perform a probabilistic modeling of SEP event occurrence. Second, visualizing the time series slices of the proton fluxes based on the GSEP metadata.</p>
-<div class="section" id="part-one-metadata-analysis">
-<h2>Part One - Metadata Analysis<a class="headerlink" href="#part-one-metadata-analysis" title="Permalink to this headline">¶</a></h2>
+<section id="part-one-metadata-analysis">
+<h2>Part One - Metadata Analysis<a class="headerlink" href="#part-one-metadata-analysis" title="Permalink to this headline">#</a></h2>
 <p>For the first part, we explore the GSEP metadata that is primarily generated by integrating two SEP event catalogs (PSEP [1] and CDAW-SEP [2]).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -949,8 +1164,8 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 <p>3 rows × 51 columns</p>
 </div></div></div>
 </div>
-<div class="section" id="plotting-the-locations-of-flares-associated-to-sep-events">
-<h3>Plotting the locations of flares associated to SEP events.<a class="headerlink" href="#plotting-the-locations-of-flares-associated-to-sep-events" title="Permalink to this headline">¶</a></h3>
+<section id="plotting-the-locations-of-flares-associated-to-sep-events">
+<h3>Plotting the locations of flares associated to SEP events.<a class="headerlink" href="#plotting-the-locations-of-flares-associated-to-sep-events" title="Permalink to this headline">#</a></h3>
 <p>Identifying the source solar active region plays an important role in characterizing the SEP events that occur near Earth. Below, we show scatter plots of coordinate values of flares associated with major events, respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1011,9 +1226,9 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 </div>
 <p>The magnetic connectivity between the Sun and Earth is strong over the western hemisphere on the Sun and until <span class="math notranslate nohighlight">\(-30^0\)</span> toward the eastern side. In the figure above, it can be noticed that while most events occur in the magnetically well-connected western regions on the Sun, there are ~20% of the total events originating from the eastern hemisphere, solar limbs and farside (behind the Sun).</p>
 <p>Furthermore, there is a spread of flaring active reagion locations across the solar hemisphere. It is interesting to observe particles reach Earth in the interplanetary magnetic fields that are several tens of degrees beyond the Sun-Earth connecting regions of the Parker spiral.</p>
-</div>
-<div class="section" id="impacts-dosage-rate">
-<h3>Impacts: Dosage rate<a class="headerlink" href="#impacts-dosage-rate" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="impacts-dosage-rate">
+<h3>Impacts: Dosage rate<a class="headerlink" href="#impacts-dosage-rate" title="Permalink to this headline">#</a></h3>
 <p>An important effect of SEP events is the dosage rate on astronauts and electronic equipment [8], [9]. The histogram shows the proton flux levels measured in particle flux units (pfu) according to the NOAA solar radiation storm-scale. The figure below (Credit: NOAA-SWPC, [<a class="reference external" href="https://www.swpc.noaa.gov/noaa-scales-explanation">https://www.swpc.noaa.gov/noaa-scales-explanation</a>]),  describing the S-scale with reference the effects of the SEP event levels.</p>
 <p><img alt="SolarRadiationStormScale.jpg" src="chapters/ec22_rotti_etal/attachment:SolarRadiationStormScale.jpg" /></p>
 <div class="cell docutils container">
@@ -1038,9 +1253,9 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 <p>The base scale (S1) is at 10 <em>pfu</em> and continues to logarithmically increase from the previous scale. The number of events in the S1 category is high indicating minor effects. However, there are several events measured in the higher scales that could impact biologically and technologically in space.</p>
 <p>Interestingly, we do not observe any S5 events in the last three solar cycles based on our dataset. Events in that scale are extremely rare and we are only counting the things that came towards Earth.</p>
 <p>Historical fact: The GOES proton fluxes were observed at S4 levels for 12 hours on 29-Oct-2003 (the famous Halloween storm) [10].</p>
-</div>
-<div class="section" id="sep-event-occurrence-probability-modeling">
-<h3>SEP Event Occurrence Probability Modeling<a class="headerlink" href="#sep-event-occurrence-probability-modeling" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sep-event-occurrence-probability-modeling">
+<h3>SEP Event Occurrence Probability Modeling<a class="headerlink" href="#sep-event-occurrence-probability-modeling" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">groupby_bins</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span><span class="n">col_1</span><span class="p">,</span><span class="n">col_2</span><span class="p">,</span><span class="n">col_agg</span><span class="p">):</span>
@@ -1574,13 +1789,13 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 </div>
 </div>
 <p>The probability of occurrence model satisfactorily reflects the observational evidences of SEP event association to the source active regions. From the heat map shown above, we can notice the higher probability of magnetic connectivity of eruptive regions from central to the western hemisphere of the Sun.</p>
-</div>
-</div>
-<div class="section" id="part-two-time-series-visualizations">
-<h2>Part Two - Time series visualizations<a class="headerlink" href="#part-two-time-series-visualizations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="part-two-time-series-visualizations">
+<h2>Part Two - Time series visualizations<a class="headerlink" href="#part-two-time-series-visualizations" title="Permalink to this headline">#</a></h2>
 <p>The integral proton fluxes from GOES satellites are downloaded from the NOAA server [<a class="reference external" href="https://satdat.ngdc.noaa.gov/sem/goes/data/avg/">https://satdat.ngdc.noaa.gov/sem/goes/data/avg/</a>] and sorted for reliable missions. Two GOES missions making parallel observations are denoted as primary and secondary. The differences in their measurements occur because of the geomagnetic cut-off [7]. Hence, we understand the possible variations by visually inspecting the time series data and sorting them into reliable missions. Furthermore, the proton flux data is smoothed and imputed across all missions. Then, a subset of time series is obtained for each SEP event based on the event start and end time as reported in the GSEP catalog. We maintain an observation window of 12 hours before the event onset. These subsets or time series slices are stored on Harvard Dataverse.</p>
-<div class="section" id="gsep-slices">
-<h3>GSEP Slices<a class="headerlink" href="#gsep-slices" title="Permalink to this headline">¶</a></h3>
+<section id="gsep-slices">
+<h3>GSEP Slices<a class="headerlink" href="#gsep-slices" title="Permalink to this headline">#</a></h3>
 <p>SEP events are theoretically classified as impulsive and gradual events based on the nature of the temporal evolution of particles originating from the Sun. Impulsive events have beam-like proton flux profiles while gradual events are observed as slowly decreasing in proton flux, lasting longer and posing much bigger threat of radiation exposure to astronauts.</p>
 <p>The below time series plots show typical examples of SEP events with reference to their source eruptions. For illustrative purposes, two events each from the last three solar cycles are selected from the GSEP list, respectively. The indeces of the events are <strong>gsep_003</strong>, <strong>gsep_040</strong>, <strong>gsep_165</strong>, <strong>gsep_231</strong>, <strong>gsep_320</strong> and <strong>gsep_340</strong></p>
 <div class="cell docutils container">
@@ -1875,11 +2090,11 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 </div>
 </div>
 <p>We believe this tool will be a useful helper utility for visual analytics of SEP events, specifically for understanding the statistical distributions of time differences between SEP start times and associated flare/CME occurrences.</p>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="references">
-<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h1>
 <ol class="simple">
 <li><p>Athanasios Papaioannou, Ingmar Sandberg, Anastasios Anastasiadis, Athanasios Kouloumvakos, Manolis K. Georgoulis, Kostas Tziotziou, Georgia Tsiropoula, Piers Jiggens and Alain Hilgers, “Solar flares, coronal mass ejections and solar energetic particle event characteristics.” J. Space Weather Space Clim., 6 (2016) A42, DOI: <a class="reference external" href="https://doi.org/10.1051/swsc/2016035">https://doi.org/10.1051/swsc/2016035</a></p></li>
 <li><p>CDAW Major SEP Events List, <a class="reference external" href="https://cdaw.gsfc.nasa.gov/CME_list/sepe/">https://cdaw.gsfc.nasa.gov/CME_list/sepe/</a></p></li>
@@ -1892,7 +2107,7 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 <li><p>Jiggens, P; Clavie, C; Evans, H; O’Brien, TP; Witasse, O; Mishev, AL; et al. (2019): In Situ Data and Effect Correlation During September 2017 Solar Particle Event. University of Leicester. Journal contribution. <a class="reference external" href="https://hdl.handle.net/2381/11536293.v1">https://hdl.handle.net/2381/11536293.v1</a></p></li>
 <li><p>Intense Space Weather Storms, October 19 - November 7, 2003, Service Assessment <a class="reference external" href="https://www.weather.gov/media/publications/assessments/SWstorms_assessment.pdf">https://www.weather.gov/media/publications/assessments/SWstorms_assessment.pdf</a></p></li>
 </ol>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1916,9 +2131,11 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1934,25 +2151,27 @@ The GSEP dataset is published on Harvard dataverse and can be accessed via <a cl
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
-        
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+  
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

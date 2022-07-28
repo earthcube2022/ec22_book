@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists &#8212; EarthCube 2022 Call for Notebooks</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +20,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Visualizing Ice Core Datasets in Python Using a Jupyter Notebook Template" href="../ec22_markowsky_etal/README.html" />
@@ -62,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -328,12 +344,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -341,61 +362,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_khider_etal/DK_v1_PaleoHack.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ec22_khider_etal/DK_v1_PaleoHack.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
@@ -564,20 +641,204 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#authors">
+     Authors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-import">
+   Data import
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   Data Processing and Analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorial-1-forcing-and-response">
+     Tutorial 1: Forcing and response
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constructing-insolation-curves">
+       Constructing insolation curves
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#orbital-coherence">
+       Orbital Coherence
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#clean-up-tool-1-lowpass-filter">
+         Clean-up tool #1: Lowpass filter.
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#clean-up-tool-2-singular-spectrum-analysis-ssa">
+         Clean-up tool #2: Singular spectrum analysis (SSA)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#causality">
+       Causality
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorial-2-fishing-for-correlations-at-sea">
+     Tutorial 2: Fishing for Correlations at Sea
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-case-study-from-crystal-cave">
+       A case study from Crystal Cave
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#the-crystal-cave-record">
+         The Crystal Cave record
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sst-data">
+         SST data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pitfall-1-persistence">
+       Pitfall #1: Persistence
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#single-location">
+         Single location
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pitfall-2-multiple-testing">
+       Pitfall #2: Multiple testing
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pitfall-3-age-uncertainties">
+       Pitfall #3: Age uncertainties
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conclusions">
+       Conclusions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
   <img src='https://github.com/LinkedEarth/Logos/raw/master/PYLEOCLIM_logo_HORZ-01.png' width="800">
-<div class="tex2jax_ignore mathjax_ignore section" id="paleohack-putting-earthcube-tools-in-the-hands-of-paleogeoscientists">
-<h1>PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists<a class="headerlink" href="#paleohack-putting-earthcube-tools-in-the-hands-of-paleogeoscientists" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="paleohack-putting-earthcube-tools-in-the-hands-of-paleogeoscientists">
+<h1>PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists<a class="headerlink" href="#paleohack-putting-earthcube-tools-in-the-hands-of-paleogeoscientists" title="Permalink to this headline">#</a></h1>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">#</a></h2>
 <p><strong>Deborah Khider<sup>1</sup>, Julien Emile-Geay<sup>2</sup>, Alexander James<sup>2</sup>, Feng Zhu<sup>3</sup></strong></p>
 <p><sup>1</sup> Information Sciences Institute, University of Southern California
 <sup>2</sup> Department of Earth Sciences, University of Southern California
@@ -589,57 +850,57 @@
 <li><p>Author4 = {“name”: “Feng Zhu”, “affiliation”: “Nanjing University of Information Science and Technology”, “email”: “<a class="reference external" href="mailto:fzhu&#37;&#52;&#48;nuist&#46;edu">fzhu<span>&#64;</span>nuist<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-9969-2953”}</p></li>
 </ul>
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#PaleoHack:-Putting-EarthCube-tools-in-the-hands-of-paleogeoscientists" data-toc-modified-id="PaleoHack:-Putting-EarthCube-tools-in-the-hands-of-paleogeoscientists-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists</a></span><ul class="toc-item"><li><span><a href="#Authors" data-toc-modified-id="Authors-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Authors</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Results" data-toc-modified-id="Results-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Results</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-import" data-toc-modified-id="Library-import-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library import</a></span></li></ul></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-Processing-and-Analysis" data-toc-modified-id="Data-Processing-and-Analysis-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data Processing and Analysis</a></span><ul class="toc-item"><li><span><a href="#Tutorial-1:-Forcing-and-response" data-toc-modified-id="Tutorial-1:-Forcing-and-response-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Tutorial 1: Forcing and response</a></span><ul class="toc-item"><li><span><a href="#Constructing-insolation-curves" data-toc-modified-id="Constructing-insolation-curves-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>Constructing insolation curves</a></span></li><li><span><a href="#Orbital-Coherence" data-toc-modified-id="Orbital-Coherence-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>Orbital Coherence</a></span><ul class="toc-item"><li><span><a href="#Clean-up-tool-#1:-Lowpass-filter." data-toc-modified-id="Clean-up-tool-#1:-Lowpass-filter.-4.1.2.1"><span class="toc-item-num">4.1.2.1&nbsp;&nbsp;</span>Clean-up tool #1: Lowpass filter.</a></span></li><li><span><a href="#Clean-up-tool-#2:-Singular-spectrum-analysis-(SSA)" data-toc-modified-id="Clean-up-tool-#2:-Singular-spectrum-analysis-(SSA)-4.1.2.2"><span class="toc-item-num">4.1.2.2&nbsp;&nbsp;</span>Clean-up tool #2: Singular spectrum analysis (SSA)</a></span></li></ul></li><li><span><a href="#Causality" data-toc-modified-id="Causality-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>Causality</a></span></li></ul></li><li><span><a href="#Tutorial-2:-Fishing-for-Correlations-at-Sea" data-toc-modified-id="Tutorial-2:-Fishing-for-Correlations-at-Sea-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Tutorial 2: Fishing for Correlations at Sea</a></span><ul class="toc-item"><li><span><a href="#A-case-study-from-Crystal-Cave" data-toc-modified-id="A-case-study-from-Crystal-Cave-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>A case study from Crystal Cave</a></span><ul class="toc-item"><li><span><a href="#The-Crystal-Cave-record" data-toc-modified-id="The-Crystal-Cave-record-4.2.1.1"><span class="toc-item-num">4.2.1.1&nbsp;&nbsp;</span>The Crystal Cave record</a></span></li><li><span><a href="#SST-data" data-toc-modified-id="SST-data-4.2.1.2"><span class="toc-item-num">4.2.1.2&nbsp;&nbsp;</span>SST data</a></span></li></ul></li><li><span><a href="#Pitfall-#1:-Persistence" data-toc-modified-id="Pitfall-#1:-Persistence-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>Pitfall #1: Persistence</a></span><ul class="toc-item"><li><span><a href="#Single-location" data-toc-modified-id="Single-location-4.2.2.1"><span class="toc-item-num">4.2.2.1&nbsp;&nbsp;</span>Single location</a></span></li></ul></li><li><span><a href="#Pitfall-#2:-Multiple-testing" data-toc-modified-id="Pitfall-#2:-Multiple-testing-4.2.3"><span class="toc-item-num">4.2.3&nbsp;&nbsp;</span>Pitfall #2: Multiple testing</a></span></li><li><span><a href="#Pitfall-#3:-Age-uncertainties" data-toc-modified-id="Pitfall-#3:-Age-uncertainties-4.2.4"><span class="toc-item-num">4.2.4&nbsp;&nbsp;</span>Pitfall #3: Age uncertainties</a></span></li><li><span><a href="#Conclusions" data-toc-modified-id="Conclusions-4.2.5"><span class="toc-item-num">4.2.5&nbsp;&nbsp;</span>Conclusions</a></span></li></ul></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>References</a></span></li></ul></div></div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<div class="toc"><ul class="toc-item"><li><span><a href="#PaleoHack:-Putting-EarthCube-tools-in-the-hands-of-paleogeoscientists" data-toc-modified-id="PaleoHack:-Putting-EarthCube-tools-in-the-hands-of-paleogeoscientists-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists</a></span><ul class="toc-item"><li><span><a href="#Authors" data-toc-modified-id="Authors-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Authors</a></span></li><li><span><a href="#Purpose" data-toc-modified-id="Purpose-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Purpose</a></span></li><li><span><a href="#Technical-contributions" data-toc-modified-id="Technical-contributions-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Technical contributions</a></span></li><li><span><a href="#Methodology" data-toc-modified-id="Methodology-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Methodology</a></span></li><li><span><a href="#Results" data-toc-modified-id="Results-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Results</a></span></li><li><span><a href="#Funding" data-toc-modified-id="Funding-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Funding</a></span></li><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Keywords</a></span></li><li><span><a href="#Citation" data-toc-modified-id="Citation-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Citation</a></span></li><li><span><a href="#Acknowledgements" data-toc-modified-id="Acknowledgements-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Acknowledgements</a></span></li></ul></li><li><span><a href="#Setup" data-toc-modified-id="Setup-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Setup</a></span><ul class="toc-item"><li><span><a href="#Library-import" data-toc-modified-id="Library-import-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Library import</a></span></li></ul></li><li><span><a href="#Data-import" data-toc-modified-id="Data-import-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Data import</a></span></li><li><span><a href="#Data-Processing-and-Analysis" data-toc-modified-id="Data-Processing-and-Analysis-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Data Processing and Analysis</a></span><ul class="toc-item"><li><span><a href="#Tutorial-1:-Forcing-and-response" data-toc-modified-id="Tutorial-1:-Forcing-and-response-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Tutorial 1: Forcing and response</a></span><ul class="toc-item"><li><span><a href="#Constructing-insolation-curves" data-toc-modified-id="Constructing-insolation-curves-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>Constructing insolation curves</a></span></li><li><span><a href="#Orbital-Coherence" data-toc-modified-id="Orbital-Coherence-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>Orbital Coherence</a></span><ul class="toc-item"><li><span><a href="#Clean-up-tool-#1:-Lowpass-filter." data-toc-modified-id="Clean-up-tool-#1:-Lowpass-filter.-4.1.2.1"><span class="toc-item-num">4.1.2.1&nbsp;&nbsp;</span>Clean-up tool #1: Lowpass filter.</a></span></li><li><span><a href="#Clean-up-tool-#2:-Singular-spectrum-analysis-(SSA)" data-toc-modified-id="Clean-up-tool-#2:-Singular-spectrum-analysis-(SSA)-4.1.2.2"><span class="toc-item-num">4.1.2.2&nbsp;&nbsp;</span>Clean-up tool #2: Singular spectrum analysis (SSA)</a></span></li></ul></li><li><span><a href="#Causality" data-toc-modified-id="Causality-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>Causality</a></span></li></ul></li><li><span><a href="#Tutorial-2:-Fishing-for-Correlations-at-Sea" data-toc-modified-id="Tutorial-2:-Fishing-for-Correlations-at-Sea-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Tutorial 2: Fishing for Correlations at Sea</a></span><ul class="toc-item"><li><span><a href="#A-case-study-from-Crystal-Cave" data-toc-modified-id="A-case-study-from-Crystal-Cave-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>A case study from Crystal Cave</a></span><ul class="toc-item"><li><span><a href="#The-Crystal-Cave-record" data-toc-modified-id="The-Crystal-Cave-record-4.2.1.1"><span class="toc-item-num">4.2.1.1&nbsp;&nbsp;</span>The Crystal Cave record</a></span></li><li><span><a href="#SST-data" data-toc-modified-id="SST-data-4.2.1.2"><span class="toc-item-num">4.2.1.2&nbsp;&nbsp;</span>SST data</a></span></li></ul></li><li><span><a href="#Pitfall-#1:-Persistence" data-toc-modified-id="Pitfall-#1:-Persistence-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>Pitfall #1: Persistence</a></span><ul class="toc-item"><li><span><a href="#Single-location" data-toc-modified-id="Single-location-4.2.2.1"><span class="toc-item-num">4.2.2.1&nbsp;&nbsp;</span>Single location</a></span></li></ul></li><li><span><a href="#Pitfall-#2:-Multiple-testing" data-toc-modified-id="Pitfall-#2:-Multiple-testing-4.2.3"><span class="toc-item-num">4.2.3&nbsp;&nbsp;</span>Pitfall #2: Multiple testing</a></span></li><li><span><a href="#Pitfall-#3:-Age-uncertainties" data-toc-modified-id="Pitfall-#3:-Age-uncertainties-4.2.4"><span class="toc-item-num">4.2.4&nbsp;&nbsp;</span>Pitfall #3: Age uncertainties</a></span></li><li><span><a href="#Conclusions" data-toc-modified-id="Conclusions-4.2.5"><span class="toc-item-num">4.2.5&nbsp;&nbsp;</span>Conclusions</a></span></li></ul></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>References</a></span></li></ul></div></section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>PaleoHack aims to train a new generation of paleogeoscientists to use emerging standards and tools developed through EarthCube, namely the Linked Paleo Data Format (LiPD [1]) and Pyleoclim [2]. Training is accomplished through biannual <a class="reference external" href="https://linked.earth/paleoHackathon">hackathons</a> open to researchers at various career stages. The activities are organized around eight self-guided Jupyter Notebook-based tutorials deployed on a JupyterHub walking the participants through an introduction to Pyleoclim and its object-oriented programming interface to using the package in advanced scientific paleoclimate workflows [3]. These notebooks were based on several studies published within the LinkedEarth group over the past several years.</p>
 <p>The notebooks are hosted on <a class="reference external" href="https://github.com/LinkedEarth/paleoHackathon">GitHub</a> and made available through <a class="reference external" href="https://mybinder.org/v2/gh/LinkedEarth/paleoHackathon/HEAD">myBinder</a> for execution, allowing a growing number of scientists to access these training resources without participating in the hackathons. Notebooks 1 and 2 provide general Python and Pyleoclim tutorials while Notebooks 3 to 8 walk through workflows from published studies in the field using Pyleoclim. The notebooks provide example code that can be executed with the data uploaded to the GitHub repository and exercises to test understanding of specific functionalities.</p>
 <p>In addition to the Pyleoclim-dedicated notebooks, a basic scientific Python <a class="reference external" href="http://linked.earth/ec_workshops_py/">training website</a> was deployed for new Python users. This website uses material developed by the EarthCube community, in particular <a class="reference external" href="https://projectpythia.org">Project Pythia</a>. Although it is not meant as a replacement for an <em>Introduction to Python</em> course, it provides a basic understanding of data structures and analysis code in Python, which Pyleoclim aims to automate and complement for paleoclimate datasets.</p>
 <p>The purpose of this notebook is to walk through two of the notebooks and the pedagogy behind its development. In this particular examples, we will be examining (1) the relationship between insolation and a composite of three <span class="math notranslate nohighlight">\(\delta^{18}O\)</span> records from Chinese speleothems (Sanbao, Hulu, and Dongge caves, [4]) and (2) the danger of relying too strongly on correlation analysis for the interpretation of paleoclimate data using a speleothem record from Crystal Cave, CA ([5]). The version presented here is the <em>instructor copy</em>, which contains the answers to the various exercises and is stored on a private GitHub repository.</p>
-</div>
-<div class="section" id="technical-contributions">
-<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Leverage existing functionalities in Pyleoclim to understand the relationship between orbital forcing and cave <span class="math notranslate nohighlight">\(\delta^{18}O\)</span> from China and pitfalls resulting from correlation analysis.</p></li>
 <li><p>Teach fundamental statistical concepts and associated pitfalls.</p></li>
 <li><p>Introduce Pyleoclim functionalities that enable the rapid analysis and visualization of paleoclimate data.</p></li>
 </ul>
-</div>
-<div class="section" id="methodology">
-<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">#</a></h2>
 <p>This notebook utilizes <a class="reference external" href="https://pyleoclim-util.readthedocs.io/en/master/">Pyleoclim</a>[2], a Python package for the analysis and visualization of paleoclimate data. Pyleoclim builds upon standard Python libraries, namely numpy, pandas, matplotlib, cartopy, and scikit-learn (among others). The package is designed around object-oriented <a class="reference external" href="https://pyleoclim-util.readthedocs.io/en/master/core/ui.html#series-pyleoclim-series">Series</a>, which can be manipulated for plotting, spectral and wavelet analysis, and other time series appropriate operations.</p>
 <p>An high-level diagram of Pyleoclim user APIs is shown below.</p>
 <img src='https://pyleoclim-util.readthedocs.io/en/master/_images/Pyleoclim_API.png' width="800">
 <p>This notebook features two tutorials based on paleoclimate records obtained from both non-LiPD (csv and a record generated from the <a class="reference external" href="https://climlab.readthedocs.io/en/latest/">climlab</a> library [6]) and LiPD-formatted datasets to illustrate how Pyleoclim can be used with various data formats. It walks through basic data visualization and analysis of the records using coherence, correlation, and causality. During hackahtons, participants are asked to answer specific questions in the notebooks, designed to help them learn Pyleoclim as well as critically thinking about their scientific objectives. For the purpose of this presentation, the answers will be provided in cells labeled as <code class="docutils literal notranslate"><span class="pre">answers</span></code>.</p>
-</div>
-<div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h2>
 <p>The primary objective of this notebook is to serve as a learning tool for scientists engaged in paleoclimate research at all career stage. It is also an introduction in the use of the Pyleoclim software package.</p>
-</div>
-<div class="section" id="funding">
-<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">#</a></h2>
 <p>Award1 = {“agency”: “US National Science Foundation”, “award_code”: “1541029”, “award_URL”: <a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1541029&amp;HistoricalAwards=false">https://www.nsf.gov/awardsearch/showAward?AWD_ID=1541029&amp;HistoricalAwards=false</a>}</p>
 <p>Award2 = {“agency”: “JP Morgan”}</p>
 <p>Award3 = {“agency”: “US National Science Foundation”, “award_code”: “2002556”, “award_URL”: <a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2002556&amp;HistoricalAwards=false">https://www.nsf.gov/awardsearch/showAward?AWD_ID=2002556&amp;HistoricalAwards=false</a>}</p>
 <p>Award3 = {“agency”: “US National Science Foundation”, “award_code”: “2126510”, “award_URL”: <a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2126510&amp;HistoricalAwards=false">https://www.nsf.gov/awardsearch/showAward?AWD_ID=2126510&amp;HistoricalAwards=false</a>}</p>
-</div>
-<div class="section" id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
 <p>keywords=[“Paleoclimate”,”LiPD”,”Python”,”Coherence”,”Correlation”,”Causality’]</p>
-</div>
-<div class="section" id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <p>Khider D., Emile-Geay, J., James, A., Zhu, F. (2022). PaleoHack: Putting EarthCube tools in the hands of paleogeoscientists. Jupyter Notebook.</p>
-</div>
-<div class="section" id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h2>
 <p>The LinkedEarth team would like to thank the EarthCube Technology and Architecture Committee for their support in developing and deploying an introduction Python tutorial and <a class="reference external" href="https://2i2c.org">2i2c</a> for providing JupyterHub capabilities during the hackathons.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="library-import">
-<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h1>
+<section id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">#</a></h2>
 <p>We will import 6 libraries:</p>
 <ul class="simple">
 <li><p>numpy, to facilitate operations with:</p></li>
@@ -673,10 +934,10 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-import">
-<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-import">
+<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">#</a></h1>
 <p>We will import the following datasets throughout the notebook:</p>
 <ul class="simple">
 <li><p>Tutorial 1:</p>
@@ -692,11 +953,11 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
-<h1>Data Processing and Analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="tutorial-1-forcing-and-response">
-<h2>Tutorial 1: Forcing and response<a class="headerlink" href="#tutorial-1-forcing-and-response" title="Permalink to this headline">¶</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-processing-and-analysis">
+<h1>Data Processing and Analysis<a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">#</a></h1>
+<section id="tutorial-1-forcing-and-response">
+<h2>Tutorial 1: Forcing and response<a class="headerlink" href="#tutorial-1-forcing-and-response" title="Permalink to this headline">#</a></h2>
 <p>A common task in paleoclimatology is to relate a record (or several of them) to what is thought to be their forcing. A classic example comes <span class="math notranslate nohighlight">\(\delta^{18}O\)</span> records from Chinese speleothems, broadly interpreted as reflecting continental-scale monsoon circulations. In this notebook we focus on a composite of three Chinese speleothem records (Sanbao, Hulu, and Dongge caves) [4] and its relationship to insolation.</p>
 <p>The composite isn’t available in LiPD form, so we create a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object by hand:</p>
 <div class="cell docutils container">
@@ -747,8 +1008,8 @@
 </div>
 </div>
 <p>Sustained power in the ~20ky is evident, suggesting a link to orbital precession. Let us investigate this link in more details:</p>
-<div class="section" id="constructing-insolation-curves">
-<h3>Constructing insolation curves<a class="headerlink" href="#constructing-insolation-curves" title="Permalink to this headline">¶</a></h3>
+<section id="constructing-insolation-curves">
+<h3>Constructing insolation curves<a class="headerlink" href="#constructing-insolation-curves" title="Permalink to this headline">#</a></h3>
 <p>Speleothem records from Asia are often compared to summertime insolation (though the latitude of this field is not always consistently chosen). To compute the insolation, we make use of the excellent package climlab by Brian Rose [6].</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -763,9 +1024,9 @@
 </div>
 </div>
 <p>Note that calendar effects are non-negligible at those scales [8]. To be perfectly rigorous, we should take those into account. But this is a hackathon, so let’s proceed.</p>
-</div>
-<div class="section" id="orbital-coherence">
-<h3>Orbital Coherence<a class="headerlink" href="#orbital-coherence" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="orbital-coherence">
+<h3>Orbital Coherence<a class="headerlink" href="#orbital-coherence" title="Permalink to this headline">#</a></h3>
 <p>Given the scalogram  above, the real question is: what sort of phase lag is there between summertime insolation and the isotopic record? To answer this, let’s put the heating into a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object so we can unlock some <code class="docutils literal notranslate"><span class="pre">Pyleoclim</span></code> magic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -828,8 +1089,8 @@
 <p><strong>Exercise 1.3</strong> Interpret this plot, leaning on the documentation of <a class="reference external" href="https://pyleoclim-util.readthedocs.io/en/master/core/ui.html#pyleoclim.core.ui.Series.wavelet_coherence"><code class="docutils literal notranslate"><span class="pre">coherence</span></code></a>. What do arrows pointing to the right mean?</p>
 <p><strong>Answer 1.3</strong> In the 20kyr band, the records are in phase (the arrows are pointing right).</p>
 <p>We do see fairly incoherent behavior at short time scales. That is to be expected, as the insolation curve is a very smooth, modulated harmonic (or nearly so) coming from theoretical calculations, while the speleothem composite is a real-world dataset with real-world uncertainties. Before spending valuable CPU time to compute significance limits (a non-trivial endeavor), let’s break out some possible tools to clean this up.</p>
-<div class="section" id="clean-up-tool-1-lowpass-filter">
-<h4>Clean-up tool #1: Lowpass filter.<a class="headerlink" href="#clean-up-tool-1-lowpass-filter" title="Permalink to this headline">¶</a></h4>
+<section id="clean-up-tool-1-lowpass-filter">
+<h4>Clean-up tool #1: Lowpass filter.<a class="headerlink" href="#clean-up-tool-1-lowpass-filter" title="Permalink to this headline">#</a></h4>
 <p>Given that all the noise appears to be at scales shorter than ~5ky, the simplest thing is to filter them out. Of course, <code class="docutils literal notranslate"><span class="pre">Pyleoclim</span></code> has a button for that.</p>
 <p><strong>Exercise 1.4</strong> Look up the <a class="reference external" href="https://pyleoclim-util.readthedocs.io/en/master/core/ui.html#pyleoclim.core.ui.Series.filter"><code class="docutils literal notranslate"><span class="pre">filter</span></code></a> method for the <code class="docutils literal notranslate"><span class="pre">Series</span></code> class and apply with a cutoff scale of 10 kyr. Then plot it on top of the original, with proper labels.</p>
 <div class="cell docutils container">
@@ -856,9 +1117,9 @@
 <img alt="../../_images/DK_v1_PaleoHack_24_1.png" src="../../_images/DK_v1_PaleoHack_24_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="clean-up-tool-2-singular-spectrum-analysis-ssa">
-<h4>Clean-up tool #2: Singular spectrum analysis (SSA)<a class="headerlink" href="#clean-up-tool-2-singular-spectrum-analysis-ssa" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="clean-up-tool-2-singular-spectrum-analysis-ssa">
+<h4>Clean-up tool #2: Singular spectrum analysis (SSA)<a class="headerlink" href="#clean-up-tool-2-singular-spectrum-analysis-ssa" title="Permalink to this headline">#</a></h4>
 <p>The previous notebook in the hackathon series (not reproduced here) introduces SSA, which we now apply to this record. However, this turns out to be quite a long series for SSA, and the decomposition takes an impossibly long while. Since our purpose is to isolate long wavelengths (low frequencies), it’s just as convenient to first coarse-grain the series prior to analysis. For this, we use <code class="docutils literal notranslate"><span class="pre">gkernel</span></code>, which is quite good at smoothing along the way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1020,10 +1281,10 @@
 <img alt="../../_images/DK_v1_PaleoHack_46_1.png" src="../../_images/DK_v1_PaleoHack_46_1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="causality">
-<h3>Causality<a class="headerlink" href="#causality" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="causality">
+<h3>Causality<a class="headerlink" href="#causality" title="Permalink to this headline">#</a></h3>
 <p>It’s been known for about 300 years that correlation does not imply causation, so several methods have been devised to try to extract the notion of <em>causality</em> from timeseries data.  <code class="docutils literal notranslate"><span class="pre">Pyleoclim</span></code> offers access to two of them:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.scholarpedia.org/article/Granger_causality">Granger causality</a></p></li>
@@ -1079,10 +1340,10 @@ parameter F test:         F=71.7747 , p=0.0000  , df_denom=996, df_num=1
 </div>
 </div>
 <p>This analysis suggests a causal relationship between insolation and the speleothem <span class="math notranslate nohighlight">\(\delta^{18}O\)</span> composite.</p>
-</div>
-</div>
-<div class="section" id="tutorial-2-fishing-for-correlations-at-sea">
-<h2>Tutorial 2: Fishing for Correlations at Sea<a class="headerlink" href="#tutorial-2-fishing-for-correlations-at-sea" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="tutorial-2-fishing-for-correlations-at-sea">
+<h2>Tutorial 2: Fishing for Correlations at Sea<a class="headerlink" href="#tutorial-2-fishing-for-correlations-at-sea" title="Permalink to this headline">#</a></h2>
 <p>Correlation analysis, despite its simplicity and many shortcomings, remains a centerpiece of empirical analysis in many fields, particularly the paleosciences. Computing correlations is trivial enough; the difficulty lies in properly assessing their significance. Of particular importance are four considerations:</p>
 <ol class="simple">
 <li><p><strong>Persistence</strong>, which violates the standard assumption that the data are independent (which underlies the classical test of significance implemented, e.g. in Excel).</p></li>
@@ -1091,11 +1352,11 @@ parameter F test:         F=71.7747 , p=0.0000  , df_denom=996, df_num=1
 <li><p><strong>Test multiplicity</strong> aka the “Look Elsewhere effect”, which states that repeatedly performing the same test can result in unacceptably high type I error (accepting correlations as significant, when in fact they are not). This arises e.g. when correlating a paleoclimate record with an instrumental field, assessing significance at thousands of grid points at once, or assessing significance within an age ensemble.</p></li>
 </ol>
 <p>Accordingly, Pyleoclim facilitates an assessment of correlations that deals with all these cases, makes the necessary data transformations transparent to the user, and allows for one-line plot commands to visualize the results.</p>
-<div class="section" id="a-case-study-from-crystal-cave">
-<h3>A case study from Crystal Cave<a class="headerlink" href="#a-case-study-from-crystal-cave" title="Permalink to this headline">¶</a></h3>
+<section id="a-case-study-from-crystal-cave">
+<h3>A case study from Crystal Cave<a class="headerlink" href="#a-case-study-from-crystal-cave" title="Permalink to this headline">#</a></h3>
 <p>In this notebook we reproduce the case of [9], particularly the example of their section 4, which illustrates several of these pitfalls at once. The example illuminates the issue of relying too strongly on correlations between a paleoclimate record and an instrumental field to interpret the record. Before we start, a disclaimer: the studies investigated in this paper are by no means isolated cases. They just happened to be cases that we knew about, and thought deserved a second look in light of more rigorous statistics. The same study could have been written by subsituting any number of other records interpreted, wholly or in part, on the basis of correlations. Accordingly, what follows should not be viewed as an indictment of a particularly study or group of authors, rather, at how easy it is by the best-intentioned scientists to get fooled by spurious correlations, and (thankfully), how easy we’ve made it not get similarly fooled by carrying out this analysis with pyleoclim.</p>
-<div class="section" id="the-crystal-cave-record">
-<h4>The Crystal Cave record<a class="headerlink" href="#the-crystal-cave-record" title="Permalink to this headline">¶</a></h4>
+<section id="the-crystal-cave-record">
+<h4>The Crystal Cave record<a class="headerlink" href="#the-crystal-cave-record" title="Permalink to this headline">#</a></h4>
 <p>The example uses the speleothem record of [6] from Crystal Cave, California, in the Sequoia National Forest. Of interest to us is the <span class="math notranslate nohighlight">\(\delta^{18}O\)</span> record, which the authors interepret as reflecting sea-surface temperatures (SST) in the Kuroshio Extension region of the West Pacific. This is a strong claim, given that no mechanistic link is proposed, and relies entirely on an analysis of correlations between the record and instrumental SST.</p>
 <p>We first load and plot this record. Since this record is available in LiPD format, we can use methods specific to this file format, which rely on the greater availability of metadata.</p>
 <div class="cell docutils container">
@@ -1151,9 +1412,9 @@ Created time series: 3 entries
 </div>
 </div>
 <p>This is a very high resolution record, with near-annual spacing (check it), and a broadly red spectrum that exhibits a number of spectral peaks at interannual and decadal scales.</p>
-</div>
-<div class="section" id="sst-data">
-<h4>SST data<a class="headerlink" href="#sst-data" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="sst-data">
+<h4>SST data<a class="headerlink" href="#sst-data" title="Permalink to this headline">#</a></h4>
 <p>The original paper correlated the above record against the Kaplan SST dataset.  In this notebook we instead use the <a class="reference external" href="https://www.metoffice.gov.uk/hadobs/hadsst4/index.html">HadSST4 dataset</a> [7],  which is more up to date. During the hackathons, the dataset is downloaded to obtain the most up-to-date version. Here a copy is provided (downloaded April 2022).</p>
 <p>We load via the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> package:</p>
 <div class="cell docutils container">
@@ -2190,14 +2451,14 @@ Attributes:
        [ -90.,  -85.],
        [ -85.,  -80.]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-77d2cf5b-7fde-42b1-b118-131a05845e1b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-77d2cf5b-7fde-42b1-b118-131a05845e1b' class='xr-section-summary' >Attributes: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>comment :</span></dt><dd></dd><dt><span>history :</span></dt><dd>Converted to netcdf today</dd><dt><span>institution :</span></dt><dd>Met Office</dd><dt><span>reference :</span></dt><dd>Kennedy et al. (2019), https://www.metoffice.gov.uk/hadobs/hadsst4</dd><dt><span>source :</span></dt><dd>surface observation</dd><dt><span>title :</span></dt><dd>Ensemble-median sea-surface temperature anomalies from the HadSST.4.0.1.0 data set</dd><dt><span>version :</span></dt><dd>HadSST.4.0.1.0</dd><dt><span>Conventions :</span></dt><dd>CF-1.7</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="pitfall-1-persistence">
-<h3>Pitfall #1: Persistence<a class="headerlink" href="#pitfall-1-persistence" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="pitfall-1-persistence">
+<h3>Pitfall #1: Persistence<a class="headerlink" href="#pitfall-1-persistence" title="Permalink to this headline">#</a></h3>
 <p>Persistence is the tendency of many geophysical timeseries (particularly paleoclimate ones) to show some kind of memory: consecutive observations tend to resemble each other, resulting in timeseries that have fairly broad trends and low-frequency fluctuations, and comparatively little high-frequency fluctuations.</p>
 <p>This has an important consequence: the standard assumption of independence, which undergirds much of frequentist statistics, is violated in this case. In a timeseries with <span class="math notranslate nohighlight">\(n\)</span> fully independent observations (e.g. white noise), the degrees of freedom for the variance are <span class="math notranslate nohighlight">\(DOF = n -1\)</span>  But if memory is present, this number can be drastically reduced.</p>
-<div class="section" id="single-location">
-<h4>Single location<a class="headerlink" href="#single-location" title="Permalink to this headline">¶</a></h4>
+<section id="single-location">
+<h4>Single location<a class="headerlink" href="#single-location" title="Permalink to this headline">#</a></h4>
 <p>Let us look at a random location and build some intuition. First, we need to compute montly anomalies and annualize them. <code class="docutils literal notranslate"><span class="pre">xarray</span></code> makes that easy (4 lines of code), so let’s look at the result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2347,10 +2608,10 @@ Attributes:
 </div>
 <p><strong>Answer 1.2</strong> The other two methods are the T-test adjusted for the loss of degrees of freedom due to persistence, and the isopersistent test, which compares the observed correlation to the distribution of correlations with (by default) 1000 randomly-generated AR(1) timeseries with the same persistence parameters as the original series. In this particular case, the T-test also judges the correlation to be insignificant, but the isopersistent test is more finicky: sometimes it does, sometimes it doesn’t. <code class="docutils literal notranslate"><span class="pre">nsim</span></code> only affects the methods that use Monte Carlo simulations (isopersistent and isospectral).  Upping <code class="docutils literal notranslate"><span class="pre">nsim</span></code> ensures more consistent results: for <code class="docutils literal notranslate"><span class="pre">nsim</span> <span class="pre">&gt;=</span> <span class="pre">2000</span></code>, the result is consistently judged insignificant.</p>
 <p>In this case, the three methods concur that the correlation is insignificant, given a sufficient number of simulations.</p>
-</div>
-</div>
-<div class="section" id="pitfall-2-multiple-testing">
-<h3>Pitfall #2: Multiple testing<a class="headerlink" href="#pitfall-2-multiple-testing" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="pitfall-2-multiple-testing">
+<h3>Pitfall #2: Multiple testing<a class="headerlink" href="#pitfall-2-multiple-testing" title="Permalink to this headline">#</a></h3>
 <p>The foregoing shows how to properly assess significance at just one location. How would we go about conducting a similar test for an entire field? Let us first try the naive approach: recursively carry out the same test as above at all grid points.  For this, we need not only to loop over grid points, but also store the p-values for later analysis. To save time, we’ll use the <code class="docutils literal notranslate"><span class="pre">ttest</span></code> option for <code class="docutils literal notranslate"><span class="pre">correlation()</span></code>, knowing that it is rather approximate. Also, we need to exclude points that have too few observations.  The loop below achieves that.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3235,9 +3496,9 @@ Computing correlation at 32.5N, 277.5E
 </div>
 </div>
 <p>Only one grid point appears significant now.</p>
-</div>
-<div class="section" id="pitfall-3-age-uncertainties">
-<h3>Pitfall #3: Age uncertainties<a class="headerlink" href="#pitfall-3-age-uncertainties" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pitfall-3-age-uncertainties">
+<h3>Pitfall #3: Age uncertainties<a class="headerlink" href="#pitfall-3-age-uncertainties" title="Permalink to this headline">#</a></h3>
 <p>As if the first two pitfalls weren’t enough, there is a third difficulty in this comparison: beautiful though U/Th chronologies may be, they are not perfect (do not believe people who tell you otherwise!). Such chronological uncertainties must be taken into account as well.</p>
 <p>It turns out that the LiPD file loaded above contains not only the raw U/Th dates (dig for them if you’re curious), but also an ensemble of age-depth relationships derived from those dates, via the Bayesian age model <a class="reference external" href="https://cran.r-project.org/web/packages/Bchron/vignettes/Bchron.html">BChron</a>. Let us load those 1000 draws from the posterior distribution of ages and put them in a place where <code class="docutils literal notranslate"><span class="pre">pyleoclim</span></code> will be able to work with them:</p>
 <div class="cell docutils container">
@@ -9273,16 +9534,16 @@ Duplicate timestamps have been combined by averaging values.
 <img alt="../../_images/DK_v1_PaleoHack_109_375.png" src="../../_images/DK_v1_PaleoHack_109_375.png" />
 </div>
 </div>
-</div>
-<div class="section" id="conclusions">
-<h3>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="conclusions">
+<h3>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h3>
 <p><strong>Exercise 2.5</strong>  To bring it all together, summarize everything that can go wrong when fishing for correlations (at sea, or on land). Can you think of other papers where correlations with paleoclimate records might have been used unwisely? (no names needed… Just keep that in mind in your own work and point people to more defensible ways of dealing with this danger, i.e. Pyleoclim!)</p>
 <p><strong>Answer 2.5</strong> The moral of the story is that all of these pitfalls matter ; any single one of them can turn a correlation initially reported as “significant” into insignificant ones. That is especially the case with a conjunction of pitfalls, with any 2 out of 3. The conjunction of all 3 pitfalls (persistence, test multiplicity, and age uncertainties) is particularly damaging in this example. Fortunatly, Pyleoclim makes it easy to deal with those pitfalls, so there is no excuse not to.</p>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="references">
-<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h1>
 <p>[1] McKay, N. P., &amp; Emile-Geay, J. (2016). Technical Note: The Linked Paleo Data framework – a common tongue for paleoclimatology. Climate of the Past, 12, 1093-1100.</p>
 <p>[2] Khider, D., F. Zhu, J. E.-G. J. Hu, A. James, M. Kwan, P. Athreya, and D. Garijo.  Pyleoclim: A Pythonpackage for the analysis of paleoclimate data (v0.7.2) (2022).  URL <a class="reference external" href="https://doi.org/10.5281/zenodo.4002870">https://doi.org/10.5281/zenodo.4002870</a></p>
 <p>[3] Deborah Khider, Julien Emile-Geay, Feng Zhu, Alexander James, &amp; Yuvi Panda. (2022). PaleoHackathon. Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.4556144">http://doi.org/10.5281/zenodo.4556144</a>. GitHub: <a class="reference external" href="https://github.com/LinkedEarth/paleoHackathon">https://github.com/LinkedEarth/paleoHackathon</a>.</p>
@@ -9293,7 +9554,7 @@ Duplicate timestamps have been combined by averaging values.
 <p>[8] Bartlein, P. J., &amp; Shafer, S. L. (2019). Paleo calendar-effect adjustments in time-slice and transient climate-model simulations (PaleoCalAdjust v1.0): impact and strategies for data analysis. Climate of the Past, 12(9), 3889–3913. <a class="reference external" href="https://doi.org/10.5194/gmd-12-3889-2019">https://doi.org/10.5194/gmd-12-3889-2019</a></p>
 <p>[9] Hu, J., Emile-Geay, J., &amp; Partin, J. (2017). Correlation-based interpretations of paleoclimate data - where statistics meet past climates. Earth and Planetary Science Letters, 459, 362-371. <a class="reference external" href="https://doi.org/10.1016/j.epsl.2016.11.048">https://doi.org/10.1016/j.epsl.2016.11.048</a></p>
 <p>[10] Benjamin, Y., &amp; Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society: Series B (Methodological), 57(1), 289-300.  <a class="reference external" href="https://doi.org/10.1111/j.2517-6161.1995.tb02031.x">https://doi.org/10.1111/j.2517-6161.1995.tb02031.x</a></p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -9317,9 +9578,11 @@ Duplicate timestamps have been combined by averaging values.
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -9335,25 +9598,27 @@ Duplicate timestamps have been combined by averaging values.
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
-        
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+  
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

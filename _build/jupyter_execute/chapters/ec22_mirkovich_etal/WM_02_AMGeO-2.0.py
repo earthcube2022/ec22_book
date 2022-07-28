@@ -490,7 +490,6 @@ ds['joule_heat'][0].lat.attrs
 # In[28]:
 
 
-
 def _polar2dial(ax):
     """
     Turns a matplotlib axes polar plot into a dial plot

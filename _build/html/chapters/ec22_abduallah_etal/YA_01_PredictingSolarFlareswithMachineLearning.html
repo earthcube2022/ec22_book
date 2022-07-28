@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Predicting Solar Flares with Machine Learning &#8212; EarthCube 2022 Call for Notebooks</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,36 +20,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -60,7 +61,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,9 +84,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -326,12 +342,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -339,61 +360,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ec22_abduallah_etal/YA_01_PredictingSolarFlareswithMachineLearning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    <strong>
@@ -563,19 +640,204 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Predicting Solar Flares with Machine Learning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   <strong>
+    Predicting Solar Flares with Machine Learning
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-contents">
+     <strong>
+      Table of Contents
+     </strong>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#author-s">
+       <strong>
+        Author(s)
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#purpose">
+       <strong>
+        Purpose
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#technical-contributions">
+       <strong>
+        Technical Contributions
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#methodology">
+       <strong>
+        Methodology
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#funding">
+       <strong>
+        Funding
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#keywords">
+       <strong>
+        Keywords
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#citation">
+       <strong>
+        Citation
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#acknowledgements">
+       <strong>
+        Acknowledgements
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   <strong>
+    Setup
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing-and-analysis">
+   <strong>
+    Data Processing and Analysis
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binder">
+   <strong>
+    Binder
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flareml-workflow-and-results">
+   <strong>
+    FlareML Workflow and Results
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-preparation-and-loading">
+     <strong>
+      Data Preparation and Loading
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predicting-with-pretrained-models">
+     <strong>
+      Predicting with Pretrained Models
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ens-model-training-and-testing">
+     <strong>
+      ENS Model Training and Testing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rf-model-training-and-testing">
+     <strong>
+      RF Model Training and Testing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mlp-model-training-and-testing">
+     <strong>
+      MLP Model Training and Testing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elm-model-training-and-testing">
+     <strong>
+      ELM Model Training and Testing
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#timing">
+     <strong>
+      Timing
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   <strong>
+    Conclusions
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   <strong>
+    References
+   </strong>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="predicting-solar-flares-with-machine-learning">
-<h1><strong>Predicting Solar Flares with Machine Learning</strong><a class="headerlink" href="#predicting-solar-flares-with-machine-learning" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="table-of-contents">
-<h2><strong>Table of Contents</strong><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="predicting-solar-flares-with-machine-learning">
+<h1><strong>Predicting Solar Flares with Machine Learning</strong><a class="headerlink" href="#predicting-solar-flares-with-machine-learning" title="Permalink to this headline">#</a></h1>
+<section id="table-of-contents">
+<h2><strong>Table of Contents</strong><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
 <div class="toc">
 <!--     <ul class="toc-item"> -->
         <li><span><a href="#Template-Notebook-for-EarthCube---Long-Version"
@@ -744,27 +1006,27 @@
                     class="toc-item-num">7&nbsp;&nbsp;</span>References</a></span>
     </li>    
     </ul>
-</div><div class="section" id="author-s">
-<h3><strong>Author(s)</strong><a class="headerlink" href="#author-s" title="Permalink to this headline">¶</a></h3>
+</div><section id="author-s">
+<h3><strong>Author(s)</strong><a class="headerlink" href="#author-s" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Author1 = {“name”: “Yasser Abduallah”, “affiliation”: “Department of Computer Science, New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:ya54&#37;&#52;&#48;njit&#46;edu">ya54<span>&#64;</span>njit<span>&#46;</span>edu</a>”, “orcid”: “<a class="reference external" href="https://orcid.org/0000-0003-0792-2270">https://orcid.org/0000-0003-0792-2270</a>”}</p></li>
 <li><p>Author2 = {“name”: “Jason T. L. Wang”, “affiliation”: “Department of Computer Science, New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:wangj&#37;&#52;&#48;njit&#46;edu">wangj<span>&#64;</span>njit<span>&#46;</span>edu</a>”, “orcid”: “<a class="reference external" href="https://orcid.org/0000-0002-2486-1097">https://orcid.org/0000-0002-2486-1097</a>”}</p></li>
 <li><p>Author3 = {“name”: “Haimin Wang”, “affiliation”: “Institute for Space Weather Sciences, New Jersey Institute of Technology”, “email”: “<a class="reference external" href="mailto:haimin&#46;wang&#37;&#52;&#48;njit&#46;edu">haimin<span>&#46;</span>wang<span>&#64;</span>njit<span>&#46;</span>edu</a>”, “orcid”: “<a class="reference external" href="https://orcid.org/0000-0002-5233-565X">https://orcid.org/0000-0002-5233-565X</a>”}</p></li>
 </ul>
-</div>
-<div class="section" id="purpose">
-<h3><strong>Purpose</strong><a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="purpose">
+<h3><strong>Purpose</strong><a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h3>
 <p>Solar flare prediction plays an important role in understanding and forecasting space weather. The main goal of the Helioseismic and Magnetic Imager (HMI), one of the instruments on NASA’s Solar Dynamics Observatory (SDO), is to study the origin of solar variability and characterize the Sun’s magnetic activity. HMI provides continuous full-disk observations of the solar vector magnetic field with high cadence data that lead to reliable predictive capability; yet, solar flare prediction effort utilizing these data is still limited.</p>
 <p>In this notebook we provide an overview of the FlareML system to demonstrate how to predict solar flares using machine learning (ML) and SDO/HMI vector magnetic data products (SHARP parameters).</p>
-</div>
-<div class="section" id="technical-contributions">
-<h3><strong>Technical Contributions</strong><a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="technical-contributions">
+<h3><strong>Technical Contributions</strong><a class="headerlink" href="#technical-contributions" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>We provide the community with a new tool to predict solar flares.</p></li>
 </ul>
-</div>
-<div class="section" id="methodology">
-<h3><strong>Methodology</strong><a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="methodology">
+<h3><strong>Methodology</strong><a class="headerlink" href="#methodology" title="Permalink to this headline">#</a></h3>
 <p>Here we present a flare prediction system, named FlareML, for predicting solar flares using machine learning (ML) based on HMI’s vector magnetic data products. Specifically, we construct training data by utilizing the physical parameters provided by the Space-weather HMI Active Region Patches (SHARP) and categorize solar flares into four classes, namely B, C, M, X, according to the X-ray flare catalogs prepared by the National Centers for Environmental Information (NCEI). Thus, the solar flare prediction problem at hand is essentially a multi-class (i.e., four-class) classification problem. The FlareML system employs four machine learning methods to tackle this multi-class prediction problem. These four methods are: (i) ensemble (ENS), (ii) random forests (RF), (iii) multilayer perceptrons (MLP), and (iv) extreme learning machines (ELM). ENS works by taking the majority vote of the results obtained from RF, MLP and ELM. This notebook leverages python machine learning and visualization packages: matplotlib, numpy, scikit-learn, sklearn-extensions, and pandas. It describes the steps on how to use the FlareML tool to predict solar flare types: B, C, M, and X. The notebook is trained and tested on sample data sets to show flare predictions and their accuracies in graphical bar plots. FlareML is the backend of an online machine-learning-as-a-service system accessible at: <a class="reference external" href="https://nature.njit.edu/spacesoft/DeepSun/">https://nature.njit.edu/spacesoft/DeepSun/</a>.</p>
 <p>Notes: <br></p>
 <ul>
@@ -774,27 +1036,27 @@
         Detailed information about the parameters used for each model can be found in our published paper: <a href='https://iopscience.iop.org/article/10.1088/1674-4527/21/7/160'>https://iopscience.iop.org/article/10.1088/1674-4527/21/7/160</a>
     </li>
     </ul>
-</div>
-<div class="section" id="funding">
-<h3><strong>Funding</strong><a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="funding">
+<h3><strong>Funding</strong><a class="headerlink" href="#funding" title="Permalink to this headline">#</a></h3>
 <p>This work was supported by U.S. NSF grants AGS-1927578 and AGS-1954737.</p>
-</div>
-<div class="section" id="keywords">
-<h3><strong>Keywords</strong><a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="keywords">
+<h3><strong>Keywords</strong><a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h3>
 <p>keywords=[“Flare”, “Prediction”, “Machine”, “Learning”, “SHARP”]</p>
-</div>
-<div class="section" id="citation">
-<h3><strong>Citation</strong><a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="citation">
+<h3><strong>Citation</strong><a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h3>
 <p>To cite this notebook: Yasser Abduallah, Jason T. L. Wang, &amp; Haimin Wang. Predicting Solar Flares with Machine Learning, available at: <a href='https://github.com/ccsc-tools/FlareML/blob/main/YA_01_PredictingSolarFlareswithMachineLearning.ipynb' target='new'>https://github.com/ccsc-tools/FlareML/blob/main/YA_01_PredictingSolarFlareswithMachineLearning.ipynb</a>.</p>
-</div>
-<div class="section" id="acknowledgements">
-<h3><strong>Acknowledgements</strong><a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="acknowledgements">
+<h3><strong>Acknowledgements</strong><a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h3>
 <p>We thank the team of SDO/HMI for producing vector magnetic data products. The flare catalogs were prepared by and made available through NOAA NCEI.</p>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="setup">
-<h1><strong>Setup</strong><a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1><strong>Setup</strong><a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h1>
 <p><strong>Installation on Local Machine</strong><br>
 Running this notebook in a local machine requires Python version 3.8.x with the following packages and their version:</p>
 <table class="colwidths-auto table">
@@ -858,9 +1120,9 @@ The following libraries need to be imported.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-processing-and-analysis">
-<h1><strong>Data Processing and Analysis</strong><a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-processing-and-analysis">
+<h1><strong>Data Processing and Analysis</strong><a class="headerlink" href="#data-processing-and-analysis" title="Permalink to this headline">#</a></h1>
 <p>We created and stored 845 data samples in
 our database accessible at <a target='new' href='https://nature.njit.edu/spacesoft/Flare-Predict/'>https://nature.njit.edu/spacesoft/Flare-Predict/</a>, where each data sample
 contains values of 13 physical parameters or features. The two digits following a class label (B,
@@ -870,27 +1132,27 @@ morning) of the start date of a flare and the label of the data
 sample is the class which the flare belongs to. These labeled
 data samples are used to train the FlareML system.</p>
 <p>For this notebook, we use sample data sets for training and testing.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="binder">
-<h1><strong>Binder</strong><a class="headerlink" href="#binder" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="binder">
+<h1><strong>Binder</strong><a class="headerlink" href="#binder" title="Permalink to this headline">#</a></h1>
 <p>This notebook is Binder enabled and can be run on <a target='new' href='https://mybinder.org/'>mybinder.org</a> by using the image link below:</p>
 <p float="left"> <a href='https://mybinder.org/v2/gh/ccsc-tools/FlareML/HEAD?labpath=YA_01_PredictingSolarFlareswithMachineLearning.ipynb' target='new'><img align="left" src='https://mybinder.org/badge_logo.svg'></img></a></p>
 <p><br><br>
 Please note that starting Binder might take some time to create and start the image.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="flareml-workflow-and-results">
-<h1><strong>FlareML Workflow and Results</strong><a class="headerlink" href="#flareml-workflow-and-results" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="data-preparation-and-loading">
-<h2><strong>Data Preparation and Loading</strong><a class="headerlink" href="#data-preparation-and-loading" title="Permalink to this headline">¶</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="flareml-workflow-and-results">
+<h1><strong>FlareML Workflow and Results</strong><a class="headerlink" href="#flareml-workflow-and-results" title="Permalink to this headline">#</a></h1>
+<section id="data-preparation-and-loading">
+<h2><strong>Data Preparation and Loading</strong><a class="headerlink" href="#data-preparation-and-loading" title="Permalink to this headline">#</a></h2>
 <p>The data folder includes two sub-directories: train_data and test_data.</p>
 <ul class="simple">
 <li><p>The train_data includes a CSV training data file that is used to train the model.</p></li>
 <li><p>The test_data includes a CSV test data file that is used to predict the included flares.</p></li>
 </ul>
 <p>The files are loaded and used during the testing and training process.</p>
-</div>
-<div class="section" id="predicting-with-pretrained-models">
-<h2><strong>Predicting with Pretrained Models</strong><a class="headerlink" href="#predicting-with-pretrained-models" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="predicting-with-pretrained-models">
+<h2><strong>Predicting with Pretrained Models</strong><a class="headerlink" href="#predicting-with-pretrained-models" title="Permalink to this headline">#</a></h2>
 <p>There are default and pretrained models that can be used to predict without running your own trained model. The modelid  is set to default_model which uses all pretrained algorithms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -924,9 +1186,9 @@ Finished the prediction task..
 <img alt="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_15_0.png" src="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_15_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ens-model-training-and-testing">
-<h2><strong>ENS Model Training and Testing</strong><a class="headerlink" href="#ens-model-training-and-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ens-model-training-and-testing">
+<h2><strong>ENS Model Training and Testing</strong><a class="headerlink" href="#ens-model-training-and-testing" title="Permalink to this headline">#</a></h2>
 <p>You may train the model with your own data or train the model with the default data.</p>
 <p><strong>ENS Model Training with Default Data</strong><br>
 Here, we show how to train the model with default data.
@@ -1003,9 +1265,9 @@ The prediction result can be plotted by passing the result variable to the funct
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="rf-model-training-and-testing">
-<h2><strong>RF Model Training and Testing</strong><a class="headerlink" href="#rf-model-training-and-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rf-model-training-and-testing">
+<h2><strong>RF Model Training and Testing</strong><a class="headerlink" href="#rf-model-training-and-testing" title="Permalink to this headline">#</a></h2>
 <p><strong>RF Model Training with Default Data</strong><br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1067,9 +1329,9 @@ Finished the prediction task..
 <img alt="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_28_0.png" src="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_28_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="mlp-model-training-and-testing">
-<h2><strong>MLP Model Training and Testing</strong><a class="headerlink" href="#mlp-model-training-and-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mlp-model-training-and-testing">
+<h2><strong>MLP Model Training and Testing</strong><a class="headerlink" href="#mlp-model-training-and-testing" title="Permalink to this headline">#</a></h2>
 <p><strong>MLP Model Training with Default Data</strong><br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1131,9 +1393,9 @@ Finished the prediction task..
 <img alt="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_34_0.png" src="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_34_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="elm-model-training-and-testing">
-<h2><strong>ELM Model Training and Testing</strong><a class="headerlink" href="#elm-model-training-and-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="elm-model-training-and-testing">
+<h2><strong>ELM Model Training and Testing</strong><a class="headerlink" href="#elm-model-training-and-testing" title="Permalink to this headline">#</a></h2>
 <p><strong>ELM Model Training with Default Data</strong><br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1195,14 +1457,14 @@ Finished the prediction task..
 <img alt="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_40_0.png" src="../../_images/YA_01_PredictingSolarFlareswithMachineLearning_40_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="timing">
-<h2><strong>Timing</strong><a class="headerlink" href="#timing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="timing">
+<h2><strong>Timing</strong><a class="headerlink" href="#timing" title="Permalink to this headline">#</a></h2>
 <p>Please note that the execution time in mybinder varies based on the availability of resources. The average time to run the notebook is 10-15 minutes, but it could be more.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="conclusions">
-<h1><strong>Conclusions</strong><a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="conclusions">
+<h1><strong>Conclusions</strong><a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h1>
 <!-- We present a machine-learning-as-a-service framework
 (DeepSun) for solar flare prediction. This framework provides
 two interfaces: a web server where the user enters the information through a graphical interface and a programmable
@@ -1213,9 +1475,9 @@ belonging to four flare classes: B, C, M, and X across 472 active regions. In ad
 Imager (HMI) aboard the Solar Dynamics Observatory (SDO) produces continuous full-disk observations (solar images).<br>In
 future work we plan to incorporate these HMI images into our DeepSun framework and extend our previously developed deep learning techniques to directly process the images. -->
 <p>We present a machine learning-based system (FlareML) for solar flare prediction. FlareML employs three existing machine learning algorithms, namely random forests (RF), multilayer perceptrons (MLP), extreme learning machines (ELM), and an ensemble algorithm (ENS) that combines the three machine learning algorithms. Our experimental results demonstrated the good performance of the ensemble algorithm and its superiority over the three existing machine learning algorithms. In the current work we focus on data samples composed of SHARP physical parameters. We collect 845 data samples belonging to four flare classes: B, C, M, and X across 472 active regions. In addition, the Helioseismic Magnetic Imager (HMI) aboard the Solar Dynamics Observatory (SDO) produces continuous full-disk observations (solar images). In future work we plan to incorporate these HMI images into our FlareML framework and extend our previously developed deep learning techniques to directly process the images for solar flare prediction.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="references">
-<h1><strong>References</strong><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1><strong>References</strong><a class="headerlink" href="#references" title="Permalink to this headline">#</a></h1>
 <ol>
     <li>
         DeepSun: Machine-Learning-as-a-Service for Solar Flare Prediction<br>
@@ -1243,7 +1505,7 @@ Bidirectional LSTM Network<br>
     Yasser Abduallah, Vania K. Jordanova, Hao Liu, Qin Li, Jason T. L. Wang and Haimin Wang<br>
         <a target='new' href='https://iopscience.iop.org/article/10.3847/1538-4365/ac5f56'>https://iopscience.iop.org/article/10.3847/1538-4365/ac5f56</a>
     </li>        
-</ol></div>
+</ol></section>
 
     <script type="text/x-thebe-config">
     {
@@ -1267,9 +1529,11 @@ Bidirectional LSTM Network<br>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1285,25 +1549,27 @@ Bidirectional LSTM Network<br>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
-        
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+  
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

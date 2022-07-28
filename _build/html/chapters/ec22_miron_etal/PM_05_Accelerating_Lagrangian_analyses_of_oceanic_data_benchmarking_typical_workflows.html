@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows &#8212; EarthCube 2022 Call for Notebooks</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,36 +20,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -60,7 +61,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,9 +84,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -326,12 +342,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -339,61 +360,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ec22_miron_etal/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
@@ -649,19 +726,290 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#authors">
+     Authors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-library-import">
+     Local library import
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-overview">
+   Data Overview
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#individual-netcdfs">
+     Individual NetCDFs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dimensions">
+       Dimensions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variables">
+       Variables
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contiguous-ragged-array">
+     Contiguous Ragged Array
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xarray">
+   <em>
+    Xarray
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xarray-test-1-geographical-binning-of-any-variable">
+     <em>
+      Xarray
+     </em>
+     test 1: Geographical binning of any variable
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xarray-test-2-extract-a-given-region">
+     <em>
+      Xarray
+     </em>
+     test 2: Extract a given region
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xarray-test-3-operations-per-trajectory">
+     <em>
+      Xarray
+     </em>
+     test 3: Operations per trajectory
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#single-statistic-per-trajectory">
+       Single statistic per trajectory
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operations-per-trajectory">
+       Operations per trajectory
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#simple-operation-by-chunks-or-blocks">
+         Simple operation by chunks (or blocks)
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#more-complex-operation-where-dimensions-can-change-between-input-and-output">
+         More complex operation where dimensions can change between input and output
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   <em>
+    Pandas
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-test-1-geographical-binning-of-any-variable">
+     <em>
+      Pandas
+     </em>
+     test 1: Geographical binning of any variable
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-test-2-extract-a-given-region">
+     <em>
+      Pandas
+     </em>
+     test 2: Extract a given region
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-test-3-single-statistic-per-trajectory">
+     <em>
+      Pandas
+     </em>
+     test 3: Single statistic per trajectory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#awkward-array">
+   <em>
+    Awkward Array
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#awkward-array-test-1-geographical-binning-of-any-variable">
+     <em>
+      Awkward Array
+     </em>
+     test 1: Geographical binning of any variable
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#awkward-array-test-2-extract-a-given-region">
+     <em>
+      Awkward Array
+     </em>
+     test 2: Extract a given region
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#awkward-array-test-3-single-statistic-per-trajectory">
+     <em>
+      Awkward Array
+     </em>
+     test 3: Single statistic per trajectory
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numba">
+     Numba
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   Discussion
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#benchmark-speed">
+     Benchmark speed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#feedback">
+     Feedback
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#future-development">
+     Future development
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="accelerating-lagrangian-analyses-of-oceanic-data-benchmarking-typical-workflows">
-<h1>Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows<a class="headerlink" href="#accelerating-lagrangian-analyses-of-oceanic-data-benchmarking-typical-workflows" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="accelerating-lagrangian-analyses-of-oceanic-data-benchmarking-typical-workflows">
+<h1>Accelerating Lagrangian analyses of oceanic data: benchmarking typical workflows<a class="headerlink" href="#accelerating-lagrangian-analyses-of-oceanic-data-benchmarking-typical-workflows" title="Permalink to this headline">#</a></h1>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Author1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Miron, Philippe&quot;</span><span class="p">,</span> <span class="s2">&quot;affiliation&quot;</span><span class="p">:</span> <span class="s2">&quot;Florida State University&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;pmiron@fsu.edu&quot;</span><span class="p">,</span> <span class="s2">&quot;orcid&quot;</span><span class="p">:</span> <span class="s2">&quot;0000-0002-8520-6221&quot;</span><span class="p">}</span>
@@ -904,9 +1252,9 @@
         </span>
         </li>
     </ul>
-</div></div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+</div></section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>For data, <em>Lagrangian</em> refers to oceanic and atmosphere information acquired by observing platforms drifting with the flow they are embedded within, but also refers more broadly to the data originating from uncrewed platforms, vehicles, and animals that gather data along their unrestricted and often complex paths. Because such paths traverse both spatial and temporal dimensions, Lagrangian data often convolve spatial and temporal information that cannot always readily be organized in common data structures and stored in standard file formats with the help of common libraries and standards. As such, for both originators and users, Lagrangian data present challenges that the <a class="reference external" href="https://github.com/Cloud-Drift">EarthCube CloudDrift</a> project aims to overcome.</p>
 <p>This notebook consists of systematic evaluations and comparisons of workflows for Lagrangian data, using as a basis the velocity and sea surface temperature datasets emanating from the drifting buoys of the <a class="reference external" href="https://www.aoml.noaa.gov/phod/gdp/">Global Drifter Program</a> (GDP). Specifically, we evaluate the data structure associated with common existing libraries in <em>Python</em> (<a class="reference external" href="https://docs.xarray.dev/en/stable/">xarray</a>, <a class="reference external" href="https://pandas.pydata.org">pandas</a>, and <a class="reference external" href="https://awkward-array.org/quickstart.html">Awkward Array</a>) in order to test their adequacies for performing three common Lagrangian tasks:</p>
 <ol class="simple">
@@ -915,31 +1263,31 @@
 <li><p>analyses per trajectory (e.g. single statistics, spectral estimation by Fast Fourier Transform).</p></li>
 </ol>
 <p>Since the <em>CloudDrift</em> project aims at accelerating the use of Lagrangian data for atmospheric, oceanic, and climate sciences, we hope that the users of this notebook will provide us with feedback on its ease of use and the intuitiveness of the proposed methods in order to guide the on-going development of the <em>clouddrift</em> <em>Python</em> package.</p>
-</div>
-<div class="section" id="technical-contributions">
-<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Description of some challenges arising from the analysis of large, heterogeneous Lagrangian datasets.</p></li>
 <li><p>Description of some data formats for Lagrangian analysis with <em>Python</em>.</p></li>
 <li><p>Comparison of performances of established and developing <em>Python</em> packages and libraries.</p></li>
 </ul>
-</div>
-<div class="section" id="methodology">
-<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">#</a></h2>
 <p>The notebook proceeds in three steps:</p>
 <ol class="simple">
 <li><p>First, we download a subset of the hourly dataset of the GDP. Specifically, we access version 2.00 (beta) of the dataset that consists of a collection of 17,324 NetCDF files, one for each drifting buoy, available from a HHTPS (or FTP) <a class="reference external" href="https://www.aoml.noaa.gov/ftp/pub/phod/lumpkin/hourly/v2.00/netcdf/">server</a> of the GDP. Alternative methods to download these data are described on the website of the <a class="reference external" href="https://www.aoml.noaa.gov/phod/gdp/hourly_data.php">GDP DAC at NOAA AOML</a> and includes a newly-formed collection from the NOAA National Centers for Environmental Information with <a class="reference external" href="https://doi.org/10.25921/x46c-3620">doi:10.25921/x46c-3620</a>. We download a subset (which size can be scaled up or down) then proceed to aggregate the data from the individual files in one single file using a suggested format (the contiguous ragged array).</p></li>
 <li><p>Second, we benchmark three libraries—<em>xarray</em>, <em>Pandas</em>, and <em>Awkward Array</em>—with typical Lagrangian workflow tasks such as the geographical binning of a variable, the extraction of the data for a given region, and operations performed per drifter trajectory.</p></li>
 <li><p>Third, we discuss briefly future works for the upcoming <em>clouddrift</em> library, and seek to obtain feedback from the community to guide future development.</p></li>
 </ol>
-</div>
-<div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h2>
 <p>In terms of python packages, we find that <em>Pandas</em> is intuitive with a simple syntax but does not perform efficiently with a large dataset. The complete GDP hourly dataset is currently <em>only</em> ~15 GB, but as part of <em>CloudDrift</em> we also want to support larger Lagrangian datasets (&gt;100 GB). On the other hand, <em>xarray</em> can interface with <em>Dask</em> to efficiently <em>lazy-load</em> large dataset but it requires custom adaptation to operate on a ragged array. In contrast, <em>Awkward Array</em> provides a novel approach by storing alongside the data an offset index in a manner that is transparent to the user, simplifying the analysis of non-uniform Lagrangian datasets. We find that it is also <em>fast</em> and can easily interface with <em>Numba</em> to further improve performances.</p>
 <p>In terms of benchmark speed, each package show similar results for the geographical binning (test 1) and the operation per trajectory (test 3) benchmarks. For the extraction of a given region (test 2), <em>xarray</em> was found to be slower than both <em>Pandas</em> and <em>Awkward Array</em>. We note that speed and performance may not the deciding factor for all users and we believe that ease of use and simple intuitive syntax is as important for the end users. For this reason, we believe that the performance of <em>Awkward Array</em> and its ease of use make it a perfect framework to develop the CloudDrift library.</p>
-</div>
-<div class="section" id="funding">
-<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Award1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;agency&quot;</span><span class="p">:</span> <span class="s2">&quot;NSF EarthCube&quot;</span><span class="p">,</span> <span class="s2">&quot;award_code&quot;</span><span class="p">:</span> <span class="s2">&quot;2126413&quot;</span><span class="p">,</span> <span class="s2">&quot;award_URL&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.nsf.gov/awardsearch/showAward?AWD_ID=2126413&quot;</span><span class="p">}</span>
@@ -949,9 +1297,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lagrangian&quot;</span><span class="p">,</span> <span class="s2">&quot;drifters&quot;</span><span class="p">,</span> <span class="s2">&quot;data structures&quot;</span><span class="p">,</span> <span class="s2">&quot;workflow tasks&quot;</span><span class="p">,</span> <span class="s2">&quot;benchmarks&quot;</span><span class="p">]</span>
@@ -959,20 +1307,20 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <p>P. Miron, S. Elipot, R. Lumpkin and B. Dano, Accelerating Lagrangian analysis of oceanic data: benchmarking typical workflows, 2022, 2022 EarthCube Annual Meeting, Accessed X/Y/2022 at <a class="reference external" href="https://github.com/Cloud-Drift/earthcube-meeting-2022">https://github.com/Cloud-Drift/earthcube-meeting-2022</a></p>
-</div>
-<div class="section" id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h2>
 <p>The CloudDrift team would like to acknowledge <a class="reference external" href="https://github.com/rabernat">Dr. Ryan Abernathey</a> for suggesting to create benchmarks on typical Lagrangian workflow tasks and <a class="reference external" href="https://github.com/jpivarski">Dr. Jim Pivarski</a> for assisting with Awkward array.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="library-import">
-<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h1>
+<section id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data manipulation</span>
@@ -1022,9 +1370,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="local-library-import">
-<h2>Local library import<a class="headerlink" href="#local-library-import" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="local-library-import">
+<h2>Local library import<a class="headerlink" href="#local-library-import" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To run this notebook, we need to load on a number of functions from the `preprocess.py` file found within this repository.</span>
@@ -1033,10 +1381,10 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-overview">
-<h1>Data Overview<a class="headerlink" href="#data-overview" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-overview">
+<h1>Data Overview<a class="headerlink" href="#data-overview" title="Permalink to this headline">#</a></h1>
 <p>In the first step of this notebook, we present the current format of the <a class="reference external" href="https://www.aoml.noaa.gov/phod/gdp/">Global Drifter Program (GDP)</a> dataset, and show how to transform it into a single archival file in which each variable is stored in an ragged fashion.</p>
 <p>The GDP produces two interpolated datasets of drifter position, velocity and sea surface temperature from more than 20,000 drifters that have been released since 1979. One dataset is at 6-hour resolution (<a class="reference external" href="http://dx.doi.org/10.1175/1520-0426(1996)013%3C0900:QCAIOW%3E2.0.CO;2">Hansen and Poulain 1996</a>) and the other one is at hourly resolution (<a class="reference external" href="http://dx.doi.org/10.1002/2016JC011716">Elipot et al. 2016</a>). The files, one per drifter identified by its unique identification number (ID), are updated on a quarterly basis and are available via the <a class="reference external" href="https://www.aoml.noaa.gov/ftp/pub/phod/lumpkin/hourly/v2.00/netcdf/">HTTPS server</a> of the GDP Data Assembly Center (DAC).</p>
 <p>Here we use a subset of the hourly drifter dataset of the GDP by setting the variable <code class="docutils literal notranslate"><span class="pre">subset_nb_drifters</span> <span class="pre">=</span> <span class="pre">500</span></code>. The suggested number is large enough to create an interesting dataset, yet without making the downloading cumbersome and the data processing too expensive. Feel free to scale down or up this value (from 1 to 17324), but beware that if you are running this notebook in a <em>Binder there is a 2 GB memory limitation</em> (running this Notebook with <code class="docutils literal notranslate"><span class="pre">subset_nb_drifters</span> <span class="pre">=</span> <span class="pre">500</span></code> requires close to 2 GB).</p>
@@ -1101,18 +1449,18 @@
 </div>
 </div>
 </div>
-<div class="section" id="individual-netcdfs">
-<h2>Individual NetCDFs<a class="headerlink" href="#individual-netcdfs" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="dimensions">
-<h3>Dimensions<a class="headerlink" href="#dimensions" title="Permalink to this headline">¶</a></h3>
+<section id="individual-netcdfs">
+<h2>Individual NetCDFs<a class="headerlink" href="#individual-netcdfs" title="Permalink to this headline">#</a></h2>
+<section id="dimensions">
+<h3>Dimensions<a class="headerlink" href="#dimensions" title="Permalink to this headline">#</a></h3>
 <p>Each individual NetCDF file contains two main dimensions for its variables:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">['traj']</span></code> of length 1, since there is one trajectory per file (e.g. <code class="docutils literal notranslate"><span class="pre">ID</span></code>, <code class="docutils literal notranslate"><span class="pre">deploy_date</span></code>, <code class="docutils literal notranslate"><span class="pre">deploy_lon</span></code>, etc.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">['obs']</span></code>: of length N, with N the number of observations along the trajectory (<code class="docutils literal notranslate"><span class="pre">lon</span></code>, <code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">ve</span></code>, <code class="docutils literal notranslate"><span class="pre">vn</span></code>, <code class="docutils literal notranslate"><span class="pre">sst</span></code>, etc.)</p></li>
 </ul>
-</div>
-<div class="section" id="variables">
-<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h3>
 <p>In each file, there are 20 numerical variables representing estimated quantities with dimensions <code class="docutils literal notranslate"><span class="pre">['traj',</span> <span class="pre">'obs']</span></code> (where <code class="docutils literal notranslate"><span class="pre">traj</span></code> = 1 since there is only one trajectory per file). There are 11 numerical variables with dimension <code class="docutils literal notranslate"><span class="pre">['traj']</span></code> that contain metadata unique to each drifter and file (e.g. Deployment date and time). In addition, there are 2 variables with one of their dimensions being <code class="docutils literal notranslate"><span class="pre">['traj']</span></code> that also contains non-numerical metadata (e.g. Buoy type). Further metadata pertaining to an individual drifter and to the whole dataset are contained in various <em>global attributes</em> of the NetCDF file.</p>
 <p>To have a “peek” at the structure of the NetCDF files (dimensions, variables, and attributes), we load the first file in our list of files as an <em>xarray</em> dataset object using the <code class="docutils literal notranslate"><span class="pre">open_dataset</span></code>function. <em>xarray</em> offers a pleasant html visualization of a dataset (expand the view by clicking on the black arrows to the left).</p>
 <div class="cell docutils container">
@@ -1515,10 +1863,10 @@ Attributes: (12/72)
          2.79639e+02, -1.00000e+34]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sst1</span></div><div class='xr-var-dims'>(traj, obs)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-17f98f49-3d3a-4284-bd7b-14f17aa54f3d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-17f98f49-3d3a-4284-bd7b-14f17aa54f3d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-02a1cd4a-ea62-4a1c-aee4-96d120b49649' class='xr-var-data-in' type='checkbox'><label for='data-02a1cd4a-ea62-4a1c-aee4-96d120b49649' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>fitted non-diurnal sea water temperature</dd><dt><span>units :</span></dt><dd>Kelvin</dd><dt><span>comment :</span></dt><dd>estimated near-surface non-diurnal sea water temperature from drifting buoy measurements</dd></dl></div><div class='xr-var-data'><pre>array([[ 2.74126e+02,  2.73760e+02,  2.73513e+02, ...,  2.79681e+02,
          2.79638e+02, -1.00000e+34]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sst2</span></div><div class='xr-var-dims'>(traj, obs)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ec116aee-da27-477a-b04f-6ac5d821422c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ec116aee-da27-477a-b04f-6ac5d821422c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5fa0aaaf-bea3-4c1d-9544-0982d659c431' class='xr-var-data-in' type='checkbox'><label for='data-5fa0aaaf-bea3-4c1d-9544-0982d659c431' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>fitted diurnal sea water temperature anomaly</dd><dt><span>units :</span></dt><dd>Kelvin</dd><dt><span>comment :</span></dt><dd>estimated near-surface diurnal sea water temperature anomaly from drifting buoy measurements</dd></dl></div><div class='xr-var-data'><pre>array([[-6.54e-01, -6.60e-01, -6.43e-01, ..., -1.56e-01,  1.00e-03, -1.00e+34]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>err_sst</span></div><div class='xr-var-dims'>(traj, obs)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-94f38a0c-69d9-43d9-8119-3323afd49532' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-94f38a0c-69d9-43d9-8119-3323afd49532' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ff8e782d-e91a-4ec0-9f39-2cade57cbcb3' class='xr-var-data-in' type='checkbox'><label for='data-ff8e782d-e91a-4ec0-9f39-2cade57cbcb3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>standard uncertainty of fitted sea water temperature</dd><dt><span>units :</span></dt><dd>Kelvin</dd><dt><span>comment :</span></dt><dd>estimated one standard error of near-surface sea water temperature estimate from drifting buoy measurements</dd></dl></div><div class='xr-var-data'><pre>array([[ 7.4e-02,  7.7e-02,  8.6e-02, ...,  3.8e-02,  4.2e-02, -1.0e+34]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>err_sst1</span></div><div class='xr-var-dims'>(traj, obs)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8ed9079f-f2bc-4cb7-b869-0270554123bc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8ed9079f-f2bc-4cb7-b869-0270554123bc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-45e195cd-60f5-41d3-8e0d-3bd7cb08efa5' class='xr-var-data-in' type='checkbox'><label for='data-45e195cd-60f5-41d3-8e0d-3bd7cb08efa5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>standard uncertainty of fitted non-diurnal sea water temperature</dd><dt><span>units :</span></dt><dd>Kelvin</dd><dt><span>comment :</span></dt><dd>estimated one standard error of near-surface non-diurnal sea water temperature estimate from drifting buoy measurements</dd></dl></div><div class='xr-var-data'><pre>array([[ 2.24e-01,  1.58e-01,  1.13e-01, ...,  7.20e-02,  1.07e-01, -1.00e+34]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>err_sst2</span></div><div class='xr-var-dims'>(traj, obs)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b6e1d7d1-5ece-4e29-8c68-edb92044b5ea' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b6e1d7d1-5ece-4e29-8c68-edb92044b5ea' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6a38c329-36d5-4f05-93cc-0ae4bfca6660' class='xr-var-data-in' type='checkbox'><label for='data-6a38c329-36d5-4f05-93cc-0ae4bfca6660' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>standard uncertainty of fitted diurnal sea water temperature anomaly</dd><dt><span>units :</span></dt><dd>Kelvin</dd><dt><span>comment :</span></dt><dd>estimated one standard error of near-surface diurnal sea water temperature anomaly estimate from drifting buoy measurements</dd></dl></div><div class='xr-var-data'><pre>array([[ 2.36e-01,  1.85e-01,  1.42e-01, ...,  8.70e-02,  1.00e-01, -1.00e+34]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>flg_sst</span></div><div class='xr-var-dims'>(traj, obs)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-dac269a1-dc33-47d2-9fef-a849171231ea' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dac269a1-dc33-47d2-9fef-a849171231ea' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9cbf3054-1aff-46b2-99d9-1a9107de2f19' class='xr-var-data-in' type='checkbox'><label for='data-9cbf3054-1aff-46b2-99d9-1a9107de2f19' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>fitted sea water temperature quality flag</dd><dt><span>standard_name :</span></dt><dd>quality flag</dd><dt><span>flag_values :</span></dt><dd>0, 1, 2, 3, 4, 5</dd><dt><span>flag_meanings :</span></dt><dd>no-estimate, no-uncertainty-estimate, estimate-not-in-range-uncertainty-not-in-range, estimate-not-in-range-uncertainty-in-range estimate-in-range-uncertainty-not-in-range, estimate-in-range-uncertainty-in-range</dd><dt><span>comment :</span></dt><dd>quality flag for fitted sea water temperature</dd></dl></div><div class='xr-var-data'><pre>array([[5., 5., 5., ..., 5., 5., 0.]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>flg_sst1</span></div><div class='xr-var-dims'>(traj, obs)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-742cd97b-c0dc-4946-8b32-0344504542b7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-742cd97b-c0dc-4946-8b32-0344504542b7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-50794d51-4ca2-44ed-b23c-b2e5774f09ad' class='xr-var-data-in' type='checkbox'><label for='data-50794d51-4ca2-44ed-b23c-b2e5774f09ad' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>fitted non-diurnal sea water temperature quality flag</dd><dt><span>flag_values :</span></dt><dd>0, 1, 2, 3, 4, 5</dd><dt><span>flag_meanings :</span></dt><dd>no-estimate, no-uncertainty-estimate, estimate-not-in-range-uncertainty-not-in-range, estimate-not-in-range-uncertainty-in-range estimate-in-range-uncertainty-not-in-range, estimate-in-range-uncertainty-in-range</dd><dt><span>comment :</span></dt><dd>quality flag for fitted non-diurnal sea water temperature</dd></dl></div><div class='xr-var-data'><pre>array([[5., 5., 5., ..., 5., 5., 0.]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>flg_sst2</span></div><div class='xr-var-dims'>(traj, obs)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-503a8fda-1295-46eb-8bdb-d8c0829b25ad' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-503a8fda-1295-46eb-8bdb-d8c0829b25ad' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-eb8d5ee8-b18c-4871-9273-3861fed0da7d' class='xr-var-data-in' type='checkbox'><label for='data-eb8d5ee8-b18c-4871-9273-3861fed0da7d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>fitted diurnal sea water temperature anomaly quality flag</dd><dt><span>flag_values :</span></dt><dd>0, 1, 2, 3, 4, 5</dd><dt><span>flag_meanings :</span></dt><dd>no-estimate, no-uncertainty-estimate,-,-,-,-</dd><dt><span>comment :</span></dt><dd>quality flag for fitted diurnal sea water temperature anomaly</dd></dl></div><div class='xr-var-data'><pre>array([[4., 4., 4., ..., 4., 2., 0.]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3b3c8e00-b3f0-4fc4-b6bb-12eeaa439652' class='xr-section-summary-in' type='checkbox'  ><label for='section-3b3c8e00-b3f0-4fc4-b6bb-12eeaa439652' class='xr-section-summary' >Attributes: <span>(72)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>Global Drifter Program hourly drifting buoy collection</dd><dt><span>id :</span></dt><dd>Global Drifter Program ID 2592</dd><dt><span>location_type :</span></dt><dd>Argos</dd><dt><span>wmo_platform_code :</span></dt><dd>4400509</dd><dt><span>ncei_template_version :</span></dt><dd>NCEI_NetCDF_Trajectory_Template_v2</dd><dt><span>cdm_data_type :</span></dt><dd>Trajectory</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>Conventions :</span></dt><dd>CF-1.6, ACDD-1.3</dd><dt><span>time_coverage_start :</span></dt><dd>2001-05-01T08:05:00Z</dd><dt><span>time_coverage_end :</span></dt><dd>2001-06-16T10:06:00Z</dd><dt><span>geospatial_lat_min :</span></dt><dd>46.430f</dd><dt><span>geospatial_lat_max :</span></dt><dd>47.429f</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>tbd</dd><dt><span>geospatial_lon_min :</span></dt><dd>-54.271f</dd><dt><span>geospatial_lon_max :</span></dt><dd>-52.335f</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>tbd</dd><dt><span>geospatial_bounds :</span></dt><dd>polygon (  180.000  46.430,  307.665  46.430,  307.665  47.429, 180.000  47.429, 180.000  46.430</dd><dt><span>date_created :</span></dt><dd>2021-01-21T15:01:53Z</dd><dt><span>date_modified :</span></dt><dd>2021-01-21T15:01:53Z</dd><dt><span>date_issued :</span></dt><dd>2021-01-21T15:01:53Z</dd><dt><span>publisher_name :</span></dt><dd>GDP Drifter DAC</dd><dt><span>publisher_email :</span></dt><dd>aoml.dftr@noaa.gov</dd><dt><span>publisher_url :</span></dt><dd>https://www.aoml.noaa.gov/phod/gdp</dd><dt><span>licence :</span></dt><dd>freely available</dd><dt><span>processing_level :</span></dt><dd>Level 2 QC by GDP drifter DAC</dd><dt><span>metadata_link :</span></dt><dd>https://www.aoml.noaa.gov/phod/dac/dirall.html</dd><dt><span>source :</span></dt><dd>source description</dd><dt><span>uuid :</span></dt><dd>n/a</dd><dt><span>naming_authority :</span></dt><dd>n/a</dd><dt><span>contributor_name :</span></dt><dd>NOAA Global Drifter Program</dd><dt><span>contributor_role :</span></dt><dd>Data Acquisition Center</dd><dt><span>institution :</span></dt><dd>NOAA Atlantic Oceanographic and Meteorological Laboratory</dd><dt><span>creator_name :</span></dt><dd>GDP drifter DAC</dd><dt><span>creator_url :</span></dt><dd>https://www.aoml.noaa.gov/phod/gdp</dd><dt><span>creator_email :</span></dt><dd>aoml.dftr@noaa.gov</dd><dt><span>doi :</span></dt><dd>10.1002/2016JC011716TBA</dd><dt><span>summary :</span></dt><dd>Global Drifter Program hourly data</dd><dt><span>comment :</span></dt><dd>Global Drifter Program hourly data</dd><dt><span>standard_name_vocabulary :</span></dt><dd>CF Standard Name Table v30</dd><dt><span>instrument_vocabulary :</span></dt><dd>n/a</dd><dt><span>keywords_vocabulary :</span></dt><dd>n/a</dd><dt><span>keywords :</span></dt><dd>drifter, surface current, interpolated</dd><dt><span>DeployingShip :</span></dt><dd>MAERSK PLACENTIA</dd><dt><span>DeploymentStatus :</span></dt><dd>good</dd><dt><span>BuoyTypeManufacturer :</span></dt><dd>Technocean</dd><dt><span>BuoyTypeSensorArray :</span></dt><dd>SVP</dd><dt><span>CurrentProgram :</span></dt><dd>9046</dd><dt><span>PurchaserFunding :</span></dt><dd>United States</dd><dt><span>SensorUpgrade :</span></dt><dd></dd><dt><span>Transmissions :</span></dt><dd>United States</dd><dt><span>DeployingCountry :</span></dt><dd>United States</dd><dt><span>DeploymentComments :</span></dt><dd></dd><dt><span>ManufactureYear :</span></dt><dd>NaN</dd><dt><span>ManufactureMonth :</span></dt><dd>NaN</dd><dt><span>ManufactureSensorType :</span></dt><dd>SVP</dd><dt><span>ManufactureVoltage :</span></dt><dd>56 volts</dd><dt><span>FloatDiameter :</span></dt><dd>38 cm</dd><dt><span>SubsfcFloatPresence :</span></dt><dd>0</dd><dt><span>DrogueType :</span></dt><dd>HOLY098</dd><dt><span>DrogueLength :</span></dt><dd>5.5 m</dd><dt><span>DrogueBallast :</span></dt><dd>2 kg</dd><dt><span>DragAreaAboveDrogue :</span></dt><dd>16.1 m^2</dd><dt><span>DragAreaOfDrogue :</span></dt><dd>712.8 m^2</dd><dt><span>DragAreaRatio :</span></dt><dd>44.2733</dd><dt><span>DrogueCenterDepth :</span></dt><dd>15 m</dd><dt><span>DrogueDetectSensor :</span></dt><dd>submergence</dd><dt><span>acknowledgement :</span></dt><dd>Elipot et al. (2016), Elipot et al. (2021) to be submitted. Global Drifter Program quality-controlled hourly interpolated data from ocean surface drifting buoys, version 2.00. NOAA National Centers for Environmental Information. https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2016JC011716TBA.</dd><dt><span>history :</span></dt><dd>Version 2.00.  Metadata from dirall.dat and deplog.dat</dd><dt><span>interpolation_method :</span></dt><dd></dd><dt><span>imei :</span></dt><dd></dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="contiguous-ragged-array">
-<h2>Contiguous Ragged Array<a class="headerlink" href="#contiguous-ragged-array" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="contiguous-ragged-array">
+<h2>Contiguous Ragged Array<a class="headerlink" href="#contiguous-ragged-array" title="Permalink to this headline">#</a></h2>
 <p>In the GDP dataset, the number of observations varies from <code class="docutils literal notranslate"><span class="pre">len(['obs'])=13</span></code> to <code class="docutils literal notranslate"><span class="pre">len(['obs'])=66417</span></code>. As such, it seems inefficient to create bidimensional datastructure <code class="docutils literal notranslate"><span class="pre">['traj',</span> <span class="pre">'obs']</span></code>, commonly used by Lagrangian numerical simulation tools such as <a class="reference external" href="https://oceanparcels.org/">Ocean Parcels</a> and <a class="reference external" href="https://opendrift.github.io/">OpenDrift</a> that tend to generate trajectories of equal or similar lengths.</p>
 <p>Here, we propose to combine the data from the individual netCDFs files into a <a class="reference external" href="https://cfconventions.org/cf-conventions/cf-conventions.html#_contiguous_ragged_array_representation"><em>contiguous ragged array</em></a> eventually written in a single NetCDF file in order to simplify data distribution, decrease metadata redundancies, and efficiently store a Lagrangian data collection of uneven lengths. The aggregation process (conducted with the <code class="docutils literal notranslate"><span class="pre">create_ragged_array</span></code> function found in the module <code class="docutils literal notranslate"><span class="pre">preprocess.py</span></code>) also converts to variables some of the metadata originally stored as attributes in the individual NetCDFs. The final structure contains 21 variables with dimension <code class="docutils literal notranslate"><span class="pre">['obs']</span></code> and 38 variables with dimension <code class="docutils literal notranslate"><span class="pre">['traj']</span></code>.</p>
 <div class="cell docutils container">
@@ -2338,10 +2686,10 @@ Attributes:
 </div>
 </div>
 <p>In the second and next step of the notebook, we benchmark different data science <em>Python</em> libraries. For this, the following sections present three typical Lagrangian tasks which are conducted successively using <em>xarray</em>, <em>Pandas</em>, and finally <em>Awkward Arrays</em>.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="xarray">
-<h1><em>Xarray</em><a class="headerlink" href="#xarray" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="xarray">
+<h1><em>Xarray</em><a class="headerlink" href="#xarray" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path_gdp</span> <span class="o">=</span> <span class="s1">&#39;data/gdp_subset.nc&#39;</span>
@@ -6110,8 +6458,8 @@ Attributes: (12/15)
     </tr>
 </table></div></li></ul></div></li><li class='xr-section-item'><input id='section-a9bb89a7-911d-4212-8d98-44872b6fe191' class='xr-section-summary-in' type='checkbox'  ><label for='section-a9bb89a7-911d-4212-8d98-44872b6fe191' class='xr-section-summary' >Attributes: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>Global Drifter Program hourly drifting buoy collection</dd><dt><span>history :</span></dt><dd>Version 2.00.  Metadata from dirall.dat and deplog.dat</dd><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>date_created :</span></dt><dd>2022-05-20T14:48:40.763710</dd><dt><span>publisher_name :</span></dt><dd>GDP Drifter DAC</dd><dt><span>publisher_email :</span></dt><dd>aoml.dftr@noaa.gov</dd><dt><span>publisher_url :</span></dt><dd>https://www.aoml.noaa.gov/phod/gdp</dd><dt><span>licence :</span></dt><dd>MIT License</dd><dt><span>processing_level :</span></dt><dd>Level 2 QC by GDP drifter DAC</dd><dt><span>metadata_link :</span></dt><dd>https://www.aoml.noaa.gov/phod/dac/dirall.html</dd><dt><span>contributor_name :</span></dt><dd>NOAA Global Drifter Program</dd><dt><span>contributor_role :</span></dt><dd>Data Acquisition Center</dd><dt><span>institution :</span></dt><dd>NOAA Atlantic Oceanographic and Meteorological Laboratory</dd><dt><span>acknowledgement :</span></dt><dd>Elipot et al. (2022) to be submitted. Elipot et al. (2016). Global Drifter Program quality-controlled hourly interpolated data from ocean surface drifting buoys, version 2.00. NOAA National Centers for Environmental Information. https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2016JC011716TBA. Accessed [date].</dd><dt><span>summary :</span></dt><dd>Global Drifter Program hourly data</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<div class="section" id="xarray-test-1-geographical-binning-of-any-variable">
-<h2><em>Xarray</em> test 1: Geographical binning of any variable<a class="headerlink" href="#xarray-test-1-geographical-binning-of-any-variable" title="Permalink to this headline">¶</a></h2>
+<section id="xarray-test-1-geographical-binning-of-any-variable">
+<h2><em>Xarray</em> test 1: Geographical binning of any variable<a class="headerlink" href="#xarray-test-1-geographical-binning-of-any-variable" title="Permalink to this headline">#</a></h2>
 <p>The first benchmark test implemented here is to compute statistics per geographical <em>bins</em>. Here we choose to compute the mean of the zonal velocity (<code class="docutils literal notranslate"><span class="pre">ve</span></code>) from all drifter estimates. From the previous cell, we can see that the size of the chunks were automatically set to the size of <code class="docutils literal notranslate"><span class="pre">obs</span></code>, leading to one chunk per variable. For this type of bin operation, one chunk is convenient because the <em>complete zonal velocity ragged array</em> variable will be loaded in memory in one operation. In order to perform operations per trajectory (shown below), we will instead set the size of the chunks to be the length of each trajectory, which here would have required <code class="docutils literal notranslate"><span class="pre">subset_nb_drifters</span></code> operation to load the same data.</p>
 <p><em>Note</em>: chunks should always align with the computation to optimize performance (more details in section 5.3.2).</p>
 <p>In order to keep track of computing times of each test, we create a variable <code class="docutils literal notranslate"><span class="pre">benchmark_times</span></code>.</p>
@@ -6180,9 +6528,9 @@ Attributes: (12/15)
 <img alt="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_37_0.png" src="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_37_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="xarray-test-2-extract-a-given-region">
-<h2><em>Xarray</em> test 2: Extract a given region<a class="headerlink" href="#xarray-test-2-extract-a-given-region" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="xarray-test-2-extract-a-given-region">
+<h2><em>Xarray</em> test 2: Extract a given region<a class="headerlink" href="#xarray-test-2-extract-a-given-region" title="Permalink to this headline">#</a></h2>
 <p>Extracting a subregion of the dataset is also a very common operation. <em>xarray</em> provides efficient way to apply mask to the data. One important thing to note is that since we have two dimensions, a mask is applied on the <code class="docutils literal notranslate"><span class="pre">obs</span></code> as well as on the <code class="docutils literal notranslate"><span class="pre">traj</span></code> dimensions. We first define a function to do the data extraction:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6269,11 +6617,11 @@ Attributes: (12/15)
 <img alt="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_43_0.png" src="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_43_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="xarray-test-3-operations-per-trajectory">
-<h2><em>Xarray</em> test 3: Operations per trajectory<a class="headerlink" href="#xarray-test-3-operations-per-trajectory" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="single-statistic-per-trajectory">
-<h3>Single statistic per trajectory<a class="headerlink" href="#single-statistic-per-trajectory" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="xarray-test-3-operations-per-trajectory">
+<h2><em>Xarray</em> test 3: Operations per trajectory<a class="headerlink" href="#xarray-test-3-operations-per-trajectory" title="Permalink to this headline">#</a></h2>
+<section id="single-statistic-per-trajectory">
+<h3>Single statistic per trajectory<a class="headerlink" href="#single-statistic-per-trajectory" title="Permalink to this headline">#</a></h3>
 <p>The next type of common operation with Lagrangian data is to compute statistics, or perform time series analysis, per trajectory. In order to do this with an <em>xarray</em> dataset, we need to create first a variable that indexes the beginning of each trajectory, i.e. we create an array <code class="docutils literal notranslate"><span class="pre">traj_idx</span></code> in which <code class="docutils literal notranslate"><span class="pre">traj_idx[i]</span></code> is the starting index of the data for the (i+1)<sup>th</sup> trajectory (since <em>Python</em> uses zero-based indexing.).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7433,9 +7781,9 @@ Data variables:
     err_sst1  float32 0.02489
     err_sst2  float32 0.06399</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-54bff9f7-2b3b-4867-bb2a-de5ed5c7301f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-54bff9f7-2b3b-4867-bb2a-de5ed5c7301f' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-020f8130-0d28-4b97-803d-767cf20a79cc' class='xr-section-summary-in' type='checkbox'  checked><label for='section-020f8130-0d28-4b97-803d-767cf20a79cc' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ID</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>27131</div><input id='attrs-00709e80-86ec-4c2c-844b-5d9aaf259289' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-00709e80-86ec-4c2c-844b-5d9aaf259289' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f554f4f5-c528-4d16-8d79-c963bd38fa5d' class='xr-var-data-in' type='checkbox'><label for='data-f554f4f5-c528-4d16-8d79-c963bd38fa5d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Global Drifter Program Buoy ID</dd><dt><span>units :</span></dt><dd>-</dd></dl></div><div class='xr-var-data'><pre>array(27131)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-4aea5fe3-5d0c-4e7e-9449-ba81f649a317' class='xr-section-summary-in' type='checkbox'  checked><label for='section-4aea5fe3-5d0c-4e7e-9449-ba81f649a317' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ve</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.1437</div><input id='attrs-a3e76dc9-5b1b-4fa7-ad50-0007ba68a800' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a3e76dc9-5b1b-4fa7-ad50-0007ba68a800' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ffe63044-6f70-42bc-8b07-c5d50be374f3' class='xr-var-data-in' type='checkbox'><label for='data-ffe63044-6f70-42bc-8b07-c5d50be374f3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.14371336, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vn</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-0.04261</div><input id='attrs-a29b90dc-e1eb-4d95-9a03-dbd4dea724fc' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a29b90dc-e1eb-4d95-9a03-dbd4dea724fc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0a19ec6b-2846-4fd3-8dd8-9db08db0d790' class='xr-var-data-in' type='checkbox'><label for='data-0a19ec6b-2846-4fd3-8dd8-9db08db0d790' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(-0.04260561, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gap</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>1.479e+04</div><input id='attrs-700b7e02-b31d-44a6-93ea-e9d81c7c0d03' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-700b7e02-b31d-44a6-93ea-e9d81c7c0d03' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0b2378cd-c625-4bf0-97a5-051e50879e8a' class='xr-var-data-in' type='checkbox'><label for='data-0b2378cd-c625-4bf0-97a5-051e50879e8a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(14790.94, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>err_lat</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.007155</div><input id='attrs-f1a90d67-9b42-4bd3-9826-3c228c2b87a9' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f1a90d67-9b42-4bd3-9826-3c228c2b87a9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8208c257-d758-4b60-8493-14c59c49a065' class='xr-var-data-in' type='checkbox'><label for='data-8208c257-d758-4b60-8493-14c59c49a065' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.00715474, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>err_lon</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.01117</div><input id='attrs-f0c57196-26a5-479e-b457-08b0f4b1e913' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f0c57196-26a5-479e-b457-08b0f4b1e913' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-51a209c4-a5af-4d8a-b90d-0f29c1de72be' class='xr-var-data-in' type='checkbox'><label for='data-51a209c4-a5af-4d8a-b90d-0f29c1de72be' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.01117038, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sst</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>285.7</div><input id='attrs-3670da1c-d984-4b1f-b1a6-5729ba0691f3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3670da1c-d984-4b1f-b1a6-5729ba0691f3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c5ab22a7-d085-4428-909e-97eb514e5886' class='xr-var-data-in' type='checkbox'><label for='data-c5ab22a7-d085-4428-909e-97eb514e5886' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(285.6781, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sst1</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>285.7</div><input id='attrs-a388f809-0ea8-48d1-982e-8418dca50d26' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a388f809-0ea8-48d1-982e-8418dca50d26' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-20c70b34-681f-4f4f-8045-af9a2f3ca0f0' class='xr-var-data-in' type='checkbox'><label for='data-20c70b34-681f-4f4f-8045-af9a2f3ca0f0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(285.68143, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sst2</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-0.003311</div><input id='attrs-53e09ed6-1f70-4e9a-babd-e48abec1d617' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-53e09ed6-1f70-4e9a-babd-e48abec1d617' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-81478d54-7fae-4e0f-b9c3-f2f57587a78a' class='xr-var-data-in' type='checkbox'><label for='data-81478d54-7fae-4e0f-b9c3-f2f57587a78a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(-0.00331116, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>err_sst</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.07059</div><input id='attrs-f28481fe-d193-4ae4-81b9-bcbf3d24ce0c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f28481fe-d193-4ae4-81b9-bcbf3d24ce0c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5a19820f-4176-4e3c-a890-54a689837bfd' class='xr-var-data-in' type='checkbox'><label for='data-5a19820f-4176-4e3c-a890-54a689837bfd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.07059364, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>err_sst1</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.02489</div><input id='attrs-ec7e57a6-046d-4166-a853-55ca04bf2237' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ec7e57a6-046d-4166-a853-55ca04bf2237' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-08d6998d-d588-4e98-8d30-4c5dacc41c3c' class='xr-var-data-in' type='checkbox'><label for='data-08d6998d-d588-4e98-8d30-4c5dacc41c3c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.02489492, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>err_sst2</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.06399</div><input id='attrs-cb19a2d5-868f-4654-b8f7-f281665b5e30' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cb19a2d5-868f-4654-b8f7-f281665b5e30' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1fd0ba7d-1120-4ce4-b6c1-ffc77542c5fa' class='xr-var-data-in' type='checkbox'><label for='data-1fd0ba7d-1120-4ce4-b6c1-ffc77542c5fa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.0639906, dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f7c01cfc-2207-4f65-932a-cefe7eb7bec0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-f7c01cfc-2207-4f65-932a-cefe7eb7bec0' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="operations-per-trajectory">
-<h3>Operations per trajectory<a class="headerlink" href="#operations-per-trajectory" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="operations-per-trajectory">
+<h3>Operations per trajectory<a class="headerlink" href="#operations-per-trajectory" title="Permalink to this headline">#</a></h3>
 <p>As previously noted, to perform the same operation per trajectory, it is more efficient to align the <em>chunks</em> with the trajectories. This is done by settings the size of the <em>chunks</em> equal to the dimensions of the trajectories. However, here we need to know the lengths of all the trajectories in the order they are arranged in the ragged array <em>before</em> actually loading the dataset with <em>xarray</em>. This is clearly not practical as <em>xarray</em> does not provide an obvious mechanism to align the data chunks with specified indices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8862,8 +9210,8 @@ Attributes:
     </tr>
 </table></div></li></ul></div></li><li class='xr-section-item'><input id='section-08578831-4894-4a37-bc41-f65b23828f5e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-08578831-4894-4a37-bc41-f65b23828f5e' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<div class="section" id="simple-operation-by-chunks-or-blocks">
-<h4>Simple operation by chunks (or blocks)<a class="headerlink" href="#simple-operation-by-chunks-or-blocks" title="Permalink to this headline">¶</a></h4>
+<section id="simple-operation-by-chunks-or-blocks">
+<h4>Simple operation by chunks (or blocks)<a class="headerlink" href="#simple-operation-by-chunks-or-blocks" title="Permalink to this headline">#</a></h4>
 <p>To perform arbitrary operation per trajectory, we can now use <code class="docutils literal notranslate"><span class="pre">map_blocks()</span></code> that applies a function per chunk (<em>block</em> is also used for <em>chunks</em>). In the example below we simply define the function <code class="docutils literal notranslate"><span class="pre">func</span></code> that calculates the mean of each block of an array <code class="docutils literal notranslate"><span class="pre">x</span></code>. Note that this requires loading <code class="docutils literal notranslate"><span class="pre">nb_subset_drifters</span></code> chunks and applying the operation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8894,9 +9242,9 @@ Attributes:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="more-complex-operation-where-dimensions-can-change-between-input-and-output">
-<h4>More complex operation where dimensions can change between input and output<a class="headerlink" href="#more-complex-operation-where-dimensions-can-change-between-input-and-output" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="more-complex-operation-where-dimensions-can-change-between-input-and-output">
+<h4>More complex operation where dimensions can change between input and output<a class="headerlink" href="#more-complex-operation-where-dimensions-can-change-between-input-and-output" title="Permalink to this headline">#</a></h4>
 <p>Alternatively, one can use the <em>xarray</em> function <code class="docutils literal notranslate"><span class="pre">apply_ufunc</span></code> to map a function per chunks. In this case, the function to be applied can be a bit more complex, but this method gives more flexibility to handle the input and output formats and dimensions of the function.</p>
 <p>In a first example, the eastward velocity is passed as an argument by chunk to the function which will calculate the anomaly per trajectory. The length of the output will be of the same length as the input. Please note here that:</p>
 <ol class="simple">
@@ -9806,12 +10154,12 @@ Dimensions without coordinates: obs</pre><div class='xr-wrap' style='display:non
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="pandas">
-<h1><em>Pandas</em><a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pandas">
+<h1><em>Pandas</em><a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h1>
 <p>In this section, we test the use of the <em><a class="reference external" href="https://pandas.pydata.org/">Pandas</a></em> package for our Lagrangian data. Since the previously-created NetCDF file containing the ragged array has two dimensions <code class="docutils literal notranslate"><span class="pre">['traj']</span></code> and <code class="docutils literal notranslate"><span class="pre">['obs']</span></code>, it cannot be read directly into the table structure of a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame()</span></code>. As a workaround, we load the data with <em>xarray</em>, drop the <code class="docutils literal notranslate"><span class="pre">['traj']</span></code> dimension, and convert the resulting data to a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame()</span></code>. The disadvantage is that it requires to form a second dataset with the dimension<code class="docutils literal notranslate"><span class="pre">['traj']</span></code> to have access to all variables (not presented here).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -10031,8 +10379,8 @@ Dimensions without coordinates: obs</pre><div class='xr-wrap' style='display:non
 </div>
 </div>
 </div>
-<div class="section" id="pandas-test-1-geographical-binning-of-any-variable">
-<h2><em>Pandas</em> test 1: Geographical binning of any variable<a class="headerlink" href="#pandas-test-1-geographical-binning-of-any-variable" title="Permalink to this headline">¶</a></h2>
+<section id="pandas-test-1-geographical-binning-of-any-variable">
+<h2><em>Pandas</em> test 1: Geographical binning of any variable<a class="headerlink" href="#pandas-test-1-geographical-binning-of-any-variable" title="Permalink to this headline">#</a></h2>
 <p>Here we reconduct the first bench test: calculate the mean zonal velocity from all drifters of the dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -10089,9 +10437,9 @@ Dimensions without coordinates: obs</pre><div class='xr-wrap' style='display:non
 <img alt="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_92_0.png" src="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_92_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="pandas-test-2-extract-a-given-region">
-<h2><em>Pandas</em> test 2: Extract a given region<a class="headerlink" href="#pandas-test-2-extract-a-given-region" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pandas-test-2-extract-a-given-region">
+<h2><em>Pandas</em> test 2: Extract a given region<a class="headerlink" href="#pandas-test-2-extract-a-given-region" title="Permalink to this headline">#</a></h2>
 <p>The extraction of a region is slightly simpler with <em>Pandas</em> than with <em>xarray</em>, because the same mask can be applied to all variables of interest that share the <code class="docutils literal notranslate"><span class="pre">obs</span></code> dimension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -10364,9 +10712,9 @@ Dimensions without coordinates: obs</pre><div class='xr-wrap' style='display:non
 <img alt="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_98_0.png" src="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_98_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="pandas-test-3-single-statistic-per-trajectory">
-<h2><em>Pandas</em> test 3: Single statistic per trajectory<a class="headerlink" href="#pandas-test-3-single-statistic-per-trajectory" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pandas-test-3-single-statistic-per-trajectory">
+<h2><em>Pandas</em> test 3: Single statistic per trajectory<a class="headerlink" href="#pandas-test-3-single-statistic-per-trajectory" title="Permalink to this headline">#</a></h2>
 <p>Single operation per trajectory can be easily implemented in a <em>Pandas DataFrame</em> by locating the drifter ID by index (<code class="docutils literal notranslate"><span class="pre">iloc</span></code>) or by value (<code class="docutils literal notranslate"><span class="pre">loc</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -10557,10 +10905,10 @@ Name: cv, Length: 500, dtype: object
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="awkward-array">
-<h1><em>Awkward Array</em><a class="headerlink" href="#awkward-array" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="awkward-array">
+<h1><em>Awkward Array</em><a class="headerlink" href="#awkward-array" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://awkward-array.readthedocs.io/en/latest/"><em>Awkward Array</em></a> is a library for nested, variable-sized data, including arbitrary-length lists, records, mixed types, and missing data, using NumPy-like idioms. Such arrays are dynamically typed (defined at runtime as a function of the variable to store), but operations on them are compiled into <em>machine code</em> and therefore executes faster than regular <em>interpreted</em> <em>Python</em> function. This allow to generalizes <em>NumPy</em> array manipulation routines, even with variable-sized data.</p>
 <p>A schematic view of the data structure is presented in the figure below. The higher level <code class="docutils literal notranslate"><span class="pre">ak.Array</span></code> and <code class="docutils literal notranslate"><span class="pre">ak.Record</span></code> hides the nested structure of the data structure, but can always be accessed with <code class="docutils literal notranslate"><span class="pre">ak.Array.layout</span></code> (or <code class="docutils literal notranslate"><span class="pre">ds_ak.layout</span></code> in our case). This structure also stores parameters or metadata such as <em>units</em>, <em>long name</em>, etc. associated with the data. The library stores data into standard <code class="docutils literal notranslate"><span class="pre">NumPyArray</span></code> alongside a <code class="docutils literal notranslate"><span class="pre">ListOffsetArray</span></code> for fast and efficient access to variables, even with nonuniform data length.</p>
 <div>
@@ -10820,8 +11168,8 @@ Name: cv, Length: 500, dtype: object
 </div>
 </div>
 </div>
-<div class="section" id="awkward-array-test-1-geographical-binning-of-any-variable">
-<h2><em>Awkward Array</em> test 1: Geographical binning of any variable<a class="headerlink" href="#awkward-array-test-1-geographical-binning-of-any-variable" title="Permalink to this headline">¶</a></h2>
+<section id="awkward-array-test-1-geographical-binning-of-any-variable">
+<h2><em>Awkward Array</em> test 1: Geographical binning of any variable<a class="headerlink" href="#awkward-array-test-1-geographical-binning-of-any-variable" title="Permalink to this headline">#</a></h2>
 <p>Again, we reconduct the first bench test: calculate the mean zonal velocity from all drifters of the dataset. For operations apply on the full dataset, we use the <code class="docutils literal notranslate"><span class="pre">ak.flatten()</span></code> function to retrieve the underlying unidimensional <em>NumPy</em> array containing all the observations for all drifters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -10878,9 +11226,9 @@ Name: cv, Length: 500, dtype: object
 <img alt="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_145_0.png" src="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_145_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="awkward-array-test-2-extract-a-given-region">
-<h2><em>Awkward Array</em> test 2: Extract a given region<a class="headerlink" href="#awkward-array-test-2-extract-a-given-region" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="awkward-array-test-2-extract-a-given-region">
+<h2><em>Awkward Array</em> test 2: Extract a given region<a class="headerlink" href="#awkward-array-test-2-extract-a-given-region" title="Permalink to this headline">#</a></h2>
 <p>With <em>Awkward Array</em>, the extraction of a subregion is slightly more complex than with <em>Pandas</em>, since here the dataset contains both variables with dimension <code class="docutils literal notranslate"><span class="pre">['traj']</span></code> and variables with dimension <code class="docutils literal notranslate"><span class="pre">['obs']</span></code>. Note that comparisons can be performed on the bidimensional non-regular <code class="docutils literal notranslate"><span class="pre">ak.Array</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">ds.obs.lon</span></code>, <code class="docutils literal notranslate"><span class="pre">ds.obs.lat</span></code>, <code class="docutils literal notranslate"><span class="pre">ds.obs.time</span></code>) without looping.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -10961,9 +11309,9 @@ Name: cv, Length: 500, dtype: object
 <img alt="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_150_0.png" src="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_150_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="awkward-array-test-3-single-statistic-per-trajectory">
-<h2><em>Awkward Array</em> test 3: Single statistic per trajectory<a class="headerlink" href="#awkward-array-test-3-single-statistic-per-trajectory" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="awkward-array-test-3-single-statistic-per-trajectory">
+<h2><em>Awkward Array</em> test 3: Single statistic per trajectory<a class="headerlink" href="#awkward-array-test-3-single-statistic-per-trajectory" title="Permalink to this headline">#</a></h2>
 <p>Without the need for indices, we can perform reduction operation per trajectory directly with Awkward array, which simplify considerably the notations, and should ease the development of new functionality.</p>
 <p><em>Note</em>: At this point, the dataset <code class="docutils literal notranslate"><span class="pre">ds_ak</span></code> is loaded in memory, which explains the speed of the operations. For larger dataset that cannot be held completely in memory, an option could be to interface with <a class="reference external" href="https://dask.org">Dask</a>, currently under development.</p>
 <div class="cell docutils container">
@@ -11045,9 +11393,9 @@ Name: cv, Length: 500, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="numba">
-<h2>Numba<a class="headerlink" href="#numba" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="numba">
+<h2>Numba<a class="headerlink" href="#numba" title="Permalink to this headline">#</a></h2>
 <p><em>Awkward Array</em> can be combined with <a class="reference external" href="https://numba.pydata.org">Numba</a> to accelerate calculations. Here, the goal is <em>not</em> to show the most efficient way of performing a calculation, but to present how simply adding the numba decorator <code class="docutils literal notranslate"><span class="pre">&#64;nb.njit</span></code> to a function can improved the performance by order of magnitude(s).</p>
 <p>Here we show an example that calculates the kinetic energy of a drifter trajectory from its velocity time series:</p>
 <div class="cell docutils container">
@@ -11125,10 +11473,10 @@ Wall time: 164 ms
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="discussion">
-<h1>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="discussion">
+<h1>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h1>
 <p>We presented a commonly used Lagrangian oceanographic dataset (the GDP dataset) which is currently available as individual NetCDF files (one of the means of distribution). Next, we presented an efficient data structure, the contiguous ragged array, to combine the variables from these individual NetCDF files. We then compared three different packages–<a class="reference external" href="https://docs.xarray.dev/en/stable/"><em>xarray</em></a> , <a class="reference external" href="https://pandas.pydata.org/"><em>Pandas</em></a>, and <a class="reference external" href="https://awkward-array.readthedocs.io/en/latest/"><em>Awkward Array</em></a>—by performing typical Lagrangian workflow tasks.</p>
 <p><strong>Xarray</strong></p>
 <p><a class="reference external" href="https://docs.xarray.dev/en/stable/"><em>xarray</em></a>  is a well-known and established package used to perform operations on N-Dimensional datasets. It is natively integrated with <em>Dask</em> for parallel computing(not demonstrated in this Notebook), and allows users to <em>lazy load</em> data when the dataset is larger than the available memory of the computing environment.</p>
@@ -11139,8 +11487,8 @@ Wall time: 164 ms
 <p><strong>Awkward Array</strong></p>
 <p><a class="reference external" href="https://awkward-array.readthedocs.io/en/latest/"><em>Awkward Array</em></a> is a novel library specifically designed to deal with ragged and heterogeneous data (in type or size). With the example of the heterogeneous GDP dataset, we find that this library simplifies considerably Lagrangian analysis. Furthermore, integration with <em>Numba</em> allows to speed up calculations without major redesign. We anticipate that these two advantages will lead to faster development of Lagrangian analysis functions as part of the <em>CloudDrift</em> project.</p>
 <p>Initially developed for particle physics applications, <em>Awkward Array</em> is missing some useful features (e.g. <em>html</em> representation, import from <em>NetCDF</em>, and especially <em>Dask</em> integration) when compared to more mature libraries like <em>xarray</em> or <em>Pandas</em>. During the development of this Notebook, we had the opportunity to engage with the authors of this library, and we plan on collaborating to fill those gaps during the development the <em>clouddrift</em> libraries. We believe that this collaboration will elevate both projects, which are sponsored by the National Science Foundation during similar time frame (<em>Awkward Array</em> <a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2103945">#2103945</a>).</p>
-<div class="section" id="benchmark-speed">
-<h2>Benchmark speed<a class="headerlink" href="#benchmark-speed" title="Permalink to this headline">¶</a></h2>
+<section id="benchmark-speed">
+<h2>Benchmark speed<a class="headerlink" href="#benchmark-speed" title="Permalink to this headline">#</a></h2>
 <p>The following figure presents the benchmark times obtain for the current execution. As a comparison, we include a reference time (black dashed line) obtained on a 2021 Mac Mini with a 8 cores Apple M1 ARM processor, 16GB of RAM, running macOS Monterey 12.3.</p>
 <p><em>Note: user should expect slower time on a Binder or Google Colab environment. We understand that a lot of factors can influence the results of this benchmark, and it might not be the most accurate when running on a Cloud environment, or on a local cluster with multiple users. We still believe it gives an interesting view of the performance of the three selected libraries.</em></p>
 <div class="cell docutils container">
@@ -11194,9 +11542,9 @@ Wall time: 164 ms
 <img alt="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_176_1.png" src="../../_images/PM_05_Accelerating_Lagrangian_analyses_of_oceanic_data_benchmarking_typical_workflows_176_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="feedback">
-<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="feedback">
+<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">#</a></h2>
 <div>
 <img src="https://cdn.pixabay.com/photo/2020/01/07/05/42/feedback-4746811__340.png" width="400"/>
 </div>
@@ -11246,19 +11594,19 @@ Wall time: 164 ms
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="future-development">
-<h2>Future development<a class="headerlink" href="#future-development" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="future-development">
+<h2>Future development<a class="headerlink" href="#future-development" title="Permalink to this headline">#</a></h2>
 <p>We hope you will follow the development of <a class="reference external" href="https://github.com/Cloud-Drift">CloudDrift</a>, and encourage everyone to share this Notebook as well as submit feedback and comments to team members.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="references">
-<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Elipot et al. (2016), “A global surface drifter dataset at hourly resolution”, J. Geophys. Res. Oceans, 121, <a class="reference external" href="https://doi.org/10.1002/2016JC011716">doi:10.1002/2016JC011716</a></p></li>
 <li><p>Hansen, D. V., &amp; Poulain, P. M. (1996). Quality control and interpolations of WOCE-TOGA drifter data. Journal of Atmospheric and Oceanic Technology, 13(4), 900-909, <a class="reference external" href="http://dx.doi.org/10.1175/1520-0426(1996)013%3C0900:QCAIOW%3E2.0.CO;2">doi:10.1175/1520-0426(1996)013%3C0900:QCAIOW%3E2.0.CO;2</a></p></li>
 </ul>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -11282,9 +11630,11 @@ Wall time: 164 ms
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -11300,25 +11650,27 @@ Wall time: 164 ms
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
-        
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+  
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

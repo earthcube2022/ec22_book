@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>ICESpark-EarthCube-2022-Annual-Meeting &#8212; EarthCube 2022 Call for Notebooks</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,36 +20,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -59,7 +60,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -68,9 +83,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -325,12 +341,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -338,61 +359,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ec22_yu_etal/ICESpark-EarthCube-2022-Annual-Meeting.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    ICESpark-EarthCube-2022-Annual-Meeting
@@ -608,29 +685,260 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>ICESpark-EarthCube-2022-Annual-Meeting</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   ICESpark-EarthCube-2022-Annual-Meeting
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#authors">
+     Authors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-contents">
+     Table of Contents
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialize-the-cluster-environment">
+     Initialize the cluster environment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#register-geospatial-data-support">
+     Register geospatial data support
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-import">
+   Data import
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-ice-sat2-orbits-into-spark">
+     Load ICE_SAT2 orbits into Spark
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-dataframe-with-a-geometry-column">
+     Create DataFrame with a Geometry column
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-a-country-shapefile-as-the-base-map-for-visualization-purpose">
+     Read a country shapefile as the base map, for visualization purpose
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demo-1-find-the-crossings-between-icesat-2-orbits-and-soda-moorings">
+   Demo 1: Find the crossings between ICESat-2 orbits and SODA moorings
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-the-crossings-around-three-soda-objects-each-of-which-has-a-100km-buffer-area-using-st-buffer">
+     Find the crossings around three SODA objects, each of which has a 100KM buffer area, using ST_Buffer
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-orbits-in-year-2019-in-the-soda-c-result">
+     Find orbits in Year 2019 in the SODA-C result
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-crossings-on-soda-c-using-geopandas">
+     Visualize crossings on SODA-C using GeoPandas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#put-soda-c-into-a-df-and-convert-it-to-100km-circle">
+       Put SODA-C into a DF and convert it to 100KM circle
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-soda-c-result-dataframe-to-geopandas-dataframe">
+       Convert SODA-C result DataFrame to GeoPandas DataFrame
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-the-maps">
+       Plot the maps
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demo-2-find-the-crossing-between-icesat-2-orbits-and-sentinel-2-and-worldview-3-images">
+   Demo 2:  Find the crossing between ICESat-2 orbits and Sentinel-2 and WorldView-3 images
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-if-orbits-intersect-s-2-and-or-worldview-bounding-boxes">
+     Check if orbits intersect S-2 and/or WorldView bounding boxes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-orbits-in-year-2019-in-the-s-2-a-result">
+     Find orbits in Year 2019 in the S-2 A result
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-crossings-on-s-2-a-using-geopandas">
+     Visualize crossings on S-2 A using GeoPandas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#put-s-2-a-into-a-dataframe">
+       Put S-2 A into a DataFrame
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-result-dataframe-to-geopandas-dataframe">
+       Convert result DataFrame to GeoPandas DataFrame
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Plot the maps
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demo-3-find-the-crossings-between-icesat-2-orbits-and-mosaic-master-track-of-polarstern-cruise">
+   Demo 3: Find the crossings between ICESat-2 orbits and MOSAiC Master track of POLARSTERN cruise
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-master-track-of-polarstern-cruise-into-spark">
+     Load Master track of POLARSTERN cruise into Spark
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-dataframe-with-a-geometry-column">
+     Create a DataFrame with a Geometry column
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-orbits-within-a-50km-circle-of-cruise-locations-in-year-2019-using-st-buffer">
+     Find orbits within a 50KM circle of cruise locations in Year 2019, using ST_Buffer
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-the-query-result-using-geopandas">
+     Visualize the query result using GeoPandas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-cruise-df-to-50km-circle">
+       Convert Cruise DF to 50KM circle
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-to-geopandas-dataframes">
+       Convert to GeoPandas DataFrames
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Plot the maps
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="icespark-earthcube-2022-annual-meeting">
-<h1>ICESpark-EarthCube-2022-Annual-Meeting<a class="headerlink" href="#icespark-earthcube-2022-annual-meeting" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="icespark-earthcube-2022-annual-meeting">
+<h1>ICESpark-EarthCube-2022-Annual-Meeting<a class="headerlink" href="#icespark-earthcube-2022-annual-meeting" title="Permalink to this headline">#</a></h1>
 <p>ICESpark in Action: Analyzing Large-scale Arctic Observations Using an Open-source Big Data Platform</p>
-<div class="section" id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Author1 = {“name”: “Jia Yu”, “affiliation”: “Washington State University”, “email”: “<a class="reference external" href="mailto:jia&#46;yu1&#37;&#52;&#48;wsu&#46;edu">jia<span>&#46;</span>yu1<span>&#64;</span>wsu<span>&#46;</span>edu</a>”}</p></li>
 <li><p>Author2 = {“name”: “Yiqun Xie”, “affiliation”: “University of Maryland”, “email”: “<a class="reference external" href="mailto:xie&#37;&#52;&#48;umd&#46;edu">xie<span>&#64;</span>umd<span>&#46;</span>edu</a>”}</p></li>
 <li><p>Author3 = {“name”: “Kyle Duncan”, “affiliation”: “University of Maryland”, “email”: “<a class="reference external" href="mailto:kduncan&#37;&#52;&#48;umd&#46;edu">kduncan<span>&#64;</span>umd<span>&#46;</span>edu</a>”}</p></li>
 <li><p>Author4 = {“name”: “Sinead Louise Farrell”, “affiliation”: “University of Maryland”, “email”: “<a class="reference external" href="mailto:sineadf&#37;&#52;&#48;umd&#46;edu">sineadf<span>&#64;</span>umd<span>&#46;</span>edu</a>”}</p></li>
 </ul>
-</div>
-<div class="section" id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="#ICESpark-EarthCube-2022-Annual-Meeting">ICESpark-EarthCube-2022-Annual-Meeting</a></p></li>
 <li><p><a class="reference external" href="#Setup">Setup</a></p></li>
@@ -640,39 +948,39 @@
 <li><p><a class="reference external" href="#Demo-3:-Find-the-crossings-between-ICESat-2-orbits-and-MOSAiC-Master-track-of-POLARSTERN-cruise">Demo 3: Find the crossings between ICESat-2 orbits and MOSAiC Master track of POLARSTERN cruise</a></p></li>
 <li><p><a class="reference external" href="#References">References</a></p></li>
 </ol>
-</div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The Arctic climate system is undergoing rapid change with rising air and sea surface temperatures, accompanied by declines in Arctic glacial ice and sea ice as well as loss of snow cover on land. The combined increase in global air temperature and ice-sheet mass loss is driving sea level rise around the globe. As the Arctic region is largely inaccessible to traditional observation techniques, satellite remote sensing systems play a key role in monitoring the essential climate variables. However, the unprecedented volume and variety of geospatial big data collected by new satellite sensors have reached far beyond the capacity of computing platforms accessible to most geoscientists. ICESpark is an open-source distributed platform that can combine local commodity computers into a powerful environment that is ready for geospatial big data (GeoBD). Built on Apache Sedona [1], ICESpark comprises a set of off-the-shelf data integration tools and analytical functions to make sense of large-scale arctic observations.</p>
-</div>
-<div class="section" id="technical-contributions">
-<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">#</a></h2>
 <p>We plan to demonstrate ICESpark through a Python Jupyter notebook running on top of a cluster of commodity computers to let the audience experience the scalability and interactivity provided by the tool. In this notebook, we demonstrate three case studies to illustrate how ICESpark may help geoscientists quickly find temporally and/or spatially coincident data across heterogenous arctic observation data. This task is typically required to validate the accuracy of new remote sensing data products, or for cross comparison of complementary polar climate variables.</p>
-</div>
-<div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The first case study includes Stratified Ocean Dynamics of the Arctic (SODA) moorings [2] and ICESat-2 reference ground tracks (RGTs) [3], where the goal is to find all ICESat-2 orbits falling within a 50 km search radius around the mooring sites.</p></li>
 <li><p>The second case study integrates Sentinel-2 [4] and WorldView-3 [5] imagery to discover the spatial overlaps between ICESat-2 RGTs and tiles from these high-resolution imagery datasets.</p></li>
 <li><p>The last case study compares the aforementioned lCESat 2 orbits (RGTs) against the MOSAiC expedition cruise master track data [6 - 9]. The goal of this study is to find the spatio-temporal overalps between ICESat-Z orbits and a 50KM search radius around each reported cruise location.</p></li>
 </ul>
-</div>
-<div class="section" id="funding">
-<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Award1 = {“agency”: “US National Science Foundation”, “award_code”: “2126449”, “award_URL”: “<a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2126449&amp;HistoricalAwards=false">https://www.nsf.gov/awardsearch/showAward?AWD_ID=2126449&amp;HistoricalAwards=false</a>”}</p></li>
 <li><p>Award2 = {“agency”: “US National Science Foundation”, “award_code”: “2126474”, “award_URL”: “<a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2126474&amp;HistoricalAwards=false">https://www.nsf.gov/awardsearch/showAward?AWD_ID=2126474&amp;HistoricalAwards=false</a>”}</p></li>
 </ul>
-</div>
-<div class="section" id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
 <p>keywords=[“arctic observation”, “big data”, “cluster computing”]</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="library-import">
-<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h1>
+<section id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Import local library</span>
@@ -696,9 +1004,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="initialize-the-cluster-environment">
-<h2>Initialize the cluster environment<a class="headerlink" href="#initialize-the-cluster-environment" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="initialize-the-cluster-environment">
+<h2>Initialize the cluster environment<a class="headerlink" href="#initialize-the-cluster-environment" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span> \
@@ -773,9 +1081,9 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="register-geospatial-data-support">
-<h2>Register geospatial data support<a class="headerlink" href="#register-geospatial-data-support" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="register-geospatial-data-support">
+<h2>Register geospatial data support<a class="headerlink" href="#register-geospatial-data-support" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SedonaRegistrator</span><span class="o">.</span><span class="n">registerAll</span><span class="p">(</span><span class="n">spark</span><span class="p">)</span>
@@ -792,12 +1100,12 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-import">
-<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="load-ice-sat2-orbits-into-spark">
-<h2>Load ICE_SAT2 orbits into Spark<a class="headerlink" href="#load-ice-sat2-orbits-into-spark" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-import">
+<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">#</a></h1>
+<section id="load-ice-sat2-orbits-into-spark">
+<h2>Load ICE_SAT2 orbits into Spark<a class="headerlink" href="#load-ice-sat2-orbits-into-spark" title="Permalink to this headline">#</a></h2>
 <p>Files are originally in KML. They are converted to a single WKT file using GDAL ogr2ogr command.</p>
 <p>The converted dataset contains 13704 orbits and has 2.6GB in size. The notebook only takes a sample of 499 orbits because of the limited resource provided in Binder environment. In addition, GitHub only allows max 100MB per file.</p>
 <p>Filename example: IS2_RGT_0702_cycle3_14-May-2019.kml.csv</p>
@@ -825,9 +1133,9 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="create-dataframe-with-a-geometry-column">
-<h2>Create DataFrame with a Geometry column<a class="headerlink" href="#create-dataframe-with-a-geometry-column" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-dataframe-with-a-geometry-column">
+<h2>Create DataFrame with a Geometry column<a class="headerlink" href="#create-dataframe-with-a-geometry-column" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;select ST_FlipCoordinates(ST_GeomFromWKT(WKT)) as orbit, Name, altitudeMode, tessellate, extrude, visibility, filename, date from is2_df_raw&quot;</span><span class="p">)</span><span class="o">.</span>\
@@ -877,9 +1185,9 @@ only showing top 10 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="read-a-country-shapefile-as-the-base-map-for-visualization-purpose">
-<h2>Read a country shapefile as the base map, for visualization purpose<a class="headerlink" href="#read-a-country-shapefile-as-the-base-map-for-visualization-purpose" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="read-a-country-shapefile-as-the-base-map-for-visualization-purpose">
+<h2>Read a country shapefile as the base map, for visualization purpose<a class="headerlink" href="#read-a-country-shapefile-as-the-base-map-for-visualization-purpose" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="n">ShapefileReader</span><span class="o">.</span><span class="n">readToGeometryRDD</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="s2">&quot;data/ne_50m_admin_0_countries_lakes&quot;</span><span class="p">)</span>
@@ -903,16 +1211,16 @@ only showing top 2 rows
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="demo-1-find-the-crossings-between-icesat-2-orbits-and-soda-moorings">
-<h1>Demo 1: Find the crossings between ICESat-2 orbits and SODA moorings<a class="headerlink" href="#demo-1-find-the-crossings-between-icesat-2-orbits-and-soda-moorings" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="demo-1-find-the-crossings-between-icesat-2-orbits-and-soda-moorings">
+<h1>Demo 1: Find the crossings between ICESat-2 orbits and SODA moorings<a class="headerlink" href="#demo-1-find-the-crossings-between-icesat-2-orbits-and-soda-moorings" title="Permalink to this headline">#</a></h1>
 <p>We have 3 Stratified Ocean Dynamics of the Arctic (SODA) moorings sites at the following locations:</p>
 <p>SODA-A: (73.00043, -148.33627)</p>
 <p>SODA-B: (75.46388, -145.63685)</p>
 <p>SODA-C: (77.73677, -139.14153)</p>
-<div class="section" id="find-the-crossings-around-three-soda-objects-each-of-which-has-a-100km-buffer-area-using-st-buffer">
-<h2>Find the crossings around three SODA objects, each of which has a 100KM buffer area, using ST_Buffer<a class="headerlink" href="#find-the-crossings-around-three-soda-objects-each-of-which-has-a-100km-buffer-area-using-st-buffer" title="Permalink to this headline">¶</a></h2>
+<section id="find-the-crossings-around-three-soda-objects-each-of-which-has-a-100km-buffer-area-using-st-buffer">
+<h2>Find the crossings around three SODA objects, each of which has a 100KM buffer area, using ST_Buffer<a class="headerlink" href="#find-the-crossings-around-three-soda-objects-each-of-which-has-a-100km-buffer-area-using-st-buffer" title="Permalink to this headline">#</a></h2>
 <p>IceSat2 data needs to be converted from WGS84 (epsg:4326) CRS to meter-based epsg:4087 (WGS 84 / World Equidistant Cylindrical) using Sedona’s ST_Transform</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -972,9 +1280,9 @@ only showing top 2 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="find-orbits-in-year-2019-in-the-soda-c-result">
-<h2>Find orbits in Year 2019 in the SODA-C result<a class="headerlink" href="#find-orbits-in-year-2019-in-the-soda-c-result" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="find-orbits-in-year-2019-in-the-soda-c-result">
+<h2>Find orbits in Year 2019 in the SODA-C result<a class="headerlink" href="#find-orbits-in-year-2019-in-the-soda-c-result" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result_df3_sorted</span> <span class="o">=</span> <span class="n">result_df3</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;filename LIKE </span><span class="se">\&#39;</span><span class="si">%2019%</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">asc</span><span class="p">())</span>
@@ -994,11 +1302,11 @@ only showing top 2 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="visualize-crossings-on-soda-c-using-geopandas">
-<h2>Visualize crossings on SODA-C using GeoPandas<a class="headerlink" href="#visualize-crossings-on-soda-c-using-geopandas" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="put-soda-c-into-a-df-and-convert-it-to-100km-circle">
-<h3>Put SODA-C into a DF and convert it to 100KM circle<a class="headerlink" href="#put-soda-c-into-a-df-and-convert-it-to-100km-circle" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="visualize-crossings-on-soda-c-using-geopandas">
+<h2>Visualize crossings on SODA-C using GeoPandas<a class="headerlink" href="#visualize-crossings-on-soda-c-using-geopandas" title="Permalink to this headline">#</a></h2>
+<section id="put-soda-c-into-a-df-and-convert-it-to-100km-circle">
+<h3>Put SODA-C into a DF and convert it to 100KM circle<a class="headerlink" href="#put-soda-c-into-a-df-and-convert-it-to-100km-circle" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soda_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;POINT (73.00043 -148.33627)&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT (75.46388 -145.63685)&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT (77.73677 -139.14153)&quot;</span><span class="p">]</span>
@@ -1027,9 +1335,9 @@ only showing top 2 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="convert-soda-c-result-dataframe-to-geopandas-dataframe">
-<h3>Convert SODA-C result DataFrame to GeoPandas DataFrame<a class="headerlink" href="#convert-soda-c-result-dataframe-to-geopandas-dataframe" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="convert-soda-c-result-dataframe-to-geopandas-dataframe">
+<h3>Convert SODA-C result DataFrame to GeoPandas DataFrame<a class="headerlink" href="#convert-soda-c-result-dataframe-to-geopandas-dataframe" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country_gpd</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">countries_df</span><span class="o">.</span><span class="n">toPandas</span><span class="p">(),</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span>
@@ -1047,9 +1355,9 @@ only showing top 2 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-the-maps">
-<h3>Plot the maps<a class="headerlink" href="#plot-the-maps" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plot-the-maps">
+<h3>Plot the maps<a class="headerlink" href="#plot-the-maps" title="Permalink to this headline">#</a></h3>
 <p>You can uncomment different base XY to change the view of the map</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1093,11 +1401,11 @@ only showing top 2 rows
 <img alt="../../_images/ICESpark-EarthCube-2022-Annual-Meeting_26_1.png" src="../../_images/ICESpark-EarthCube-2022-Annual-Meeting_26_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="demo-2-find-the-crossing-between-icesat-2-orbits-and-sentinel-2-and-worldview-3-images">
-<h1>Demo 2:  Find the crossing between ICESat-2 orbits and Sentinel-2 and WorldView-3 images<a class="headerlink" href="#demo-2-find-the-crossing-between-icesat-2-orbits-and-sentinel-2-and-worldview-3-images" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="demo-2-find-the-crossing-between-icesat-2-orbits-and-sentinel-2-and-worldview-3-images">
+<h1>Demo 2:  Find the crossing between ICESat-2 orbits and Sentinel-2 and WorldView-3 images<a class="headerlink" href="#demo-2-find-the-crossing-between-icesat-2-orbits-and-sentinel-2-and-worldview-3-images" title="Permalink to this headline">#</a></h1>
 <p><strong>Two Sentinel-2 image bounding boxes (lat, lon format)</strong></p>
 <p>S-2 image from June 22, 2019:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UL</span><span class="p">:</span> <span class="mf">82.852919</span><span class="p">,</span> <span class="o">-</span><span class="mf">63.001439</span>
@@ -1140,8 +1448,8 @@ only showing top 2 rows
 </pre></div>
 </div>
 <p>Polygon format (UL - LL - LR - UR - UL): 84.04474275, -60.80835633, 83.90936693, -60.7855143, 83.90966186, -59.23332056, 84.04404486, -59.21133579, 84.04474275, -60.80835633</p>
-<div class="section" id="check-if-orbits-intersect-s-2-and-or-worldview-bounding-boxes">
-<h2>Check if orbits intersect S-2 and/or WorldView bounding boxes<a class="headerlink" href="#check-if-orbits-intersect-s-2-and-or-worldview-bounding-boxes" title="Permalink to this headline">¶</a></h2>
+<section id="check-if-orbits-intersect-s-2-and-or-worldview-bounding-boxes">
+<h2>Check if orbits intersect S-2 and/or WorldView bounding boxes<a class="headerlink" href="#check-if-orbits-intersect-s-2-and-or-worldview-bounding-boxes" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># modified projection</span>
@@ -1229,9 +1537,9 @@ WorldView C number of crosses:  10
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="find-orbits-in-year-2019-in-the-s-2-a-result">
-<h2>Find orbits in Year 2019 in the S-2 A result<a class="headerlink" href="#find-orbits-in-year-2019-in-the-s-2-a-result" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="find-orbits-in-year-2019-in-the-s-2-a-result">
+<h2>Find orbits in Year 2019 in the S-2 A result<a class="headerlink" href="#find-orbits-in-year-2019-in-the-s-2-a-result" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result_df1</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s1">&#39;filename LIKE </span><span class="se">\&#39;</span><span class="si">%2019%</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">result_df1</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">truncate</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
@@ -1264,11 +1572,11 @@ WorldView C number of crosses:  10
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="visualize-crossings-on-s-2-a-using-geopandas">
-<h2>Visualize crossings on S-2 A using GeoPandas<a class="headerlink" href="#visualize-crossings-on-s-2-a-using-geopandas" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="put-s-2-a-into-a-dataframe">
-<h3>Put S-2 A into a DataFrame<a class="headerlink" href="#put-s-2-a-into-a-dataframe" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="visualize-crossings-on-s-2-a-using-geopandas">
+<h2>Visualize crossings on S-2 A using GeoPandas<a class="headerlink" href="#visualize-crossings-on-s-2-a-using-geopandas" title="Permalink to this headline">#</a></h2>
+<section id="put-s-2-a-into-a-dataframe">
+<h3>Put S-2 A into a DataFrame<a class="headerlink" href="#put-s-2-a-into-a-dataframe" title="Permalink to this headline">#</a></h3>
 <p>You can uncomment other examples as well</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1293,9 +1601,9 @@ WorldView C number of crosses:  10
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="convert-result-dataframe-to-geopandas-dataframe">
-<h3>Convert result DataFrame to GeoPandas DataFrame<a class="headerlink" href="#convert-result-dataframe-to-geopandas-dataframe" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="convert-result-dataframe-to-geopandas-dataframe">
+<h3>Convert result DataFrame to GeoPandas DataFrame<a class="headerlink" href="#convert-result-dataframe-to-geopandas-dataframe" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country_gpd</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">countries_df</span><span class="o">.</span><span class="n">toPandas</span><span class="p">(),</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span>
@@ -1318,9 +1626,9 @@ WorldView C number of crosses:  10
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h3>Plot the maps<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3>Plot the maps<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>You can uncomment different base XY to change the view of the map</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1365,11 +1673,11 @@ WorldView C number of crosses:  10
 <img alt="../../_images/ICESpark-EarthCube-2022-Annual-Meeting_38_1.png" src="../../_images/ICESpark-EarthCube-2022-Annual-Meeting_38_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="demo-3-find-the-crossings-between-icesat-2-orbits-and-mosaic-master-track-of-polarstern-cruise">
-<h1>Demo 3: Find the crossings between ICESat-2 orbits and MOSAiC Master track of POLARSTERN cruise<a class="headerlink" href="#demo-3-find-the-crossings-between-icesat-2-orbits-and-mosaic-master-track-of-polarstern-cruise" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="demo-3-find-the-crossings-between-icesat-2-orbits-and-mosaic-master-track-of-polarstern-cruise">
+<h1>Demo 3: Find the crossings between ICESat-2 orbits and MOSAiC Master track of POLARSTERN cruise<a class="headerlink" href="#demo-3-find-the-crossings-between-icesat-2-orbits-and-mosaic-master-track-of-polarstern-cruise" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a UDF to clean up the data</span>
@@ -1386,8 +1694,8 @@ WorldView C number of crosses:  10
 </div>
 </div>
 </div>
-<div class="section" id="load-master-track-of-polarstern-cruise-into-spark">
-<h2>Load Master track of POLARSTERN cruise into Spark<a class="headerlink" href="#load-master-track-of-polarstern-cruise-into-spark" title="Permalink to this headline">¶</a></h2>
+<section id="load-master-track-of-polarstern-cruise-into-spark">
+<h2>Load Master track of POLARSTERN cruise into Spark<a class="headerlink" href="#load-master-track-of-polarstern-cruise-into-spark" title="Permalink to this headline">#</a></h2>
 <p>The original data contains Leg 1- 4 including 28222065 coordinates, and has a size at 1.2 GB</p>
 <p>This demo only takes a sample of 1000 records.</p>
 <div class="cell docutils container">
@@ -1415,9 +1723,9 @@ only showing top 2 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="create-a-dataframe-with-a-geometry-column">
-<h2>Create a DataFrame with a Geometry column<a class="headerlink" href="#create-a-dataframe-with-a-geometry-column" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-a-dataframe-with-a-geometry-column">
+<h2>Create a DataFrame with a Geometry column<a class="headerlink" href="#create-a-dataframe-with-a-geometry-column" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cruise_df</span> <span class="o">=</span> <span class="n">cruise_df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="n">expr</span><span class="p">(</span><span class="s2">&quot;ST_Point(cast(Longitude as double), cast(Latitude as double))&quot;</span><span class="p">))</span>\
@@ -1452,9 +1760,9 @@ only showing top 2 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="find-orbits-within-a-50km-circle-of-cruise-locations-in-year-2019-using-st-buffer">
-<h2>Find orbits within a 50KM circle of cruise locations in Year 2019, using ST_Buffer<a class="headerlink" href="#find-orbits-within-a-50km-circle-of-cruise-locations-in-year-2019-using-st-buffer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="find-orbits-within-a-50km-circle-of-cruise-locations-in-year-2019-using-st-buffer">
+<h2>Find orbits within a 50KM circle of cruise locations in Year 2019, using ST_Buffer<a class="headerlink" href="#find-orbits-within-a-50km-circle-of-cruise-locations-in-year-2019-using-st-buffer" title="Permalink to this headline">#</a></h2>
 <p>IceSat2 data needs to be converted from WGS84 (epsg:4326) CRS to meter-based epsg:4087 (WGS 84 / World Equidistant Cylindrical) using Sedona’s ST_Transform</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1492,11 +1800,11 @@ only showing top 10 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="visualize-the-query-result-using-geopandas">
-<h2>Visualize the query result using GeoPandas<a class="headerlink" href="#visualize-the-query-result-using-geopandas" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="convert-cruise-df-to-50km-circle">
-<h3>Convert Cruise DF to 50KM circle<a class="headerlink" href="#convert-cruise-df-to-50km-circle" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="visualize-the-query-result-using-geopandas">
+<h2>Visualize the query result using GeoPandas<a class="headerlink" href="#visualize-the-query-result-using-geopandas" title="Permalink to this headline">#</a></h2>
+<section id="convert-cruise-df-to-50km-circle">
+<h3>Convert Cruise DF to 50KM circle<a class="headerlink" href="#convert-cruise-df-to-50km-circle" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert to epsg:4087 meter-based CRS</span>
@@ -1531,9 +1839,9 @@ only showing top 10 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="convert-to-geopandas-dataframes">
-<h3>Convert to GeoPandas DataFrames<a class="headerlink" href="#convert-to-geopandas-dataframes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="convert-to-geopandas-dataframes">
+<h3>Convert to GeoPandas DataFrames<a class="headerlink" href="#convert-to-geopandas-dataframes" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country_gpd</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">countries_df</span><span class="o">.</span><span class="n">toPandas</span><span class="p">(),</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span>
@@ -1551,9 +1859,9 @@ only showing top 10 rows
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3>Plot the maps<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>Plot the maps<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="n">country_gpd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1587,11 +1895,11 @@ only showing top 10 rows
 <img alt="../../_images/ICESpark-EarthCube-2022-Annual-Meeting_52_1.png" src="../../_images/ICESpark-EarthCube-2022-Annual-Meeting_52_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="references">
-<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h1>
 <p>[1] Yu, J., Zhang, Z., &amp; Sarwat, M. (2019). Spatial data management in apache spark: the geospark perspective and
 beyond. Geolnformatica, 23(1), 37-78.</p>
 <p>[2] Stratiﬁed Ocean Dynamics of the Arctic (SODA) moorings: <a class="reference external" href="https://apl.uw.edu/project/project.php?id=soda">https://apl.uw.edu/project/project.php?id=soda</a> (Accessed: 1 March 2021)</p>
@@ -1612,7 +1920,7 @@ Wegener Institute, Helmholtz Centre for Polar and Marine Research, Bremerhaven, 
 <p>[9] Rex, Markus (2021): Master track of POLARSTERN cruise PS122/4 in 1 sec resolution (zipped, 36 MB). Alfred
 Wegener Institute, Helmholtz Centre for Polar and Marine Research, Bremerhaven, PANGAEA,
 <a class="reference external" href="https://doi.org/10.1594/PANGAEA.926830">https://doi.org/10.1594/PANGAEA.926830</a></p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1636,9 +1944,11 @@ Wegener Institute, Helmholtz Centre for Polar and Marine Research, Bremerhaven, 
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1647,25 +1957,27 @@ Wegener Institute, Helmholtz Centre for Polar and Marine Research, Bremerhaven, 
         </div>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
-        
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+  
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

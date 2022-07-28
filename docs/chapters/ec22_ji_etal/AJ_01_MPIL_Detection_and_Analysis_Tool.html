@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>AJ_01_MPIL_Detection_and_Analysis_Tool &#8212; EarthCube 2022 Call for Notebooks</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,36 +20,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -60,7 +61,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,9 +84,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -326,12 +342,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -339,61 +360,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ec22_ji_etal/AJ_01_MPIL_Detection_and_Analysis_Tool.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    AJ_01_MPIL_Detection_and_Analysis_Tool
@@ -551,19 +628,192 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>AJ_01_MPIL_Detection_and_Analysis_Tool</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   AJ_01_MPIL_Detection_and_Analysis_Tool
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#author-s">
+     Author(s)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-contributions">
+     Technical contributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodology">
+     Methodology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funding">
+     Funding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     Keywords
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation">
+     Citation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#library-import">
+     Library import
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-library-import">
+     Local library import
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-definitions">
+   Parameter definitions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-import">
+   Data import
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-out-an-example-of-imported-data">
+     Plot out an example of imported data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection-process-and-analysis">
+   Detection process and analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identify-polarity-region-by-strength-threshold">
+     Identify Polarity Region by Strength threshold
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-edge-detection">
+     Apply Edge Detection
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-spatial-buffering-on-the-edges-of-polarity-regions">
+     Apply spatial buffering on the edges of polarity regions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#candidate-ropis">
+     Candidate RoPIs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#candidate-mpils">
+     Candidate MPILs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#refine-based-on-preserved-flux-ratio">
+       Refine based on preserved flux ratio
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#morphological-thinning-operations">
+     Morphological thinning operations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-refinement-using-size-filter">
+     Further refinement using size filter
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-regions-of-polarity-inversion-ropi">
+     Getting Regions of Polarity Inversion (RoPI)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-convex-hull-of-pil">
+     Getting convex hull of PIL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-analysis-tool">
+   Video Analysis Tool
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="aj-01-mpil-detection-and-analysis-tool">
-<h1>AJ_01_MPIL_Detection_and_Analysis_Tool<a class="headerlink" href="#aj-01-mpil-detection-and-analysis-tool" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="author-s">
-<h2>Author(s)<a class="headerlink" href="#author-s" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="aj-01-mpil-detection-and-analysis-tool">
+<h1>AJ_01_MPIL_Detection_and_Analysis_Tool<a class="headerlink" href="#aj-01-mpil-detection-and-analysis-tool" title="Permalink to this headline">#</a></h1>
+<section id="author-s">
+<h2>Author(s)<a class="headerlink" href="#author-s" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Author1 = {“name”: “Anli Ji”, “affiliation”: “Department of Computer Science, Georgia State University, Atlanta, GA”, “email”: “<a class="reference external" href="mailto:aji1&#37;&#52;&#48;student&#46;gsu&#46;edu">aji1<span>&#64;</span>student<span>&#46;</span>gsu<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-1551-2370”}</p></li>
 <li><p>Author2 = {“name”: “Nigar Khasayeva”, “affiliation”: “Department of Computer Science, Georgia State University, Atlanta, GA”, “email”: “<a class="reference external" href="mailto:nkhasayeva1&#37;&#52;&#48;student&#46;gsu&#46;edu">nkhasayeva1<span>&#64;</span>student<span>&#46;</span>gsu<span>&#46;</span>edu</a>”, “orcid”: “0000-0002-4590-7031”}</p></li>
@@ -601,52 +851,52 @@
         <li><span><a href="#Generate-RoPI" data-toc-modified-id="Generate-RoPI-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>Generate Region of Polarity Inversions (RoPI)</a></span></li>
         <li><span><a href="#Generate-convex-hull" data-toc-modified-id="Generate-convex-hull-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>Generate convex hull of PIL</a></span></li></ul>
     <li><span><a href="#Video-analysis-tool" data-toc-modified-id="Video-analysis-tool-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Video Analysis Tool</a></span></li>
-    <li><span><a href="#References" data-toc-modified-id="References-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>References</a></span></li></ul></div></div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+    <li><span><a href="#References" data-toc-modified-id="References-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>References</a></span></li></ul></div></section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>Magnetic polarity inversion lines (MPILs) detected from solar active regions with attributes engineered from them are recognized as one of the essential features for predicting the characteristics of explosive and eruptive instabilities such as solar flares and coronal mass ejections (CME). We have built a software framework that can detect MPILs from the line-of-sight (LoS) or the radial component of the magnetic field vector in solar active region magnetogram patches. As part of our efforts, we applied this detection method on magnetogram patches obtained from HMI Active Region Patches (HARP) data product. This tool is customizable and can be used to detect, understand and analyze intrinsic characteristics of MPILs.</p>
-</div>
-<div class="section" id="technical-contributions">
-<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="technical-contributions">
+<h2>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>We share detection our tool in the notebook and present the inner works of our detection functions as well as visualization for the MPIL detection technique over a set of eruptive active regions from Solar Cycle 24.</p></li>
 <li><p>We also provide a qualitative evaluation of our module and exploratory analyses that highlight the relationships between the time evolution characteristics of MPILs in addition to a video visualization tool for the MPILs and related data products.</p></li>
 <li><p>The tools and code implemented in the notebook have been developed with user defined thresholds that allow easy modification for analysis.</p></li>
 </ul>
-</div>
-<div class="section" id="methodology">
-<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">#</a></h2>
 <p>A brief summary of the detection method is as follows:</p>
 <p>First, we identify the positive and negative polarity regions by applying a magnetic field strength threshold of +/-100 Gauss on active region magnetogram patches. Then, we obtain the boundaries of positive and negative polarity regions by using an edge detection technique and apply intersection and thinning morphological operations along with a magnetic field strength filter to identify coarse MPILs. Lastly, we generate final MPILs by imposing a size filter that removes the relatively small disconnected components/lines and retains more significant ones.</p>
 <p>In addition to the MPIL detection tool, we provide feature extraction functions to obtain the properties of MPILs (i.e., MPIL size, the area of polarity inversion, the masked unsigned flux of enclosing MPIL, convexity, eigenvalues, fractal dimension, and Hu moments) and MPIL-related binary masks of rasters. These spatiotemporal data components can be extracted from any set of magnetogram patch series, which can be used to build a comprehensive and complementary data source for space weather forecasting efforts.</p>
-</div>
-<div class="section" id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h2>
 <p>This work provides a detection and visualization analysis tool for identifying MPILs and it can also be parameterized based on users’ requirements. We present detection results for a well-known active region, NOAA AR 11158 (HARP 377), consisting of 50 magnetogram patches (CEA series) with 1 hour cadence. Our detection results show that our approach can successfully identify PILs and other relevant metadata elements. Our video visualization tool can also be used to visually analyze the evolution of magnetic polarity inversion lines and their structure.</p>
-</div>
-<div class="section" id="funding">
-<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Award = {“agency”: “NSF”, “award_code”: “2104004”, “award_URL”: “<a class="reference external" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2104004">https://www.nsf.gov/awardsearch/showAward?AWD_ID=2104004</a>”}</p></li>
 </ul>
-</div>
-<div class="section" id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
 <p>keywords=[“Magnetic Polarity Inversion Lines”, “Solar Active Regions”, “Feature Extraction”]</p>
-</div>
-<div class="section" id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <p>A. Ji, N. Khasayeva, X. Cai, M. K. Georgoulis, P. C. Martens, R. A. Angryk, B. Aydin, 2022. MPIL Detection and Analysis Tool. Accessed 4/13/2022 at <a class="reference external" href="https://github.com/annieee6446/ec22-MPIL">https://github.com/annieee6446/ec22-MPIL</a></p>
-</div>
-<div class="section" id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h2>
 <p>The data used in this research is courtesy of NASA/SDO and the HMI science teams.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="library-import">
-<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h1>
+<section id="library-import">
+<h2>Library import<a class="headerlink" href="#library-import" title="Permalink to this headline">#</a></h2>
 <p>We will import glob for file operations. We will import sunpy.map and matplotlib.pylot for visualizations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -662,9 +912,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="local-library-import">
-<h2>Local library import<a class="headerlink" href="#local-library-import" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="local-library-import">
+<h2>Local library import<a class="headerlink" href="#local-library-import" title="Permalink to this headline">#</a></h2>
 <p>We will import the utility functions from our detection framework and video visualization tool.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -693,10 +943,10 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="parameter-definitions">
-<h1>Parameter definitions<a class="headerlink" href="#parameter-definitions" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="parameter-definitions">
+<h1>Parameter definitions<a class="headerlink" href="#parameter-definitions" title="Permalink to this headline">#</a></h1>
 <p>The tools and code implemented in the notebook have been developed with user defined thresholds that allow easy modification for analysis.</p>
 <ul class="simple">
 <li><p>STRENGTH_FILTER: Unsigned magnetic field strength threshold for identifying polarity regions.</p></li>
@@ -714,9 +964,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-import">
-<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-import">
+<h1>Data import<a class="headerlink" href="#data-import" title="Permalink to this headline">#</a></h1>
 <p>Our PIL detection framework applies to longitudinal magnetogram patches. Throughout the development lifecycle of our framework, we made use of the HMI Active Region Patches (HARP) data product [1]. However, it can be used with other magnetogram data series. HARPs are essentially tracked active regions and come with both vector and LoS components of magnetic field. The LoS magnetic field product is stored in FITS format and can be accessed from JSOC (<a class="reference external" href="http://jsoc.stanford.edu/ajax/lookdata.html">http://jsoc.stanford.edu/ajax/lookdata.html</a>). We primarily used the definitive series with 720 seconds cadence which are mapped the Lambert Cylindrical Equal Area (CEA) projection, where each pixel roughly occupies the same physical area on the Sun. For brevity, in the samples shown below, we adopt a one hour cadence instead of the 720 seconds.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -732,8 +982,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="plot-out-an-example-of-imported-data">
-<h2>Plot out an example of imported data<a class="headerlink" href="#plot-out-an-example-of-imported-data" title="Permalink to this headline">¶</a></h2>
+<section id="plot-out-an-example-of-imported-data">
+<h2>Plot out an example of imported data<a class="headerlink" href="#plot-out-an-example-of-imported-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the index of desired magnetogram patch</span>
@@ -759,12 +1009,12 @@
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_14_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_14_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="detection-process-and-analysis">
-<h1>Detection process and analysis<a class="headerlink" href="#detection-process-and-analysis" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="identify-polarity-region-by-strength-threshold">
-<h2>Identify Polarity Region by Strength threshold<a class="headerlink" href="#identify-polarity-region-by-strength-threshold" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="detection-process-and-analysis">
+<h1>Detection process and analysis<a class="headerlink" href="#detection-process-and-analysis" title="Permalink to this headline">#</a></h1>
+<section id="identify-polarity-region-by-strength-threshold">
+<h2>Identify Polarity Region by Strength threshold<a class="headerlink" href="#identify-polarity-region-by-strength-threshold" title="Permalink to this headline">#</a></h2>
 <p>The detection process starts by identifying the positive and negative polarity regions. We generated and applied two binary masks of the opposite polarity regions onto the original maps with a magnetic field strength thresholds of user defined Gauss values. The predefined thresholds are +/- 100 Gauss.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -796,9 +1046,9 @@
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_19_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_19_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="apply-edge-detection">
-<h2>Apply Edge Detection<a class="headerlink" href="#apply-edge-detection" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apply-edge-detection">
+<h2>Apply Edge Detection<a class="headerlink" href="#apply-edge-detection" title="Permalink to this headline">#</a></h2>
 <p>In this step, we obtain the boundaries of positive and negative polarity regions separately by using the Canny edge operator [2], which applies a Gaussian filter to smooth the magnetogram images and detects the overall contour of the polarity regions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -831,9 +1081,9 @@
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_23_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_23_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="apply-spatial-buffering-on-the-edges-of-polarity-regions">
-<h2>Apply spatial buffering on the edges of polarity regions<a class="headerlink" href="#apply-spatial-buffering-on-the-edges-of-polarity-regions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apply-spatial-buffering-on-the-edges-of-polarity-regions">
+<h2>Apply spatial buffering on the edges of polarity regions<a class="headerlink" href="#apply-spatial-buffering-on-the-edges-of-polarity-regions" title="Permalink to this headline">#</a></h2>
 <p>Region of Polarity Inversions (RoPIs) are the regions where negative and positive polarity regions are sufficiently close. These regions are determined using a topological intersection operation between spatially buffered edges of polarity regions. The intersection areas can then be considered as raw RoPIs. In this step, we spatially buffer the edges of negative and positive polarity regions in binary masks with a user defined buffer kernel size to represent the expanded areas of a given polarity inversion line. This buffer size parameter practically enforces how close polarity regions are expected to be located to be considered as adjacent regions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -866,9 +1116,9 @@
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_27_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_27_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="candidate-ropis">
-<h2>Candidate RoPIs<a class="headerlink" href="#candidate-ropis" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="candidate-ropis">
+<h2>Candidate RoPIs<a class="headerlink" href="#candidate-ropis" title="Permalink to this headline">#</a></h2>
 <p>The candidate RoPIs are generated based on the intersection areas of spatially buffered opposite polarity regions.</p>
 <p>In this step, we also include a quality index of SPEI (Severe Projection Effect Index) for checking magnetograms that can be potentially impacted by severe projection effect (greater than 70 degrees East-West).</p>
 <div class="cell docutils container">
@@ -916,11 +1166,11 @@ Number of Detected Candidate RoPIs:  50
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_32_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_32_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="candidate-mpils">
-<h2>Candidate MPILs<a class="headerlink" href="#candidate-mpils" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="refine-based-on-preserved-flux-ratio">
-<h3>Refine based on preserved flux ratio<a class="headerlink" href="#refine-based-on-preserved-flux-ratio" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="candidate-mpils">
+<h2>Candidate MPILs<a class="headerlink" href="#candidate-mpils" title="Permalink to this headline">#</a></h2>
+<section id="refine-based-on-preserved-flux-ratio">
+<h3>Refine based on preserved flux ratio<a class="headerlink" href="#refine-based-on-preserved-flux-ratio" title="Permalink to this headline">#</a></h3>
 <p>To generate the candidate PILs, we utilize an unsigned magnetic flux filter on the areas covered by disconnected RoPIs, which ensures that the selected candidate PILs represent within the user defined percentage (denoted by PRESERVED_FLUX_RATIO) of unsigned magnetic flux contained in RoPIs and removes the candidate RoPIs with relatively low flux build up around them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -954,10 +1204,10 @@ Number of Detected Candidate RoPIs:  50
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_37_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_37_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="morphological-thinning-operations">
-<h2>Morphological thinning operations<a class="headerlink" href="#morphological-thinning-operations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="morphological-thinning-operations">
+<h2>Morphological thinning operations<a class="headerlink" href="#morphological-thinning-operations" title="Permalink to this headline">#</a></h2>
 <p>The flux filter is followed by applying a morphological thinning operation [3] to the candidate RoPIs. By doing this we eliminate majority of the foreground pixels and preserve the principal topology of the primary shapes for MPILs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -988,9 +1238,9 @@ Number of Detected Candidate RoPIs:  50
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_41_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_41_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="further-refinement-using-size-filter">
-<h2>Further refinement using size filter<a class="headerlink" href="#further-refinement-using-size-filter" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="further-refinement-using-size-filter">
+<h2>Further refinement using size filter<a class="headerlink" href="#further-refinement-using-size-filter" title="Permalink to this headline">#</a></h2>
 <p>Lastly, we apply a user-defined size filter in CEA pixels. For HARP data series, each pixel roughly covers approximately 131,400 km^2. This operation removes relatively small MPILs and retain a cleaner set of significant MPILs. The predefined size is 14 pixels in this example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1024,9 +1274,9 @@ Number of Detected Candidate RoPIs:  50
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_46_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_46_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="getting-regions-of-polarity-inversion-ropi">
-<h2>Getting Regions of Polarity Inversion (RoPI)<a class="headerlink" href="#getting-regions-of-polarity-inversion-ropi" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="getting-regions-of-polarity-inversion-ropi">
+<h2>Getting Regions of Polarity Inversion (RoPI)<a class="headerlink" href="#getting-regions-of-polarity-inversion-ropi" title="Permalink to this headline">#</a></h2>
 <p>We fetch the refined RoPIs as part of our additional metadata raster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1057,9 +1307,9 @@ Number of Detected Candidate RoPIs:  50
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_50_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_50_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="getting-convex-hull-of-pil">
-<h2>Getting convex hull of PIL<a class="headerlink" href="#getting-convex-hull-of-pil" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="getting-convex-hull-of-pil">
+<h2>Getting convex hull of PIL<a class="headerlink" href="#getting-convex-hull-of-pil" title="Permalink to this headline">#</a></h2>
 <p>To generate the convex hull, we determine the convex closure of the set in detected MPIL.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1090,10 +1340,10 @@ Number of Detected Candidate RoPIs:  50
 <img alt="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_54_0.png" src="../../_images/AJ_01_MPIL_Detection_and_Analysis_Tool_54_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="video-analysis-tool">
-<h1>Video Analysis Tool<a class="headerlink" href="#video-analysis-tool" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="video-analysis-tool">
+<h1>Video Analysis Tool<a class="headerlink" href="#video-analysis-tool" title="Permalink to this headline">#</a></h1>
 <p>Generates the magnetogram images of Active Regions with applied on them Polarity Inversion Line, Region of Polarity Inversion, and Convex Hull masks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1116,13 +1366,13 @@ Number of Detected Candidate RoPIs:  50
  Your browser does not support the video tag.
  </video></div></div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="reference">
-<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h1>
 <p>[1] M. G. Bobra, X. Sun, J. T. Hoeksema, M. Turmon, Y. Liu, K. Hayashi, G. Barnes, and K. D. Leka, “The helioseismic and magnetic imager (hmi) vector magnetic field pipeline: Sharps – space-weather hmi active region patches,” Solar Physics, vol. 289, no. 9, pp. 3549–3578, Sep 2014. Available: <a class="reference external" href="https://doi.org/10.1007/s11207-014-0529-3">https://doi.org/10.1007/s11207-014-0529-3</a></p>
 <p>[2] J. Canny, “A computational approach to edge detection,” IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. PAMI-8, no. 6, pp. 679–698, 1986.</p>
 <p>[3] Jean Serra. 1983. Image Analysis and Mathematical Morphology. Academic Press, Inc., USA.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1146,9 +1396,11 @@ Number of Detected Candidate RoPIs:  50
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1164,25 +1416,27 @@ Number of Detected Candidate RoPIs:  50
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By EarthCube Office: Supported by NSF Award Number 1928208<br/>
-        
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By EarthCube Office: Supported by NSF Award Number 1928208<br/>
+  
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
