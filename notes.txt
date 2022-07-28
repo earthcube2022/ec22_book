@@ -1,3 +1,15 @@
+Notes
+
+jupyter build in this dir and then
+cp -ar _build/html/* docs
+then push up.
+
+Really need to use a git action build like for the OIH docs.  
+
+Need to think about how to do that with the releases for zenodo though.
+
+
+
  https://github.com/iodepo/odis-arch
  https://github.com/earthcube2022/ec22_mckay_etal
  https://github.com/earthcube2022/ec22_kwan_etal
@@ -12,7 +24,6 @@
  https://github.com/earthcube2022/ec22_abduallah_etal
  https://github.com/earthcube2022/ec22_mills_etal
  https://github.com/earthcube2022/ec22_yu_etal
-
 
  Need to leverage https://github.com/zenodraft/metadata-schema-zenodo
 
